@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>python environment | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="python,ubuntu">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="ubuntupython27_on_debian.sh 先运行 12sudo apt-get updatesudo apt-get upgrade 确保所有的软件无误。【总之前戏要做足】 然后安装 123sudo apt-get install python-pip python-dev build-essentialsudo pip install --upgrade pipsudo pip i">
+<meta name="keywords" content="python,ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python environment">
+<meta property="og:url" content="http://yoursite.com/wiki/编程语言/python/python环境/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="ubuntupython27_on_debian.sh 先运行 12sudo apt-get updatesudo apt-get upgrade 确保所有的软件无误。【总之前戏要做足】 然后安装 123sudo apt-get install python-pip python-dev build-essentialsudo pip install --upgrade pipsudo pip i">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.933Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python environment">
+<meta name="twitter:description" content="ubuntupython27_on_debian.sh 先运行 12sudo apt-get updatesudo apt-get upgrade 确保所有的软件无误。【总之前戏要做足】 然后安装 123sudo apt-get install python-pip python-dev build-essentialsudo pip install --upgrade pipsudo pip i">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file active"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-编程语言/python/python环境" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/编程语言/">编程语言</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/编程语言/python/">python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/ubuntu/">ubuntu</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/编程语言/python/python环境/">
+            <time datetime="2017-10-05T06:41:54.000Z" itemprop="datePublished">2017-10-05</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/编程语言/python/python环境.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/编程语言/python/python环境.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/编程语言/python/python环境.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            python environment
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><p><a href="https://gist.github.com/lukaslundgren/2659457" rel="external nofollow noopener noreferrer" target="_blank">python27_on_debian.sh</a></p>
+<p>先运行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<p>确保所有的软件无误。【总之前戏要做足】</p>
+<p>然后安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-pip python-dev build-essential</span><br><span class="line">sudo pip install --upgrade pip</span><br><span class="line">sudo pip install --upgrade virtualenv</span><br></pre></td></tr></table></figure>
+<p>关于python2和ptyhon3的问题，我的ubuntu一般都是两个默认安装，所以需要安装各自版本的。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-pip</span><br><span class="line">pip3 install virtualenv</span><br><span class="line">virtualenv --python=/usr/bin/python3 XXXX</span><br><span class="line"></span><br><span class="line"><span class="comment"># can not work</span></span><br><span class="line">python3 -m venv XXXX</span><br></pre></td></tr></table></figure>
+<p>接着就是针对不同的需求创建虚拟环境。</p>
+<p>卸载<br><code>pip uninstall XXXX</code></p>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>别用中文的useername来登陆Windows，大坑。因为windows的编码很复杂，我根本搞不清啥原因。</p>
+<p>windows有大量的charset，比如windows1255、936等等，这些后面的did无所谓。</p>
+<p>一开始安装：</p>
+<ul>
+<li>出现了Unicode有问题，我怀疑是中文用户名，然后修改了。</li>
+<li>出现缺少C++的build工具（python的包依赖c++编译器），然后按照这个网站<a href="https://wiki.python.org/moin/WindowsCompilers#Microsoft_Visual_C.2B-.2B-_14.0_with_Visual_Studio_2017_.28x86.2C_x64.2C_ARM.2C_ARM64.29" rel="external nofollow noopener noreferrer" target="_blank">vs build—python</a>完成了安装，</li>
+<li>又出现了Unicode问题，然后参照<a href="https://my.oschina.net/mengyoufengyu/blog/1524422" rel="external nofollow noopener noreferrer" target="_blank">有效的解决方案</a>完美解决安装”pycrypto“这个包导致的问题。这个<a href="https://stackoverflow.com/questions/35510743/error-while-upgrading-pip-unicodedecodeerror-utf-8-codec-cant-decode-byte" rel="external nofollow noopener noreferrer" target="_blank">stackoverflow方案</a>说的，我找不到怎么改文档编码，所以没成功，但也可以借鉴。</li>
+</ul>
+<p>具体步骤为<br>（1）修改<code>python362\lib\site-packages\pip\compat_init_.py</code>di175行为</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">console_to_str</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> s.decode(sys.__stdout__.encoding)</span><br><span class="line">    <span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">return</span> s.decode(<span class="string">'utf-8'</span>)</span><br><span class="line">        <span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">            <span class="keyword">return</span> s.decode(<span class="string">'cp936'</span>)</span><br></pre></td></tr></table></figure>
+<p>（2）将D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\stdint.h文件拷贝到C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\目录下。<br>（3）修改C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\inttypes.h中的第13行（注意当前的编码还有是否为英文输入）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="comment">// 到</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdint.h"</span></span></span><br></pre></td></tr></table></figure>
+<p>上述的文件名灵活修改，我用的是build而不是community版本，但效果一样，具体的版本编号也要做相应修改。</p>
+<h2 id="版本兼容"><a href="#版本兼容" class="headerlink" title="版本兼容"></a>版本兼容</h2><p>pip2、pip3、</p>
+<p>py2、py3、</p>
+<p>pyqt4、pyqt5</p>
+<p>我目前已知的就这些，而且还搭配上ubuntu自带的python，我安装的python，我觉得python是最需要dokcer的，他的版本实在太多了，而且名字都一样，根本不知道package安装在哪里。</p>
+<h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><h3 id="源"><a href="#源" class="headerlink" title="源"></a>源</h3><p>windows:<code>%HOMEPATH%\pip\pip.ini</code><br>windows下，直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini，内容如下:</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+<p>再比如ali源</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span></span><br><span class="line"><span class="attr">trusted-host</span> =  mirrors.aliyun.com</span><br><span class="line"><span class="attr">index-url</span> = https://mirrors.aliyun.com/pypi/simple</span><br></pre></td></tr></table></figure>
+<p><a href="https://gist.github.com/MaHu6/228fe96b2b81c677ae5c950a6b8d55c4" rel="external nofollow noopener noreferrer" target="_blank">例子</a></p>
+<h3 id="requirements文件格式"><a href="#requirements文件格式" class="headerlink" title="requirements文件格式"></a>requirements文件格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meld==3.14.2</span><br><span class="line">pip-autoremove==0.9.0</span><br><span class="line">virtualenv==15.0.1</span><br></pre></td></tr></table></figure>
+<p>输入输出</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt --upgrade</span><br><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+<p>查看版本</p>
+<ul>
+<li><code>pip freeze | grep ****</code>后面就是你想知道的lib的名称，<a href="https://stackoverflow.com/questions/20180543/how-to-check-version-of-python-modules" rel="external nofollow noopener noreferrer" target="_blank">参考</a></li>
+<li><a href="https://stackoverflow.com/questions/4888027/python-and-pip-list-all-versions-of-a-package-thats-available" rel="external nofollow noopener noreferrer" target="_blank">查看某lib所有可允许的版本</a></li>
+</ul>
+<h3 id="安装，卸载"><a href="#安装，卸载" class="headerlink" title="安装，卸载"></a>安装，卸载</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install scapy</span><br><span class="line">pip install scapy==<span class="number">2</span>.<span class="number">4</span>.<span class="number">2</span></span><br><span class="line"></span><br><span class="line">pip uninstall scapy</span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/编程语言/python/library/file-operator/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    python-文件处理
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/开源库/python/crawl/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">爬虫</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

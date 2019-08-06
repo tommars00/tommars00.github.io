@@ -1,0 +1,3131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Kali Linux Tools | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="hacker,工具,linux">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Kali Linux Tools ListingTools Listing  Gui Cmd-line Shell[可交互]  Information Gathering 信息收集   name mode function comment     DMitry ? whois查询/子域名收集/端口扫描 whois并不简单明了；子域名和邮箱依赖google；端口扫描速度一般   dnmap ? 用于">
+<meta name="keywords" content="hacker,工具,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kali Linux Tools">
+<meta property="og:url" content="http://yoursite.com/wiki/hacker/kali-linux/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="Kali Linux Tools ListingTools Listing  Gui Cmd-line Shell[可交互]  Information Gathering 信息收集   name mode function comment     DMitry ? whois查询/子域名收集/端口扫描 whois并不简单明了；子域名和邮箱依赖google；端口扫描速度一般   dnmap ? 用于">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.925Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kali Linux Tools">
+<meta name="twitter:description" content="Kali Linux Tools ListingTools Listing  Gui Cmd-line Shell[可交互]  Information Gathering 信息收集   name mode function comment     DMitry ? whois查询/子域名收集/端口扫描 whois并不简单明了；子域名和邮箱依赖google；端口扫描速度一般   dnmap ? 用于">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file active"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-hacker/kali-linux" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/hacker/">hacker</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/hacker/">hacker</a>, <a class="tag-link" href="/tags/linux/">linux</a>, <a class="tag-link" href="/tags/工具/">工具</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/hacker/kali-linux/">
+            <time datetime="2019-04-13T06:14:54.000Z" itemprop="datePublished">2019-04-13</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/hacker/kali-linux.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/hacker/kali-linux.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/hacker/kali-linux.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Kali Linux Tools
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="Kali-Linux-Tools-Listing"><a href="#Kali-Linux-Tools-Listing" class="headerlink" title="Kali Linux Tools Listing"></a>Kali Linux Tools Listing</h2><p><a href="https://tools.kali.org/tools-listing" rel="external nofollow noopener noreferrer" target="_blank">Tools Listing</a></p>
+<ul>
+<li>Gui</li>
+<li>Cmd-line</li>
+<li>Shell[可交互]</li>
+</ul>
+<h2 id="Information-Gathering-信息收集"><a href="#Information-Gathering-信息收集" class="headerlink" title="Information Gathering 信息收集"></a>Information Gathering 信息收集</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DMitry</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">whois查询/子域名收集/端口扫描</td>
+<td style="text-align:center">whois并不简单明了；子域名和邮箱依赖google；端口扫描速度一般</td>
+</tr>
+<tr>
+<td style="text-align:center">dnmap</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">用于组建分布式nmap，dnmap_server为服务端；dnmap_client为客户端</td>
+<td style="text-align:center">用起来并不是那么方便，不是实在不行不是很必要</td>
+</tr>
+<tr>
+<td style="text-align:center">ike-scan</td>
+<td style="text-align:center">?官网没了</td>
+<td style="text-align:center">收集ipsec vpn server指纹信息</td>
+<td style="text-align:center">好像用于攻击vpn，不太懂</td>
+</tr>
+<tr>
+<td style="text-align:center">maltegoce</td>
+<td style="text-align:center">G官网没了</td>
+<td style="text-align:center">域名/账号等关联性收集展示(通过网络搜索，获取某个IP或邮箱与其他IP或邮箱的拓扑关系)</td>
+<td style="text-align:center">关联性展示功能确实很好，但效果可能没有那么理想，特别是对国内而言(这东西有那么强，但社工的东西还是没那么强，而且还是外国的工具在天朝的网络)</td>
+</tr>
+<tr>
+<td style="text-align:center">netdiscover</td>
+<td style="text-align:center">?官网没了</td>
+<td style="text-align:center">主动发出arp包和截获arp包</td>
+<td style="text-align:center">就arp探测功能就此功能本身而言做得算很好了</td>
+</tr>
+<tr>
+<td style="text-align:center">Nmap</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">端口服务探测和端口漏洞扫描</td>
+<td style="text-align:center">端口扫描集大成者</td>
+</tr>
+<tr>
+<td style="text-align:center">p0f</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">监听网卡收发的数据包，从数据包中读取远端机器操作系统服务版本等信息</td>
+<td style="text-align:center">毕竟只是截取数据 包中的版本信息，效果期望不要很大</td>
+</tr>
+<tr>
+<td style="text-align:center">regon-ng</td>
+<td style="text-align:center">S官网没了</td>
+<td style="text-align:center">模仿msf的信息侦查框架</td>
+<td style="text-align:center">类似将站长工具等东西命令行化，想法挺好但是用起来感觉不是那么直观</td>
+</tr>
+<tr>
+<td style="text-align:center">SPARTA</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">图形版的hydra，加了端口服务扫描功能</td>
+<td style="text-align:center">还行图形界面聊胜于无</td>
+</tr>
+<tr>
+<td style="text-align:center">zenmap</td>
+<td style="text-align:center">G官网没了</td>
+<td style="text-align:center">图形界面版的nmap</td>
+<td style="text-align:center">还行图形界面聊胜于无</td>
+</tr>
+<tr>
+<td style="text-align:center">GoLismero</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">就是一个文本版的类似awvs的web扫描器</td>
+<td style="text-align:center">感觉可以提升对扫描器原理的认识</td>
+</tr>
+<tr>
+<td style="text-align:center">Faraday</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">报告管理</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>ace-voip<br>Amap<br>APT2<br>arp-scan<br>Automater<br>bing-ip2hosts<br>braa<br>CaseFile<br>CDPSnarf<br>cisco-torch<br>copy-router-config</p>
+<p>dnsenum<br>dnsmap<br>DNSRecon<br>dnstracer<br>dnswalk<br>DotDotPwn<br>enum4linux<br>enumIAX<br>EyeWitness</p>
+<p>Fierce<br>Firewalk<br>fragroute<br>fragrouter<br>Ghost Phisher</p>
+<p>goofile<br>hping3<br>ident-user-enum<br>InSpy<br>InTrace<br>iSMTP<br>lbd<br>Maltego Teeth<br>masscan<br>Metagoofil<br>Miranda<br>nbtscan-unixwiz<br>Nikto<br>ntop<br>OSRFramework</p>
+<p>Parsero<br>Recon-ng<br>SET<br>SMBMap<br>smtp-user-enum<br>snmp-check</p>
+<p>sslcaudit<br>SSLsplit<br>sslstrip<br>SSLyze<br>Sublist3r<br>THC-IPV6<br>theHarvester<br>TLSSLed<br>twofi<br>Unicornscan<br>URLCrazy<br>Wireshark<br>WOL-E<br>Xplico</p>
+<h2 id="Vulnerability-Analysis系统审计-扫描-分析"><a href="#Vulnerability-Analysis系统审计-扫描-分析" class="headerlink" title="Vulnerability Analysis系统审计/扫描/分析"></a>Vulnerability Analysis系统审计/扫描/分析</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Lynis</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">感觉有点像360首页的“立即体验”，不过只是扫描告警不能一键修复</td>
+<td style="text-align:center">shell脚本写成颇为有趣</td>
+</tr>
+<tr>
+<td style="text-align:center">unix-privesc-check</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">审计系统中的关键文件权限是否有异常</td>
+<td style="text-align:center">还是没有总结性展示和修复功能</td>
+</tr>
+<tr>
+<td style="text-align:center">bed</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">通过发送各种模糊数据测试多种服务的缓冲区溢出漏洞的工具</td>
+<td style="text-align:center">可能还不错</td>
+</tr>
+<tr>
+<td style="text-align:center">commix</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">sqlmap检测sql注入此工具检测系统命令注入</td>
+<td style="text-align:center">两相搭配那注入基本覆盖了</td>
+</tr>
+<tr>
+<td style="text-align:center">Oscanner</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用字典探查oracle数据库是否监听及猜解服务名</td>
+<td style="text-align:center">参数很少。测试sid和默认用户是可以的，默认的字典基本没法看还是得自己写字典</td>
+</tr>
+<tr>
+<td style="text-align:center">SidGuesser</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用字典探测oracle数据库存在的sid</td>
+<td style="text-align:center">参数很少。测试验证如果字典里有sid，可以探测出sid。基于字典的工具还是得自己准备字典</td>
+</tr>
+<tr>
+<td style="text-align:center">tnscmd10g</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用于探测oracle是否监听及其他一些信息</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>BBQSQL<br>BED<br>cisco-auditing-tool<br>cisco-global-exploiter<br>cisco-ocs<br>cisco-torch<br>copy-router-config<br>Doona<br>DotDotPwn<br>HexorBase<br>jSQL Injection</p>
+<p>Nmap<br>ohrwurm<br>openvas</p>
+<p>Powerfuzzer<br>sfuzz</p>
+<p>SIPArmyKnife<br>sqlmap<br>Sqlninja<br>sqlsus<br>THC-IPV6</p>
+<p>Yersinia</p>
+<h2 id="Exploitation-Tools"><a href="#Exploitation-Tools" class="headerlink" title="Exploitation Tools"></a>Exploitation Tools</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Armitage</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">measploit的gui界面</td>
+<td style="text-align:center">嗯好像是比原来的msf-gui好点，不过叫人自己去启动msf还要登录，还是不用算了</td>
+</tr>
+<tr>
+<td style="text-align:center">BeEF</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">利用msf的exp结合xss构造有攻击性的html页面，当浏览器访问即会受到攻击并获取shell</td>
+<td style="text-align:center">这可以啊，不过不懂对现在浏览器效果怎么样</td>
+</tr>
+<tr>
+<td style="text-align:center">Metasploit Framework</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">就是启动msf console咯.一款开源的安全漏洞检测工具供开发，测试和使用恶意代码，收集了数百个实用的溢出攻击程序及一些辅助工具，让人们使用简单的方法完成安全漏洞检测，即使一个不懂安全的人也可以轻松的使用它。</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">msf payload center</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">生成包含exp的windows/android等各平台的可执行文件，木马制作利器</td>
+<td style="text-align:center">那这东西和msf venom的区别是什么</td>
+</tr>
+<tr>
+<td style="text-align:center">search sploit</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用于搜索已从exploitdb下载到本地的漏洞利用脚本</td>
+<td style="text-align:center">可以理解msf都是ruby写的可执行代码，exploit不一定用ruby写，也可能只是扫描述而非代码</td>
+</tr>
+<tr>
+<td style="text-align:center">Backdoor Factory</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Maltego Teeth</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">图形化界面，是一款社会工程学分析软件，很强大。只需要一个网站或一个姓名一个email就能以蜘蛛网的形式给出千丝万缕的联系。收集某个人的在线数据信息 – 包括电子邮件地址、博客、Facebook中的朋友，个人爱好、地理位置、工作描述等信息。</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>cisco-auditing-tool<br>cisco-global-exploiter<br>cisco-ocs<br>cisco-torch<br>Commix<br>crackle<br>exploitdb<br>jboss-autopwn<br>Linux Exploit Suggester</p>
+<p>MSFPC<br>RouterSploit<br>SET<br>ShellNoob<br>sqlmap<br>THC-IPV6<br>Yersinia</p>
+<h2 id="Wireless-Attacks"><a href="#Wireless-Attacks" class="headerlink" title="Wireless Attacks"></a>Wireless Attacks</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Pyrit</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">WPA/WPA2加密的wifi的密码破解工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Aircrack-ng</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">针对WEP、 WPA加密方式的wifi密码破解套件</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">chrip</td>
+<td style="text-align:center">G官网无</td>
+<td style="text-align:center">各种无线电数据包的拦截工具（？）</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">coWPAtty</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">基于已捕获握手包和密码字典的WPA-PSK加密的wifi密码的猜解</td>
+<td style="text-align:center">不能自己拦截数据包也只能破解WPA-PSK类加密方式功能有点弱</td>
+</tr>
+<tr>
+<td style="text-align:center">Fern Wifi Cracker</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">基于字典的WEP和WPA加密的wifi破解工具</td>
+<td style="text-align:center">能自动发现wifi能拦截数据包，图形界面操作，简单易用</td>
+</tr>
+<tr>
+<td style="text-align:center">Ghost Phisher</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">能发现AP并使与AP连接的设备断开连接然后假冒AP让设备重新连接</td>
+<td style="text-align:center">图形界面除了AP外还有假冒DNS、http服务器等，较为好用</td>
+</tr>
+<tr>
+<td style="text-align:center">GISKismet</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">Kismet输出结果的可视化工具，即较成text、html等各种格式</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Kismet</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">交互式的AP发现工具，列出周围AP的各种信息</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">mdk3</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">可向AP发送大量连接、断开请求，可向周围设备告知存在根本不存在的大量AP</td>
+<td style="text-align:center">这工具的攻击方法简直是发了疯</td>
+</tr>
+<tr>
+<td style="text-align:center">mfor</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">IC卡密钥破解程序</td>
+<td style="text-align:center">各种免费吃饭充钱教程里用的工具你想不想学</td>
+</tr>
+<tr>
+<td style="text-align:center">mfterm</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">交互式IC卡文件写入工具</td>
+<td style="text-align:center">要修改卡内数据才是最终的IC卡破解</td>
+</tr>
+<tr>
+<td style="text-align:center">PixieWPS</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">针对开启WPS的wifi利用WPS随机数生成中的bug来破解</td>
+<td style="text-align:center">有说很快有说成功率比较低</td>
+</tr>
+<tr>
+<td style="text-align:center">Reaver</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">针对开启WPS的wifi进行暴力破解的工具</td>
+<td style="text-align:center">aircrack-ng后排名第二的wifi破解工具</td>
+</tr>
+<tr>
+<td style="text-align:center">Wifite</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">较为自动化的wifi破解工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>Airbase-ng</p>
+<p>Airdecap-ng and Airdecloak-ng<br>Aireplay-ng<br>airgraph-ng<br>Airmon-ng<br>Airodump-ng<br>airodump-ng-oui-update<br>Airolib-ng<br>Airserv-ng<br>Airtun-ng<br>Asleap<br>Besside-ng<br>Bluelog<br>BlueMaho<br>Bluepot<br>BlueRanger<br>Bluesnarfer<br>Bully</p>
+<p>crackle<br>eapmd5pass<br>Easside-ng</p>
+<p>FreeRADIUS-WPE</p>
+<p>Gqrx<br>gr-scan<br>hostapd-wpe<br>ivstools<br>kalibrate-rtl<br>KillerBee</p>
+<p>makeivs-ng</p>
+<p>mfcuk<br>mfoc</p>
+<p>Multimon-NG<br>Packetforge-ng</p>
+<p>redfang<br>RTLSDR Scanner<br>Spooftooph<br>Tkiptun-ng<br>Wesside-ng<br>Wifi Honey<br>wifiphisher<br>Wifitap</p>
+<p>wpaclean</p>
+<h2 id="Forensics-Tools"><a href="#Forensics-Tools" class="headerlink" title="Forensics Tools"></a>Forensics Tools</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Binwalk</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用于分析一个文件中是否其实有多个文件</td>
+<td style="text-align:center">ctf的key文件提取就常用到的</td>
+</tr>
+<tr>
+<td style="text-align:center">bulk-extractor</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">扫描给定的目录或文件，如果发现一些如电话号码网址等关键的信息则输出到文件</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">chkrootkit</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">扫描本机，查看本机是否存在受rootkit影响的地方</td>
+<td style="text-align:center">理解成360的木马查杀也差不多</td>
+</tr>
+<tr>
+<td style="text-align:center">Foremost</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">文件恢复工具，用于被删除的文件的恢复，就是360等的那个文件恢复功能</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Galleta</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用于分析IE的cookie文件输出其中的有用信息</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Volatility</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">[ volafox的扩展，支持Mac OS X/Linux/Windows] 针对Mac OS X的内存分析工具，可从其内存镜像中读取进程列表等各种主机信息</td>
+<td style="text-align:center">先用工具把当前内存抓取下来，然后再用来分析；内存数据容易被破坏所以这确实很有意义</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>Capstone<br>chntpw<br>Cuckoo<br>dc3dd<br>ddrescue<br>DFF<br>diStorm3<br>Dumpzilla<br>extundelete</p>
+<p>Guymager<br>iPhone Backup Analyzer<br>p0f<br>pdf-parser<br>pdfid<br>pdgmail<br>peepdf<br>RegRipper</p>
+<p>Xplico</p>
+<h2 id="Web-Applications"><a href="#Web-Applications" class="headerlink" title="Web Applications"></a>Web Applications</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Nikto</td>
+<td style="text-align:center">？</td>
+<td style="text-align:center">web扫描器</td>
+<td style="text-align:center">就喜欢这种直接告漏洞的扫描器（不过事实上很少能有可用的漏洞）</td>
+</tr>
+<tr>
+<td style="text-align:center">Burp Suite</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">常用web代理截包工具</td>
+<td style="text-align:center">功能强大不能要求更多</td>
+</tr>
+<tr>
+<td style="text-align:center">httrack</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">将网站克隆到本地</td>
+<td style="text-align:center">钓鱼乌云等可能有用</td>
+</tr>
+<tr>
+<td style="text-align:center">owasp-zap</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">owasp组织开发的工具</td>
+<td style="text-align:center">和burpsuite相比弱化了截包功能，强化了web漏洞扫描功能，不过感觉也没扫出什么东西</td>
+</tr>
+<tr>
+<td style="text-align:center">Paros</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">一个web爬行和漏扫工具</td>
+<td style="text-align:center">和owasp-zap差不多</td>
+</tr>
+<tr>
+<td style="text-align:center">Skipfish</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">一个全自动化的web漏洞扫描工具</td>
+<td style="text-align:center">其工作一是爬行网站页面，然后分析页面漏洞，最后生html报告</td>
+</tr>
+<tr>
+<td style="text-align:center">sqlmap</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">一个强大的sql注入扫描工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">w3af</td>
+<td style="text-align:center">G/S</td>
+<td style="text-align:center">一个web漏洞扫描框架</td>
+<td style="text-align:center">所谓框架就是有一堆扫描模块，然后你选定其中一些模块去扫描网站；感觉一般没说的那么好</td>
+</tr>
+<tr>
+<td style="text-align:center">WebScarab</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">更专业的网站树型结构分析工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">WPScan</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">针对wordpress的漏洞扫描工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">BBQSQL</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">一个高度可配置的交互式的sql盲注工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">jSQL Injection</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">根据url探测数据库类型/参数注入测试/探测后台页而/探测重要文件</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">mdb-sql</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">可用来连接access数据库文件（mdb）然后通过sql语句查询数据</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">sqllite database</td>
+<td style="text-align:center">G官网没了</td>
+<td style="text-align:center">qlite数据库客户端</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Sqlninja</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用于猜解ms sql</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">sqlsus</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用于mysql的盲注检测</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">autopsy</td>
+<td style="text-align:center">web官网无</td>
+<td style="text-align:center">启动一个服务通过浏览器访问使用，感觉是分析网页各种元素的不是很懂</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">zaproxy</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">web安全扫描工具，其中OWASP已经成了web安全的规范，好多工作求职时需要熟悉top10的缺陷及其修复。个人测试偶尔有误报</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>apache-users<br>Arachni</p>
+<p>BlindElephant</p>
+<p>CutyCapt<br>DAVTest<br>deblaze<br>DIRB<br>DirBuster<br>fimap<br>FunkLoad<br>Gobuster<br>Grabber<br>hURL<br>jboss-autopwn<br>joomscan</p>
+<p>Maltego Teeth</p>
+<p>PadBuster</p>
+<p>Parsero<br>plecost<br>Powerfuzzer<br>ProxyStrike<br>Recon-ng</p>
+<p>ua-tester<br>Uniscan</p>
+<p>Webshag<br>WebSlayer<br>WebSploit<br>Wfuzz<br>WhatWeb</p>
+<p>XSSer</p>
+<h2 id="Stress-Testing"><a href="#Stress-Testing" class="headerlink" title="Stress Testing"></a>Stress Testing</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Termineter</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">智能电表攻击框架</td>
+<td style="text-align:center">这需要硬件搭配吧，没玩过</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>DHCPig<br>FunkLoad<br>iaxflood<br>Inundator<br>inviteflood<br>ipv6-toolkit<br>mdk3<br>Reaver<br>rtpflood<br>SlowHTTPTest<br>t50</p>
+<p>THC-IPV6<br>THC-SSL-DOS</p>
+<h2 id="Sniffing-amp-Spoofing"><a href="#Sniffing-amp-Spoofing" class="headerlink" title="Sniffing &amp; Spoofing"></a>Sniffing &amp; Spoofing</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">driftnet</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">用于嗅探流量中的图版并展示到x-window上</td>
+<td style="text-align:center">配上arp欺骗作为中间人才能发挥威力，自己拦自己的就好玩而已</td>
+</tr>
+<tr>
+<td style="text-align:center">bettercap</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">听说可以截持同子网的流量，强无敌，原理是什么</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">hampster</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">好像也是代理转发流量的</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">bdf proxy</td>
+<td style="text-align:center">?官网无</td>
+<td style="text-align:center">处于中间人身份时可对经过的流量插入payload</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">mac changer</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">修改本机上网时的mac地址，一用作身份隐藏，二可用来绕过wifi mac黑名单</td>
+<td style="text-align:center">应该只是软修改mac地址不可能可写吧</td>
+</tr>
+<tr>
+<td style="text-align:center">mitm proxy</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">好像也是代理转发流量的</td>
+<td style="text-align:center">感觉没什么特色啊</td>
+</tr>
+<tr>
+<td style="text-align:center">netsniff-ng</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">高性能的流量捕获套件，可能大流量时的捕获效果比较稳定</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">responder</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">被动嗅探与所在主机交互的主机的操作系统版本等信息</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Wireshark</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">拦截经过指定网卡的所有流量</td>
+<td style="text-align:center">sectools常年排行第一的工具，这就不用多说了吧</td>
+</tr>
+<tr>
+<td style="text-align:center">proxy chains</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">好像用来配置多种代理的</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>Burp Suite<br>DNSChef<br>fiked<br>hamster-sidejack<br>HexInject<br>iaxflood<br>inviteflood<br>iSMTP<br>isr-evilgrade</p>
+<p>ohrwurm<br>protos-sip<br>rebind</p>
+<p>rtpbreak<br>rtpinsertsound<br>rtpmixsound<br>sctpscan<br>SIPArmyKnife<br>SIPp<br>SIPVicious<br>SniffJoke<br>SSLsplit<br>sslstrip<br>THC-IPV6<br>VoIPHopper<br>WebScarab<br>Wifi Honey</p>
+<p>xspy<br>Yersinia<br>zaproxy</p>
+<h2 id="Password-Attacks"><a href="#Password-Attacks" class="headerlink" title="Password Attacks"></a>Password Attacks</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">HexorBase</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">一个支持多种数据库的客户端有多个数据库的口令破解功能</td>
+<td style="text-align:center">作为客户端只能将就着用。暴破口令需要自己准备字典</td>
+</tr>
+<tr>
+<td style="text-align:center">CeWL</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">爬取给定的URL并依据限制条件截取网页中的单词生成口令集合</td>
+<td style="text-align:center">这种想法是可取的。但有点遗憾只是截取网页中的单词，没有a转@等等智能变换</td>
+</tr>
+<tr>
+<td style="text-align:center">crunch</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">依据限定的条件生成口令集合</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Hashcat</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">多种hash的爆力猜解工具，速度快所耗CPU小（相对）</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">John the Ripper</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">用于对系统口令文件的破解（如/etc/passwd）还原出密码明文</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Johnny</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">john的gui版本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">medusa</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">可对IMAP, rlogin, SSH等进行口令猜解，类似hydra</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Ncrack</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">可对IMAP, rlogin, SSH等进行口令猜解，类似hydra</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">ophcrack</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">基于彩虹表的windows口令破解工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">RainbowCrack</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">具有彩虹表的生成、排序和使用排序好换彩虹表进行破解的功能</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">rcracki-mt</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">基于彩虹表的hash破解工具，可能蚲rainbowcrack一部份</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">wordlists</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">打印kali自带的一些口令文件存放的位置</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">mimikatz</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">用于从windows内存中提取密码</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">THC-Hydra</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">一款密码暴力破解软件可以在线破解多种密码需要配合强大的字典。密码能否破解就在于你强大的字典了。</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>BruteSpray<br>Burp Suite</p>
+<p>chntpw<br>cisco-auditing-tool<br>CmosPwd<br>creddump<br>crowbar</p>
+<p>findmyhash<br>gpp-decrypt<br>hash-identifier</p>
+<p>keimpx<br>Maltego Teeth<br>Maskprocessor<br>multiforcer</p>
+<p>oclgausscrack</p>
+<p>PACK<br>patator<br>phrasendrescher<br>polenum</p>
+<p>RSMangler<br>SecLists<br>SQLdict<br>Statsprocessor<br>THC-pptp-bruter<br>TrueCrack<br>WebScarab</p>
+<p>zaproxy</p>
+<h2 id="Maintaining-Access"><a href="#Maintaining-Access" class="headerlink" title="Maintaining Access"></a>Maintaining Access</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Intersect</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">感觉是SQL 有攻击性Intersect语句的生成工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Nishang</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">基于powershell的后渗透攻击工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">PowerSploit</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">也是一个基于powershell的后渗透攻击工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Weevely</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">webshell连接工具不过好像要用自己生成的小马</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>CryptCat<br>Cymothoa<br>dbd<br>dns2tcp<br>HTTPTunnel</p>
+<p>polenum</p>
+<p>pwnat<br>RidEnum<br>sbd<br>shellter<br>U3-Pwn<br>Webshells</p>
+<p>Winexe</p>
+<h2 id="Hardware-Hacking"><a href="#Hardware-Hacking" class="headerlink" title="Hardware Hacking"></a>Hardware Hacking</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">apktool</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">从apk文件中还原出xml和图版等资源文件</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">dex2jar</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">apktool把apk还原成了资源文件和dex，dex2jar把dex还原成jar文件（.class）</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>android-sdk</p>
+<p>Arduino</p>
+<p>Sakis3G<br>smali</p>
+<h2 id="Reverse-Engineering"><a href="#Reverse-Engineering" class="headerlink" title="Reverse Engineering"></a>Reverse Engineering</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">edb-debugger</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">软件逆向动态调试工具</td>
+<td style="text-align:center">Linux版Ollydbg</td>
+</tr>
+<tr>
+<td style="text-align:center">flashm</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">.swf文件的反汇编工具可反汇编出.swf中的脚本代码</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">jad</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">dex2jar把文件还原成了.class，jad进一步把文件还原成.java文件</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">javasnoop</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">java程序漏洞评估工具</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">nasm-shell</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">nasm是32位汇编编译器，这是一个nasm的shell</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">OllyDbg</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">windows平台大名鼎鼎的动态调试工具，Linux上是通过wine运行有点水土不服</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">radare2</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">类似ida的静态反汇编分析工具，功能强大，开源</td>
+<td style="text-align:center">但是命令行操作这难度有点大</td>
+</tr>
+<tr>
+<td style="text-align:center">exe2hex</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">顾名思义就是把exe文件转成十六进制文件</td>
+<td style="text-align:center">不过这样的意义是什么，不是以十六进制就能打开了吗</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>apktool<br>dex2jar<br>diStorm3</p>
+<p>JD-GUI</p>
+<p>smali<br>Valgrind<br>YARA</p>
+<h2 id="Reporting-Tools"><a href="#Reporting-Tools" class="headerlink" title="Reporting Tools"></a>Reporting Tools</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CaseFile</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">一个画图工具，packet tracer用来画网络拓扑，这用来画场景拓扑</td>
+<td style="text-align:center">这写出高大上的报告啊</td>
+</tr>
+<tr>
+<td style="text-align:center">CutyCapt</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">一个基于WebKit内核的网页截图工具，就是指定一个url它就能用解析url并把url界面截下来</td>
+<td style="text-align:center">各种扫描器中的截图就是使用类似的工具完成的，并不会真用个浏览器访问再截图下来</td>
+</tr>
+<tr>
+<td style="text-align:center">Dradis</td>
+<td style="text-align:center">Web</td>
+<td style="text-align:center">可解析burpsuite/nmap等生成的扫描文件，并可将扫描结果转存为pdf或html</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">MagicTree</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">报告管理？？</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">pipal</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">说词频统计并不是很准确，文命令可分析统计给定文件中的词语的“各种最”</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>cherrytree</p>
+<p>dos2unix</p>
+<p>Metagoofil<br>Nipper-ng</p>
+<p>RDPY</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">function</th>
+<th style="text-align:center">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">clang</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">类似gcc的编译器，更轻量，可编译c、c++、Objective-C</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">clang++</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">C++编译器，与clang的关系类似gcc和g++的类系</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">keep note</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">较之记事本，可建文件夹，支持富文本，可导出为其他格式</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">record my desktop</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">屏幕录制，输出.ogv格式视频</td>
+<td style="text-align:center">不过感觉这视频格式占用磁盘有点大啊</td>
+</tr>
+<tr>
+<td style="text-align:center">hashdeep</td>
+<td style="text-align:center">C官网无</td>
+<td style="text-align:center">用于计算文件hash值，支持多种散列算法</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Social-Engineering</td>
+<td style="text-align:center">S官网无</td>
+<td style="text-align:center">一般用于生成各种插入了exp的文件，诱使目标打开而中招</td>
+<td style="text-align:center">社会工程学总说得很厉害，不过我总觉得社会工程学和DDOS就是最名不副实的</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/开源库/python/scapy/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    scapy
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/hacker/attack/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">attack</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

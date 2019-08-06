@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>linux | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="工具,linux">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="文档recursive mkdir： mkdir -p foo/bar/zoo/andsoforth ls ls -l (filename)显示用户、属性等信息 复制所有source文件夹下的内容cp -a /source/. /dst/ 更改文档属性可执行 find file by name/extension 用户、用户组 用who查看当前登录用户名 用groups XXX查看“XXX”所在的">
+<meta name="keywords" content="工具,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="http://yoursite.com/wiki/工具/Operator System/linux/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="文档recursive mkdir： mkdir -p foo/bar/zoo/andsoforth ls ls -l (filename)显示用户、属性等信息 复制所有source文件夹下的内容cp -a /source/. /dst/ 更改文档属性可执行 find file by name/extension 用户、用户组 用who查看当前登录用户名 用groups XXX查看“XXX”所在的">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux">
+<meta name="twitter:description" content="文档recursive mkdir： mkdir -p foo/bar/zoo/andsoforth ls ls -l (filename)显示用户、属性等信息 复制所有source文件夹下的内容cp -a /source/. /dst/ 更改文档属性可执行 find file by name/extension 用户、用户组 用who查看当前登录用户名 用groups XXX查看“XXX”所在的">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file active"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-工具/Operator System/linux" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/工具/">工具</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/工具/Operator-System/">Operator System</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/linux/">linux</a>, <a class="tag-link" href="/tags/工具/">工具</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/工具/Operator System/linux/">
+            <time datetime="2019-05-04T12:15:58.000Z" itemprop="datePublished">2019-05-04</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/工具/Operator System/linux.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/工具/Operator System/linux.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/工具/Operator System/linux.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            linux
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文档"><span class="toc-number">1.</span> <span class="toc-text">文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户、用户组"><span class="toc-number">2.</span> <span class="toc-text">用户、用户组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh和scp"><span class="toc-number">3.</span> <span class="toc-text">ssh和scp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行浏览网页"><span class="toc-number">4.</span> <span class="toc-text">命令行浏览网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后台运行"><span class="toc-number">5.</span> <span class="toc-text">后台运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重定向报错"><span class="toc-number">6.</span> <span class="toc-text">重定向报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#端口"><span class="toc-number">7.</span> <span class="toc-text">端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看历史纪录"><span class="toc-number">8.</span> <span class="toc-text">查看历史纪录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量"><span class="toc-number">9.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#process"><span class="toc-number">10.</span> <span class="toc-text">process</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ctrl-z"><span class="toc-number">10.1.</span> <span class="toc-text">ctrl+z</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#service"><span class="toc-number">11.</span> <span class="toc-text">service</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p>recursive mkdir： <code>mkdir -p foo/bar/zoo/andsoforth</code></p>
+<p><a href="https://www.mkssoftware.com/docs/man1/ls.1.asp" rel="external nofollow noopener noreferrer" target="_blank"><code>ls</code></a></p>
+<p><code>ls -l (filename)</code>显示用户、属性等信息</p>
+<p>复制所有source文件夹下的内容<code>cp -a /source/. /dst/</code></p>
+<p><a href="https://askubuntu.com/questions/229589/how-to-make-a-file-e-g-a-sh-script-executable-so-it-can-be-run-from-termina" rel="external nofollow noopener noreferrer" target="_blank">更改文档属性可执行</a></p>
+<p><a href="https://www.linode.com/docs/tools-reference/tools/find-files-in-linux-using-the-command-line/" rel="external nofollow noopener noreferrer" target="_blank">find file by name/extension</a></p>
+<h2 id="用户、用户组"><a href="#用户、用户组" class="headerlink" title="用户、用户组"></a>用户、用户组</h2><ul>
+<li>用<code>who</code>查看当前登录用户名</li>
+<li>用<code>groups XXX</code>查看“XXX”所在的用户组</li>
+<li><a href="https://www.cyberciti.biz/faq/linux-list-users-command/" rel="external nofollow noopener noreferrer" target="_blank">list all user</a></li>
+<li><a href="https://www.hostingadvice.com/how-to/change-file-ownershipgroups-linux/" rel="external nofollow noopener noreferrer" target="_blank">Change File Ownership &amp; Groups</a></li>
+</ul>
+<h2 id="ssh和scp"><a href="#ssh和scp" class="headerlink" title="ssh和scp"></a>ssh和scp</h2><p>“cloud” ————&gt; “local”<strong>上传</strong></p>
+<p>文件：<code>scp username@servername:/path/filename local_dir</code></p>
+<p>目录：<code>scp -r username@servername:remote_dir local_dir</code></p>
+<p> “local”————&gt;“cloud” <strong>下载</strong></p>
+<p>文件：<code>scp /path/filename username@servername:/remote_dir</code></p>
+<p>目录：<code>scp -r local_dir username@servername:remote_dir</code></p>
+<h2 id="命令行浏览网页"><a href="#命令行浏览网页" class="headerlink" title="命令行浏览网页"></a>命令行浏览网页</h2><p><code>curl http://google.com</code><br>可以制定代理、cookie、OPTION等，自己玩吧。</p>
+<h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><p><code>nohup ping google.com &amp;</code></p>
+<p>标准输出和错误会定向到<code>nohup.out</code>中。</p>
+<p>nohup顾名思义，提交的命令忽略”hang up“信号。</p>
+<h2 id="重定向报错"><a href="#重定向报错" class="headerlink" title="重定向报错"></a>重定向报错</h2><p><code>curl -L https://github.com/docker/compose/releases/download/1.8.0/run.sh &gt; /usr/local/bin/docker-compose</code></p>
+<p>可以用<code>sudo bash -c &quot;echo N&gt; /sys/module/drm_kms_helper/parameters/poll&quot;</code>让他在<code>sudo bash -c &quot;&quot;</code>中运行。</p>
+<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>查看端口使用<a href="https://www.cyberciti.biz/faq/how-do-i-find-out-what-ports-are-listeningopen-on-my-linuxfreebsd-server/" rel="external nofollow noopener noreferrer" target="_blank">参考</a></p>
+<p><code>netstat -l</code>或者<code>netstat --listen</code></p>
+<h2 id="查看历史纪录"><a href="#查看历史纪录" class="headerlink" title="查看历史纪录"></a>查看历史纪录</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.bash_history</span><br><span class="line">less ~/.bash_history</span><br><span class="line"></span><br><span class="line"><span class="comment">#The history size defaults to 500 commands. You can, however, increase this by adding the following line to your ~./bashrc:</span></span><br><span class="line">HISTSIZE=&lt;number of entries, -1 <span class="keyword">for</span> unlimited&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">history</span></span><br></pre></td></tr></table></figure>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>查看<br><code>echo $PATH</code><br><code>printf &quot;%s\n&quot; $PATH</code><br><code>echo $PATH | tr &quot;:&quot; &quot;\n&quot; | nl</code><br>新增或修改<br><code>export PATH=$PATH:/opt/games</code><br><code>export CATALINA_HOME=/path/to/the/root/folder/of/tomcat</code><br>取消或删除<br><code>unset PATH</code></p>
+<h2 id="process"><a href="#process" class="headerlink" title="process"></a>process</h2><ul>
+<li><a href="https://www.linux.com/learn/intro-to-linux/2017/5/how-kill-process-command-line" rel="external nofollow noopener noreferrer" target="_blank">kill</a></li>
+</ul>
+<h3 id="ctrl-z"><a href="#ctrl-z" class="headerlink" title="ctrl+z"></a>ctrl+z</h3><p>比如在vim下，使用<code>ctrl+z</code>会将vim切换至后台，然后就可以看到前台的terminal。有点像是视窗os的<code>tab</code>的功能</p>
+<p>可以在terminal中使用<code>fg</code>就能看到，然后再切换过去</p>
+<p>延申类似功能<br>The general job control commands in Linux are:</p>
+<ul>
+<li><code>jobs</code> - list the current jobs</li>
+<li><code>fg</code> - resume the job that’s next in the queue<ul>
+<li><code>fg %[number]</code> - resume job [number]</li>
+</ul>
+</li>
+<li><code>bg</code> - Push the next job in the queue into the     background<ul>
+<li><code>bg %[number]</code> - Push the job [number] into the background</li>
+</ul>
+</li>
+<li><code>kill %[number]</code> - Kill the job numbered [number]<ul>
+<li><code>kill -[signal] %[number]</code> - Send the signal [signal] to job number [number]</li>
+</ul>
+</li>
+<li><code>disown %[number]</code> - disown the process(no more terminal will be owner), so command will be alive even after closing the terminal.</li>
+</ul>
+<h2 id="service"><a href="#service" class="headerlink" title="service"></a>service</h2><ul>
+<li><a href="https://support.rackspace.com/how-to/checking-running-services-on-linux/" rel="external nofollow noopener noreferrer" target="_blank">run</a></li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/工具/reverse engineer/OllyDbg/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    OllDbg
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/开源库/python/pycrypto/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">pycrypto</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

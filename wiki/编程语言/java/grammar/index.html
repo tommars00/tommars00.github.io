@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>grammar | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="Java,grammar,编程语言">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="1123456case 1:case 2:case 3:case 4: 	Console.WriteLine(&amp;quot;ok!**********&amp;quot;); 	break; case 5: 	Console.WriteLine(&amp;quot;wrong!*******&amp;quot;); 	break; file处理 file处理2 List和Collection一样，本身是interface，">
+<meta name="keywords" content="Java,grammar,编程语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="grammar">
+<meta property="og:url" content="http://yoursite.com/wiki/编程语言/java/grammar/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="1123456case 1:case 2:case 3:case 4: 	Console.WriteLine(&amp;quot;ok!**********&amp;quot;); 	break; case 5: 	Console.WriteLine(&amp;quot;wrong!*******&amp;quot;); 	break; file处理 file处理2 List和Collection一样，本身是interface，">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.933Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="grammar">
+<meta name="twitter:description" content="1123456case 1:case 2:case 3:case 4: 	Console.WriteLine(&amp;quot;ok!**********&amp;quot;); 	break; case 5: 	Console.WriteLine(&amp;quot;wrong!*******&amp;quot;); 	break; file处理 file处理2 List和Collection一样，本身是interface，">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-编程语言/java/grammar" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/编程语言/">编程语言</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/编程语言/java/">java</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/grammar/">grammar</a>, <a class="tag-link" href="/tags/编程语言/">编程语言</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/编程语言/java/grammar/">
+            <time datetime="2018-06-12T15:41:54.000Z" itemprop="datePublished">2018-06-12</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/编程语言/java/grammar.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/编程语言/java/grammar.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/编程语言/java/grammar.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            grammar
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">case 1:case 2:case 3:case 4: </span><br><span class="line">	Console.WriteLine(&quot;ok!**********&quot;); </span><br><span class="line">	break; </span><br><span class="line">case 5: </span><br><span class="line">	Console.WriteLine(&quot;wrong!*******&quot;); </span><br><span class="line">	break;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.cnblogs.com/digdeep/p/4478734.html" rel="external nofollow noopener noreferrer" target="_blank">file处理</a></p>
+<p><a href="http://www.cnblogs.com/lovebread/archive/2009/11/23/1609122.html" rel="external nofollow noopener noreferrer" target="_blank">file处理2</a></p>
+<p><code>List</code>和<code>Collection</code>一样，本身是interface，需要赋值的是派生类。</p>
+<p>static、final等关键词含义</p>
+<p>static修饰函数是否指，静态函数，与C++有何区别。java的似乎也无法static函数使用non-static的成员变量</p>
+<p>final似乎和lambda的引用本地变量有关系。</p>
+<p><a href="http://www.cnblogs.com/wanlipeng/archive/2010/10/21/1857791.html" rel="external nofollow noopener noreferrer" target="_blank">vector、arraylist区别</a></p>
+<h3 id="junit"><a href="#junit" class="headerlink" title="junit"></a>junit</h3><p><a href="http://www.cnblogs.com/feiweiwei/archive/2009/06/16/1024623.html" rel="external nofollow noopener noreferrer" target="_blank">范例</a></p>
+<h3 id="java8的lambda配合thread"><a href="#java8的lambda配合thread" class="headerlink" title="java8的lambda配合thread"></a>java8的lambda配合thread</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Runnable task = ()-&gt;&#123;...&#125;;</span><br><span class="line">Thread thread = new Thread(task);</span><br><span class="line">thread.start();</span><br></pre></td></tr></table></figure>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>/*IO流-转换流的字符编码转换-ISO-8859-1和utf-8和GBK互转</p>
+<p>编码:字符串变成字节数组</p>
+<p>解码:字节数组变成字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">String--&gt;byte[]:  str.getBytes();</span><br><span class="line"></span><br><span class="line">     byte[] getBytes(Charset charset) </span><br><span class="line"></span><br><span class="line">          使用给定的 charset 将此 String 编码到 byte 序列，并将结果存储到新的 byte 数组。 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">byte[] --&gt;String :  new String(byte[])</span><br><span class="line"></span><br><span class="line">    String(byte[] bytes, String charsetName) </span><br><span class="line"></span><br><span class="line">          通过使用指定的 charset 解码指定的 byte 数组，构造一个新的 String。</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">import java.uitl.*;</span><br><span class="line"></span><br><span class="line">class EncodeDemo</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        String s = &quot;你好&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        byte[] b1 = s.getBytes(&quot;GBK&quot;);//编码:字符串变成字节数组 输入 参数（编码表）</span><br><span class="line"></span><br><span class="line">        System.out.println(Arrays.toString(b1));//打印 数组变成字符串 </span><br><span class="line"></span><br><span class="line">        String s1 = new String(b1,&quot;ISO8859-1&quot;);//解码:字节数组变成字符串,String参数(数组,编码表) 输出</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;s1=&quot;+s1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //对s1进行iso8859-1编码</span><br><span class="line"></span><br><span class="line">        byte[] b2 = s1.getBytes(&quot;ISO8859-1&quot;);//拿乱码的字符串重新编码成字节数组,输入 参数（编码表）</span><br><span class="line"></span><br><span class="line">        System.out.println(Arrays.toString(b2));//打印 数组变成字符串　</span><br><span class="line"></span><br><span class="line">        String s2 = new String(b2,&quot;gbk&quot;);//解码:字节数组变成字符串,String参数(数组,编码表) 输出</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;s2=&quot;+s2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//ISO8859-1和GBK互转 不会出乱码</span><br><span class="line"></span><br><span class="line">        //utf-8和GBK互转会出乱码，参考其他文章，如下</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">GBK编码是一个中文2个字节，而UTF-8编码是一个中文3个字节，</span><br><span class="line"></span><br><span class="line">当我们调用getBytes(&quot;UTF-8&quot;)方法时，会通过计算来增加字节。</span><br><span class="line"></span><br><span class="line">正常的情况下是两个两个的转化，但是当字节是奇数时最后1个字节转字符就会计算错误，</span><br><span class="line"></span><br><span class="line">然后直接赋予最后这个字符为?。所以我们需要创建ISO-8859-1编码的字符串，保证一个输入只有一个输出。</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class new_122 &#123;</span><br><span class="line"></span><br><span class="line">public static void main(String[] args) throws UnsupportedEncodingException &#123;</span><br><span class="line"></span><br><span class="line">    String gbk =&quot;我来了&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    String iso = new String(gbk.getBytes(&quot;UTF-8&quot;),&quot;ISO-8859-1&quot;);    </span><br><span class="line"></span><br><span class="line">    //构造方法 String(byte[] bytes, Charset charset) </span><br><span class="line"></span><br><span class="line">     //     通过使用指定的 charset 解码指定的 byte 数组，构造一个新的 String。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //方法 返回byte[]： getBytes(Charset charset) </span><br><span class="line"></span><br><span class="line">    //     使用给定的 charset 将此 String 编码到 byte 序列，并将结果存储到新的 byte 数组。 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //构造方法里面，再加了方法，就是先编码字节数组用UTF-8，再解码字符串用ISO-8859-1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    System.out.println(new String(iso.getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;));</span><br><span class="line"></span><br><span class="line">    //构造方法里面，再加了方法，就是先编码字节数组用ISO-8859-1，再解码字符串用UTF-8</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    //总结，用ISO-8859-1做中介编码表 来 实现UTF-8 和GBK 互转，因为ISO-8859-1是单字节的，不会改变数据</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###</p>
+<p>java的static method没法创建private class。<br>static main可以创建自己。</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/工具/network/postman/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    postman &amp;&amp; curl
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/工具/IDE/eclipse/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">eclipse</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

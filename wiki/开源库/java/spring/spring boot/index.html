@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Spring-boot | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="开源库,java,Spring-boot">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="版本更迭cloud与boot配合1 问题1@SpringApplicationConfiguration(classes = Application.class) 报错，注解不能导入。 有的说是这个注解在1.4就被替换1.5.2版本的，直接用@SpringBootTest就可以实现测试功能。 问题2spring-boot-starter-parent是一个特殊的starter,它用来提供相关的Ma">
+<meta name="keywords" content="开源库,java,Spring-boot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring-boot">
+<meta property="og:url" content="http://yoursite.com/wiki/开源库/java/spring/spring boot/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="版本更迭cloud与boot配合1 问题1@SpringApplicationConfiguration(classes = Application.class) 报错，注解不能导入。 有的说是这个注解在1.4就被替换1.5.2版本的，直接用@SpringBootTest就可以实现测试功能。 问题2spring-boot-starter-parent是一个特殊的starter,它用来提供相关的Ma">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring-boot">
+<meta name="twitter:description" content="版本更迭cloud与boot配合1 问题1@SpringApplicationConfiguration(classes = Application.class) 报错，注解不能导入。 有的说是这个注解在1.4就被替换1.5.2版本的，直接用@SpringBootTest就可以实现测试功能。 问题2spring-boot-starter-parent是一个特殊的starter,它用来提供相关的Ma">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file active"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-开源库/java/spring/spring boot" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/开源库/">开源库</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/开源库/java/">java</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/开源库/java/spring/">spring</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Spring-boot/">Spring-boot</a>, <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/开源库/">开源库</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/开源库/java/spring/spring boot/">
+            <time datetime="2018-09-08T21:45:54.000Z" itemprop="datePublished">2018-09-09</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/开源库/java/spring/spring boot.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/开源库/java/spring/spring boot.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/开源库/java/spring/spring boot.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Spring-boot
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="版本更迭"><a href="#版本更迭" class="headerlink" title="版本更迭"></a>版本更迭</h2><h3 id="cloud与boot配合"><a href="#cloud与boot配合" class="headerlink" title="cloud与boot配合"></a>cloud与boot配合</h3><p><a href="https://blog.csdn.net/russle/article/details/80865288" rel="external nofollow noopener noreferrer" target="_blank">1</a></p>
+<h3 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h3><p><code>@SpringApplicationConfiguration(classes = Application.class)</code> 报错，注解不能导入。</p>
+<p>有的说是这个注解在1.4就被替换<br>1.5.2版本的，直接用<code>@SpringBootTest</code>就可以实现测试功能。</p>
+<h3 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h3><p><code>spring-boot-starter-parent</code>是一个特殊的starter,它用来提供相关的Maven默认依赖，使用它之后，常用的包依赖可以省去version标签。</p>
+<p>并不是每个人都喜欢继承自<code>spring-boot-starter-parent</code> POM。<br>您可能有您需要使用的自己的公司标准parent，或者您可能更喜欢显式声明所有的Maven配置。<br>如果你不想使用<code>spring-boot-starter-parent</code>，您仍然可以通过使用<code>scope = import</code>依赖关系来保持依赖关系管理：</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>spring boot—-springapplication not found—版本号问题</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>spring boot—–root of context hierarchy—————问题是由于scope的属性配置问题，改成compile即可。<br> 具体原因：由于scope为provided时该依赖是由系统组件提供的，我们不需要手动添加，它只存在于编译、运行和测试阶段，打包的时候并不会打进去，被剔除了的。<br>而comile表示 dependency 都可以在生命周期中使用。而且，这些dependencies 会传递到依赖的项目中。适用于所有阶段，会随着项目一起发布。即依赖的项目会参与到当前项目的编译、运行、测试以及打包发布，是一个比较强的依赖范围。</p>
+<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p><a href="https://stackoverflow.com/questions/33301073/spring-boot-application-cant-resolve-the-org-springframework-boot-package/42998184" rel="external nofollow noopener noreferrer" target="_blank">https://stackoverflow.com/questions/33301073/spring-boot-application-cant-resolve-the-org-springframework-boot-package/42998184</a><br>解决方法和高票答案一致，降spring-boot-starter-parent版本</p>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>could not extract ResultSet in hibernate<br>原因不详。解决方法是：application.properties添加<br>spring.jpa.hibernate.naming.implicit-strategy=org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl<br>spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl<br>并且版本从1.3.7升级到1.4.3.<br>不需要给@Entity的类添加@Table、@Column这些内容。</p>
+<h3 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h3><p>报一些奇怪的错，比如：<br>java.lang.ClassNotFoundException: org.springframework.boot.SpringApplication</p>
+<p>解决办法<br>删除整个<code>.m2</code>目录，maven clean了一下重新下载的依赖</p>
+<h2 id="spring-boot-maven-pulgin"><a href="#spring-boot-maven-pulgin" class="headerlink" title="spring-boot-maven-pulgin"></a>spring-boot-maven-pulgin</h2><p>Spring Boot的Maven插件（Spring Boot Maven plugin）能够以Maven的方式为应用提供Spring Boot的支持，即为Spring Boot应用提供了执行Maven操作的可能。<br>Spring Boot Maven plugin能够将Spring Boot应用打包为可执行的jar或war文件，然后以通常的方式运行Spring Boot应用。</p>
+<ol>
+<li>Spring Boot Maven plugin的5个Goals</li>
+</ol>
+<p>spring-boot:repackage，默认goal。在mvn package之后，再次打包可执行的jar/war，同时保留mvn package生成的jar/war为.origin<br>spring-boot:run，运行Spring Boot应用<br>spring-boot:start，在mvn integration-test阶段，进行Spring Boot应用生命周期的管理<br>spring-boot:stop，在mvn integration-test阶段，进行Spring Boot应用生命周期的管理<br>spring-boot:build-info，生成Actuator使用的构建信息文件build-info.properties</p>
+<p><groupid>org.springframework.boot</groupid></p>
+<artifactid>spring-boot-maven-plugin</artifactid>
+
+
+<h2 id="cli"><a href="#cli" class="headerlink" title="cli"></a>cli</h2><p><a href="https://cloud.spring.io/spring-cloud-cli/" rel="external nofollow noopener noreferrer" target="_blank">cloud</a></p>
+<p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html" rel="external nofollow noopener noreferrer" target="_blank">boot</a></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/开源库/java/guava/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    guava
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/开源库/java/spring-cloud/spring cloud/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Spring-Cloud</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

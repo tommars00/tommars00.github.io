@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>scipy | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="python,library,scipy">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Matrix Objects出自1.6.2即隶属Arrary Objects-&amp;gt;Standard Array Subclasses-&amp;gt;   matrix objects inherit from the ndarray and therefore, they have the same attributes and methods of ndarrays.There are six i">
+<meta name="keywords" content="python,library,scipy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scipy">
+<meta property="og:url" content="http://yoursite.com/wiki/开源库/python/SciPy/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="Matrix Objects出自1.6.2即隶属Arrary Objects-&amp;gt;Standard Array Subclasses-&amp;gt;   matrix objects inherit from the ndarray and therefore, they have the same attributes and methods of ndarrays.There are six i">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="scipy">
+<meta name="twitter:description" content="Matrix Objects出自1.6.2即隶属Arrary Objects-&amp;gt;Standard Array Subclasses-&amp;gt;   matrix objects inherit from the ndarray and therefore, they have the same attributes and methods of ndarrays.There are six i">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-开源库/python/SciPy" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/开源库/">开源库</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/开源库/python/">python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/library/">library</a>, <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/scipy/">scipy</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/开源库/python/SciPy/">
+            <time datetime="2019-04-27T14:57:49.000Z" itemprop="datePublished">2019-04-27</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/开源库/python/SciPy.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/开源库/python/SciPy.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/开源库/python/SciPy.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            scipy
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Objects"><span class="toc-number">1.</span> <span class="toc-text">Matrix Objects</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-library-numpy-matlib"><span class="toc-number">2.</span> <span class="toc-text">Matrix library (numpy.matlib)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sci-optimize-fsolve"><span class="toc-number">3.</span> <span class="toc-text">sci.optimize.fsolve</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#File-IO-scipy-io"><span class="toc-number"></span> <span class="toc-text">File IO (scipy.io)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MATLAB-files"><span class="toc-number"></span> <span class="toc-text">MATLAB files</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-basic-functions"><span class="toc-number">1.</span> <span class="toc-text">The basic functions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-do-I-start"><span class="toc-number">2.</span> <span class="toc-text">How do I start?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB-structs"><span class="toc-number">3.</span> <span class="toc-text">MATLAB structs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB-cell-arrays"><span class="toc-number">4.</span> <span class="toc-text">MATLAB cell arrays</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IDL-files"><span class="toc-number"></span> <span class="toc-text">IDL files</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Matrix-Market-files"><span class="toc-number"></span> <span class="toc-text">Matrix Market files</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Wav-sound-files-scipy-io-wavfile"><span class="toc-number"></span> <span class="toc-text">Wav sound files (scipy.io.wavfile)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Arff-files-scipy-io-arff"><span class="toc-number"></span> <span class="toc-text">Arff files (scipy.io.arff)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples"><span class="toc-number">1.</span> <span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Netcdf-scipy-io-netcdf"><span class="toc-number"></span> <span class="toc-text">Netcdf (scipy.io.netcdf)</span></a>
+                </li></div>
+            
+        
+        
+            <h2 id="Matrix-Objects"><a href="#Matrix-Objects" class="headerlink" title="Matrix Objects"></a>Matrix Objects</h2><p>出自1.6.2即隶属Arrary Objects-&gt;Standard Array Subclasses-&gt;  </p>
+<p><code>matrix</code> objects <strong>inherit</strong> from the <code>ndarray</code> and therefore, they have the same attributes and methods of ndarrays.<br>There are six important differences of matrix objects, however, that may lead to unexpected results when you use matrices <strong>but expect them to act like arrays</strong>:</p>
+<ol>
+<li>Matrix objects can be created using a string notation to <strong>allow Matlab-style syntax</strong> where <strong>spaces separate columns</strong> and <strong>semicolons (‘;’) separate rows</strong>.</li>
+<li>Matrix objects are <strong>always two-dimensional</strong>. This has far-reaching implications, in that <code>m.ravel()</code> is still two dimensional (with a 1 in the first dimension) and item selection returns two-dimensional objects so that sequence behavior is fundamentally different than arrays.</li>
+<li>Matrix objects <strong>over-ride multiplication to be matrix-multiplication</strong>. Make sure you understand this for functions that you may want to receive matrices. Especially in light of the fact that <code>asanyarray(m)</code> returns a matrix when m is a matrix.</li>
+<li>Matrix objects <strong>over-ride power to be matrix raised to a power</strong>. The same warning about using power inside a function that uses <code>asanyarray(...)</code> to get an array object holds for this fact.</li>
+<li>The default <code>__array_priority__</code> of matrix objects is 10.0, and therefore <strong>mixed operations with ndarrays always produce matrices</strong>.</li>
+<li>Matrices have <strong>special attributes</strong> which make calculations easier. These are</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Title1</th>
+<th style="text-align:left">Title2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">matrix.T</td>
+<td style="text-align:left">Returns the transpose of the matrix.</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix.H</td>
+<td style="text-align:left">Returns the (complex) conjugate transpose of self.</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix.I</td>
+<td style="text-align:left">Returns the (multiplicative) inverse of invertible self.</td>
+</tr>
+<tr>
+<td style="text-align:left">matrix.A</td>
+<td style="text-align:left">Return self as an ndarray object.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Matrix-library-numpy-matlib"><a href="#Matrix-library-numpy-matlib" class="headerlink" title="Matrix library (numpy.matlib)"></a>Matrix library (numpy.matlib)</h2><p>This module contains all functions in the numpy namespace, with the following replacement functions that return <strong>matrices</strong> instead of <strong>ndarrays</strong>.</p>
+<p>这个不好用，别被坑了</p>
+<h2 id="sci-optimize-fsolve"><a href="#sci-optimize-fsolve" class="headerlink" title="sci.optimize.fsolve"></a><code>sci.optimize.fsolve</code></h2><p>解方程，屌屌的，仔细体会下面代码</p>
+<ol>
+<li>利用2个关系式，解2元方程组</li>
+</ol>
+<p>法一(<code>lambda</code>表达式)</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func = <span class="keyword">lambda</span> x:(x[<span class="number">0</span>]**<span class="number">2</span>+x[<span class="number">1</span>]**<span class="number">2</span>-R**<span class="number">2</span>, (x[<span class="number">0</span>]**<span class="number">2</span>+x[<span class="number">1</span>]**<span class="number">2</span>)/R**<span class="number">2</span>-np.cos(beta))</span><br><span class="line">x, y = sci.optimize.fsolve(func,[<span class="number">0</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>法二(<code>def</code>形式)</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">equations</span><span class="params">(p)</span>:</span></span><br><span class="line">	y,z = p</span><br><span class="line">	f1 = <span class="number">-10</span>*z + <span class="number">4</span>*y*z - <span class="number">5</span>*y + <span class="number">4</span>*z**<span class="number">2</span> - <span class="number">7</span></span><br><span class="line">	f2 = <span class="number">2</span>*y*z + <span class="number">5</span>*y - <span class="number">3</span></span><br><span class="line">	<span class="keyword">return</span> (f1,f2)</span><br><span class="line">	y,z = sci.optimize.fsolve(equations,[<span class="number">0</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>利用1个关系式、一个元的某个解，求解另一个元的解</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x0=[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="keyword">lambda</span> x: [x[<span class="number">0</span>]*<span class="number">14.80461</span>-x[<span class="number">1</span>]*<span class="number">4.9233</span>+x[<span class="number">2</span>]*<span class="number">10</span>*<span class="number">0.4803</span>, <span class="number">0</span> , <span class="number">0</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,x0)</span><br><span class="line">array([<span class="number">-0.29192258</span>,  <span class="number">4.</span>        ,  <span class="number">5.</span>        ])</span><br></pre></td></tr></table></figure>
+<p>此处python就会假定<code>x[1]=4, x[2]=5</code>求解得<code>x[0]=-0.2919</code></p>
+<p>注意如果要多个根root，请注意下面的例子：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x**<span class="number">2</span><span class="number">-1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f, np.array([<span class="number">-10</span>, <span class="number">0.5</span>]))</span><br><span class="line">array([<span class="number">-1.</span>, <span class="number">-1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">-10</span>,<span class="number">1.1</span>]))</span><br><span class="line">array([<span class="number">-1.</span>,  <span class="number">1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f, np.array([<span class="number">-10</span>, <span class="number">0</span>]))</span><br><span class="line">array([<span class="number">-10.</span>, <span class="number">0.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">-10</span>, <span class="number">-2</span>]))</span><br><span class="line">array([<span class="number">-1.</span>,  <span class="number">-1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">1.1</span>,<span class="number">-2</span>]))</span><br><span class="line">array([ <span class="number">1.</span>, <span class="number">-1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">1.1</span>,<span class="number">0.1</span>]))</span><br><span class="line">array([ <span class="number">1.</span>,  <span class="number">1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">1.1</span>, <span class="number">-0.5</span>]))</span><br><span class="line">array([ <span class="number">1.</span>, <span class="number">-1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,[<span class="number">1.1</span>, <span class="number">-2</span>])</span><br><span class="line">array([ <span class="number">1.</span>, <span class="number">-1.</span>])</span><br></pre></td></tr></table></figure>
+<p>总结就是：</p>
+<ol>
+<li>不要将猜测值设为<code>0</code>，系统不认识</li>
+<li>也不要设置成<code>0.x</code>，系统认识，但是他会重复之前的结果</li>
+<li>要得到多个解，请用<code>array</code>格式，不管是<code>np.array([ , ,])</code>还是<code>[ , ,]</code></li>
+</ol>
+<h1 id="File-IO-scipy-io"><a href="#File-IO-scipy-io" class="headerlink" title="File IO (scipy.io)"></a>File IO (scipy.io)</h1><p>数据流的保存方式</p>
+<h1 id="MATLAB-files"><a href="#MATLAB-files" class="headerlink" title="MATLAB files"></a>MATLAB files</h1><p>Load MATLAB file :Parameters: file_name : str Name of the mat file (do not need .m</p>
+<pre><code>loadmat(file_name[, mdict, appendmat])
+</code></pre><p>Save a dictionary of names and arrays into a MATLAB-style .mat file.<br>注意：  </p>
+<ol>
+<li>确实是只能一个变量，然后在后面还不能append，感觉好蠢。额，是我蠢了，可以好几个，你保存得是python的dist，肯定可以好几个啊，被举例给误导了。   </li>
+<li><p>默认是保存为.mat格式，所以filename可以不加.mat</p>
+<p>  scipy.io.savemat(file_name, mdict, appendmat=True, format=’5’, long_field_names=False, do_compression=False, oned_as=’row’)<br> savemat(file_name, mdict[, appendmat, …])<br>List variables inside a MATLAB file :Parameters: file_name : str Name of the mat file</p>
+<p> whosmat(file_name[, appendmat]) </p>
+<h2 id="The-basic-functions"><a href="#The-basic-functions" class="headerlink" title="The basic functions"></a>The basic functions</h2></li>
+</ol>
+<p>We’ll start by importing <code>scipy.io</code> and calling it <code>sio</code> for convenience:</p>
+<pre><code>&gt;&gt;&gt; import scipy.io as sio
+</code></pre><p>If you are using IPython, try tab completing on sio. Among the many options, you will find:</p>
+<pre><code>sio.loadmat
+sio.savemat
+sio.whosmat
+</code></pre><p>These are the high-level functions you will most likely use when working with MATLAB files. You’ll also find:</p>
+<pre><code>sio.matlab
+</code></pre><p>This is the package from which <code>loadmat</code>, <code>savemat</code> and <code>whosmat</code> are imported. Within <code>sio.matlab</code>, you will find the <code>mio</code> module This module contains the machinery that <code>loadmat</code> and <code>savemat</code> use. From time to time you<br>may find yourself re-using this machinery.  </p>
+<h2 id="How-do-I-start"><a href="#How-do-I-start" class="headerlink" title="How do I start?"></a>How do I start?</h2><p>You may have a <code>.mat</code> file that you want to read into Scipy. Or, you want to pass some variables from Scipy / Numpy into MATLAB.</p>
+<p>To save us using a MATLAB license, let’s start in Octave. Octave has MATLAB-compatible save and load functions.<br>Start Octave (octave at the command line for me):</p>
+<pre><code>octave:1&gt; a = 1:12
+a =
+    1 2 3 4 5 6 7 8 9 10 11 12
+octave:2&gt; a = reshape(a, [1 3 4])
+a =
+ans(:,:,1) =
+    1 2 3
+ans(:,:,2) =
+    4 5 6
+ans(:,:,3) =
+    7 8 9
+ans(:,:,4) =
+    10 11 12
+octave:3&gt; save -6 octave_a.mat a % MATLAB 6 compatible
+octave:4&gt; ls octave_a.mat
+octave_a.mat
+</code></pre><p>Now, to Python:</p>
+<pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(&apos;octave_a.mat&apos;)
+&gt;&gt;&gt; mat_contents
+{’a’: array([[[ 1., 4., 7., 10.],
+              [ 2., 5., 8., 11.],
+              [ 3., 6., 9., 12.]]]),
+’__version__’: ’1.0’,
+’__header__’: ’MATLAB 5.0 MAT-file, written by
+Octave 3.6.3, 2013-02-17 21:02:11 UTC’,
+’__globals__’: []}
+&gt;&gt;&gt; oct_a = mat_contents[’a’]
+&gt;&gt;&gt; oct_a
+array([[[ 1., 4., 7., 10.],
+        [ 2., 5., 8., 11.],
+        [ 3., 6., 9., 12.]]])
+&gt;&gt;&gt; oct_a.shape
+(1, 3, 4)
+</code></pre><p>Now let’s try the other way round:</p>
+<pre><code>&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; vect = np.arange(10)
+&gt;&gt;&gt; vect.shape
+(10,)
+&gt;&gt;&gt; sio.savemat(’np_vector.mat’, {’vect’:vect})
+</code></pre><p>Then back to Octave:</p>
+<pre><code>octave:8&gt; load np_vector.mat
+octave:9&gt; vect
+vect =
+    0 1 2 3 4 5 6 7 8 9
+octave:10&gt; size(vect)
+ans =
+    1 10
+</code></pre><p>If you want to inspect the contents of a MATLAB file without reading the data into memory, use the <code>whosmat</code> command:</p>
+<pre><code>&gt;&gt;&gt; sio.whosmat(’octave_a.mat’)
+[(’a’, (1, 3, 4), ’double’)]
+</code></pre><p><code>whosmat</code> returns <em>a list of tuples</em>, one for each array (or other object) in the file. Each tuple contains the name, shape and data type of the array.  </p>
+<h2 id="MATLAB-structs"><a href="#MATLAB-structs" class="headerlink" title="MATLAB structs"></a>MATLAB structs</h2><p>MATLAB structs are a little bit like Python <em>dicts</em>, <strong>except the field names must be strings</strong>. Any MATLAB object can be a value of a field. As for all objects in MATLAB, structs are in fact <em>arrays of structs</em>,<strong> where a single struct is an array of shape (1, 1)</strong>.</p>
+<pre><code>octave:11&gt; my_struct = struct(’field1’, 1, ’field2’, 2)
+my_struct =
+{
+field1 = 1
+field2 = 2
+}
+octave:12&gt; save -6 octave_struct.mat my_struct
+</code></pre><p>We can load this in Python:</p>
+<pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_struct.mat’)
+&gt;&gt;&gt; mat_contents
+{’my_struct’: array([[([[1.0]], [[2.0]])]],
+    dtype=[(’field1’, ’O’), (’field2’, ’O’)]), 
+    ’__version__’: ’1.0’, 
+    ’__header__’: ’MATLAB 5.0 MAT-
+&gt;&gt;&gt; oct_struct = mat_contents[’my_struct’]
+&gt;&gt;&gt; oct_struct.shape
+(1, 1)
+&gt;&gt;&gt; val = oct_struct[0,0]
+&gt;&gt;&gt; val
+([[1.0]], [[2.0]])
+&gt;&gt;&gt; val[’field1’]
+array([[ 1.]])
+&gt;&gt;&gt; val[’field2’]
+array([[ 2.]])
+&gt;&gt;&gt; val.dtype
+dtype([(’field1’, ’O’), (’field2’, ’O’)])
+</code></pre><p>In versions of Scipy from 0.12.0, MATLAB structs come back as numpy structured arrays, with fields named for the struct fields. You can see the field names in the <code>dtype</code> output above. Note also:</p>
+<pre><code>&gt;&gt;&gt; val = oct_struct[0,0]
+
+and:
+
+octave:13&gt; size(my_struct)
+ans =
+        1 1
+</code></pre><p>So, in MATLAB, the struct array must be at least 2D, and we replicate that when we read into Scipy. If you want all length 1 dimensions squeezed out, try this:</p>
+<pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_struct.mat’, squeeze_me=True)
+&gt;&gt;&gt; oct_struct = mat_contents[’my_struct’]
+&gt;&gt;&gt; oct_struct.shape
+()
+</code></pre><p>Sometimes, it’s more convenient to load the MATLAB structs as python objects rather than numpy structured arrays - it can make the access syntax in python a bit more similar to that in MATLAB. In order to do this, use the <code>struct_as_record=False</code> parameter setting to <code>loadmat</code>.</p>
+<pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_struct.mat’, struct_as_record=False)
+&gt;&gt;&gt; oct_struct = mat_contents[’my_struct’]
+&gt;&gt;&gt; oct_struct[0,0].field1
+array([[ 1.]])
+</code></pre><p><code>struct_as_record=False</code> works nicely with <code>squeeze_me</code>:</p>
+<pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_struct.mat’, struct_as_record=False, squeeze_me=True)
+&gt;&gt;&gt; oct_struct = mat_contents[’my_struct’]
+&gt;&gt;&gt; oct_struct.shape # but no - it’s a scalar
+
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+
+AttributeError: ’mat_struct’ object has no attribute ’shape’
+
+&gt;&gt;&gt; type(oct_struct)
+&lt;class ’scipy.io.matlab.mio5_params.mat_struct’&gt;
+&gt;&gt;&gt; oct_struct.field1
+    1.0
+
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+
+AttributeError: ’mat_struct’ object has no attribute ’shape’
+</code></pre><p>Saving struct arrays can be done in various ways. One simple method is to use <code>dicts</code>:</p>
+<pre><code>&gt;&gt;&gt; a_dict = {’field1’: 0.5, ’field2’: ’a string’}
+&gt;&gt;&gt; sio.savemat(’saved_struct.mat’, {’a_dict’: a_dict})
+loaded as:
+octave:21&gt; load saved_struct
+octave:22&gt; a_dict
+a_dict =
+
+    scalar structure containing the fields:
+
+        field2 = a string
+        field1 = 0.50000
+</code></pre><p>You can also save structs back again to MATLAB (or Octave in our case) like this:</p>
+<pre><code>&gt;&gt;&gt; dt = [(’f1’, ’f8’), (’f2’, ’S10’)]
+&gt;&gt;&gt; arr = np.zeros((2,), dtype=dt)
+&gt;&gt;&gt; arr
+array([(0.0, ’’), (0.0, ’’)],
+        dtype=[(’f1’, ’&lt;f8’), (’f2’, ’S10’)])
+&gt;&gt;&gt; arr[0][’f1’] = 0.5
+&gt;&gt;&gt; arr[0][’f2’] = ’python’
+&gt;&gt;&gt; arr[1][’f1’] = 99
+&gt;&gt;&gt; arr[1][’f2’] = ’not perl’
+&gt;&gt;&gt; sio.savemat(’np_struct_arr.mat’, {’arr’: arr})
+</code></pre><h2 id="MATLAB-cell-arrays"><a href="#MATLAB-cell-arrays" class="headerlink" title="MATLAB cell arrays"></a>MATLAB cell arrays</h2><p>Cell arrays in MATLAB are rather like python <code>lists</code>, in the sense that the elements in the arrays can contain any type of MATLAB object. In fact they are most similar to <code>numpy object arrays</code>, and that is how we load them into numpy.</p>
+<pre><code>octave:14&gt; my_cells = {1, [2, 3]}
+my_cells =
+{
+    [1,1] = 1
+    [1,2] =
+
+        2 3
+}
+
+octave:15&gt; save -6 octave_cells.mat my_cells
+</code></pre><p>Back to Python:</p>
+<pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_cells.mat’)
+&gt;&gt;&gt; oct_cells = mat_contents[’my_cells’]
+&gt;&gt;&gt; print(oct_cells.dtype)
+object
+&gt;&gt;&gt; val = oct_cells[0,0]
+&gt;&gt;&gt; val
+array([[ 1.]])
+&gt;&gt;&gt; print(val.dtype)
+float64
+</code></pre><p>Saving to a MATLAB cell array just involves making a numpy object array:</p>
+<pre><code>&gt;&gt;&gt; obj_arr = np.zeros((2,), dtype=np.object)
+&gt;&gt;&gt; obj_arr[0] = 1
+&gt;&gt;&gt; obj_arr[1] = ’a string’
+&gt;&gt;&gt; obj_arr
+array([1, ’a string’], dtype=object)
+&gt;&gt;&gt; sio.savemat(’np_cells.mat’, {’obj_arr’:obj_arr})
+
+
+octave:16&gt; load np_cells.mat
+octave:17&gt; obj_arr
+obj_arr =
+{
+    [1,1] = 1
+    [2,1] = a string
+}
+</code></pre><h1 id="IDL-files"><a href="#IDL-files" class="headerlink" title="IDL files"></a>IDL files</h1><p>Read an IDL .sav file :Parameters: file_name : str Name of the IDL save file.</p>
+<pre><code>readsav(file_name[, idict, python_dict, ...]) 
+</code></pre><h1 id="Matrix-Market-files"><a href="#Matrix-Market-files" class="headerlink" title="Matrix Market files"></a>Matrix Market files</h1><p>Queries the contents of the Matrix Market file ‘filename’ to extract size and storage</p>
+<pre><code>mminfo(source) 
+</code></pre><p>Reads the contents of a Matrix Market file ‘filename’ into a matrix.</p>
+<pre><code>mmread(source)
+</code></pre><p>Writes the sparse or dense array a to a Matrix Market formatted file.</p>
+<pre><code>mmwrite(target, a[, comment, field, precision]) 
+</code></pre><h1 id="Wav-sound-files-scipy-io-wavfile"><a href="#Wav-sound-files-scipy-io-wavfile" class="headerlink" title="Wav sound files (scipy.io.wavfile)"></a>Wav sound files (scipy.io.wavfile)</h1><p>Return the sample rate (in samples/sec) and data from a WAV file :Parameters: filename : string or ope</p>
+<pre><code>read(filename[, mmap])
+</code></pre><p>Write a numpy array as a WAV file :Parameters: filename : string or open file handle Output wav file ra</p>
+<pre><code>write(filename, rate, data) 
+</code></pre><h1 id="Arff-files-scipy-io-arff"><a href="#Arff-files-scipy-io-arff" class="headerlink" title="Arff files (scipy.io.arff)"></a>Arff files (scipy.io.arff)</h1><p>Module to read ARFF files, which are the standard data format for WEKA.<br>ARFF is a text file format which support numerical, string and data values. The format can also represent missing data and sparse data.<br>See the WEKA website for more details about arff format and available datasets.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><pre><code>&gt;&gt;&gt; from scipy.io import arff
+&gt;&gt;&gt; from cStringIO import StringIO
+&gt;&gt;&gt; content = &quot;&quot;&quot;
+... @relation foo
+... @attribute width numeric
+... @attribute height numeric
+... @attribute color {red,green,blue,yellow,black}
+... @data
+... 5.0,3.25,blue
+... 4.5,3.75,green
+... 3.0,4.00,red
+... &quot;&quot;&quot;
+&gt;&gt;&gt; f = StringIO(content)
+&gt;&gt;&gt; data, meta = arff.loadarff(f)
+&gt;&gt;&gt; data
+array([(5.0, 3.25, ’blue’), (4.5, 3.75, ’green’), (3.0, 4.0, ’red’)],
+        dtype=[(’width’, ’&lt;f8’), (’height’, ’&lt;f8’), (’color’, ’|S6’)])
+&gt;&gt;&gt; meta
+Dataset: foo
+        width’s type is numeric
+        height’s type is numeric
+        color’s type is nominal, range is (’red’, ’green’, ’blue’, ’yellow’, ’black’)
+</code></pre><p>Read an arff file.</p>
+<pre><code>loadarff(f) 
+</code></pre><h1 id="Netcdf-scipy-io-netcdf"><a href="#Netcdf-scipy-io-netcdf" class="headerlink" title="Netcdf (scipy.io.netcdf)"></a>Netcdf (scipy.io.netcdf)</h1><p>A file object for NetCDF data.</p>
+<pre><code>netcdf_file(filename[, mode, mmap, version]) 
+</code></pre><p>Allows reading of NetCDF files (version of pupynere package)</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/开源库/python/numpy/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    numpy
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/开源库/python/win32/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">pywin32</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>elastic-job-lite | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="开源库,java,maven,eclipse,elastic-job-lite">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="preparementgit 编译错误lombok的eclipse安装方法 PowerShell后台执行ZooKeeperStart-Job -ScriptBlock { sleep 5 } web端打包流程 runspring装配后，用ApplicationContext加载下xml文件，就可以启动了。既可以在test文件夹下写class，用mvn  test启动。也可以在main文件夹下写ma">
+<meta name="keywords" content="开源库,java,maven,eclipse,elastic-job-lite">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elastic-job-lite">
+<meta property="og:url" content="http://yoursite.com/wiki/开源库/java/elastic-job-lite/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="preparementgit 编译错误lombok的eclipse安装方法 PowerShell后台执行ZooKeeperStart-Job -ScriptBlock { sleep 5 } web端打包流程 runspring装配后，用ApplicationContext加载下xml文件，就可以启动了。既可以在test文件夹下写class，用mvn  test启动。也可以在main文件夹下写ma">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="elastic-job-lite">
+<meta name="twitter:description" content="preparementgit 编译错误lombok的eclipse安装方法 PowerShell后台执行ZooKeeperStart-Job -ScriptBlock { sleep 5 } web端打包流程 runspring装配后，用ApplicationContext加载下xml文件，就可以启动了。既可以在test文件夹下写class，用mvn  test启动。也可以在main文件夹下写ma">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file active"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-开源库/java/elastic-job-lite" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/开源库/">开源库</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/开源库/java/">java</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/eclipse/">eclipse</a>, <a class="tag-link" href="/tags/elastic-job-lite/">elastic-job-lite</a>, <a class="tag-link" href="/tags/java/">java</a>, <a class="tag-link" href="/tags/maven/">maven</a>, <a class="tag-link" href="/tags/开源库/">开源库</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/开源库/java/elastic-job-lite/">
+            <time datetime="2018-05-28T21:45:54.000Z" itemprop="datePublished">2018-05-29</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/开源库/java/elastic-job-lite.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/开源库/java/elastic-job-lite.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/开源库/java/elastic-job-lite.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            elastic-job-lite
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="preparement"><a href="#preparement" class="headerlink" title="preparement"></a>preparement</h2><p><a href="https://github.com/elasticjob/elastic-job-lite" rel="external nofollow noopener noreferrer" target="_blank">git</a></p>
+<h3 id="编译错误"><a href="#编译错误" class="headerlink" title="编译错误"></a>编译错误</h3><p><a href="http://www.blogjava.net/fancydeepin/archive/2012/07/12/lombok.html" rel="external nofollow noopener noreferrer" target="_blank">lombok的eclipse安装方法</a></p>
+<h3 id="PowerShell后台执行ZooKeeper"><a href="#PowerShell后台执行ZooKeeper" class="headerlink" title="PowerShell后台执行ZooKeeper"></a>PowerShell后台执行ZooKeeper</h3><p><code>Start-Job -ScriptBlock { sleep 5 }</code></p>
+<h3 id="web端"><a href="#web端" class="headerlink" title="web端"></a>web端</h3><p><a href="https://blog.csdn.net/u013274055/article/details/77767506" rel="external nofollow noopener noreferrer" target="_blank">打包流程</a></p>
+<h3 id="run"><a href="#run" class="headerlink" title="run"></a>run</h3><p>spring装配后，用ApplicationContext加载下xml文件，就可以启动了。既可以在test文件夹下写class，用mvn  test启动。也可以在main文件夹下写main方法，用mvn -Dexec启动</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><h3 id="diverse"><a href="#diverse" class="headerlink" title="diverse"></a>diverse</h3><p>分4片。只有2路，分别处理奇偶索引，</p>
+<p>因为是一次性执行所有分片，导致每次都有1对是重复作业。如何避免。</p>
+<h3 id="elastic-console"><a href="#elastic-console" class="headerlink" title="elastic-console"></a>elastic-console</h3><p>注册中心配置<br>    注册中心地址———server-lists<br>    命名空间————-namespace<br>这两个设定相一致，其他无所谓。否则无法显示作业</p>
+<h2 id="1-4-配置eclipse的maven"><a href="#1-4-配置eclipse的maven" class="headerlink" title="1.4 配置eclipse的maven"></a>1.4 配置eclipse的maven</h2><p><a href="https://www.cnblogs.com/tangshengwei/p/6341462.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/tangshengwei/p/6341462.html</a></p>
+<p><a href="https://www.cnblogs.com/pengyan-9826/p/7767070.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/pengyan-9826/p/7767070.html</a></p>
+<p><a href="https://blog.csdn.net/anialy/article/details/8226887" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/anialy/article/details/8226887</a></p>
+<h2 id="cron"><a href="#cron" class="headerlink" title="cron"></a>cron</h2><p><a href="http://www.cnblogs.com/linjiqin/archive/2013/07/08/3178452.html" rel="external nofollow noopener noreferrer" target="_blank">cron表达式</a></p>
+<p><a href="http://cron.qqe2.com/" rel="external nofollow noopener noreferrer" target="_blank">在线编辑器</a></p>
+<p><a href="https://blog.csdn.net/sin90lzc/article/details/7543262" rel="external nofollow noopener noreferrer" target="_blank">简介</a></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>先把log文件生成arraylist，每个string都是一条完整的日志记录。</p>
+<p>—–放在ctor，有别的吗？</p>
+<p>dataflow对每个string进行分类，并存入相应的文件。</p>
+<p>分片按照arraylist的idx来进行，确保不会有出现重复处理。—-有别的方式吗？</p>
+<p>为什么要任务分片，分片需要执行多久才合适？</p>
+<p>比如说，我把200大小的数组，分给4片去处理，如果不用分片id，上来就是1-50-100-150-200，让分片一次性处理完？？</p>
+<p>或者使用分片id，每次只处理1个，1234，5678，4个4个的处理完所有。分片是为了利用多核或者分布式系统吗？？</p>
+<p>分片什么时候回来轮训说，再处理一次？？</p>
+<p>大文件无法读入内存，该如何处理。</p>
+<p>zookeeper是个管理分布式系统的东西。</p>
+<h3 id="不是问题的问题"><a href="#不是问题的问题" class="headerlink" title="不是问题的问题"></a>不是问题的问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">!!![jcc][t4][2030][11211][3.69.24] 在对连接的底层 socket、socket input stream 或 socket output stream 执行操作期间                                      </span><br><span class="line"></span><br><span class="line">发生通信错误。错误位置：Reply.fill() - socketInputStream.read (-1)。消息：Software caused connection abort: recv failed。 ERRORCODE=-4499, SQLSTATE=0800</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">!!![jcc][t4][10335][10366][3.69.24] 操作无效：连接已关闭。 ERRORCODE=-4470, SQLSTATE=08003</span><br></pre></td></tr></table></figure>
+<p>这个问题是突然出现的，但是dataflow的任务都能正常执行，就是会报这个错误。我已开始认为这个可能会导致任务执行不完全，比如执行到一半，后续的都被舍弃掉了，所以对他进行了错误检查处理。</p>
+<ol>
+<li><p>最后是通过重启电脑，解决了该问题</p>
+</li>
+<li><p>怀疑是job没有被正常的启动，因为我感觉我修改了cron表达式，job并没有按照我预想的逻辑执行。——无解，这个cron我还是没能解决</p>
+</li>
+<li><p>怀疑是AppData/Temp文件中又不干净的内容，因为我发现ZkServer居然会缓存一些内容，每次我重启zkServer他能保留之前的信息，我怀疑信息是在这里—–删除了也仍然报错</p>
+</li>
+<li><p>怀疑是job逻辑出问题——-但工作都是正常的</p>
+</li>
+<li><p>突然发现zkserver一直抱一个错（xid:0x10 txntype:-1 reqpath:n/a Error Path:/dd-job/myDataFlowJob8/instances Error:KeeperErrorCode = NoNode for /dd-job/myDataFlowJob8/instances）。怀疑是这个问题，但实际上我起一个普通的simplejob仍然有该问题——-实际应该是由于我是单机运行，zookeeper没办法分配job。</p>
+</li>
+<li><p>怀疑是3分片，导致的多线程对文件的争夺写入。但是用sync来控制仍然会报错。</p>
+</li>
+</ol>
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p><a href="http://elasticjob.io/docs/elastic-job-lite/01-start/dev-guide/" rel="external nofollow noopener noreferrer" target="_blank">http://elasticjob.io/docs/elastic-job-lite/01-start/dev-guide/</a></p>
+<p><a href="https://my.oschina.net/u/719192/blog/506062" rel="external nofollow noopener noreferrer" target="_blank">https://my.oschina.net/u/719192/blog/506062</a></p>
+<p> <a href="https://www.cnblogs.com/haoxinyue/p/6919375.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/haoxinyue/p/6919375.html</a></p>
+<p> <a href="https://my.oschina.net/u/719192/blog/506062" rel="external nofollow noopener noreferrer" target="_blank">https://my.oschina.net/u/719192/blog/506062</a></p>
+<p> <a href="https://github.com/elasticjob/elastic-job-lite" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/elasticjob/elastic-job-lite</a></p>
+<p> <a href="https://www.jianshu.com/p/a518dd3229de" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/a518dd3229de</a></p>
+<p> <a href="https://www.jianshu.com/p/14f86c6efe22" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/14f86c6efe22</a></p>
+<p> <a href="https://www.jianshu.com/p/e0e7e8494d96" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/e0e7e8494d96</a></p>
+<p> <a href="https://stackoverflow.com/questions/34183503/eclipse-maven-2-installation" rel="external nofollow noopener noreferrer" target="_blank">https://stackoverflow.com/questions/34183503/eclipse-maven-2-installation</a></p>
+<p> <a href="http://www.codes51.com/itwd/4194401.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.codes51.com/itwd/4194401.html</a></p>
+<p> <a href="https://cn.bing.com/search?q=eclipse+Target+is+not+a+Maven+Home&amp;qs=n&amp;form=QBRE&amp;sp=-1&amp;pq=eclipse+target+is+not+a+maven+home&amp;sc=0-34&amp;sk=&amp;cvid=E8CE2D27333F4E0FBDE616332FD38A97" rel="external nofollow noopener noreferrer" target="_blank">https://cn.bing.com/search?q=eclipse+Target+is+not+a+Maven+Home&amp;qs=n&amp;form=QBRE&amp;sp=-1&amp;pq=eclipse+target+is+not+a+maven+home&amp;sc=0-34&amp;sk=&amp;cvid=E8CE2D27333F4E0FBDE616332FD38A97</a></p>
+<p> <a href="https://blog.csdn.net/hhhccckkk/article/details/10458159" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/hhhccckkk/article/details/10458159</a></p>
+<p> <a href="https://cn.bing.com/search?q=eclipse+git+clone&amp;form=%20PRLNC1&amp;src=IE11TR&amp;pc=LCTE" rel="external nofollow noopener noreferrer" target="_blank">https://cn.bing.com/search?q=eclipse+git+clone&amp;form=%20PRLNC1&amp;src=IE11TR&amp;pc=LCTE</a></p>
+<p> <a href="https://blog.csdn.net/hhhccckkk/article/details/10458159" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/hhhccckkk/article/details/10458159</a></p>
+<p> <a href="http://www.cnblogs.com/lpshou/archive/2013/07/18/3199243.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.cnblogs.com/lpshou/archive/2013/07/18/3199243.html</a></p>
+<p> <a href="https://blog.csdn.net/Qiufeng_0ng/article/details/54427795" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/Qiufeng_0ng/article/details/54427795</a></p>
+<p>一个业务系统的后台可能存在很多不同种类、不同粒度的周期性任务，这些任务在分布式环境会遇到以下问题：</p>
+<p>   1、任务执行的单点问题：一台服务宕了，正在运行的任务也停止了。</p>
+<pre><code>2、任务执行的负载问题：一个大的任务只能跑在一台机器上，如何跑在多台服务器上并且同时不会被重复执行。
+</code></pre><p>   3、任务如何弹性扩容缩容？</p>
+<p> 本课题旨在解决以上问题。</p>
+<h3 id="sharding"><a href="#sharding" class="headerlink" title="sharding"></a>sharding</h3><p>1–1</p>
+<p>2–2</p>
+<p>0–0</p>
+<p>0–3</p>
+<p>1–5</p>
+<p>2–7</p>
+<p>0–6</p>
+<p>1–8</p>
+<p>2–10</p>
+<p>0–9</p>
+<p>1–11</p>
+<p>2–12</p>
+<p>0–12</p>
+<p>1–14</p>
+<p>2–16</p>
+<p>0–15</p>
+<p>1–16</p>
+<p>2–18</p>
+<p>0–18</p>
+<p>1–20</p>
+<p>2–21</p>
+<p>0–21</p>
+<p>1–22</p>
+<p>2–23</p>
+<h3 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h3><p>感觉是我对  分片、多服务器、定时、任务，这3个糅合在一起产生了误解。</p>
+<p>每次闪一下，是因为我设定的cron表达式含义为5s执行一次，即定时，而不是轮询判断当前分片来去选择执行，这也能解释一开始的问题，任务到底设置成什么样，是1次全执行完，还是分几次这样一闪一闪，答案是前者。他不是借助多服务来人一个大任务分片这样一闪一闪的执行多次。那就是另一个问题，如果任务阻塞了怎么办？有的任务很耗时（或某个时刻有太多任务要执行），导致其他任务分片迟迟得不到服务器去执行。</p>
+<p>按照在单机（只有一个zookeeper）上运行3个分片，2个任务（1个每5s，一个每10s）。观察到并得出的结论：</p>
+<ul>
+<li><p>各任务各分片各执行次数，线程id不同，但不同次数偶尔会出现id重复（第一次33-38，第二次39-41，第三次42-47，第四次48-50）</p>
+</li>
+<li><p>流处理不是所有分片的get的内容汇聚在一起统一处理，而是在各自线程中get完后，就自行处理。</p>
+</li>
+<li><p>线程都是并行的，每个步骤（取数据，拿数据，修改内容等等）的时间线彼此交织，并不固定，所以不能用一个线程公有变量进行内容控制，否则会有意想不到的执行，如果用mutex严格限定，又降低了效率</p>
+</li>
+<li><p>我第一次ctr+C中断，修改除了jobID以外的内容，重新运行，发现他仍然执行之前的逻辑，即jobID不更新，新的业务逻辑不会被分配，ctr+C没法再regCenter中删除该信息</p>
+</li>
+<li><p>读文件是采用的是先在ctor中把内容读成array再处理，写文件时出现3个线程同时往相同文件写【之前因为每次job只写1条，速度太快可能没太大影响】，这次直接报错【在对连接的底层 socket、socket input stream 或 socket output stream 执行操作期间                           发生通信错误。错误位置：Reply.fill() - socketInputStream.read (-1)。消息：Connection reset by peer: socket write error。 ERRORCODE=-4499, SQL</p>
+</li>
+</ul>
+<p>STATE=08001】</p>
+<h3 id="spring"><a href="#spring" class="headerlink" title="spring"></a>spring</h3><p>xml文件注释，<code>&lt;!-- --&gt;</code>， 不要另起一行，直接在首末添加</p>
+<p><code>context:component-scan</code></p>
+<p>spring可以自动去扫描base-pack下面或者子包下面的java文件，如果扫描到有@Component @Controller@Service等这些注解的类，则把这些类注册为bean</p>
+<p><code>context:property-placeholder</code></p>
+<h2 id="elastic"><a href="#elastic" class="headerlink" title="elastic"></a>elastic</h2><p><a href="https://www.jianshu.com/p/e0e7e8494d96" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/e0e7e8494d96</a></p>
+<p><a href="https://www.jianshu.com/p/af35eb69e52f" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/af35eb69e52f</a></p>
+<p><a href="https://www.jianshu.com/p/dd3c5b7d7694" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/dd3c5b7d7694</a></p>
+<p><a href="https://www.jianshu.com/p/a9458887739d" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/a9458887739d</a></p>
+<p><a href="https://www.jianshu.com/p/c47bf61039f3" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/c47bf61039f3</a></p>
+<p><a href="https://www.jianshu.com/p/9907fa17f4a6" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/9907fa17f4a6</a></p>
+<p><a href="http://elim.iteye.com/blog/2406211" rel="external nofollow noopener noreferrer" target="_blank">http://elim.iteye.com/blog/2406211</a></p>
+<h2 id="elastic-code"><a href="#elastic-code" class="headerlink" title="elastic-code"></a>elastic-code</h2><p><a href="https://www.jianshu.com/p/65cee9864d42" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/65cee9864d42</a></p>
+<p><a href="https://www.jianshu.com/p/d442390ac3d1" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/d442390ac3d1</a></p>
+<p><a href="https://www.jianshu.com/p/058051ba8204" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/058051ba8204</a></p>
+<p><a href="https://www.jianshu.com/p/a7e291f3049b" rel="external nofollow noopener noreferrer" target="_blank">https://www.jianshu.com/p/a7e291f3049b</a></p>
+<h2 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h2><p><a href="http://wiki.jikexueyuan.com/project/java-socket/socket-tcp-deadlock.html" rel="external nofollow noopener noreferrer" target="_blank">http://wiki.jikexueyuan.com/project/java-socket/socket-tcp-deadlock.html</a></p>
+<h3 id="elastic-dump"><a href="#elastic-dump" class="headerlink" title="elastic dump"></a>elastic dump</h3><p><a href="https://blog.csdn.net/zhaosensenyy/article/details/51864096" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/zhaosensenyy/article/details/51864096</a></p>
+<p><a href="https://blog.csdn.net/tanga842428/article/details/52885998" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/tanga842428/article/details/52885998</a></p>
+<p><a href="https://blog.csdn.net/agony_sun/article/details/77480109" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/agony_sun/article/details/77480109</a></p>
+<p><a href="http://www.cnblogs.com/shanyou/p/3221990.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.cnblogs.com/shanyou/p/3221990.html</a></p>
+<p><a href="https://blog.csdn.net/top_code/article/details/51377632" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/top_code/article/details/51377632</a></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/工具/IDE/eclipse/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    eclipse
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/编程语言/java/maven/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">maven project</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

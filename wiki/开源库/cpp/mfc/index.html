@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>mfc | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="C++,mfc">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="MFC和GDImfc font weight GDI+和GDICBitmap和HBITMAP HBITMAP、BITMAP、CBitmap load pngload jpg pngload png resource using gdiload image from resource using gdidraw a png image using loadimage and stretchDIbit">
+<meta name="keywords" content="C++,mfc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mfc">
+<meta property="og:url" content="http://yoursite.com/wiki/开源库/cpp/mfc/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="MFC和GDImfc font weight GDI+和GDICBitmap和HBITMAP HBITMAP、BITMAP、CBitmap load pngload jpg pngload png resource using gdiload image from resource using gdidraw a png image using loadimage and stretchDIbit">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mfc">
+<meta name="twitter:description" content="MFC和GDImfc font weight GDI+和GDICBitmap和HBITMAP HBITMAP、BITMAP、CBitmap load pngload jpg pngload png resource using gdiload image from resource using gdidraw a png image using loadimage and stretchDIbit">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file active"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-开源库/cpp/mfc" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/开源库/">开源库</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/开源库/cpp/">cpp</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/C/">C++</a>, <a class="tag-link" href="/tags/mfc/">mfc</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/开源库/cpp/mfc/">
+            <time datetime="2019-03-26T15:15:58.000Z" itemprop="datePublished">2019-03-26</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/开源库/cpp/mfc.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/开源库/cpp/mfc.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/开源库/cpp/mfc.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            mfc
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MFC和GDI"><span class="toc-number">1.</span> <span class="toc-text">MFC和GDI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MFC"><span class="toc-number">2.</span> <span class="toc-text">MFC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图标"><span class="toc-number">3.</span> <span class="toc-text">图标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对话框"><span class="toc-number">4.</span> <span class="toc-text">对话框</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不规则边框"><span class="toc-number">4.1.</span> <span class="toc-text">不规则边框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#透明"><span class="toc-number">4.2.</span> <span class="toc-text">透明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GDI"><span class="toc-number">5.</span> <span class="toc-text">GDI+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-number">6.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#鼠标事件"><span class="toc-number">6.1.</span> <span class="toc-text">鼠标事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MFC的帮助类"><span class="toc-number">7.</span> <span class="toc-text">MFC的帮助类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CString"><span class="toc-number">7.1.</span> <span class="toc-text">CString</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CFtpConnection"><span class="toc-number">7.2.</span> <span class="toc-text">CFtpConnection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CFont"><span class="toc-number">7.3.</span> <span class="toc-text">CFont</span></a></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <h2 id="MFC和GDI"><a href="#MFC和GDI" class="headerlink" title="MFC和GDI"></a>MFC和GDI</h2><p>mfc font weight</p>
+<p><a href="https://www.cnblogs.com/Yogurshine/p/3729546.html" rel="external nofollow noopener noreferrer" target="_blank">GDI+和GDI</a><br><a href="http://www.cnblogs.com/dahai/archive/2010/06/22/1762422.html" rel="external nofollow noopener noreferrer" target="_blank"><code>CBitmap</code>和<code>HBITMAP</code></a></p>
+<p><a href="https://www.tek-tips.com/viewthread.cfm?qid=241738" rel="external nofollow noopener noreferrer" target="_blank">HBITMAP、BITMAP、CBitmap</a></p>
+<p><a href="http://www.cplusplus.com/forum/general/72665/" rel="external nofollow noopener noreferrer" target="_blank">load png</a><br><a href="https://www.codeproject.com/Articles/3537/Loading-JPG-PNG-resources-using-GDI" rel="external nofollow noopener noreferrer" target="_blank">load jpg png</a><br><a href="https://stackoverflow.com/questions/3988484/how-to-load-a-png-resource-into-picture-control-on-a-dialog-box" rel="external nofollow noopener noreferrer" target="_blank">load png resource using gdi</a><br><a href="https://stackoverflow.com/questions/791743/how-can-i-load-an-image-from-a-resource-using-gdi" rel="external nofollow noopener noreferrer" target="_blank">load image from resource using gdi</a><br><a href="https://stackoverflow.com/questions/4568057/how-would-i-draw-a-png-image-using-loadimage-and-stretchdibits" rel="external nofollow noopener noreferrer" target="_blank">draw a png image using <code>loadimage</code> and <code>stretchDIbits</code></a></p>
+<p><a href="https://stackoverflow.com/questions/45504800/how-to-load-a-bitmap-from-a-resource-file-rc-file" rel="external nofollow noopener noreferrer" target="_blank">加载图标，亲测可行</a><br><code>HBITMAP h=LoadBitmap((HINSTANCE)GetWindowsLong(hWnd, GWL_HINSTANCE), MAKEINTRESOURCE(IDB_xxx))</code></p>
+<p><a href="https://blog.csdn.net/harvic880925/article/details/9097319" rel="external nofollow noopener noreferrer" target="_blank">GDI+字体</a></p>
+<p><a href="https://stackoverflow.com/questions/2797451/gdi-not-clearing-my-window-on-repaint-for-vista" rel="external nofollow noopener noreferrer" target="_blank">clear paint清空之前的绘制</a></p>
+<h2 id="MFC"><a href="#MFC" class="headerlink" title="MFC"></a>MFC</h2><p><a href="http://voidcn.com/article/p-eismqjdx-bdt.html" rel="external nofollow noopener noreferrer" target="_blank">MFC类对应的头文件</a></p>
+<p>mfc碰见<code>IDD_...</code>的undecalared identifier直接<code>#include&quot;resource.h&quot;</code></p>
+<p><a href="https://www.cnblogs.com/findumars/p/5402919.html" rel="external nofollow noopener noreferrer" target="_blank">自绘控件总结</a></p>
+<h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><p><a href="https://www.cnblogs.com/jerrybaby/p/6305440.html" rel="external nofollow noopener noreferrer" target="_blank">mfc程序添加图标</a></p>
+<p>注：debug模式没有，release模式才有<br><a href="https://stackoverflow.com/questions/2393863/set-an-exe-icon-for-my-program/26130514" rel="external nofollow noopener noreferrer" target="_blank">win32的console程序添加图标</a></p>
+<p><a href="https://stackoverflow.com/questions/7655736/win32-changing-program-icon/7655777" rel="external nofollow noopener noreferrer" target="_blank">win32添加图标</a></p>
+<h2 id="对话框"><a href="#对话框" class="headerlink" title="对话框"></a>对话框</h2><p><a href="https://blog.csdn.net/qq_36746738/article/details/72995365" rel="external nofollow noopener noreferrer" target="_blank">mfc两种类型“文件对话框”</a></p>
+<p><a href="https://www.cnblogs.com/lujin49/p/4731895.html" rel="external nofollow noopener noreferrer" target="_blank">mfc两种“对话框”，模态、非模态</a></p>
+<p>mfc的IsWindow的用途，如果别的控件让该控件EnableWindow(false)，该如何捕获该事件？且似乎会阻塞消息。</p>
+<p><a href="https://stackoverflow.com/questions/1846263/reopen-modal-dialog-in-mfc" rel="external nofollow noopener noreferrer" target="_blank">dialog reopen</a></p>
+<p><a href="https://docs.microsoft.com/en-us/cpp/mfc/destroying-the-dialog-box?view=vs-2017" rel="external nofollow noopener noreferrer" target="_blank">destroy dialog</a></p>
+<p><a href="https://blog.csdn.net/akof1314/article/details/4952372" rel="external nofollow noopener noreferrer" target="_blank">对话框背景颜色</a></p>
+<h3 id="不规则边框"><a href="#不规则边框" class="headerlink" title="不规则边框"></a>不规则边框</h3><p><a href="https://blog.csdn.net/elaine_bao/article/details/51586688" rel="external nofollow noopener noreferrer" target="_blank">亲测可行</a></p>
+<p><a href="https://blog.csdn.net/dpsying/article/details/17126761" rel="external nofollow noopener noreferrer" target="_blank">1</a><br><a href="https://blog.csdn.net/friendan/article/details/10973029" rel="external nofollow noopener noreferrer" target="_blank">2</a><br><a href="http://vcsos.com/article/pageSource/140810/20140810095334.shtml" rel="external nofollow noopener noreferrer" target="_blank">3</a><br><a href="https://my.oschina.net/ypimgt/blog/62656" rel="external nofollow noopener noreferrer" target="_blank">4</a></p>
+<h3 id="透明"><a href="#透明" class="headerlink" title="透明"></a>透明</h3><p><a href="https://stackoverflow.com/questions/17251692/how-to-create-transparent-dialog-not-invisible-but-image-or-text-drawn-on-it" rel="external nofollow noopener noreferrer" target="_blank">1</a></p>
+<h2 id="GDI"><a href="#GDI" class="headerlink" title="GDI+"></a><code>GDI+</code></h2><p><a href="https://blog.csdn.net/touzani/article/details/1655790" rel="external nofollow noopener noreferrer" target="_blank"><code>gdi+</code></a></p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><a href="https://blog.csdn.net/yingzheng1983/article/details/3135838" rel="external nofollow noopener noreferrer" target="_blank"><code>OnPaint</code>和<code>WM_CNPAINT</code></a><br><a href="https://www.codeproject.com/Questions/607358/MFCplusOnPaintplusvsplusDrawItem?arn=1096" rel="external nofollow noopener noreferrer" target="_blank"><code>OnPaint</code>和<code>DrawItem</code></a></p>
+<p><code>GetDlgItem(IDC_XXX).EnableWindow()</code>和<code>xxx.EnableWindow(true/false)</code>可以适用于任何控件，对话框、按钮等等。</p>
+<h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><p>mfc的tackMouseEvent中的<code>tme_cancel</code>到底怎么和<code>tme_hover/leave</code>来配合的？？</p>
+<p><a href="http://www.cnblogs.com/greatverve/archive/2013/02/06/TRACKMOUSEEVENT.html" rel="external nofollow noopener noreferrer" target="_blank">1</a><br><a href="https://stackoverflow.com/questions/2886588/trackmouseevent-not-working" rel="external nofollow noopener noreferrer" target="_blank">2</a><br><a href="https://docs.microsoft.com/en-us/windows/desktop/inputdev/wm-mousehover" rel="external nofollow noopener noreferrer" target="_blank">3</a><br><a href="https://stackoverflow.com/questions/33189986/how-to-handle-mouse-hover-event-for-specific-control-in-microsoft-visual-c-m/33191480#33191480" rel="external nofollow noopener noreferrer" target="_blank">4</a><br><a href="https://stackoverflow.com/questions/39672801/why-do-i-get-a-wm-mouseleave-after-enabling-window" rel="external nofollow noopener noreferrer" target="_blank">5</a><br><a href="http://www.ucancode.net/Visual_C_Source_Code/MFC-Sample-Code-TrackMouseEvent-GetCapture-SetCapture-ReleaseCapture-GetCursorPos.htm" rel="external nofollow noopener noreferrer" target="_blank">6</a></p>
+<p><a href="https://stackoverflow.com/questions/6423729/get-current-cursor-position" rel="external nofollow noopener noreferrer" target="_blank">鼠标位置</a><br><a href="https://blog.csdn.net/flyfish1986/article/details/50837513" rel="external nofollow noopener noreferrer" target="_blank">鼠标是否在框内</a><br><a href="https://blog.csdn.net/flyfish1986/article/details/50837513" rel="external nofollow noopener noreferrer" target="_blank">鼠标在控件内</a></p>
+<p><a href="https://blog.csdn.net/dpsying/article/details/17264339" rel="external nofollow noopener noreferrer" target="_blank">浮窗显隐</a><br><a href="https://blog.csdn.net/bjtuwayne/article/details/66977728" rel="external nofollow noopener noreferrer" target="_blank">浮窗显隐2</a></p>
+<h2 id="MFC的帮助类"><a href="#MFC的帮助类" class="headerlink" title="MFC的帮助类"></a>MFC的帮助类</h2><h3 id="CString"><a href="#CString" class="headerlink" title="CString"></a><code>CString</code></h3><p><a href="https://support.microsoft.com/en-us/help/309801/you-may-receive-an-lnk2019-error-message-when-you-build-a-visual-c-200" rel="external nofollow noopener noreferrer" target="_blank">that uses a CString-derived class from a DLL file</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CString <span class="title">hi</span><span class="params">(<span class="string">"HI);</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="string">std::wstring wHI(hi);</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="string"></span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="string">std::wstring hi(L"</span>HI<span class="string">");</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="string">CString cHI(hi.c_str());</span></span></span></span><br></pre></td></tr></table></figure>
+<p>宽字符转utf8  <code>ATL::CW2A(str, CP_UTF8)</code><br>宽字符转ansi（默认）  <code>ATL::CW2A(str)</code></p>
+<h3 id="CFtpConnection"><a href="#CFtpConnection" class="headerlink" title="CFtpConnection"></a><code>CFtpConnection</code></h3><ul>
+<li><a href="https://blog.csdn.net/harry330/article/details/5384439" rel="external nofollow noopener noreferrer" target="_blank">CFtpConnection</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/mfc/reference/cftpconnection-class" rel="external nofollow noopener noreferrer" target="_blank">CFtpConnection msdn</a></li>
+<li><a href="https://blog.csdn.net/yhtppp/article/details/5711804" rel="external nofollow noopener noreferrer" target="_blank">CFtpConnection command</a></li>
+</ul>
+<h3 id="CFont"><a href="#CFont" class="headerlink" title="CFont"></a><code>CFont</code></h3><p><a href="http://www.voidcn.com/article/p-hwwqcbkz-nk.html" rel="external nofollow noopener noreferrer" target="_blank">CFont字体</a><br><a href="http://www.codersource.net/2010/01/30/mfc-cfont-sample/" rel="external nofollow noopener noreferrer" target="_blank">Cfont</a></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/编程语言/cpp/keyword/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    keyword
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/开源库/cpp/imgui/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">imgui</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

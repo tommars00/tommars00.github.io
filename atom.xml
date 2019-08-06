@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>tommar00&#39;s wiki</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-08-06T15:20:43.929Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>tommars00</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring-test</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/java/spring/spring%20test/"/>
+    <id>http://yoursite.com/wiki/开源库/java/spring/spring test/</id>
+    <published>2019-08-06T15:20:43.929Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="spring-boot-test"><a href="#spring-boot-test" class="headerlink" title="spring-boot-test"></a>spring-boot-test</h2><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>【即<code>@SpringBootConfiguration</code>配合<code>@SpringBootTest</code>】</p><p>被测类class A。</p><p>配置类class B，需要用<code>@SpringBootConfiguration</code>。内部创建被测类class A的<code>@bean</code>。</p><p>测试类class C，需要用<code>@SpringBootTest(classes=B.class)</code>。至于<code>RunWith</code>不太讲究。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class Hello &#123;</span><br><span class="line">public String hello() &#123;</span><br><span class="line">return &quot;hello&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@SpringBootConfiguration</span><br><span class="line">public class Config &#123;</span><br><span class="line">@Bean</span><br><span class="line">Hello makeHello() &#123;</span><br><span class="line">return new Hello();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@SpringBootTest(classes=Config.class)</span><br><span class="line">public class HelloTest &#123;</span><br><span class="line">@Autowired</span><br><span class="line">private Hello hello;</span><br><span class="line">@Test</span><br><span class="line">public void helloTest() &#123;</span><br><span class="line">String actual =  hello.hello();</span><br><span class="line">String expected = &quot;hello&quot;;</span><br><span class="line">assertEquals(expected, actual);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><p>报错：NoClassDefFoundError: Could not initialize class org.springframework.test.context.junit4.SpringJUnit4ClassRunner<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;1.5.13.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;relativePath /&gt;</span><br><span class="line">&lt;/parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure></p><p>报错：Unable to find suppressions file at location: src/checkstyle/checkstyle-suppressions.xml: Could not find resource ‘src/checkstyle/checkstyle-suppressions.xml’.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-parent&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;1.5.13.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;relativePath /&gt;</span><br><span class="line">&lt;/parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure></p><p>正常</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-parent&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;2.0.4.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;relativePath /&gt;</span><br><span class="line">&lt;/parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure><p>正常<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;2.0.4.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;relativePath /&gt;</span><br><span class="line">&lt;/parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;spring-boot-test&quot;&gt;&lt;a href=&quot;#spring-boot-test&quot; class=&quot;headerlink&quot; title=&quot;spring-boot-test&quot;&gt;&lt;/a&gt;spring-boot-test&lt;/h2&gt;&lt;h3 id=&quot;示例&quot;&gt;&lt;a hr
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="java" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/java/"/>
+    
+      <category term="spring" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/java/spring/"/>
+    
+    
+      <category term="开源库" scheme="http://yoursite.com/tags/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="spring-boot-test" scheme="http://yoursite.com/tags/spring-boot-test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gtest</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/cpp/gtest/"/>
+    <id>http://yoursite.com/wiki/开源库/cpp/gtest/</id>
+    <published>2019-07-31T13:15:58.000Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="official-document"><a href="#official-document" class="headerlink" title="official document"></a>official document</h2><ul><li><a href="https://github.com/google/googletest" rel="external nofollow noopener noreferrer" target="_blank">github</a></li><li><a href="https://github.com/google/googletest/blob/master/googletest/docs/primer.md" rel="external nofollow noopener noreferrer" target="_blank">gtest primer</a></li><li><a href="https://github.com/google/googletest/blob/master/googletest/docs/advanced.md" rel="external nofollow noopener noreferrer" target="_blank">gtest advanced</a></li><li><a href="https://github.com/google/googletest/blob/master/googletest/docs/faq.md" rel="external nofollow noopener noreferrer" target="_blank">gtest faq</a></li><li><a href="https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md" rel="external nofollow noopener noreferrer" target="_blank">gmock cook_book</a></li><li><a href="https://github.com/google/googletest/blob/master/googlemock/docs/for_dummies.md" rel="external nofollow noopener noreferrer" target="_blank">for_dummies</a></li><li><a href="https://github.com/google/googletest/blob/master/googlemock/docs/cheat_sheet.md" rel="external nofollow noopener noreferrer" target="_blank">cheat_sheet</a></li></ul><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul><li>C/C++ -&gt; Code Generation -&gt; Runtime Library</li><li>Debug下， Multi-threaded Debug(/MTd)</li><li>Release下，Multi-threaded(MT)</li><li><a href="https://blog.csdn.net/genii12345/article/details/8609642" rel="external nofollow noopener noreferrer" target="_blank">VS2010使用GooglTest，GoogleMock</a></li><li></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;official-document&quot;&gt;&lt;a href=&quot;#official-document&quot; class=&quot;headerlink&quot; title=&quot;official document&quot;&gt;&lt;/a&gt;official document&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a h
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="cpp" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/cpp/"/>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="gtest" scheme="http://yoursite.com/tags/gtest/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python-加解密处理</title>
+    <link href="http://yoursite.com/wiki/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/library/encrypt/"/>
+    <id>http://yoursite.com/wiki/编程语言/python/library/encrypt/</id>
+    <published>2019-07-15T22:16:54.000Z</published>
+    <updated>2019-08-06T15:20:43.933Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul><li><a href="https://blog.csdn.net/qq_878799579/article/details/74324869" rel="external nofollow noopener noreferrer" target="_blank">Python之MD5加密</a></li><li><a href="https://blog.csdn.net/csdn15698845876/article/details/78305467" rel="external nofollow noopener noreferrer" target="_blank">Python中摘要算法MD5，SHA1讲解</a></li><li><a href="https://blog.csdn.net/jy692405180/article/details/52516161" rel="external nofollow noopener noreferrer" target="_blank">用hashlib模块生成消息摘要</a></li><li><a href="https://my.oschina.net/duhaizhang/blog/67214" rel="external nofollow noopener noreferrer" target="_blank">md5模块（Python内置模块）和hashlib模块</a></li><li><a href="https://www.geeksforgeeks.org/md5-hash-python/" rel="external nofollow noopener noreferrer" target="_blank">MD5 hash in Python</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/qq_878799579/article/details/74324869
+      
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="python" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/"/>
+    
+      <category term="library" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/library/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="encrypt" scheme="http://yoursite.com/tags/encrypt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python-socket</title>
+    <link href="http://yoursite.com/wiki/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/library/socket/"/>
+    <id>http://yoursite.com/wiki/编程语言/python/library/socket/</id>
+    <published>2019-07-14T22:25:49.000Z</published>
+    <updated>2019-08-06T15:20:43.933Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><ul><li><a href="https://gist.github.com/kevinkindom/108ffd675cb9253f8f71" rel="external nofollow noopener noreferrer" target="_blank">python socket</a></li><li><a href="https://gist.github.com/kevinkindom/108ffd675cb9253f8f71" rel="external nofollow noopener noreferrer" target="_blank">Python Socket 编程详细介绍</a></li><li><a href="https://docs.python.org/2/library/simplehttpserver.html" rel="external nofollow noopener noreferrer" target="_blank">python2 simplehttpserver</a></li><li><a href="https://docs.python.org/3/library/http.server.html" rel="external nofollow noopener noreferrer" target="_blank">python3 http.server</a></li><li><a href="https://stackoverflow.com/questions/7943751/what-is-the-python-3-equivalent-of-python-m-simplehttpserver" rel="external nofollow noopener noreferrer" target="_blank">python3 http.server usage</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;2&quot;&gt;&lt;a href=&quot;#2&quot; class=&quot;headerlink&quot; title=&quot;2&quot;&gt;&lt;/a&gt;2&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gist.github.com/kevinkindom/108ffd675cb9253f8f71&quot; r
+      
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="python" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/"/>
+    
+      <category term="library" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/library/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="socket" scheme="http://yoursite.com/tags/socket/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cpp-lzma</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/cpp/lzma/"/>
+    <id>http://yoursite.com/wiki/开源库/cpp/lzma/</id>
+    <published>2019-07-14T22:13:54.000Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<p>## </p><ul><li><a href="https://stackoverflow.com/questions/10260241/how-to-compress-a-folder-uses-lzma-sdk?noredirect=1&amp;lq=1" rel="external nofollow noopener noreferrer" target="_blank">How to compress a Folder uses lzma sdk</a></li><li><a href="https://stackoverflow.com/questions/74544/the-quaternion-moat-problem" rel="external nofollow noopener noreferrer" target="_blank">Using 7-Zip from Delphi</a></li><li><a href="https://stackoverflow.com/questions/9553332/how-to-unzip-an-lzma-compressed-zip-file-on-windows-phone-7" rel="external nofollow noopener noreferrer" target="_blank">How to unzip an LZMA compressed zip file</a></li><li><a href="https://stackoverflow.com/questions/21289985/c-lzma-sdk-uncompress-function-for-lzma2-compressed-file" rel="external nofollow noopener noreferrer" target="_blank">C++ LZMA SDK: Uncompress function for LZMA2 compressed file</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;## &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/10260241/how-to-compress-a-folder-uses-lzma-sdk?noredirect=1&amp;amp;lq=1&quot; rel=
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="cpp" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/cpp/"/>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="lzma" scheme="http://yoursite.com/tags/lzma/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>asm</title>
+    <link href="http://yoursite.com/wiki/hacker/windows/asm/"/>
+    <id>http://yoursite.com/wiki/hacker/windows/asm/</id>
+    <published>2019-06-08T22:51:00.000Z</published>
+    <updated>2019-08-06T15:20:43.925Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="asm"><a href="#asm" class="headerlink" title="asm"></a>asm</h2><ul><li><a href="https://docs.microsoft.com/en-us/cpp/assembler/inline/defining-asm-blocks-as-c-macros?view=vs-2019" rel="external nofollow noopener noreferrer" target="_blank">__asm Blocks</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/assembler/inline/using-c-or-cpp-in-asm-blocks?view=vs-2019" rel="external nofollow noopener noreferrer" target="_blank">Using C or C++ in __asm Blocks</a></li><li><a href="https://bbs.pediy.com/thread-211647.htm" rel="external nofollow noopener noreferrer" target="_blank">编译LDE64</a></li><li><a href="http://masm32.com/board/index.php?topic=4015.0" rel="external nofollow noopener noreferrer" target="_blank">My first Msgbox with ASM</a></li><li><a href="https://win32assembly.programminghorizon.com/tut2.html" rel="external nofollow noopener noreferrer" target="_blank">Tutorial 2: MessageBox</a></li><li><a href="https://stackoverflow.com/questions/36214696/print-message-inline-assembly" rel="external nofollow noopener noreferrer" target="_blank">Print Message Inline Assembly</a></li><li><a href="https://jameshfisher.com/2018/02/20/c-inline-assembly-hello-world/" rel="external nofollow noopener noreferrer" target="_blank">Hello world in C inline assembly</a></li><li><a href="http://asm.sourceforge.net/intro/hello.html" rel="external nofollow noopener noreferrer" target="_blank">Hello, world!</a></li><li><a href="https://montcs.bloomu.edu/~bobmon/Information/LowLevel/Assembly/hello-asm.html" rel="external nofollow noopener noreferrer" target="_blank">“Hello, World” in x86 Assembly Language</a></li><li><a href="https://www.ibm.com/developerworks/rational/library/inline-assembly-c-cpp-guide/index.html" rel="external nofollow noopener noreferrer" target="_blank">A guide to inline assembly for C and C++</a></li><li><a href="https://stackoverflow.com/questions/1396909/ret-retn-retf-how-to-use-them" rel="external nofollow noopener noreferrer" target="_blank">ret, retn, retf - how to use them</a></li><li><a href="https://blog.csdn.net/yeahhook/article/details/6647308" rel="external nofollow noopener noreferrer" target="_blank">汇编指令长度计算方法</a></li><li><a href="https://blog.csdn.net/qq_40627648/article/details/83712075" rel="external nofollow noopener noreferrer" target="_blank">汇编语言——汇编指令长度的判断</a></li><li><a href="https://blog.csdn.net/Apelpoo/article/details/51870154" rel="external nofollow noopener noreferrer" target="_blank">汇编指令长度的判断</a></li><li><a href="https://forum.powerbasic.com/forum/user-to-user-discussions/source-code/59461-lde64-x86-x64-instruction-length-disassembler-engine" rel="external nofollow noopener noreferrer" target="_blank">LDE64 - x86 &amp; x64 instruction-length</a></li><li><a href="https://www.cnblogs.com/Reyzal/p/5142302.html" rel="external nofollow noopener noreferrer" target="_blank">汇编指令MOVSX与MOVZX</a></li><li><a href="https://dmalcolm.fedorapeople.org/gcc/2015-08-31/rst-experiment/how-to-use-inline-assembly-language-in-c-code.html" rel="external nofollow noopener noreferrer" target="_blank">How to Use Inline Assembly Language in C Code</a></li><li><a href="https://www.tutorialspoint.com/assembly_programming/" rel="external nofollow noopener noreferrer" target="_blank">assembly tutorial</a></li><li><a href="https://stackoverflow.com/questions/41668149/vc-inline-assembly-errors" rel="external nofollow noopener noreferrer" target="_blank">vs assmebly error</a></li><li><a href="https://blog.csdn.net/yu52000guang/article/details/6228053" rel="external nofollow noopener noreferrer" target="_blank">vs 内联汇编 “第一操作数”错误</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/assembler/inline/inline-assembler" rel="external nofollow noopener noreferrer" target="_blank">vs inline assembly</a></li><li><a href="https://www.ibm.com/developerworks/aix/library/au-inline_assembly/index.html" rel="external nofollow noopener noreferrer" target="_blank">ibm inline assembly</a></li></ul><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul><li>retn—–return near————–pop eip</li><li>retf———————pop eip; pop cs</li></ul><h2 id="INTRINS-H学习"><a href="#INTRINS-H学习" class="headerlink" title="INTRINS.H学习"></a><code>INTRINS.H</code>学习</h2><p>header中定义的函数使用起来，会让你像在用汇编时一样简便。比如<code>_crol_</code>字符循环左移，<code>_nop_</code>空操作等</p><ul><li><code>_ReturnAddress</code>返回当前调用函数返回的地址，即函数下一跳指令地址<ul><li><a href="https://blog.csdn.net/hjxyshell/article/details/43092457" rel="external nofollow noopener noreferrer" target="_blank">示例</a></li></ul></li><li><code>__readgsqword</code>从偏移量的指定位置读取内存相对 GS 段开头。有 byte、word、dword、qword<ul><li><a href="http://docs.manew.com/cpp/25222.html" rel="external nofollow noopener noreferrer" target="_blank">示例</a></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;asm&quot;&gt;&lt;a href=&quot;#asm&quot; class=&quot;headerlink&quot; title=&quot;asm&quot;&gt;&lt;/a&gt;asm&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/cpp/assembler/inli
+      
+    
+    </summary>
+    
+      <category term="hacker" scheme="http://yoursite.com/categories/hacker/"/>
+    
+      <category term="windows" scheme="http://yoursite.com/categories/hacker/windows/"/>
+    
+    
+      <category term="asm" scheme="http://yoursite.com/tags/asm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows-hook</title>
+    <link href="http://yoursite.com/wiki/hacker/windows/windows-hook/"/>
+    <id>http://yoursite.com/wiki/hacker/windows/windows-hook/</id>
+    <published>2019-06-08T22:46:00.000Z</published>
+    <updated>2019-08-06T15:20:43.925Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="windows-api"><a href="#windows-api" class="headerlink" title="windows api"></a>windows api</h2><ul><li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-resumethread" rel="external nofollow noopener noreferrer" target="_blank">ResumeThread</a></li><li><a href="https://docs.microsoft.com/en-us/windows/desktop/memory/memory-protection-constants" rel="external nofollow noopener noreferrer" target="_blank">Memory Protection Constants</a></li><li><a href="https://stackoverflow.com/questions/30032200/what-is-the-point-of-virtualprotect-when-any-process-including-malware-can-use" rel="external nofollow noopener noreferrer" target="_blank">VirtualProtect</a></li><li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc" rel="external nofollow noopener noreferrer" target="_blank">VirtualAlloc function</a></li><li><a href="https://docs.microsoft.com/en-us/powershell/module/nettcpip/set-nettcpsetting" rel="external nofollow noopener noreferrer" target="_blank">Set-NetTCPSetting</a></li><li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/memoryapi/nf-memoryapi-writeprocessmemory" rel="external nofollow noopener noreferrer" target="_blank">WriteProcessMemory</a></li><li><a href="https://stackoverflow.com/questions/42479247/winapi-is-it-needed-to-call-flushinstructioncache-on-an-executable-memory-mappe" rel="external nofollow noopener noreferrer" target="_blank">WinAPI: Is it needed to call FlushInstructionCache on an executable memory-mapped file?</a></li><li><a href="https://blog.csdn.net/caimouse/article/details/1921570" rel="external nofollow noopener noreferrer" target="_blank">FlushInstructionCache函数</a></li><li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-flushinstructioncache" rel="external nofollow noopener noreferrer" target="_blank">FlushInstructionCache function</a></li></ul><h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><ul><li><a href="https://www.endgame.com/blog/technical-blog/ten-process-injection-techniques-technical-survey-common-and-trending-process" rel="external nofollow noopener noreferrer" target="_blank">Process Injection Techniques</a></li><li><a href="https://www.endgame.com/blog/technical-blog/hunting-memory" rel="external nofollow noopener noreferrer" target="_blank">hunting-memory</a></li><li><a href="http://www.rohitab.com/discuss/topic/41855-tutorial-the-different-ways-of-hooking/" rel="external nofollow noopener noreferrer" target="_blank">The different ways of hooking</a></li></ul><ul><li><a href="https://stackoverflow.com/questions/869168/prevent-visual-studio-from-trying-to-load-symbols-for-a-particular-dll" rel="external nofollow noopener noreferrer" target="_blank">load symbols for a particular DLL</a></li><li><a href="https://www.bleepingcomputer.com/news/security/researcher-details-new-windows-code-injection-technique-named-propagate/" rel="external nofollow noopener noreferrer" target="_blank">Code Injection Technique Named PROPagate</a></li><li><a href="https://www.unknowncheats.me/forum/c-and-c-/60351-iat-eat-hook-annotations.html" rel="external nofollow noopener noreferrer" target="_blank">IAT/EAT hook with annotations</a></li><li><a href="https://relearex.wordpress.com/2017/12/26/hooking-series-part-i-import-address-table-hooking/" rel="external nofollow noopener noreferrer" target="_blank">Hooking Series PART I : Import Address Table Hooking</a></li><li><a href="https://www.experts-exchange.com/questions/21068620/Hooking-the-Export-Address-Table-EAT-C.html" rel="external nofollow noopener noreferrer" target="_blank">Hooking the Export Address Table (EAT) - C++</a></li><li><a href="https://www.unknowncheats.me/forum/c-and-c/50426-eat-hooking-dlls.html" rel="external nofollow noopener noreferrer" target="_blank">EAT Hooking On DLL’s</a></li><li><a href="https://stackoverflow.com/questions/10150174/c-how-do-i-export-address-table-hooking-eat" rel="external nofollow noopener noreferrer" target="_blank">Export Address Table Hooking (EAT)?</a></li><li><a href="https://bbs.pediy.com/thread-62574.htm" rel="external nofollow noopener noreferrer" target="_blank">导出表钩子——EAT HOOK</a></li><li><a href="https://zh.wikipedia.org/wiki/%E9%92%A9%E5%AD%90%E7%BC%96%E7%A8%8B" rel="external nofollow noopener noreferrer" target="_blank">钩子编程</a></li><li><a href="https://docs.microsoft.com/en-us/windows/desktop/winmsg/using-hooks" rel="external nofollow noopener noreferrer" target="_blank">windows hook</a></li><li><a href="https://blog.csdn.net/cosmoslife/article/details/7672125" rel="external nofollow noopener noreferrer" target="_blank">导出表hook</a></li><li><a href="http://www.voidcn.com/article/p-kdoydgww-sm.html" rel="external nofollow noopener noreferrer" target="_blank">导出表钩子</a></li><li><a href="https://stackoverflow.com/questions/43492757/how-does-function-hooking-actually-work-winapi-c/43494966" rel="external nofollow noopener noreferrer" target="_blank">函数hook</a></li><li><a href="https://stackoverflow.com/questions/873658/how-can-i-hook-windows-functions-in-c-c" rel="external nofollow noopener noreferrer" target="_blank">function hook</a></li><li><a href="https://stackoverflow.com/questions/12402052/how-to-hook-a-specific-api-on-windows-with-setwindowshookex" rel="external nofollow noopener noreferrer" target="_blank">hook specific function</a></li><li><a href="https://resources.infosecinstitute.com/api-hooking-and-dll-injection-on-windows/" rel="external nofollow noopener noreferrer" target="_blank">api hook and dll injection</a></li><li><a href="https://labs.nettitude.com/blog/windows-inline-function-hooking/" rel="external nofollow noopener noreferrer" target="_blank">inline function hook</a></li></ul><h2 id="inject"><a href="#inject" class="headerlink" title="inject"></a>inject</h2><ul><li><a href="https://www.howtogeek.com/363845/what-is-code-injection-on-windows/" rel="external nofollow noopener noreferrer" target="_blank">Code Injection</a></li><li><a href="https://attack.mitre.org/techniques/T1183/" rel="external nofollow noopener noreferrer" target="_blank">Image File Execution Options Injection</a></li><li><a href="https://attack.mitre.org/techniques/T1055/" rel="external nofollow noopener noreferrer" target="_blank">Process Injection</a></li><li><a href="https://www.cyberbit.com/blog/endpoint-security/new-early-bird-code-injection-technique-discovered/" rel="external nofollow noopener noreferrer" target="_blank">Code Injection Technique</a></li><li><a href="https://blog.ensilo.com/atombombing-brand-new-code-injection-for-windows" rel="external nofollow noopener noreferrer" target="_blank">CODE INJECTION FOR WINDOWS</a></li><li><a href="https://bbs.ichunqiu.com/thread-13129-1-1.html" rel="external nofollow noopener noreferrer" target="_blank">基于文件修改的注入方式</a></li><li><a href="http://read.pudn.com/downloads170/sourcecode/windows/785091/PuttyHijack.c__.htm" rel="external nofollow noopener noreferrer" target="_blank">dll inject</a></li><li><a href="https://www.cnblogs.com/zibility/p/5657762.html" rel="external nofollow noopener noreferrer" target="_blank">代码注入–修改导入表IAT–通过系统回调函数</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;windows-api&quot;&gt;&lt;a href=&quot;#windows-api&quot; class=&quot;headerlink&quot; title=&quot;windows api&quot;&gt;&lt;/a&gt;windows api&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.micros
+      
+    
+    </summary>
+    
+      <category term="hacker" scheme="http://yoursite.com/categories/hacker/"/>
+    
+      <category term="windows" scheme="http://yoursite.com/categories/hacker/windows/"/>
+    
+    
+      <category term="pe" scheme="http://yoursite.com/tags/pe/"/>
+    
+      <category term="Windows" scheme="http://yoursite.com/tags/Windows/"/>
+    
+      <category term="hook" scheme="http://yoursite.com/tags/hook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows-driver</title>
+    <link href="http://yoursite.com/wiki/hacker/windows/windows-driver/"/>
+    <id>http://yoursite.com/wiki/hacker/windows/windows-driver/</id>
+    <published>2019-06-08T22:46:00.000Z</published>
+    <updated>2019-08-06T15:20:43.925Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="api"><a href="#api" class="headerlink" title="api"></a>api</h2><ul><li><a href="https://www.cnblogs.com/lanrenxinxin/p/4723455.html" rel="external nofollow noopener noreferrer" target="_blank">driver(即内核编程)修改windows callback监控</a></li><li><a href="http://www.m5home.com/bbs/thread-7971-1-1.html" rel="external nofollow noopener noreferrer" target="_blank">windows driver programming</a></li><li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmisaddressvalid" rel="external nofollow noopener noreferrer" target="_blank">MmIsAddressValid function (ntddk.h)</a></li><li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddk/ns-ntddk-_image_info" rel="external nofollow noopener noreferrer" target="_blank">IMAGE_INFO</a></li><li><a href="https://social.msdn.microsoft.com/Forums/windowsdesktop/en-US/84558578-b8cb-4619-983a-ee72c3c9fea7/include-wdk-headers?forum=wfp" rel="external nofollow noopener noreferrer" target="_blank">WDK headers</a></li><li><a href="https://social.msdn.microsoft.com/Forums/en-US/555d64cf-f6f6-4251-ba1d-f2d82c45a452/dll-loading-from-wince-driver-using-loadlibrary?forum=winembplatdev" rel="external nofollow noopener noreferrer" target="_blank">WINCE driver using LoadLibrary</a></li><li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-psgetcurrentprocessid" rel="external nofollow noopener noreferrer" target="_blank">PsGetCurrentProcessId</a></li><li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk" rel="external nofollow noopener noreferrer" target="_blank">WDK for Windows 10</a></li><li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/wdm/nf-wdm-zwcreatesection" rel="external nofollow noopener noreferrer" target="_blank">ZwCreateSection</a></li><li><a href="https://stackoverflow.com/questions/45809434/windows-wdk-when-i-try-to-add-windows-h-and-wdm-h-re-definition-error-is-comin" rel="external nofollow noopener noreferrer" target="_blank">Windows Wdk</a></li><li><a href="https://msdn.microsoft.com/zh-cn/library/windows/hardware/ff554811(v=vs.85" rel="external nofollow noopener noreferrer" target="_blank">编写第一个驱动程序</a>.aspx)</li><li><a href="https://msdn.microsoft.com/zh-cn/library/windows/hardware/hh439665(v=vs.85" rel="external nofollow noopener noreferrer" target="_blank">编写通用 Hello World 驱动程序 (KMDF)</a>.aspx)</li><li><a href="https://blog.csdn.net/CharlesSimonyi/article/details/50904854" rel="external nofollow noopener noreferrer" target="_blank">Windows驱动开发如何入门</a></li><li><a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/c88faa9b-3d66-4586-a2ec-6f1a6e34c882/win64-error-quotno-target-architecturequot?forum=vcgeneral" rel="external nofollow noopener noreferrer" target="_blank">_WIN64 error “No Target Architecture”</a></li><li><a href="https://blog.csdn.net/ultimatestudio/article/details/15998617" rel="external nofollow noopener noreferrer" target="_blank">fatal error C1189: #error : “No Target Architecture”的解决方案</a></li><li><a href="http://www.rohitab.com/discuss/topic/39994-help-no-target-architecture-defined-ntddkh/" rel="external nofollow noopener noreferrer" target="_blank">No target architecture defined - Ntddk.h</a></li><li><a href="https://stackoverflow.com/questions/4845198/fatal-error-no-target-architecture-in-visual-studio" rel="external nofollow noopener noreferrer" target="_blank">Fatal error: “No Target Architecture” in Visual Studio</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;api&quot;&gt;&lt;a href=&quot;#api&quot; class=&quot;headerlink&quot; title=&quot;api&quot;&gt;&lt;/a&gt;api&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/lanrenxinxin/p/4723455.html
+      
+    
+    </summary>
+    
+      <category term="hacker" scheme="http://yoursite.com/categories/hacker/"/>
+    
+      <category term="windows" scheme="http://yoursite.com/categories/hacker/windows/"/>
+    
+    
+      <category term="Windows" scheme="http://yoursite.com/tags/Windows/"/>
+    
+      <category term="driver" scheme="http://yoursite.com/tags/driver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tcp-basic</title>
+    <link href="http://yoursite.com/wiki/hacker/net/tcp/"/>
+    <id>http://yoursite.com/wiki/hacker/net/tcp/</id>
+    <published>2019-06-08T22:46:00.000Z</published>
+    <updated>2019-08-06T15:20:43.925Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul><li><a href="http://www.networksorcery.com/enp/protocol/tcp/option008.htm" rel="external nofollow noopener noreferrer" target="_blank">tcp_timestap</a></li><li><a href="https://stackoverflow.com/questions/3989811/eagain-error-using-berkeley-socket-api" rel="external nofollow noopener noreferrer" target="_blank">socket EAGAIN</a></li><li><a href="https://networklessons.com/cisco/ccnp-route/tcp-window-size-scaling" rel="external nofollow noopener noreferrer" target="_blank">tcp_windows_scaling</a></li><li><a href="https://serverfault.com/questions/928123/windows-server-2012-tcp-window-not-scaling" rel="external nofollow noopener noreferrer" target="_blank">iperf测试</a></li><li><a href="https://blogs.technet.microsoft.com/netgeeks/2018/05/21/a-word-about-autotuninglevel-tcp-receive-auto-tuning-level-explained/" rel="external nofollow noopener noreferrer" target="_blank">windows auto tuning level</a></li><li><a href="https://social.technet.microsoft.com/forums/windows/en-US/9b5b87b0-b919-430d-9e4b-054e7c581791/windows-7-tcp-stack" rel="external nofollow noopener noreferrer" target="_blank">Windows 7 TCP Stack</a></li><li><a href="http://packetlife.net/blog/2010/aug/4/tcp-windows-and-window-scaling/" rel="external nofollow noopener noreferrer" target="_blank">tcp windows and window scaling</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.networksorcery.com/enp/protocol/tcp/option008.ht
+      
+    
+    </summary>
+    
+      <category term="hacker" scheme="http://yoursite.com/categories/hacker/"/>
+    
+      <category term="net" scheme="http://yoursite.com/categories/hacker/net/"/>
+    
+    
+      <category term="IP" scheme="http://yoursite.com/tags/IP/"/>
+    
+      <category term="TCP" scheme="http://yoursite.com/tags/TCP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pe</title>
+    <link href="http://yoursite.com/wiki/hacker/windows/pe/"/>
+    <id>http://yoursite.com/wiki/hacker/windows/pe/</id>
+    <published>2019-06-05T23:00:00.000Z</published>
+    <updated>2019-08-06T15:20:43.925Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul><li><a href="https://blog.csdn.net/Apollon_krj/article/details/77337333" rel="external nofollow noopener noreferrer" target="_blank">PE文件学习笔记（三）：导出表</a></li><li><a href="https://www.jianshu.com/p/c289687d33fe" rel="external nofollow noopener noreferrer" target="_blank">pe重定位</a></li><li><a href="http://www.heaventools.com/PE_Explorer_section_editor.htm" rel="external nofollow noopener noreferrer" target="_blank">pe section header</a></li><li><a href="https://docs.microsoft.com/en-us/windows/desktop/debug/pe-format" rel="external nofollow noopener noreferrer" target="_blank">pe format(msdn)</a></li><li><a href="https://blog.csdn.net/u013761036/article/details/53750519" rel="external nofollow noopener noreferrer" target="_blank">pe导出表重组</a></li><li><a href="https://www.pediy.com/kssd/pediy11/122632.html" rel="external nofollow noopener noreferrer" target="_blank">pe 导出表</a></li><li><a href="https://blog.csdn.net/chenlycly/article/details/53378614" rel="external nofollow noopener noreferrer" target="_blank">PE总结– EAT导出表</a></li><li><a href="http://sandsprite.com/CodeStuff/Understanding_imports.html" rel="external nofollow noopener noreferrer" target="_blank">PE—IAT导入表</a></li><li><a href="https://reverseengineering.stackexchange.com/questions/6941/pe-rdata-section-contents/6942" rel="external nofollow noopener noreferrer" target="_blank">PE—<code>.rdata</code></a></li><li><a href="https://reverseengineering.stackexchange.com/questions/16778/how-to-change-the-strings-in-rdata-section-of-a-executable-file" rel="external nofollow noopener noreferrer" target="_blank">modify <code>.radata</code> content</a></li><li><a href="https://www.jianshu.com/p/28c8689b22af" rel="external nofollow noopener noreferrer" target="_blank">Windows的TEB/PEB结构的检测调试原理</a></li><li><a href="https://blog.csdn.net/whatday/article/details/82828808" rel="external nofollow noopener noreferrer" target="_blank">通过PEB获取模块基址</a></li><li><a href="https://blog.csdn.net/VHeroin/article/details/70499994" rel="external nofollow noopener noreferrer" target="_blank">进程peb结构、获得peb的方法</a></li><li><a href="https://my.oschina.net/rkd/blog/479110" rel="external nofollow noopener noreferrer" target="_blank">PE文件知识在免杀中的应用</a></li><li><a href="http://showlinkroom.me/2017/09/08/Windows%E4%B8%AD%E7%9A%84PEB-TEB%E7%AD%89%E7%9A%84%E7%A0%94%E7%A9%B6/" rel="external nofollow noopener noreferrer" target="_blank">peb,teb研究</a></li><li><a href="https://www.aldeid.com/wiki/PEB-Process-Environment-Block/BeingDebugged" rel="external nofollow noopener noreferrer" target="_blank">PEB, TEB</a></li><li><a href="https://www.aldeid.com/wiki/PEB-Process-Environment-Block/BeingDebugged#Thwart_the_BeingDebugged_chek" rel="external nofollow noopener noreferrer" target="_blank">PEB-Process-Environment-Block/BeingDebugged</a></li><li><a href="http://www.youngroe.com/2015/08/01/Debug/peb-analysis/" rel="external nofollow noopener noreferrer" target="_blank">Peb(Process Environment Block)简单学习及分析</a></li><li><a href="https://blog.csdn.net/chenlycly/article/details/53378614" rel="external nofollow noopener noreferrer" target="_blank">PE总结 – 导出表</a></li><li><a href="https://blog.csdn.net/u013761036/article/details/53933350" rel="external nofollow noopener noreferrer" target="_blank">Windows PE导出表编程4</a></li></ul><h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><ul><li><a href="https://www.zhihu.com/question/41031348?sort=created" rel="external nofollow noopener noreferrer" target="_blank">PE Loader加载DLL的时候修改（这个DLL）自己的导出表</a></li><li><a href="https://docs.microsoft.com/en-us/windows/desktop/dlls/dllmain" rel="external nofollow noopener noreferrer" target="_blank">DllMain entry point</a></li><li><a href="https://stackoverflow.com/questions/1128150/win32-api-to-enumerate-dll-export-functions" rel="external nofollow noopener noreferrer" target="_blank">enumerate dll export functions</a></li><li><a href="https://docs.microsoft.com/en-us/cpp/build/exporting-from-a-dll-using-declspec-dllexport" rel="external nofollow noopener noreferrer" target="_blank">export dll function</a></li><li><a href="https://blog.csdn.net/bcbobo21cn/article/details/52827354" rel="external nofollow noopener noreferrer" target="_blank">ntdll.dll</a></li><li><a href="https://blog.csdn.net/thanklife/article/details/7358788" rel="external nofollow noopener noreferrer" target="_blank">vs pdb文件</a></li><li><a href="https://blog.csdn.net/oldmanzhao/article/details/45925881" rel="external nofollow noopener noreferrer" target="_blank">int 3软中断</a></li><li><a href="https://blog.csdn.net/zhuobattle/article/details/17373521" rel="external nofollow noopener noreferrer" target="_blank">缓冲区溢出检查_security_cookie</a></li><li><a href="https://stackoverflow.com/questions/19945479/what-is-security-cookie-in-c" rel="external nofollow noopener noreferrer" target="_blank">security cookie</a></li><li><a href="https://r00tk1ts.github.io/2017/12/28/API%20Interception%20via%20DLL%20Redirection/" rel="external nofollow noopener noreferrer" target="_blank">dll重定向</a></li><li><a href="https://reverseengineering.stackexchange.com/questions/13703/what-is-byte-usercall-eax-and-edi" rel="external nofollow noopener noreferrer" target="_blank">_usercall, __security_cookie</a></li><li><a href="https://blog.csdn.net/yesyes120/article/details/78944991" rel="external nofollow noopener noreferrer" target="_blank">编译原理之可重定位代码</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/Apollon_krj/article/details/77337
+      
+    
+    </summary>
+    
+      <category term="hacker" scheme="http://yoursite.com/categories/hacker/"/>
+    
+      <category term="windows" scheme="http://yoursite.com/categories/hacker/windows/"/>
+    
+    
+      <category term="pe" scheme="http://yoursite.com/tags/pe/"/>
+    
+      <category term="reverse engineer" scheme="http://yoursite.com/tags/reverse-engineer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDA</title>
+    <link href="http://yoursite.com/wiki/%E5%B7%A5%E5%85%B7/reverse%20engineer/windbg/"/>
+    <id>http://yoursite.com/wiki/工具/reverse engineer/windbg/</id>
+    <published>2019-06-05T22:55:54.000Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul><li><a href="https://www.anquanke.com/post/id/177462" rel="external nofollow noopener noreferrer" target="_blank">windbg的导入函数、导出函数</a></li><li><a href="https://www.pediy.com/kssd/pediy08/pediy8-466.htm" rel="external nofollow noopener noreferrer" target="_blank">windbg的用户态</a></li><li><a href="https://www.yeboyzq.com/zhuomianweihu/xitongyingyongjiqiao/520.html" rel="external nofollow noopener noreferrer" target="_blank">windbg的dmp分析</a></li><li><a href="https://blog.csdn.net/haoxing168/article/details/4545782" rel="external nofollow noopener noreferrer" target="_blank">Windbg入门</a></li><li><a href="https://blog.csdn.net/CJF_iceKing/article/details/51955540" rel="external nofollow noopener noreferrer" target="_blank">Windbg调试—-Windbg入门</a></li><li><a href="https://www.cnblogs.com/kekec/archive/2012/11/14/2755924.html" rel="external nofollow noopener noreferrer" target="_blank">windbg调试基础</a></li><li><a href="https://www.cnblogs.com/gaochundong/p/windbg_cheat_sheet.html" rel="external nofollow noopener noreferrer" target="_blank">windbg 命令手册</a></li><li><a href="https://reverseengineering.stackexchange.com/questions/3430/should-i-switch-from-windbg-to-ollydbg" rel="external nofollow noopener noreferrer" target="_blank">windbg和ollydbg对比</a></li><li><a href="https://reverseengineering.stackexchange.com/questions/16301/opening-windows-10-dmp-file" rel="external nofollow noopener noreferrer" target="_blank">windows dmp文件分析</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.anquanke.com/post/id/177462&quot; rel=&quot;external nofo
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="reverse engineer" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/reverse-engineer/"/>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="Windbg" scheme="http://yoursite.com/tags/Windbg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDA</title>
+    <link href="http://yoursite.com/wiki/%E5%B7%A5%E5%85%B7/reverse%20engineer/IDA/"/>
+    <id>http://yoursite.com/wiki/工具/reverse engineer/IDA/</id>
+    <published>2019-05-13T22:30:54.000Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul><li><a href="https://blog.csdn.net/hgy413/article/details/7721147" rel="external nofollow noopener noreferrer" target="_blank">ida 操作</a></li><li><a href="https://blog.csdn.net/cosmoslife/article/details/53024007" rel="external nofollow noopener noreferrer" target="_blank">IDA-文本搜索、二进制搜索</a></li><li><a href="https://reverseengineering.stackovernet.com/cn/q/768" rel="external nofollow noopener noreferrer" target="_blank">ida 脚本查找指令</a></li><li><a href="https://reverseengineering.stackexchange.com/questions/8899/searching-for-a-sequence-of-instructions-in-ida-pro" rel="external nofollow noopener noreferrer" target="_blank">ida 脚本查找指令2</a></li><li><a href="https://www.jianshu.com/p/fce2465629ba" rel="external nofollow noopener noreferrer" target="_blank">IDA Hex-Rays反编译器使用的一些小技巧</a></li><li><a href="https://zhuanlan.zhihu.com/p/38983223" rel="external nofollow noopener noreferrer" target="_blank">IDA静态分析与动态分析</a></li><li><a href="https://juejin.im/post/5a5b25d0f265da3e2e6273a5" rel="external nofollow noopener noreferrer" target="_blank">IDA Pro 逆向速参</a></li><li><a href="https://www.pediy.com/kssd/pediy12/ida.html" rel="external nofollow noopener noreferrer" target="_blank">IDA简易教程</a></li><li><a href="https://www.cnblogs.com/lanrenxinxin/p/4525782.html" rel="external nofollow noopener noreferrer" target="_blank">IDA 使用技巧</a></li><li><a href="https://xz.aliyun.com/t/4205" rel="external nofollow noopener noreferrer" target="_blank">IDA Pro7.0使用技巧总结</a></li><li><a href="https://blog.csdn.net/re_psyche/article/details/78797689" rel="external nofollow noopener noreferrer" target="_blank">IDA PRO新手使用教程</a></li><li><a href="https://blog.csdn.net/wang010366/article/details/52505345" rel="external nofollow noopener noreferrer" target="_blank">IDA Pro使用技巧及大杂烩</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/hgy413/article/details/7721147&quot; rel=&quot;
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="reverse engineer" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/reverse-engineer/"/>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="IDA" scheme="http://yoursite.com/tags/IDA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OllDbg</title>
+    <link href="http://yoursite.com/wiki/%E5%B7%A5%E5%85%B7/reverse%20engineer/OllyDbg/"/>
+    <id>http://yoursite.com/wiki/工具/reverse engineer/OllyDbg/</id>
+    <published>2019-05-12T22:00:54.000Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><a href="http://www.ollydbg.de/quickst.htm" rel="external nofollow noopener noreferrer" target="_blank">官网</a></p><h3 id="Pop-up-menus"><a href="#Pop-up-menus" class="headerlink" title="Pop-up menus"></a>Pop-up menus</h3><table><thead><tr><th style="text-align:left">Function</th><th style="text-align:left">Window</th><th style="text-align:left">Menu command</th><th style="text-align:left">Shortcut</th></tr></thead><tbody><tr><td style="text-align:left">Edit memory as binary, ASCII or UNICODE string</td><td style="text-align:left">Disassembler, Stack; Dump</td><td style="text-align:left">Binary/Edit</td><td style="text-align:left">Ctrl+E</td></tr><tr><td style="text-align:left">Undo changes</td><td style="text-align:left">Disassembler, Dump ;Registers</td><td style="text-align:left">Undo selection ;Undo</td><td style="text-align:left">Alt+BkSp</td></tr><tr><td style="text-align:left">Run application</td><td style="text-align:left">Main</td><td style="text-align:left">Debug/Run</td><td style="text-align:left">F9</td></tr><tr><td style="text-align:left">Run to selection</td><td style="text-align:left">Disassembler</td><td style="text-align:left">`Breakpoint</td><td style="text-align:left">Run` to selection</td><td>F4</td></tr><tr><td style="text-align:left">Execute till return</td><td style="text-align:left">Main</td><td style="text-align:left">`Debug</td><td style="text-align:left">Execute till return`</td><td>Ctrl+F9</td></tr><tr><td style="text-align:left">Execute till user code</td><td style="text-align:left">Main</td><td style="text-align:left">`Debug</td><td style="text-align:left">Execute till user code`</td><td>Alt+F9</td></tr><tr><td style="text-align:left">Set/reset INT3 breakpoint</td><td style="text-align:left">Disassembler Names, Source</td><td style="text-align:left">`Breakpoint</td><td style="text-align:left">Toggle` Toggle breakpoint</td><td>F2</td></tr><tr><td style="text-align:left">Set/edit conditional INT3 breakpoint</td><td style="text-align:left">Disassembler Names, Source</td><td style="text-align:left">`Breakpoint</td><td style="text-align:left">Conditional` Conditional breakpoint</td><td>Shift+F2</td></tr><tr><td style="text-align:left">Set/edit conditional logging breakpoint (logs into the Log window)</td><td style="text-align:left">Disassembler Names, Source</td><td style="text-align:left">`Breakpoint</td><td style="text-align:left">Conditional` log Conditional log breakpoint</td><td>Shift+F4</td></tr><tr><td style="text-align:left">Temporarily disable/restore INT3 breakpoint</td><td style="text-align:left">Breakpoints</td><td style="text-align:left">Disable Enable</td><td style="text-align:left">Space</td></tr><tr><td style="text-align:left">Set memory breakpoint (only one is allowed)</td><td style="text-align:left">Disassembler, Dump</td><td style="text-align:left">`Breakpoint</td><td style="text-align:left">Memory<code>, on access</code>Breakpoint</td><td>Memory`, on write</td><td></td></tr><tr><td style="text-align:left">Remove memory breakpoint</td><td style="text-align:left">Disassembler, Dump</td><td style="text-align:left">Breakpoint</td><td style="text-align:left">Remove memory breakpoint</td><td></td></tr><tr><td style="text-align:left">Set hardware breakpoint (ME/NT/2000 only)</td><td style="text-align:left">Disassembler, Dump</td><td style="text-align:left">Breakpoint</td><td style="text-align:left">Hardware (select type and size!)</td><td></td></tr><tr><td style="text-align:left">Remove hardware breakpoint</td><td style="text-align:left">Main</td><td style="text-align:left">`Debug</td><td style="text-align:left">Hardware` breakpoints</td><td></td></tr><tr><td style="text-align:left">Set single-short break on access to memory block (NT/2000 only)</td><td style="text-align:left">Memory</td><td style="text-align:left">Set break-on-access</td><td style="text-align:left">F2</td></tr><tr><td style="text-align:left">Set break on module, thread, debug string</td><td style="text-align:left">Options</td><td style="text-align:left">Events</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">Set new origin</td><td style="text-align:left">Disassembler</td><td style="text-align:left">New origin here</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">Display list of all symbolic names</td><td style="text-align:left">Disassembler, Dump Modules</td><td style="text-align:left">`Search for</td><td style="text-align:left">Name` (label) View names</td><td>Ctrl+N</td></tr><tr><td style="text-align:left">Context-sensitive help (requires external help file!)</td><td style="text-align:left">Disassembler, Names</td><td style="text-align:left">Help on symbolic name</td><td style="text-align:left">Ctrl+F1</td></tr><tr><td style="text-align:left">Find all references in code to selected address range</td><td style="text-align:left">Disassembler Dump</td><td style="text-align:left">`Find references to</td><td style="text-align:left">Command` Find references</td><td>Ctrl+R</td></tr><tr><td style="text-align:left">Find all references in code to the constant</td><td style="text-align:left">Disassembler</td><td style="text-align:left">`Find references to</td><td style="text-align:left">Constant<code></code>Search for</td><td>All constants`</td><td></td></tr><tr><td style="text-align:left">Search whole allocated memory</td><td style="text-align:left">Memory</td><td style="text-align:left">Search Search next</td><td style="text-align:left">Ctrl+L</td></tr><tr><td style="text-align:left">Go to address or value of expression</td><td style="text-align:left">Disassembler Dump</td><td style="text-align:left">`Go to</td><td style="text-align:left">Expression<code></code>Go to expression`</td><td>Ctrl+G</td></tr><tr><td style="text-align:left">Go to previous address/run trace item</td><td style="text-align:left">Disassembler</td><td style="text-align:left">`Go to</td><td style="text-align:left">Previous`</td><td>Minus</td></tr><tr><td style="text-align:left">Go to next address/run trace item</td><td style="text-align:left">Disassembler</td><td style="text-align:left">`Go to</td><td style="text-align:left">Next`</td><td>Plus</td></tr><tr><td style="text-align:left">Go to previous procedure</td><td style="text-align:left">Disassembler</td><td style="text-align:left">`Go to</td><td style="text-align:left">Previous procedure`</td><td>Ctrl+Minus</td></tr><tr><td style="text-align:left">Go to next procedure</td><td style="text-align:left">Disassembler</td><td style="text-align:left">`Go to</td><td style="text-align:left">Next procedure`</td><td>Ctrl+Plus</td></tr><tr><td style="text-align:left">View executable file</td><td style="text-align:left">Disassembler, Dump, Modules</td><td style="text-align:left">`View</td><td style="text-align:left">Executable file`</td><td></td></tr><tr><td style="text-align:left">Copy changes to executable file</td><td style="text-align:left">Disassembler</td><td style="text-align:left">Copy to executable file</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">Analyse executable code</td><td style="text-align:left">Disassembler</td><td style="text-align:left">Analysis</td><td style="text-align:left">Analyse code</td><td>Ctrl+A</td></tr><tr><td style="text-align:left">Scan object files and libraries</td><td style="text-align:left">Disassembler</td><td style="text-align:left">Scan object files</td><td style="text-align:left">Ctrl+O</td></tr><tr><td style="text-align:left">View resources</td><td style="text-align:left">Modules, Memory</td><td style="text-align:left">View all resources View resource strings</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">Suspend/resume thread</td><td style="text-align:left">Threads</td><td style="text-align:left">Suspend Resume</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">Display relative addresses</td><td style="text-align:left">Disassembler, Dump, Stack</td><td style="text-align:left">Doubleclick address</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">Copy</td><td style="text-align:left">Most of windows</td><td style="text-align:left">Copy to clipboard</td><td style="text-align:left">Ctrl+C</td></tr></tbody></table><h3 id="global-shortcuts"><a href="#global-shortcuts" class="headerlink" title="global shortcuts"></a>global shortcuts</h3><table><thead><tr><th style="text-align:left">快捷键</th><th style="text-align:left">功能</th></tr></thead><tbody><tr><td style="text-align:left">Ctrl+F2</td><td style="text-align:left">Restart program</td></tr><tr><td style="text-align:left">Alt+F2</td><td style="text-align:left">Close program</td></tr><tr><td style="text-align:left">F3</td><td style="text-align:left">Open new program</td></tr><tr><td style="text-align:left">F5</td><td style="text-align:left">Maximize/restore active window</td></tr><tr><td style="text-align:left">Alt+F5</td><td style="text-align:left">Make OllyDbg topmost</td></tr><tr><td style="text-align:left">F7</td><td style="text-align:left">Step into (entering functions)</td></tr><tr><td style="text-align:left">Ctrl+F7</td><td style="text-align:left">Animate into (entering functions)</td></tr><tr><td style="text-align:left">F8</td><td style="text-align:left">Step over (executing function calls at once)</td></tr><tr><td style="text-align:left">Ctrl+F8</td><td style="text-align:left">Animate over (executing function calls at once)</td></tr><tr><td style="text-align:left">F9</td><td style="text-align:left">Run</td></tr><tr><td style="text-align:left">Shift+F9</td><td style="text-align:left">Pass exception to standard handler and run</td></tr><tr><td style="text-align:left">Ctrl+F9</td><td style="text-align:left">Execute till return</td></tr><tr><td style="text-align:left">Alt+F9</td><td style="text-align:left">Execute till user code</td></tr><tr><td style="text-align:left">Ctrl+F11</td><td style="text-align:left">Trace into</td></tr><tr><td style="text-align:left">F12</td><td style="text-align:left">Pause</td></tr><tr><td style="text-align:left">Ctrl+F12</td><td style="text-align:left">Trace over</td></tr><tr><td style="text-align:left">Alt+B</td><td style="text-align:left">Open Breakpoints window</td></tr><tr><td style="text-align:left">Alt+C</td><td style="text-align:left">Open CPU window</td></tr><tr><td style="text-align:left">Alt+E</td><td style="text-align:left">Open Modules window</td></tr><tr><td style="text-align:left">Alt+L</td><td style="text-align:left">Open Log window</td></tr><tr><td style="text-align:left">Alt+M</td><td style="text-align:left">Open Memory window</td></tr><tr><td style="text-align:left">Alt+O</td><td style="text-align:left">Open Options dialog</td></tr><tr><td style="text-align:left">Ctrl+T</td><td style="text-align:left">Set condition to pause Run trace</td></tr><tr><td style="text-align:left">Alt+X</td><td style="text-align:left">Close OllyDbg</td></tr></tbody></table><h3 id="Disasembler-shortcuts"><a href="#Disasembler-shortcuts" class="headerlink" title="Disasembler shortcuts"></a>Disasembler shortcuts</h3><table><thead><tr><th style="text-align:left">快捷键</th><th style="text-align:left">功能</th></tr></thead><tbody><tr><td style="text-align:left">F2</td><td style="text-align:left">Toggle breakpoint</td></tr><tr><td style="text-align:left">Shift+F2</td><td style="text-align:left">Set conditional breakpoint</td></tr><tr><td style="text-align:left">F4</td><td style="text-align:left">Run to selection</td></tr><tr><td style="text-align:left">Alt+F7</td><td style="text-align:left">Go to previous reference</td></tr><tr><td style="text-align:left">Alt+F8</td><td style="text-align:left">Go to next reference</td></tr><tr><td style="text-align:left">Ctrl+A</td><td style="text-align:left">Analyse code</td></tr><tr><td style="text-align:left">Ctrl+B</td><td style="text-align:left">Start binary search</td></tr><tr><td style="text-align:left">Ctrl+C</td><td style="text-align:left">Copy selection to clipboard</td></tr><tr><td style="text-align:left">Ctrl+E</td><td style="text-align:left">Edit selection in binary format</td></tr><tr><td style="text-align:left">Ctrl+F</td><td style="text-align:left">Search for a command</td></tr><tr><td style="text-align:left">Ctrl+G</td><td style="text-align:left">Follow expression</td></tr><tr><td style="text-align:left">Ctrl+J</td><td style="text-align:left">Show list of jumps to selected line</td></tr><tr><td style="text-align:left">Ctrl+K</td><td style="text-align:left">View call tree</td></tr><tr><td style="text-align:left">Ctrl+L</td><td style="text-align:left">Repeat last search</td></tr><tr><td style="text-align:left">Ctrl+N</td><td style="text-align:left">Open list of labels (names)</td></tr><tr><td style="text-align:left">Ctrl+O</td><td style="text-align:left">Scan object files</td></tr><tr><td style="text-align:left">Ctrl+R</td><td style="text-align:left">Find references to selected command</td></tr><tr><td style="text-align:left">Ctrl+S</td><td style="text-align:left">Search for a sequence of commands</td></tr><tr><td style="text-align:left">Asterisk (*)</td><td style="text-align:left">Origin</td></tr><tr><td style="text-align:left">Enter</td><td style="text-align:left">Follow jump or call</td></tr><tr><td style="text-align:left">Plus (+)</td><td style="text-align:left">Go to next location/next run trace item</td></tr><tr><td style="text-align:left">Minus (-)</td><td style="text-align:left">Go to previous location/previous run trace item</td></tr><tr><td style="text-align:left">Space (  )</td><td style="text-align:left">Assemble</td></tr><tr><td style="text-align:left">Colon (:)</td><td style="text-align:left">Add label</td></tr><tr><td style="text-align:left">Semicolon (;)</td><td style="text-align:left">Add comment</td></tr></tbody></table><h2 id="命令栏"><a href="#命令栏" class="headerlink" title="命令栏"></a>命令栏</h2><p>以下命令使用于 OllyDbg 的快捷命令栏（显示于程序的状态栏上方）<br>以下命令适用于 OllyDbg 的命令行插件 Cmdline.dll（显示于程序的插件菜单中）</p><table><thead><tr><th style="text-align:left">命令</th><th style="text-align:left">英文</th><th style="text-align:left">功能</th></tr></thead><tbody><tr><td style="text-align:left">CALC</td><td style="text-align:left"></td><td style="text-align:left">判断表达式</td></tr><tr><td style="text-align:left">WATCH</td><td style="text-align:left"></td><td style="text-align:left">添加监视表达式</td></tr><tr><td style="text-align:left">AT / FOLLOW</td><td style="text-align:left">Disassemble at address</td><td style="text-align:left">在地址进行反汇编</td></tr><tr><td style="text-align:left">ORIG</td><td style="text-align:left">Disassemble at EIP</td><td style="text-align:left">反汇编于 EIP</td></tr><tr><td style="text-align:left">DUMP</td><td style="text-align:left">Dump at address</td><td style="text-align:left">在地址转存</td></tr><tr><td style="text-align:left">DA</td><td style="text-align:left">Dump as disassembly</td><td style="text-align:left">转存为反汇编代码</td></tr><tr><td style="text-align:left">DB</td><td style="text-align:left">Dump in hex byte format</td><td style="text-align:left">转存在十六进制字节格式</td></tr><tr><td style="text-align:left">DC</td><td style="text-align:left">Dump in ASCII format</td><td style="text-align:left">转存在 ASCII 格式</td></tr><tr><td style="text-align:left">DD</td><td style="text-align:left">Dump in stack format</td><td style="text-align:left">转存在堆栈格式</td></tr><tr><td style="text-align:left">DU</td><td style="text-align:left">Dump in UNICODE format</td><td style="text-align:left">转存在 UNICODE 格式</td></tr><tr><td style="text-align:left">DW</td><td style="text-align:left">Dump in hex word format</td><td style="text-align:left">转存在十六进制字词格式</td></tr><tr><td style="text-align:left">STK</td><td style="text-align:left">Go to address in stack</td><td style="text-align:left">前往堆栈中的地址</td></tr><tr><td style="text-align:left">AS + 地址 + 字符串</td><td style="text-align:left">Assemble at address</td><td style="text-align:left">在地址进行汇编</td></tr><tr><td style="text-align:left">L + 地址 + 字符串</td><td style="text-align:left">Label at address</td><td style="text-align:left">在地址进行标号</td></tr><tr><td style="text-align:left">C + 地址 + 字符串</td><td style="text-align:left">Comment at address</td><td style="text-align:left">在地址进行注释</td></tr><tr><td style="text-align:left">BP</td><td style="text-align:left">Break with condition</td><td style="text-align:left">使用条件中断</td></tr><tr><td style="text-align:left">BPX</td><td style="text-align:left">Break on all calls</td><td style="text-align:left">中断在全部调用</td></tr><tr><td style="text-align:left">BPD</td><td style="text-align:left">Delete break on all calls</td><td style="text-align:left">清除位于全部调用的断点</td></tr><tr><td style="text-align:left">BC</td><td style="text-align:left">Delete breakpoint</td><td style="text-align:left">清除断点</td></tr><tr><td style="text-align:left">MR</td><td style="text-align:left">Memory breakpt on access</td><td style="text-align:left">内存断点于访问时</td></tr><tr><td style="text-align:left">MW</td><td style="text-align:left">Memory breakpt on write</td><td style="text-align:left">内存断点于写入时</td></tr><tr><td style="text-align:left">MD</td><td style="text-align:left">Remove memory breakpoint</td><td style="text-align:left">清除内存断点</td></tr><tr><td style="text-align:left">HR</td><td style="text-align:left">HW break on access</td><td style="text-align:left">硬件中断在访问</td></tr><tr><td style="text-align:left">HW</td><td style="text-align:left">HW break on write</td><td style="text-align:left">硬件中断在写入</td></tr><tr><td style="text-align:left">HE</td><td style="text-align:left">HW break on execution</td><td style="text-align:left">硬件中断在执行</td></tr><tr><td style="text-align:left">HD</td><td style="text-align:left">Remove HW breakpoint</td><td style="text-align:left">清除硬件断点</td></tr><tr><td style="text-align:left">STOP</td><td style="text-align:left">Pause execution</td><td style="text-align:left">暂停执行</td></tr><tr><td style="text-align:left">PAUSE</td><td style="text-align:left">PAUSE</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">RUN</td><td style="text-align:left">Run program</td><td style="text-align:left">运行程序</td></tr><tr><td style="text-align:left">Run till address</td><td style="text-align:left"></td><td style="text-align:left">运行到地址</td></tr><tr><td style="text-align:left">GE</td><td style="text-align:left">Run and pass exception</td><td style="text-align:left">运行和通过例外</td></tr><tr><td style="text-align:left">SI</td><td style="text-align:left">Step into</td><td style="text-align:left">步入</td></tr><tr><td style="text-align:left">SO</td><td style="text-align:left">Step over</td><td style="text-align:left">步过</td></tr><tr><td style="text-align:left">TI</td><td style="text-align:left">Trace in till address</td><td style="text-align:left">跟踪进入直到地址</td></tr><tr><td style="text-align:left">TO</td><td style="text-align:left">Trace over till address</td><td style="text-align:left">跟踪步过直到地址</td></tr><tr><td style="text-align:left">TC</td><td style="text-align:left">Trace in till condition</td><td style="text-align:left">跟踪进入直到条件</td></tr><tr><td style="text-align:left">TOC</td><td style="text-align:left">Trace over till condition</td><td style="text-align:left">跟踪步过直到条件</td></tr><tr><td style="text-align:left">TR</td><td style="text-align:left">Till return</td><td style="text-align:left">直到返回</td></tr><tr><td style="text-align:left">TU</td><td style="text-align:left">Till user code</td><td style="text-align:left">直到用户代码</td></tr><tr><td style="text-align:left">LOG</td><td style="text-align:left">View Log window</td><td style="text-align:left">查看记录窗口</td></tr><tr><td style="text-align:left">MOD</td><td style="text-align:left">View Modules window</td><td style="text-align:left">查看模块窗口</td></tr><tr><td style="text-align:left">MEM</td><td style="text-align:left">View Memory window</td><td style="text-align:left">查看内存窗口</td></tr><tr><td style="text-align:left">CPU</td><td style="text-align:left">View CPU window</td><td style="text-align:left">查看 CPU 窗口</td></tr><tr><td style="text-align:left">CS</td><td style="text-align:left">View Call Stack</td><td style="text-align:left">查看 Call 堆栈</td></tr><tr><td style="text-align:left">BRK</td><td style="text-align:left">View Breakpoints window</td><td style="text-align:left">查看断点窗口</td></tr><tr><td style="text-align:left">OPT</td><td style="text-align:left">Open Options</td><td style="text-align:left">打开选项</td></tr><tr><td style="text-align:left">EXIT / QUIT</td><td style="text-align:left">Quit OllyDbg</td><td style="text-align:left">退出 OllyDbg</td></tr><tr><td style="text-align:left">OPEN</td><td style="text-align:left">Open executable file</td><td style="text-align:left">打开可执行文件</td></tr><tr><td style="text-align:left">CLOSE</td><td style="text-align:left">Close executable</td><td style="text-align:left">关闭程序</td></tr><tr><td style="text-align:left">RST</td><td style="text-align:left">Restart current program</td><td style="text-align:left">恢复当前程序</td></tr><tr><td style="text-align:left">HELP</td><td style="text-align:left">Help on API function</td><td style="text-align:left">API 函数的帮助</td></tr><tr><td style="text-align:left">ASM</td><td style="text-align:left">Assemble (if command needs it’s own addres, \”ASM COMMAND;ADDRESS\”)</td><td style="text-align:left">汇编 (如果命令需要自身的地址 \”ASM COMMAND;ADDRESS\”)</td></tr><tr><td style="text-align:left">DASM</td><td style="text-align:left">Disassemble immediate opcode</td><td style="text-align:left">反汇编直接的机器码</td></tr><tr><td style="text-align:left">FR</td><td style="text-align:left">Find reference to selected command/address</td><td style="text-align:left">查找参考到选定的命令/地址</td></tr><tr><td style="text-align:left">AC</td><td style="text-align:left">Analyse code</td><td style="text-align:left">分析代码</td></tr><tr><td style="text-align:left">SN</td><td style="text-align:left">Search for Name(label) in current module</td><td style="text-align:left">在当前模块中搜索名称(标号)</td></tr><tr><td style="text-align:left">SOB</td><td style="text-align:left">Scan object files</td><td style="text-align:left">扫描项目文件</td></tr></tbody></table><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul><li><a href="https://reverseengineering.stackexchange.com/questions/16586/searching-for-strings-in-ollydbg" rel="external nofollow noopener noreferrer" target="_blank">Searching for strings in ollydbg</a></li><li><a href="http://www.c-jump.com/CIS77/MLabs/M12reverse/M12_0070_text_strings.htm" rel="external nofollow noopener noreferrer" target="_blank">ollydbg的字符串搜索</a></li><li><a href="https://stackoverflow.com/questions/34239605/cant-find-referenced-string-in-ollydbg/35991890" rel="external nofollow noopener noreferrer" target="_blank">ollydbg ‘referenced string’</a></li><li><a href="https://bbs.pediy.com/thread-161919-1.htm" rel="external nofollow noopener noreferrer" target="_blank">ollydbg插件合集</a></li><li><a href="https://lichao890427.github.io/2014/12/30/some-thing-about-ollydbg-plugin/" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg插件深入分析</a></li><li><a href="https://blog.csdn.net/qq_27011361/article/details/79375924" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg快速查找指定代码四种方法</a></li><li><a href="https://blog.csdn.net/VxD1/article/details/2235148" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用方法</a></li><li><a href="https://reverseengineering.stackexchange.com/questions/13213/a-simple-reverseme-application-wont-run-always-loads-the-code-of-ntdll-and-ter" rel="external nofollow noopener noreferrer" target="_blank">always loads the code of ntdll and terminates the app</a></li><li><a href="https://reverseengineering.stackexchange.com/questions/6236/simple-program-being-paused-somewhere-in-ntdll/6237#6237" rel="external nofollow noopener noreferrer" target="_blank">Simple Program Being Paused Somewhere in ntdll</a></li><li><a href="https://stackoverflow.com/questions/12873197/ollydbg-single-step-event-at-ntdll-press-shiftf8-to-pass-execution" rel="external nofollow noopener noreferrer" target="_blank">Ollydbg “Single step event at ntdll“</a></li><li><a href="https://www.aldeid.com/wiki/OllyDbg/CommandLine" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg/CommandLine</a></li><li><a href="https://kevien.github.io/2017/08/22/OllyDbg%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用入门</a></li><li><a href="https://weimingtom.iteye.com/blog/1126470" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用技巧总结</a></li><li><a href="https://blog.csdn.net/faithzzf/article/details/51003170" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用小技巧(慢慢积累)</a></li><li><a href="https://blog.csdn.net/china_jeffery/article/details/79427256" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用教程</a></li><li><a href="https://blog.csdn.net/billvsme/article/details/38305839" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg 使用笔记 （一）</a></li><li><a href="https://blog.csdn.net/yongshi6/article/details/50867780" rel="external nofollow noopener noreferrer" target="_blank">Ollydbg使用技巧</a></li><li><a href="http://www.openrce.org/downloads/details/206/Modified_CmdLine_Plug-in" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg Plugins</a></li><li><a href="https://www.it72.com/thread-9155.htm" rel="external nofollow noopener noreferrer" target="_blank">OllyDBG完美教程(完美)</a></li><li><a href="https://stackoverflow.com/questions/28488750/how-to-automate-task-in-ollydbg-using-ollyscript-or-any-other-tool/28556003#28556003" rel="external nofollow noopener noreferrer" target="_blank">How to automate task in OllyDBG ?</a></li><li><a href="https://forum.exetools.com/showthread.php?t=3903" rel="external nofollow noopener noreferrer" target="_blank">module has entry point outside of code</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;快捷键&quot;&gt;&lt;a href=&quot;#快捷键&quot; class=&quot;headerlink&quot; title=&quot;快捷键&quot;&gt;&lt;/a&gt;快捷键&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.ollydbg.de/quickst.htm&quot; rel=&quot;external nofollow
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="reverse engineer" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/reverse-engineer/"/>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="OllDbg" scheme="http://yoursite.com/tags/OllDbg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux</title>
+    <link href="http://yoursite.com/wiki/%E5%B7%A5%E5%85%B7/Operator%20System/linux/"/>
+    <id>http://yoursite.com/wiki/工具/Operator System/linux/</id>
+    <published>2019-05-04T12:15:58.000Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p>recursive mkdir： <code>mkdir -p foo/bar/zoo/andsoforth</code></p><p><a href="https://www.mkssoftware.com/docs/man1/ls.1.asp" rel="external nofollow noopener noreferrer" target="_blank"><code>ls</code></a></p><p><code>ls -l (filename)</code>显示用户、属性等信息</p><p>复制所有source文件夹下的内容<code>cp -a /source/. /dst/</code></p><p><a href="https://askubuntu.com/questions/229589/how-to-make-a-file-e-g-a-sh-script-executable-so-it-can-be-run-from-termina" rel="external nofollow noopener noreferrer" target="_blank">更改文档属性可执行</a></p><p><a href="https://www.linode.com/docs/tools-reference/tools/find-files-in-linux-using-the-command-line/" rel="external nofollow noopener noreferrer" target="_blank">find file by name/extension</a></p><h2 id="用户、用户组"><a href="#用户、用户组" class="headerlink" title="用户、用户组"></a>用户、用户组</h2><ul><li>用<code>who</code>查看当前登录用户名</li><li>用<code>groups XXX</code>查看“XXX”所在的用户组</li><li><a href="https://www.cyberciti.biz/faq/linux-list-users-command/" rel="external nofollow noopener noreferrer" target="_blank">list all user</a></li><li><a href="https://www.hostingadvice.com/how-to/change-file-ownershipgroups-linux/" rel="external nofollow noopener noreferrer" target="_blank">Change File Ownership &amp; Groups</a></li></ul><h2 id="ssh和scp"><a href="#ssh和scp" class="headerlink" title="ssh和scp"></a>ssh和scp</h2><p>“cloud” ————&gt; “local”<strong>上传</strong></p><p>文件：<code>scp username@servername:/path/filename local_dir</code></p><p>目录：<code>scp -r username@servername:remote_dir local_dir</code></p><p> “local”————&gt;“cloud” <strong>下载</strong></p><p>文件：<code>scp /path/filename username@servername:/remote_dir</code></p><p>目录：<code>scp -r local_dir username@servername:remote_dir</code></p><h2 id="命令行浏览网页"><a href="#命令行浏览网页" class="headerlink" title="命令行浏览网页"></a>命令行浏览网页</h2><p><code>curl http://google.com</code><br>可以制定代理、cookie、OPTION等，自己玩吧。</p><h2 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h2><p><code>nohup ping google.com &amp;</code></p><p>标准输出和错误会定向到<code>nohup.out</code>中。</p><p>nohup顾名思义，提交的命令忽略”hang up“信号。</p><h2 id="重定向报错"><a href="#重定向报错" class="headerlink" title="重定向报错"></a>重定向报错</h2><p><code>curl -L https://github.com/docker/compose/releases/download/1.8.0/run.sh &gt; /usr/local/bin/docker-compose</code></p><p>可以用<code>sudo bash -c &quot;echo N&gt; /sys/module/drm_kms_helper/parameters/poll&quot;</code>让他在<code>sudo bash -c &quot;&quot;</code>中运行。</p><h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>查看端口使用<a href="https://www.cyberciti.biz/faq/how-do-i-find-out-what-ports-are-listeningopen-on-my-linuxfreebsd-server/" rel="external nofollow noopener noreferrer" target="_blank">参考</a></p><p><code>netstat -l</code>或者<code>netstat --listen</code></p><h2 id="查看历史纪录"><a href="#查看历史纪录" class="headerlink" title="查看历史纪录"></a>查看历史纪录</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.bash_history</span><br><span class="line">less ~/.bash_history</span><br><span class="line"></span><br><span class="line"><span class="comment">#The history size defaults to 500 commands. You can, however, increase this by adding the following line to your ~./bashrc:</span></span><br><span class="line">HISTSIZE=&lt;number of entries, -1 <span class="keyword">for</span> unlimited&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">history</span></span><br></pre></td></tr></table></figure><h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>查看<br><code>echo $PATH</code><br><code>printf &quot;%s\n&quot; $PATH</code><br><code>echo $PATH | tr &quot;:&quot; &quot;\n&quot; | nl</code><br>新增或修改<br><code>export PATH=$PATH:/opt/games</code><br><code>export CATALINA_HOME=/path/to/the/root/folder/of/tomcat</code><br>取消或删除<br><code>unset PATH</code></p><h2 id="process"><a href="#process" class="headerlink" title="process"></a>process</h2><ul><li><a href="https://www.linux.com/learn/intro-to-linux/2017/5/how-kill-process-command-line" rel="external nofollow noopener noreferrer" target="_blank">kill</a></li></ul><h3 id="ctrl-z"><a href="#ctrl-z" class="headerlink" title="ctrl+z"></a>ctrl+z</h3><p>比如在vim下，使用<code>ctrl+z</code>会将vim切换至后台，然后就可以看到前台的terminal。有点像是视窗os的<code>tab</code>的功能</p><p>可以在terminal中使用<code>fg</code>就能看到，然后再切换过去</p><p>延申类似功能<br>The general job control commands in Linux are:</p><ul><li><code>jobs</code> - list the current jobs</li><li><code>fg</code> - resume the job that’s next in the queue<ul><li><code>fg %[number]</code> - resume job [number]</li></ul></li><li><code>bg</code> - Push the next job in the queue into the     background<ul><li><code>bg %[number]</code> - Push the job [number] into the background</li></ul></li><li><code>kill %[number]</code> - Kill the job numbered [number]<ul><li><code>kill -[signal] %[number]</code> - Send the signal [signal] to job number [number]</li></ul></li><li><code>disown %[number]</code> - disown the process(no more terminal will be owner), so command will be alive even after closing the terminal.</li></ul><h2 id="service"><a href="#service" class="headerlink" title="service"></a>service</h2><ul><li><a href="https://support.rackspace.com/how-to/checking-running-services-on-linux/" rel="external nofollow noopener noreferrer" target="_blank">run</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;文档&quot;&gt;&lt;a href=&quot;#文档&quot; class=&quot;headerlink&quot; title=&quot;文档&quot;&gt;&lt;/a&gt;文档&lt;/h2&gt;&lt;p&gt;recursive mkdir： &lt;code&gt;mkdir -p foo/bar/zoo/andsoforth&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="Operator System" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/Operator-System/"/>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pycrypto</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/python/pycrypto/"/>
+    <id>http://yoursite.com/wiki/开源库/python/pycrypto/</id>
+    <published>2019-04-27T14:57:49.000Z</published>
+    <updated>2019-08-06T15:20:43.933Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><ul><li><a href="https://stackoverflow.com/questions/43994590/how-do-i-get-around-the-no-module-named-crypto-error-after-doing-pip-inst" rel="external nofollow noopener noreferrer" target="_blank"><code>pycrypto: No module named strxor</code>解决办法</a></li><li><a href="https://www.pycryptodome.org/en/latest/src/faq.html#why-do-i-get-the-error-no-module-named-crypto-on-windows" rel="external nofollow noopener noreferrer" target="_blank">官网解决方案</a></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pycrypto</span><br><span class="line">pip install pycryptodome</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul><li><a href="https://en.wikipedia.org/wiki/PKCS" rel="external nofollow noopener noreferrer" target="_blank">pkcs定义</a></li><li><a href="https://en.wikipedia.org/wiki/PBKDF2" rel="external nofollow noopener noreferrer" target="_blank">PBKDF2</a></li><li><a href="https://tools.ietf.org/html/rfc8018" rel="external nofollow noopener noreferrer" target="_blank">RFC8018定义了PKCS</a></li><li><a href="https://stackoverflow.com/questions/6258047/java-default-crypto-aes-behavior" rel="external nofollow noopener noreferrer" target="_blank">JDK default Crypto/AES behavior</a></li><li><a href="https://stackoverflow.com/questions/3243018/how-to-load-rsa-private-key-from-file" rel="external nofollow noopener noreferrer" target="_blank">Load RSA Private Key From File</a></li><li><a href="http://voidcn.com/article/p-apvjrqwc-bcc.html" rel="external nofollow noopener noreferrer" target="_blank">信息安全python库PyCrypto</a></li></ul><h3 id="RSA-报错-plain-text-too-long"><a href="#RSA-报错-plain-text-too-long" class="headerlink" title="RSA 报错 plain text too long"></a>RSA 报错 plain text too long</h3><ul><li><a href="https://blog.csdn.net/hurricane_0x01/article/details/51802965" rel="external nofollow noopener noreferrer" target="_blank">RSA加解密</a></li><li><a href="https://blog.csdn.net/orangleliu/article/details/72964948" rel="external nofollow noopener noreferrer" target="_blank">RSA长字符串加密</a></li><li><a href="https://stackoverflow.com/questions/25462906/asymmetric-cryptography-plaintext-size-error" rel="external nofollow noopener noreferrer" target="_blank">Asymmetric cryptography - Plaintext size error</a></li></ul><h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><ul><li><a href="https://stackoverflow.com/questions/46546896/base64-encoding-in-python3" rel="external nofollow noopener noreferrer" target="_blank">encoding</a></li><li><a href="https://docs.python.org/3.1/library/base64.html" rel="external nofollow noopener noreferrer" target="_blank">rfc 3548</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;报错&quot;&gt;&lt;a href=&quot;#报错&quot; class=&quot;headerlink&quot; title=&quot;报错&quot;&gt;&lt;/a&gt;报错&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/43994590/how-do-i-g
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="python" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="library" scheme="http://yoursite.com/tags/library/"/>
+    
+      <category term="crypt" scheme="http://yoursite.com/tags/crypt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pandas</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/python/pandas/"/>
+    <id>http://yoursite.com/wiki/开源库/python/pandas/</id>
+    <published>2019-04-27T14:57:49.000Z</published>
+    <updated>2019-08-06T15:20:43.933Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><p>类似于”一维数组”的对象,由”一组数据(各种NumPy数据类型)”,以及,”一组与之相关的数据标签即Index”,组成.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Series&quot;&gt;&lt;a href=&quot;#Series&quot; class=&quot;headerlink&quot; title=&quot;Series&quot;&gt;&lt;/a&gt;Series&lt;/h2&gt;&lt;p&gt;类似于”一维数组”的对象,由”一组数据(各种NumPy数据类型)”,以及,”一组与之相关的数据标签即Inde
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="python" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="library" scheme="http://yoursite.com/tags/library/"/>
+    
+      <category term="pandas" scheme="http://yoursite.com/tags/pandas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>numpy</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/python/numpy/"/>
+    <id>http://yoursite.com/wiki/开源库/python/numpy/</id>
+    <published>2019-04-27T14:57:49.000Z</published>
+    <updated>2019-08-06T15:20:43.933Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="针对matrix"><a href="#针对matrix" class="headerlink" title="针对matrix"></a>针对matrix</h2><p>主要是为了和matlab接轨，使用起来和代码编写比较统一</p><h3 id="使用variable创建matrix"><a href="#使用variable创建matrix" class="headerlink" title="使用variable创建matrix"></a>使用variable创建matrix</h3><p><code>M= np.matrix([[x,y],[w,z]])</code></p><p>每一个<code>commas</code>都不能省略！！！不能用<code>whitespace</code>来分列，也不能用<code>semicolons</code>来分行</p><h3 id="使用zeros创建matrix而不是narray"><a href="#使用zeros创建matrix而不是narray" class="headerlink" title="使用zeros创建matrix而不是narray"></a>使用<code>zeros</code>创建matrix而不是narray</h3><p><code>M= np.matlib.zeros((4,5))</code></p><h2 id="虚数Imaginary问题"><a href="#虚数Imaginary问题" class="headerlink" title="虚数Imaginary问题"></a>虚数<code>Imaginary</code>问题</h2><p>To avoid the <strong>invalid value</strong> warning/error, the argument to numpy’s <code>sqrt</code> function must be complex:</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">np.sqrt(<span class="number">-1</span>+<span class="number">0j</span>)</span><br></pre></td></tr></table></figure><p>即你得传递的变量或者生成的临时变量是Imaginary type，这样<code>sqrt</code>生成的值才会是Imaginary type，他和C/C++一样，不会跳着变Data Type的！！！<br>以后 numpy 一旦出现数值计算错误，一定要记得考虑这个问题，我们不可能像matlab那么牛b，总是会自动跳成虚数形式的！！！</p><p>python这种脚本型解释性语言，看似无类型，但是你用类型的内部定义函数时，就有了</p><h2 id="无穷"><a href="#无穷" class="headerlink" title="无穷"></a>无穷</h2><p><code>infinity</code>无限(有正负之分，positive or negative) ;或者<code>Not a Number</code>（简称<code>NAN</code>)</p><h2 id="创建线性向量"><a href="#创建线性向量" class="headerlink" title="创建线性向量"></a>创建线性向量</h2><p>第一个<code>np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)</code><br>第二个<code>np.arange([start,] stop[, step,][, dtype])</code></p><p>Values are generated within the half-open interval <strong>[start, stop)</strong> (in other words, the interval including start but excluding stop).</p><h2 id="numpy数据类型"><a href="#numpy数据类型" class="headerlink" title="numpy数据类型"></a>numpy数据类型</h2><p>不知道是不是我使用的问题，类型统一，好像没有MATLAB那么随意，例子就是，</p><p>我的一个func返回了三个值，这三个值，我以为是简简单单的<code>float</code>型，可实际是<code>array</code>即<code>[[]]</code>，然后我用这个数据，去创建<code>matrix</code>，结果肯定不行啊，numpy是不允许嵌套<code>matrix</code>！！！</p><p>重点在于使用<code>sio.savemat</code>它的定义是<strong>save a dictionary of names and arrays into MAT file</strong>.所以你拿出来的时候也必须得脱掉这层外，如果必要的话。</p><p>画图的时候不让使用<code>matrix</code>格式，必须得用<code>array</code>格式。所以必须用到函数<code>np.matrix().getA()</code>就可以获得一个array了。不然一直报一个很奇怪的错误：</p><p>ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()</p><h2 id="array数据类型index"><a href="#array数据类型index" class="headerlink" title="array数据类型index"></a>array数据类型index</h2><p>示例</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">a[<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">b[<span class="number">1</span>, <span class="number">-1</span>]</span><br></pre></td></tr></table></figure><p>都是可以的</p><h2 id="filter-matlab与scipy区别"><a href="#filter-matlab与scipy区别" class="headerlink" title="filter, matlab与scipy区别"></a><code>filter</code>, matlab与scipy区别</h2><p>This is not a bug. <strong>Matlab</strong>‘s <code>filter</code> operates on the <strong>first dimension</strong> of the array, while <code>scipy.signal.lfilter</code> by default operates on the the <strong>last dimension</strong>.</p><p>From your question I see that your data array has a second dimension (perhaps empty?). When you use lfilter it defaults to axis=-1, which will give the answer you got for python. If you want the same behaviour of matlab you need to specify the first axis or squeeze the array (if the second dimension has a size of 1):</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">out = lfilter(b, a, data, axis=<span class="number">0</span>)</span><br><span class="line">out = lfilter(b, a, np.squeeze(data))</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;针对matrix&quot;&gt;&lt;a href=&quot;#针对matrix&quot; class=&quot;headerlink&quot; title=&quot;针对matrix&quot;&gt;&lt;/a&gt;针对matrix&lt;/h2&gt;&lt;p&gt;主要是为了和matlab接轨，使用起来和代码编写比较统一&lt;/p&gt;
+&lt;h3 id=&quot;使用var
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="python" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="library" scheme="http://yoursite.com/tags/library/"/>
+    
+      <category term="numpy" scheme="http://yoursite.com/tags/numpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scipy</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/python/SciPy/"/>
+    <id>http://yoursite.com/wiki/开源库/python/SciPy/</id>
+    <published>2019-04-27T14:57:49.000Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Matrix-Objects"><a href="#Matrix-Objects" class="headerlink" title="Matrix Objects"></a>Matrix Objects</h2><p>出自1.6.2即隶属Arrary Objects-&gt;Standard Array Subclasses-&gt;  </p><p><code>matrix</code> objects <strong>inherit</strong> from the <code>ndarray</code> and therefore, they have the same attributes and methods of ndarrays.<br>There are six important differences of matrix objects, however, that may lead to unexpected results when you use matrices <strong>but expect them to act like arrays</strong>:</p><ol><li>Matrix objects can be created using a string notation to <strong>allow Matlab-style syntax</strong> where <strong>spaces separate columns</strong> and <strong>semicolons (‘;’) separate rows</strong>.</li><li>Matrix objects are <strong>always two-dimensional</strong>. This has far-reaching implications, in that <code>m.ravel()</code> is still two dimensional (with a 1 in the first dimension) and item selection returns two-dimensional objects so that sequence behavior is fundamentally different than arrays.</li><li>Matrix objects <strong>over-ride multiplication to be matrix-multiplication</strong>. Make sure you understand this for functions that you may want to receive matrices. Especially in light of the fact that <code>asanyarray(m)</code> returns a matrix when m is a matrix.</li><li>Matrix objects <strong>over-ride power to be matrix raised to a power</strong>. The same warning about using power inside a function that uses <code>asanyarray(...)</code> to get an array object holds for this fact.</li><li>The default <code>__array_priority__</code> of matrix objects is 10.0, and therefore <strong>mixed operations with ndarrays always produce matrices</strong>.</li><li>Matrices have <strong>special attributes</strong> which make calculations easier. These are</li></ol><table><thead><tr><th style="text-align:left">Title1</th><th style="text-align:left">Title2</th></tr></thead><tbody><tr><td style="text-align:left">matrix.T</td><td style="text-align:left">Returns the transpose of the matrix.</td></tr><tr><td style="text-align:left">matrix.H</td><td style="text-align:left">Returns the (complex) conjugate transpose of self.</td></tr><tr><td style="text-align:left">matrix.I</td><td style="text-align:left">Returns the (multiplicative) inverse of invertible self.</td></tr><tr><td style="text-align:left">matrix.A</td><td style="text-align:left">Return self as an ndarray object.</td></tr></tbody></table><h2 id="Matrix-library-numpy-matlib"><a href="#Matrix-library-numpy-matlib" class="headerlink" title="Matrix library (numpy.matlib)"></a>Matrix library (numpy.matlib)</h2><p>This module contains all functions in the numpy namespace, with the following replacement functions that return <strong>matrices</strong> instead of <strong>ndarrays</strong>.</p><p>这个不好用，别被坑了</p><h2 id="sci-optimize-fsolve"><a href="#sci-optimize-fsolve" class="headerlink" title="sci.optimize.fsolve"></a><code>sci.optimize.fsolve</code></h2><p>解方程，屌屌的，仔细体会下面代码</p><ol><li>利用2个关系式，解2元方程组</li></ol><p>法一(<code>lambda</code>表达式)</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func = <span class="keyword">lambda</span> x:(x[<span class="number">0</span>]**<span class="number">2</span>+x[<span class="number">1</span>]**<span class="number">2</span>-R**<span class="number">2</span>, (x[<span class="number">0</span>]**<span class="number">2</span>+x[<span class="number">1</span>]**<span class="number">2</span>)/R**<span class="number">2</span>-np.cos(beta))</span><br><span class="line">x, y = sci.optimize.fsolve(func,[<span class="number">0</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure><p>法二(<code>def</code>形式)</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">equations</span><span class="params">(p)</span>:</span></span><br><span class="line">y,z = p</span><br><span class="line">f1 = <span class="number">-10</span>*z + <span class="number">4</span>*y*z - <span class="number">5</span>*y + <span class="number">4</span>*z**<span class="number">2</span> - <span class="number">7</span></span><br><span class="line">f2 = <span class="number">2</span>*y*z + <span class="number">5</span>*y - <span class="number">3</span></span><br><span class="line"><span class="keyword">return</span> (f1,f2)</span><br><span class="line">y,z = sci.optimize.fsolve(equations,[<span class="number">0</span>,<span class="number">1</span>])</span><br></pre></td></tr></table></figure><ol start="2"><li>利用1个关系式、一个元的某个解，求解另一个元的解</li></ol><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x0=[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="keyword">lambda</span> x: [x[<span class="number">0</span>]*<span class="number">14.80461</span>-x[<span class="number">1</span>]*<span class="number">4.9233</span>+x[<span class="number">2</span>]*<span class="number">10</span>*<span class="number">0.4803</span>, <span class="number">0</span> , <span class="number">0</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,x0)</span><br><span class="line">array([<span class="number">-0.29192258</span>,  <span class="number">4.</span>        ,  <span class="number">5.</span>        ])</span><br></pre></td></tr></table></figure><p>此处python就会假定<code>x[1]=4, x[2]=5</code>求解得<code>x[0]=-0.2919</code></p><p>注意如果要多个根root，请注意下面的例子：</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x**<span class="number">2</span><span class="number">-1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f, np.array([<span class="number">-10</span>, <span class="number">0.5</span>]))</span><br><span class="line">array([<span class="number">-1.</span>, <span class="number">-1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">-10</span>,<span class="number">1.1</span>]))</span><br><span class="line">array([<span class="number">-1.</span>,  <span class="number">1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f, np.array([<span class="number">-10</span>, <span class="number">0</span>]))</span><br><span class="line">array([<span class="number">-10.</span>, <span class="number">0.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">-10</span>, <span class="number">-2</span>]))</span><br><span class="line">array([<span class="number">-1.</span>,  <span class="number">-1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">1.1</span>,<span class="number">-2</span>]))</span><br><span class="line">array([ <span class="number">1.</span>, <span class="number">-1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">1.1</span>,<span class="number">0.1</span>]))</span><br><span class="line">array([ <span class="number">1.</span>,  <span class="number">1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,np.array([<span class="number">1.1</span>, <span class="number">-0.5</span>]))</span><br><span class="line">array([ <span class="number">1.</span>, <span class="number">-1.</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fsolve(f,[<span class="number">1.1</span>, <span class="number">-2</span>])</span><br><span class="line">array([ <span class="number">1.</span>, <span class="number">-1.</span>])</span><br></pre></td></tr></table></figure><p>总结就是：</p><ol><li>不要将猜测值设为<code>0</code>，系统不认识</li><li>也不要设置成<code>0.x</code>，系统认识，但是他会重复之前的结果</li><li>要得到多个解，请用<code>array</code>格式，不管是<code>np.array([ , ,])</code>还是<code>[ , ,]</code></li></ol><h1 id="File-IO-scipy-io"><a href="#File-IO-scipy-io" class="headerlink" title="File IO (scipy.io)"></a>File IO (scipy.io)</h1><p>数据流的保存方式</p><h1 id="MATLAB-files"><a href="#MATLAB-files" class="headerlink" title="MATLAB files"></a>MATLAB files</h1><p>Load MATLAB file :Parameters: file_name : str Name of the mat file (do not need .m</p><pre><code>loadmat(file_name[, mdict, appendmat])</code></pre><p>Save a dictionary of names and arrays into a MATLAB-style .mat file.<br>注意：  </p><ol><li>确实是只能一个变量，然后在后面还不能append，感觉好蠢。额，是我蠢了，可以好几个，你保存得是python的dist，肯定可以好几个啊，被举例给误导了。   </li><li><p>默认是保存为.mat格式，所以filename可以不加.mat</p><p>  scipy.io.savemat(file_name, mdict, appendmat=True, format=’5’, long_field_names=False, do_compression=False, oned_as=’row’)<br> savemat(file_name, mdict[, appendmat, …])<br>List variables inside a MATLAB file :Parameters: file_name : str Name of the mat file</p><p> whosmat(file_name[, appendmat]) </p><h2 id="The-basic-functions"><a href="#The-basic-functions" class="headerlink" title="The basic functions"></a>The basic functions</h2></li></ol><p>We’ll start by importing <code>scipy.io</code> and calling it <code>sio</code> for convenience:</p><pre><code>&gt;&gt;&gt; import scipy.io as sio</code></pre><p>If you are using IPython, try tab completing on sio. Among the many options, you will find:</p><pre><code>sio.loadmatsio.savematsio.whosmat</code></pre><p>These are the high-level functions you will most likely use when working with MATLAB files. You’ll also find:</p><pre><code>sio.matlab</code></pre><p>This is the package from which <code>loadmat</code>, <code>savemat</code> and <code>whosmat</code> are imported. Within <code>sio.matlab</code>, you will find the <code>mio</code> module This module contains the machinery that <code>loadmat</code> and <code>savemat</code> use. From time to time you<br>may find yourself re-using this machinery.  </p><h2 id="How-do-I-start"><a href="#How-do-I-start" class="headerlink" title="How do I start?"></a>How do I start?</h2><p>You may have a <code>.mat</code> file that you want to read into Scipy. Or, you want to pass some variables from Scipy / Numpy into MATLAB.</p><p>To save us using a MATLAB license, let’s start in Octave. Octave has MATLAB-compatible save and load functions.<br>Start Octave (octave at the command line for me):</p><pre><code>octave:1&gt; a = 1:12a =    1 2 3 4 5 6 7 8 9 10 11 12octave:2&gt; a = reshape(a, [1 3 4])a =ans(:,:,1) =    1 2 3ans(:,:,2) =    4 5 6ans(:,:,3) =    7 8 9ans(:,:,4) =    10 11 12octave:3&gt; save -6 octave_a.mat a % MATLAB 6 compatibleoctave:4&gt; ls octave_a.matoctave_a.mat</code></pre><p>Now, to Python:</p><pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(&apos;octave_a.mat&apos;)&gt;&gt;&gt; mat_contents{’a’: array([[[ 1., 4., 7., 10.],              [ 2., 5., 8., 11.],              [ 3., 6., 9., 12.]]]),’__version__’: ’1.0’,’__header__’: ’MATLAB 5.0 MAT-file, written byOctave 3.6.3, 2013-02-17 21:02:11 UTC’,’__globals__’: []}&gt;&gt;&gt; oct_a = mat_contents[’a’]&gt;&gt;&gt; oct_aarray([[[ 1., 4., 7., 10.],        [ 2., 5., 8., 11.],        [ 3., 6., 9., 12.]]])&gt;&gt;&gt; oct_a.shape(1, 3, 4)</code></pre><p>Now let’s try the other way round:</p><pre><code>&gt;&gt;&gt; import numpy as np&gt;&gt;&gt; vect = np.arange(10)&gt;&gt;&gt; vect.shape(10,)&gt;&gt;&gt; sio.savemat(’np_vector.mat’, {’vect’:vect})</code></pre><p>Then back to Octave:</p><pre><code>octave:8&gt; load np_vector.matoctave:9&gt; vectvect =    0 1 2 3 4 5 6 7 8 9octave:10&gt; size(vect)ans =    1 10</code></pre><p>If you want to inspect the contents of a MATLAB file without reading the data into memory, use the <code>whosmat</code> command:</p><pre><code>&gt;&gt;&gt; sio.whosmat(’octave_a.mat’)[(’a’, (1, 3, 4), ’double’)]</code></pre><p><code>whosmat</code> returns <em>a list of tuples</em>, one for each array (or other object) in the file. Each tuple contains the name, shape and data type of the array.  </p><h2 id="MATLAB-structs"><a href="#MATLAB-structs" class="headerlink" title="MATLAB structs"></a>MATLAB structs</h2><p>MATLAB structs are a little bit like Python <em>dicts</em>, <strong>except the field names must be strings</strong>. Any MATLAB object can be a value of a field. As for all objects in MATLAB, structs are in fact <em>arrays of structs</em>,<strong> where a single struct is an array of shape (1, 1)</strong>.</p><pre><code>octave:11&gt; my_struct = struct(’field1’, 1, ’field2’, 2)my_struct ={field1 = 1field2 = 2}octave:12&gt; save -6 octave_struct.mat my_struct</code></pre><p>We can load this in Python:</p><pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_struct.mat’)&gt;&gt;&gt; mat_contents{’my_struct’: array([[([[1.0]], [[2.0]])]],    dtype=[(’field1’, ’O’), (’field2’, ’O’)]),     ’__version__’: ’1.0’,     ’__header__’: ’MATLAB 5.0 MAT-&gt;&gt;&gt; oct_struct = mat_contents[’my_struct’]&gt;&gt;&gt; oct_struct.shape(1, 1)&gt;&gt;&gt; val = oct_struct[0,0]&gt;&gt;&gt; val([[1.0]], [[2.0]])&gt;&gt;&gt; val[’field1’]array([[ 1.]])&gt;&gt;&gt; val[’field2’]array([[ 2.]])&gt;&gt;&gt; val.dtypedtype([(’field1’, ’O’), (’field2’, ’O’)])</code></pre><p>In versions of Scipy from 0.12.0, MATLAB structs come back as numpy structured arrays, with fields named for the struct fields. You can see the field names in the <code>dtype</code> output above. Note also:</p><pre><code>&gt;&gt;&gt; val = oct_struct[0,0]and:octave:13&gt; size(my_struct)ans =        1 1</code></pre><p>So, in MATLAB, the struct array must be at least 2D, and we replicate that when we read into Scipy. If you want all length 1 dimensions squeezed out, try this:</p><pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_struct.mat’, squeeze_me=True)&gt;&gt;&gt; oct_struct = mat_contents[’my_struct’]&gt;&gt;&gt; oct_struct.shape()</code></pre><p>Sometimes, it’s more convenient to load the MATLAB structs as python objects rather than numpy structured arrays - it can make the access syntax in python a bit more similar to that in MATLAB. In order to do this, use the <code>struct_as_record=False</code> parameter setting to <code>loadmat</code>.</p><pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_struct.mat’, struct_as_record=False)&gt;&gt;&gt; oct_struct = mat_contents[’my_struct’]&gt;&gt;&gt; oct_struct[0,0].field1array([[ 1.]])</code></pre><p><code>struct_as_record=False</code> works nicely with <code>squeeze_me</code>:</p><pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_struct.mat’, struct_as_record=False, squeeze_me=True)&gt;&gt;&gt; oct_struct = mat_contents[’my_struct’]&gt;&gt;&gt; oct_struct.shape # but no - it’s a scalarTraceback (most recent call last):File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;AttributeError: ’mat_struct’ object has no attribute ’shape’&gt;&gt;&gt; type(oct_struct)&lt;class ’scipy.io.matlab.mio5_params.mat_struct’&gt;&gt;&gt;&gt; oct_struct.field1    1.0Traceback (most recent call last):File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;AttributeError: ’mat_struct’ object has no attribute ’shape’</code></pre><p>Saving struct arrays can be done in various ways. One simple method is to use <code>dicts</code>:</p><pre><code>&gt;&gt;&gt; a_dict = {’field1’: 0.5, ’field2’: ’a string’}&gt;&gt;&gt; sio.savemat(’saved_struct.mat’, {’a_dict’: a_dict})loaded as:octave:21&gt; load saved_structoctave:22&gt; a_dicta_dict =    scalar structure containing the fields:        field2 = a string        field1 = 0.50000</code></pre><p>You can also save structs back again to MATLAB (or Octave in our case) like this:</p><pre><code>&gt;&gt;&gt; dt = [(’f1’, ’f8’), (’f2’, ’S10’)]&gt;&gt;&gt; arr = np.zeros((2,), dtype=dt)&gt;&gt;&gt; arrarray([(0.0, ’’), (0.0, ’’)],        dtype=[(’f1’, ’&lt;f8’), (’f2’, ’S10’)])&gt;&gt;&gt; arr[0][’f1’] = 0.5&gt;&gt;&gt; arr[0][’f2’] = ’python’&gt;&gt;&gt; arr[1][’f1’] = 99&gt;&gt;&gt; arr[1][’f2’] = ’not perl’&gt;&gt;&gt; sio.savemat(’np_struct_arr.mat’, {’arr’: arr})</code></pre><h2 id="MATLAB-cell-arrays"><a href="#MATLAB-cell-arrays" class="headerlink" title="MATLAB cell arrays"></a>MATLAB cell arrays</h2><p>Cell arrays in MATLAB are rather like python <code>lists</code>, in the sense that the elements in the arrays can contain any type of MATLAB object. In fact they are most similar to <code>numpy object arrays</code>, and that is how we load them into numpy.</p><pre><code>octave:14&gt; my_cells = {1, [2, 3]}my_cells ={    [1,1] = 1    [1,2] =        2 3}octave:15&gt; save -6 octave_cells.mat my_cells</code></pre><p>Back to Python:</p><pre><code>&gt;&gt;&gt; mat_contents = sio.loadmat(’octave_cells.mat’)&gt;&gt;&gt; oct_cells = mat_contents[’my_cells’]&gt;&gt;&gt; print(oct_cells.dtype)object&gt;&gt;&gt; val = oct_cells[0,0]&gt;&gt;&gt; valarray([[ 1.]])&gt;&gt;&gt; print(val.dtype)float64</code></pre><p>Saving to a MATLAB cell array just involves making a numpy object array:</p><pre><code>&gt;&gt;&gt; obj_arr = np.zeros((2,), dtype=np.object)&gt;&gt;&gt; obj_arr[0] = 1&gt;&gt;&gt; obj_arr[1] = ’a string’&gt;&gt;&gt; obj_arrarray([1, ’a string’], dtype=object)&gt;&gt;&gt; sio.savemat(’np_cells.mat’, {’obj_arr’:obj_arr})octave:16&gt; load np_cells.matoctave:17&gt; obj_arrobj_arr ={    [1,1] = 1    [2,1] = a string}</code></pre><h1 id="IDL-files"><a href="#IDL-files" class="headerlink" title="IDL files"></a>IDL files</h1><p>Read an IDL .sav file :Parameters: file_name : str Name of the IDL save file.</p><pre><code>readsav(file_name[, idict, python_dict, ...]) </code></pre><h1 id="Matrix-Market-files"><a href="#Matrix-Market-files" class="headerlink" title="Matrix Market files"></a>Matrix Market files</h1><p>Queries the contents of the Matrix Market file ‘filename’ to extract size and storage</p><pre><code>mminfo(source) </code></pre><p>Reads the contents of a Matrix Market file ‘filename’ into a matrix.</p><pre><code>mmread(source)</code></pre><p>Writes the sparse or dense array a to a Matrix Market formatted file.</p><pre><code>mmwrite(target, a[, comment, field, precision]) </code></pre><h1 id="Wav-sound-files-scipy-io-wavfile"><a href="#Wav-sound-files-scipy-io-wavfile" class="headerlink" title="Wav sound files (scipy.io.wavfile)"></a>Wav sound files (scipy.io.wavfile)</h1><p>Return the sample rate (in samples/sec) and data from a WAV file :Parameters: filename : string or ope</p><pre><code>read(filename[, mmap])</code></pre><p>Write a numpy array as a WAV file :Parameters: filename : string or open file handle Output wav file ra</p><pre><code>write(filename, rate, data) </code></pre><h1 id="Arff-files-scipy-io-arff"><a href="#Arff-files-scipy-io-arff" class="headerlink" title="Arff files (scipy.io.arff)"></a>Arff files (scipy.io.arff)</h1><p>Module to read ARFF files, which are the standard data format for WEKA.<br>ARFF is a text file format which support numerical, string and data values. The format can also represent missing data and sparse data.<br>See the WEKA website for more details about arff format and available datasets.</p><h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><pre><code>&gt;&gt;&gt; from scipy.io import arff&gt;&gt;&gt; from cStringIO import StringIO&gt;&gt;&gt; content = &quot;&quot;&quot;... @relation foo... @attribute width numeric... @attribute height numeric... @attribute color {red,green,blue,yellow,black}... @data... 5.0,3.25,blue... 4.5,3.75,green... 3.0,4.00,red... &quot;&quot;&quot;&gt;&gt;&gt; f = StringIO(content)&gt;&gt;&gt; data, meta = arff.loadarff(f)&gt;&gt;&gt; dataarray([(5.0, 3.25, ’blue’), (4.5, 3.75, ’green’), (3.0, 4.0, ’red’)],        dtype=[(’width’, ’&lt;f8’), (’height’, ’&lt;f8’), (’color’, ’|S6’)])&gt;&gt;&gt; metaDataset: foo        width’s type is numeric        height’s type is numeric        color’s type is nominal, range is (’red’, ’green’, ’blue’, ’yellow’, ’black’)</code></pre><p>Read an arff file.</p><pre><code>loadarff(f) </code></pre><h1 id="Netcdf-scipy-io-netcdf"><a href="#Netcdf-scipy-io-netcdf" class="headerlink" title="Netcdf (scipy.io.netcdf)"></a>Netcdf (scipy.io.netcdf)</h1><p>A file object for NetCDF data.</p><pre><code>netcdf_file(filename[, mode, mmap, version]) </code></pre><p>Allows reading of NetCDF files (version of pupynere package)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Matrix-Objects&quot;&gt;&lt;a href=&quot;#Matrix-Objects&quot; class=&quot;headerlink&quot; title=&quot;Matrix Objects&quot;&gt;&lt;/a&gt;Matrix Objects&lt;/h2&gt;&lt;p&gt;出自1.6.2即隶属Arrary Objec
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="python" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="library" scheme="http://yoursite.com/tags/library/"/>
+    
+      <category term="scipy" scheme="http://yoursite.com/tags/scipy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pywin32</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/python/win32/"/>
+    <id>http://yoursite.com/wiki/开源库/python/win32/</id>
+    <published>2019-04-23T14:57:49.000Z</published>
+    <updated>2019-08-06T15:20:43.933Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="pywin32"><a href="#pywin32" class="headerlink" title="pywin32"></a>pywin32</h2><p><a href="http://stackoverflow.com/questions/14913607/how-to-install-win32com-module-in-a-virtualenv/34197968" rel="external nofollow noopener noreferrer" target="_blank"><code>pypiwin32</code></a></p><p>包含<code>win32com</code></p><p><a href="https://github.com/mhammond/pywin32" rel="external nofollow noopener noreferrer" target="_blank">github</a></p><h2 id="wmi"><a href="#wmi" class="headerlink" title="wmi"></a>wmi</h2><p>参考<a href="https://docs.microsoft.com/en-us/windows/desktop/wmisdk/scripting-api-for-wmi" rel="external nofollow noopener noreferrer" target="_blank">msdn</a></p><ul><li><a href="https://www.blog.pythonlibrary.org/2010/10/03/how-to-find-and-list-all-running-processes-with-python/" rel="external nofollow noopener noreferrer" target="_blank">list-all-running-processes</a></li><li><a href="python.jobbole.com/86349">wmi教程</a></li><li><a href="https://stackoverflow.com/questions/1632234/list-running-processes-on-64-bit-windows" rel="external nofollow noopener noreferrer" target="_blank"><code>wmi</code>库</a></li><li><a href="http://timgolden.me.uk/python/wmi/index.html" rel="external nofollow noopener noreferrer" target="_blank"><code>wmi</code>库示例</a></li><li><a href="https://blog.csdn.net/shellching/article/details/16983957" rel="external nofollow noopener noreferrer" target="_blank"><code>WinMgmts:</code></a></li><li><a href="https://www.quora.com/Using-Python-how-do-I-list-all-running-tasks-in-Windows" rel="external nofollow noopener noreferrer" target="_blank"><code>win32com</code></a></li><li><a href="https://docs.microsoft.com/zh-cn/windows/desktop/WmiSdk/retrieving-raw-and-formatted-performance-data" rel="external nofollow noopener noreferrer" target="_blank"><code>Win32_PerfFormattedData</code></a></li></ul><h2 id="pdh"><a href="#pdh" class="headerlink" title="pdh"></a>pdh</h2><ul><li>参考<a href="https://docs.microsoft.com/en-us/windows/desktop/perfctrs/examples" rel="external nofollow noopener noreferrer" target="_blank">msdn</a></li><li><a href="http://code.activestate.com/recipes/303339/" rel="external nofollow noopener noreferrer" target="_blank"><code>win32pdh</code></a></li><li><a href="https://www.programcreek.com/python/example/51185/win32pdh.MakeCounterPath" rel="external nofollow noopener noreferrer" target="_blank">示例</a></li></ul><h2 id="ctyps"><a href="#ctyps" class="headerlink" title="ctyps"></a>ctyps</h2><p>配合<code>windll.psapi</code>和<code>windll.kernel32</code></p><p><a href="https://www.codeproject.com/Questions/150419/getting-process-information-on-windows-Python" rel="external nofollow noopener noreferrer" target="_blank">示例</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;pywin32&quot;&gt;&lt;a href=&quot;#pywin32&quot; class=&quot;headerlink&quot; title=&quot;pywin32&quot;&gt;&lt;/a&gt;pywin32&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/149136
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="python" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="pywin32" scheme="http://yoursite.com/tags/pywin32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pugiXML</title>
+    <link href="http://yoursite.com/wiki/%E5%BC%80%E6%BA%90%E5%BA%93/cpp/pugiXML/"/>
+    <id>http://yoursite.com/wiki/开源库/cpp/pugiXML/</id>
+    <published>2019-04-23T14:15:58.000Z</published>
+    <updated>2019-08-06T15:20:43.929Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ul><li><a href="http://www.gerald-fahrnholz.eu/sw/DocGenerated/HowToUse/html/group___grp_pugi_xml_example_cpp_file.html" rel="external nofollow noopener noreferrer" target="_blank">生成全新的</a></li><li><a href="https://github.com/zeux/pugixml" rel="external nofollow noopener noreferrer" target="_blank">github</a></li><li><a href="https://pugixml.org/docs/quickstart.html" rel="external nofollow noopener noreferrer" target="_blank">官网</a></li><li><a href="https://stackoverflow.com/questions/17168558/build-an-xml-tree-from-scratch-pugixml-c/17184067" rel="external nofollow noopener noreferrer" target="_blank">1</a></li><li><a href="https://pugixml.org/docs/samples/save_custom_writer.cpp" rel="external nofollow noopener noreferrer" target="_blank">转成string</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.gerald-fahrnholz.eu/sw/DocGenerated/HowToUse
+      
+    
+    </summary>
+    
+      <category term="开源库" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/"/>
+    
+      <category term="cpp" scheme="http://yoursite.com/categories/%E5%BC%80%E6%BA%90%E5%BA%93/cpp/"/>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="pugiXML" scheme="http://yoursite.com/tags/pugiXML/"/>
+    
+      <category term="xml" scheme="http://yoursite.com/tags/xml/"/>
+    
+  </entry>
+  
+</feed>

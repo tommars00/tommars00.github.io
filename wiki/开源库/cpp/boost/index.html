@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>boost | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="C++,boost">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="安装官方帮助文档github官方帮助文档编译要求 clang123$ ./bootstrap --with-toolset=clang$ ./b2 clean$ ./b2 toolset=clang cxxflags=&amp;quot;-stdlib=libc++&amp;quot; linkflags=&amp;quot;-stdlib=libc++&amp;quot; 12brew install boost --c++1">
+<meta name="keywords" content="C++,boost">
+<meta property="og:type" content="article">
+<meta property="og:title" content="boost">
+<meta property="og:url" content="http://yoursite.com/wiki/开源库/cpp/boost/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="安装官方帮助文档github官方帮助文档编译要求 clang123$ ./bootstrap --with-toolset=clang$ ./b2 clean$ ./b2 toolset=clang cxxflags=&amp;quot;-stdlib=libc++&amp;quot; linkflags=&amp;quot;-stdlib=libc++&amp;quot; 12brew install boost --c++1">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="boost">
+<meta name="twitter:description" content="安装官方帮助文档github官方帮助文档编译要求 clang123$ ./bootstrap --with-toolset=clang$ ./b2 clean$ ./b2 toolset=clang cxxflags=&amp;quot;-stdlib=libc++&amp;quot; linkflags=&amp;quot;-stdlib=libc++&amp;quot; 12brew install boost --c++1">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file active"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-开源库/cpp/boost" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/开源库/">开源库</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/开源库/cpp/">cpp</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/C/">C++</a>, <a class="tag-link" href="/tags/boost/">boost</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/开源库/cpp/boost/">
+            <time datetime="2018-12-22T03:15:58.000Z" itemprop="datePublished">2018-12-22</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/开源库/cpp/boost.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/开源库/cpp/boost.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/开源库/cpp/boost.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            boost
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#clang"><span class="toc-number">1.1.</span> <span class="toc-text">clang</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综述"><span class="toc-number">2.</span> <span class="toc-text">综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#log"><span class="toc-number">3.</span> <span class="toc-text">log</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#backend"><span class="toc-number">3.1.</span> <span class="toc-text">backend</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">3.2.</span> <span class="toc-text">概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#asio"><span class="toc-number">4.</span> <span class="toc-text">asio</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">4.1.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asio综述"><span class="toc-number">4.2.</span> <span class="toc-text">asio综述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#buffer"><span class="toc-number">4.3.</span> <span class="toc-text">buffer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#async"><span class="toc-number">4.4.</span> <span class="toc-text">async</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shutdown"><span class="toc-number">4.5.</span> <span class="toc-text">shutdown</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与log配合"><span class="toc-number">4.6.</span> <span class="toc-text">与log配合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asio与windows-h冲突解决"><span class="toc-number">4.7.</span> <span class="toc-text">asio与windows.h冲突解决</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#process"><span class="toc-number">5.</span> <span class="toc-text">process</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#boost-filesystem"><span class="toc-number">6.</span> <span class="toc-text">boost::filesystem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#boost-property-tree"><span class="toc-number">7.</span> <span class="toc-text">boost::property_tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#format"><span class="toc-number">8.</span> <span class="toc-text">format</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#thread-future"><span class="toc-number">9.</span> <span class="toc-text">thread, future</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#thread-pool"><span class="toc-number">9.1.</span> <span class="toc-text">thread pool</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#archive"><span class="toc-number">10.</span> <span class="toc-text">archive</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#base64"><span class="toc-number">10.1.</span> <span class="toc-text">base64</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python"><span class="toc-number">11.</span> <span class="toc-text">python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#function"><span class="toc-number">12.</span> <span class="toc-text">function</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bind"><span class="toc-number">12.1.</span> <span class="toc-text">bind</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#boost-arrary"><span class="toc-number">13.</span> <span class="toc-text">boost::arrary</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="https://github.com/boostorg/boost/wiki/Getting-Started%3A-Overview" rel="external nofollow noopener noreferrer" target="_blank">官方帮助文档github</a><br><a href="https://www.boost.org/doc/libs/1_69_0/more/getting_started/unix-variants.html" rel="external nofollow noopener noreferrer" target="_blank">官方帮助文档</a><br><a href="https://www.boost.org/doc/libs/1_69_0/libs/log/doc/html/log/installation.html" rel="external nofollow noopener noreferrer" target="_blank">编译要求</a></p>
+<h3 id="clang"><a href="#clang" class="headerlink" title="clang"></a>clang</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ./bootstrap --with-toolset=clang</span><br><span class="line">$ ./b2 clean</span><br><span class="line">$ ./b2 toolset=clang cxxflags=&quot;-stdlib=libc++&quot; linkflags=&quot;-stdlib=libc++&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install boost --c++11</span><br><span class="line">brew info boost</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install libboost-dev</span><br></pre></td></tr></table></figure>
+<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><ul>
+<li><a href="https://www.boost.org/doc/libs/1_69_0/" rel="external nofollow noopener noreferrer" target="_blank">官方文档</a></li>
+<li><a href="http://charette.no-ip.com:81/programming/doxygen/boost/attributes_2named__scope_8hpp.html" rel="external nofollow noopener noreferrer" target="_blank"><code>boost::log</code>结构</a></li>
+</ul>
+<h2 id="log"><a href="#log" class="headerlink" title="log"></a>log</h2><ul>
+<li><a href="https://theboostcpplibraries.com/boost.log" rel="external nofollow noopener noreferrer" target="_blank">很棒的10个例子虽然有些过时</a></li>
+<li><a href="https://blog.csdn.net/csfreebird/article/details/20213349" rel="external nofollow noopener noreferrer" target="_blank">架构研究</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/index.html" rel="external nofollow noopener noreferrer" target="_blank">主页</a></li>
+<li><a href="https://blog.csdn.net/s_lisheng/article/details/73850608" rel="external nofollow noopener noreferrer" target="_blank">学习使用</a></li>
+<li><a href="http://sophie.zarb.org/distrib/Fedora/20/x86_64/by-pkgid/875ec90536d12b055fdbc9a697ef0042/files/1301" rel="external nofollow noopener noreferrer" target="_blank">example</a></li>
+<li><a href="https://code.woboq.org/boost/boost/libs/log/example/advanced_usage/main.cpp.html" rel="external nofollow noopener noreferrer" target="_blank">example2</a></li>
+<li><a href="https://my.oschina.net/haos/blog/262662" rel="external nofollow noopener noreferrer" target="_blank">example3</a></li>
+<li><a href="https://code.woboq.org/boost/boost/libs/log/example/doc/tutorial_file.cpp.html" rel="external nofollow noopener noreferrer" target="_blank">example4</a></li>
+</ul>
+<h3 id="backend"><a href="#backend" class="headerlink" title="backend"></a>backend</h3><ul>
+<li><a href="https://stackoverflow.com/questions/30958520/how-to-redirect-ostream-to-boost-log-library" rel="external nofollow noopener noreferrer" target="_blank">How to redirect ostream to Boost Log library - Stack Overflow</a></li>
+<li><a href="https://valelab4.ucsf.edu/svn/3rdpartypublic/boost-versions/boost_1_55_0/libs/log/doc/html/log/detailed/sink_backends.html" rel="external nofollow noopener noreferrer" target="_blank">Sink backends</a></li>
+<li><a href="http://gernotklingler.com/blog/simple-customized-logger-based-boost-log-v2/" rel="external nofollow noopener noreferrer" target="_blank">example</a></li>
+<li><a href="https://stackoverflow.com/questions/16102128/how-to-redirect-boost-log-to-file" rel="external nofollow noopener noreferrer" target="_blank">How to redirect Boost.Log to file</a></li>
+<li><a href="https://stackoverflow.com/questions/21288016/how-to-setup-boost-log-to-limit-the-number-of-log-files" rel="external nofollow noopener noreferrer" target="_blank">file number</a></li>
+<li><a href="https://stackoverflow.com/questions/8418917/boost-log-how-to-configure-a-text-sink-backend-to-append-to-rotated-files" rel="external nofollow noopener noreferrer" target="_blank">Boost.Log - how to configure a text sink backend to append to …</a></li>
+<li><a href="http://stackoverflow.com/questions/24170577/simultaneous-logging-to-console-and-file-using-boost/24259616" rel="external nofollow noopener noreferrer" target="_blank">simulaneous output</a></li>
+<li><a href="https://stackoverflow.com/questions/34594709/boost-logging-in-real-time" rel="external nofollow noopener noreferrer" target="_blank">immediately</a></li>
+<li><a href="http://stackoverflow.com/questions/21380530/boost-log-to-file-and-stdout-simultaneously?ref=driverlayer.com/web" rel="external nofollow noopener noreferrer" target="_blank">boost log file stdout</a></li>
+<li><a href="https://fossies.org/linux/boost/libs/log/example/basic_usage/main.cpp" rel="external nofollow noopener noreferrer" target="_blank">console file log add</a></li>
+<li><a href="https://gist.github.com/jiahaowu/34950d8fa49ab2dc63d30e2d3a6a1666" rel="external nofollow noopener noreferrer" target="_blank">console file log add2</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/tutorial/sinks.html" rel="external nofollow noopener noreferrer" target="_blank">Setting up sinks</a></li>
+<li><a href="http://boost-log.sourceforge.net/libs/log1/doc/html/log/detailed/sink_backends.html" rel="external nofollow noopener noreferrer" target="_blank">sink backends</a></li>
+</ul>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><a href="https://stackoverflow.com/questions/29785243/c-how-to-set-a-severity-filter-on-a-boost-global-logger" rel="external nofollow noopener noreferrer" target="_blank">severity filter</a></li>
+<li><a href="https://sourceforge.net/p/boost-log/discussion/710021/thread/1fb9819c/?limit=25" rel="external nofollow noopener noreferrer" target="_blank">severity</a></li>
+<li><a href="https://stackoverflow.com/questions/19317609/using-format-syntax-in-boostlog" rel="external nofollow noopener noreferrer" target="_blank">expr::format_date_time</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/expressions.html#header.boost.log.expressions.keyword_hpp" rel="external nofollow noopener noreferrer" target="_blank"><code>expressions.keyword</code></a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/detailed/expressions.html#log.detailed.expressions.attr_keywords" rel="external nofollow noopener noreferrer" target="_blank"><code>expressions.attr_keywords</code></a></li>
+<li><a href="https://www.boost.org/doc/libs/1_54_0/libs/log/doc/html/log/detailed/expressions.html#log.detailed.expressions.formatters.named_scope" rel="external nofollow noopener noreferrer" target="_blank"><code>expressions.formatters.named_scope</code></a></li>
+<li><a href="https://www.boost.org/doc/libs/1_58_0/boost/log/expressions/formatters/named_scope.hpp" rel="external nofollow noopener noreferrer" target="_blank">name scope</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/tutorial/formatters.html" rel="external nofollow noopener noreferrer" target="_blank"><code>formatter</code></a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/tutorial/trivial_filtering.html" rel="external nofollow noopener noreferrer" target="_blank">trivial_filtering</a></li>
+<li><a href="https://stackoverflow.com/questions/37012651/boost-logging-filter-by-named-scope" rel="external nofollow noopener noreferrer" target="_blank">filter name scope</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/tutorial/advanced_filtering.html" rel="external nofollow noopener noreferrer" target="_blank"><code>advanced_filtering</code></a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/tutorial/sources.html" rel="external nofollow noopener noreferrer" target="_blank"><code>source</code>(tutorial)</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/detailed/sources.html" rel="external nofollow noopener noreferrer" target="_blank"><code>source</code>(detail)</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/tutorial/attributes.html" rel="external nofollow noopener noreferrer" target="_blank"><code>attributes</code>(tutorial)</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/detailed/attributes.html" rel="external nofollow noopener noreferrer" target="_blank"><code>attributes</code>(detail)</a></li>
+<li><a href="https://stackoverflow.com/questions/35895199/boost-log-and-severity-local-attributes" rel="external nofollow noopener noreferrer" target="_blank">severity / local attributes</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_55_0/libs/log/doc/html/log/detailed/attributes.html#log.detailed.attributes.named_scope" rel="external nofollow noopener noreferrer" target="_blank"><code>attributes.named_scope</code></a></li>
+<li><a href="https://stackoverflow.com/questions/24750218/boost-log-to-print-source-code-file-name-and-line-number" rel="external nofollow noopener noreferrer" target="_blank">filename attribute</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/tutorial.html#log.tutorial.trivial" rel="external nofollow noopener noreferrer" target="_blank"><code>trivial</code>(tutorial)</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/detailed/utilities.html#log.detailed.utilities.setup.convenience" rel="external nofollow noopener noreferrer" target="_blank"><code>utilities.setup</code></a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/detailed/utilities.html#log.detailed.utilities.setup.filter_formatter" rel="external nofollow noopener noreferrer" target="_blank"><code>utilities.setup.filter_formatter</code></a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/boost/log/add_common_attributes.html" rel="external nofollow noopener noreferrer" target="_blank"><code>utilities.setup</code>(add_common_attributes)</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_69_0/libs/log/doc/html/log/changelog.html" rel="external nofollow noopener noreferrer" target="_blank">版本变化</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_63_0/libs/log/doc/html/log/tutorial/wide_char.html" rel="external nofollow noopener noreferrer" target="_blank">宽字符支持</a></li>
+</ul>
+<h2 id="asio"><a href="#asio" class="headerlink" title="asio"></a><code>asio</code></h2><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><a href="https://github.com/nodejs/http-parser" rel="external nofollow noopener noreferrer" target="_blank">http_parser</a></li>
+<li><a href="https://github.com/facebook/proxygen" rel="external nofollow noopener noreferrer" target="_blank">proxygen</a>是facebook出品，用到了上面的解析库。<code>proxygen/lib/http/codec/HTTP1xCodec.cpp</code>是对请求和响应报文的解析，可以看下他们如何实现的。其实本质就是对RFC协议内容的具体规定一点点实现。</li>
+<li><a href="https://stackoverflow.com/questions/39478239/boost-log-cut-long-log-messages" rel="external nofollow noopener noreferrer" target="_blank">切去过长日志</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_70_0/boost/asio/error.hpp" rel="external nofollow noopener noreferrer" target="_blank"><code>error.hpp</code></a></li>
+</ul>
+<h3 id="asio综述"><a href="#asio综述" class="headerlink" title="asio综述"></a><code>asio</code>综述</h3><ol>
+<li><a href="https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/overview.html" rel="external nofollow noopener noreferrer" target="_blank">综述</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_69_0/doc/html/boost_asio/examples.html" rel="external nofollow noopener noreferrer" target="_blank">c03, c11, c17三种例子</a></li>
+<li>boost的asio还自带支持ssl，可以用来实现ssh/sftp</li>
+<li>异步模型。<a href="https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/overview/core/async.html" rel="external nofollow noopener noreferrer" target="_blank">The Proactor Design Pattern: Concurrency Without Threads</a>, </li>
+<li><a href="https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/overview/core/threads.html" rel="external nofollow noopener noreferrer" target="_blank">线程模型</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/overview/core/basics.html" rel="external nofollow noopener noreferrer" target="_blank">哲学Anatomy</a></li>
+<li>用socket-stream来发http请求。<a href="https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/overview/networking/iostreams.html" rel="external nofollow noopener noreferrer" target="_blank">例子</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio/reference/buffer.html" rel="external nofollow noopener noreferrer" target="_blank"><code>buffer</code></a></li>
+<li><a href="https://github.com/alexott/boost-asio-proxy" rel="external nofollow noopener noreferrer" target="_blank">实现proxy功能</a></li>
+<li><a href="http://cn.voidcc.com/question/p-doqgljpm-px.html" rel="external nofollow noopener noreferrer" target="_blank">asio 阻塞读是否优先</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_39_0/doc/html/boost_asio/example/ssl/server.cpp" rel="external nofollow noopener noreferrer" target="_blank">asio https server</a></li>
+<li><a href="https://www.gamedev.net/blogs/entry/2249317-a-guide-to-getting-started-with-boostasio/" rel="external nofollow noopener noreferrer" target="_blank">asio guide</a></li>
+</ol>
+<h3 id="buffer"><a href="#buffer" class="headerlink" title="buffer"></a><code>buffer</code></h3><ol>
+<li><a href="https://stackoverflow.com/questions/2811006/what-is-a-good-buffer-size-for-socket-programming" rel="external nofollow noopener noreferrer" target="_blank">buffer大小多少合适</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_70_0/doc/html/boost_asio/reference/streambuf.html" rel="external nofollow noopener noreferrer" target="_blank"><code>basic_streambuf</code></a></li>
+<li><a href="http://landcareweb.com/questions/36489/shi-yong-streambufzuo-wei-huan-chong-qu-jin-xing-boost-asiodu-xie" rel="external nofollow noopener noreferrer" target="_blank">streambuf作为缓冲区</a></li>
+<li><a href="https://stackoverflow.com/questions/7044216/difference-between-read-some-write-some-and-receive-send" rel="external nofollow noopener noreferrer" target="_blank"><code>read/write_some</code> vs <code>receive/send</code></a></li>
+<li><a href="https://stackoverflow.com/questions/15060671/boostasiobuffer-getting-the-buffer-size-and-preventing-buffer-overflow" rel="external nofollow noopener noreferrer" target="_blank">boost::asio::buffer: Getting the buffer size and preventing buffer …</a></li>
+<li><a href="https://stackoverflow.com/questions/18577259/boost-asio-udp-async-read-from-buffersize" rel="external nofollow noopener noreferrer" target="_blank">buffer_size</a></li>
+<li><a href="https://stackoverflow.com/questions/43863934/optimal-buffer-size-with-boostasio-in-windows/43869441" rel="external nofollow noopener noreferrer" target="_blank">Optimal buffer size with boost::asio in Windows</a></li>
+<li><a href="https://stackoverflow.com/questions/28478278/working-with-boostasiostreambuf" rel="external nofollow noopener noreferrer" target="_blank">Working with boost::asio::streambuf</a></li>
+<li><a href="https://www.jianshu.com/p/c33e7265acd8" rel="external nofollow noopener noreferrer" target="_blank">发送接收缓存asio::buffer及asio::streambuf</a></li>
+<li><a href="https://stackoverflow.com/questions/10764986/use-streambuf-as-buffer-for-boost-asio-read-and-write" rel="external nofollow noopener noreferrer" target="_blank">Use streambuf as buffer for boost asio read and write</a></li>
+<li><a href="https://stackoverflow.com/questions/15060671/boostasiobuffer-getting-the-buffer-size-and-preventing-buffer-overflow" rel="external nofollow noopener noreferrer" target="_blank">boost::asio::buffer: Getting the buffer size and preventing buffer</a></li>
+</ol>
+<ul>
+<li><a href="https://github.com/snaewe/asio-samples/blob/master/include/ma/cyclic_buffer.hpp" rel="external nofollow noopener noreferrer" target="_blank">cyclic buffer</a></li>
+<li><a href="https://gist.github.com/luca3m/81c1ea252e77083233fb" rel="external nofollow noopener noreferrer" target="_blank">buffer read</a></li>
+</ul>
+<h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><ol>
+<li><a href="http://charette.no-ip.com:81/programming/doxygen/boost/group__async__read.html" rel="external nofollow noopener noreferrer" target="_blank"><code>async_read</code></a></li>
+<li><a href="https://www.boost.org/doc/libs/1_53_0/doc/html/boost_asio/example/http/client/async_client.cpp" rel="external nofollow noopener noreferrer" target="_blank">example</a></li>
+<li><a href="https://stackoverflow.com/questions/11014918/boostasio-infinite-loop" rel="external nofollow noopener noreferrer" target="_blank">infinite loop</a></li>
+</ol>
+<ul>
+<li><a href="https://stackoverflow.com/questions/7700310/eof-with-boostasioread" rel="external nofollow noopener noreferrer" target="_blank">EOF asio::read</a></li>
+<li><a href="https://stackoverflow.com/questions/7700310/eof-with-boostasioread" rel="external nofollow noopener noreferrer" target="_blank">EOF</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_52_0/boost/asio/error.hpp" rel="external nofollow noopener noreferrer" target="_blank">error list</a></li>
+</ul>
+<h3 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h3><ul>
+<li><a href="https://stackoverflow.com/questions/1993216/boostasio-cleanly-disconnecting/1993570" rel="external nofollow noopener noreferrer" target="_blank">asio shutdown vs close</a></li>
+<li><a href="https://ask.helplib.com/c++/post_2310016" rel="external nofollow noopener noreferrer" target="_blank">asio ssl shutdown</a></li>
+<li><a href="https://bbs.avplayer.org/t/asio-socket/754" rel="external nofollow noopener noreferrer" target="_blank">asio shutdown</a></li>
+</ul>
+<h3 id="与log配合"><a href="#与log配合" class="headerlink" title="与log配合"></a>与<code>log</code>配合</h3><p>一旦和log库一起使用，msvc就必须要用(PreprocessorDefinitions)指定版本(<code>WINVER=0x0A00;_WIN32_WINNT=0x0A00;</code>)，否则就会报log的编译错误<a href="https://stackoverflow.com/questions/35910432/lnk2038-mismatch-detected-for-boost-log-abi-value-v2s-mt-nt5-doesnt-match/36306048" rel="external nofollow noopener noreferrer" target="_blank">LNK2038: mismatch detected for ‘boost_log_abi’: value ‘v2s_mt_nt5’ doesn’t match value ‘v2s_mt_nt6’Ask Question</a>。</p>
+<p><a href="https://docs.microsoft.com/en-us/cpp/porting/modifying-winver-and-win32-winnt?view=vs-2019" rel="external nofollow noopener noreferrer" target="_blank">Modifying WINVER and _WIN32_WINNT</a></p>
+<p><a href="https://www.boost.org/doc/libs/1_62_0/boost/log/detail/config.hpp" rel="external nofollow noopener noreferrer" target="_blank">MSC_VER</a></p>
+<p><a href="https://stackoverflow.com/questions/41376557/win32-winnt-winver-macro-redefinition" rel="external nofollow noopener noreferrer" target="_blank">_WIN32_WINNT’ / ‘WINVER’ : macro redefinition</a><br>这个问题主要是和<code>targetver.h</code>与<code>sdkddkver.h</code>有关。</p>
+<h3 id="asio与windows-h冲突解决"><a href="#asio与windows-h冲突解决" class="headerlink" title="asio与windows.h冲突解决"></a><code>asio</code>与<code>windows.h</code>冲突解决</h3><p>会与windows自带的socket库冲突，往往会报很多socket函数冲突什么的，只需要保证<code>boost</code>在<code>windows.h</code>之前就可以</p>
+<h2 id="process"><a href="#process" class="headerlink" title="process"></a><code>process</code></h2><p>用来执行一些cmd，感觉用py或ps1或sh更好，但也能做。</p>
+<p>好像对编译器版本有要求，即至少C11以上，我记得是。</p>
+<ul>
+<li><a href="https://www.boost.org/doc/libs/1_65_1/doc/html/process.html" rel="external nofollow noopener noreferrer" target="_blank">文档</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_65_1/doc/html/boost_process/tutorial.html" rel="external nofollow noopener noreferrer" target="_blank">异步执行</a></li>
+</ul>
+<h2 id="boost-filesystem"><a href="#boost-filesystem" class="headerlink" title="boost::filesystem"></a><code>boost::filesystem</code></h2><p><a href="en.cppreference.com/w/cpp/filesystem">已经被c17招安了</a></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/51949/how-to-get-file-extension-from-string-in-c" rel="external nofollow noopener noreferrer" target="_blank">get file extension from string</a></li>
+<li><a href="https://stackoverflow.com/questions/829468/how-to-perform-boostfilesystem-copy-file-with-overwrite" rel="external nofollow noopener noreferrer" target="_blank">copy_file</a></li>
+<li><a href="https://stackoverflow.com/questions/21164993/how-does-boostfilesystemremove-allpath-work" rel="external nofollow noopener noreferrer" target="_blank">delete file</a></li>
+<li><a href="https://stackoverflow.com/questions/6968268/how-to-save-file-into-possibly-new-directory" rel="external nofollow noopener noreferrer" target="_blank">mkdir</a></li>
+<li><a href="https://stackoverflow.com/questions/959837/how-can-i-know-the-type-of-a-file-using-boost-filesystem/22241879" rel="external nofollow noopener noreferrer" target="_blank">file extension</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_70_0/libs/filesystem/doc/portability_guide.htm" rel="external nofollow noopener noreferrer" target="_blank">命名检查</a></li>
+<li><a href="https://stackoverflow.com/questions/10426671/how-to-check-if-path-is-valid-in-boostfilesystem" rel="external nofollow noopener noreferrer" target="_blank">文件名检查</a></li>
+</ul>
+<h2 id="boost-property-tree"><a href="#boost-property-tree" class="headerlink" title="boost::property_tree"></a><code>boost::property_tree</code></h2><ul>
+<li><a href="https://stackoverflow.com/questions/6175502/how-to-parse-ini-file-with-boost" rel="external nofollow noopener noreferrer" target="_blank">可以解析xml、ini等文件</a></li>
+<li><a href="https://stackoverflow.com/questions/16135285/iterate-over-ini-file-on-c-probably-using-boostproperty-treeptree" rel="external nofollow noopener noreferrer" target="_blank">可以解析ini文件</a></li>
+<li><a href="https://stackoverflow.com/questions/1042855/using-boost-to-read-and-write-xml-files" rel="external nofollow noopener noreferrer" target="_blank">xml文件</a></li>
+<li><a href="http://boost-spirit.com/repository/applications/show_contents.php" rel="external nofollow noopener noreferrer" target="_blank">其他文本解析</a></li>
+<li><a href="https://stackoverflow.com/questions/4586768/how-to-iterate-a-boost-property-tree" rel="external nofollow noopener noreferrer" target="_blank">iterate boost property_tree</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_41_0/doc/html/boost_propertytree/accessing.html" rel="external nofollow noopener noreferrer" target="_blank">access data in property tree</a></li>
+<li><a href="https://stackoverflow.com/questions/6175502/how-to-parse-ini-file-with-boost" rel="external nofollow noopener noreferrer" target="_blank">boost ini file parse</a></li>
+<li><a href="https://stackoverflow.com/questions/38892457/boost-ini-parser-singleton-dll-issue" rel="external nofollow noopener noreferrer" target="_blank">Boost ini_parser - Singleton DLL issue</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_61_0/doc/html/property_tree/tutorial.html" rel="external nofollow noopener noreferrer" target="_blank">boost/property_tree</a></li>
+<li><a href="https://code.i-harness.com/zh-CN/q/5e3b0e" rel="external nofollow noopener noreferrer" target="_blank">c++ ptree用法- 如何使用Boost解析ini文件</a></li>
+<li><a href="https://en.wikipedia.org/wiki/INI_file" rel="external nofollow noopener noreferrer" target="_blank">INI file - Wikipedia</a></li>
+</ul>
+<p>注：xml可以用<a href="https://pugixml.org" rel="external nofollow noopener noreferrer" target="_blank">pugixml</a>或者TinyXml, RapidXml。且xml很需要xpath的语法，用起来才爽。<br><a href="https://pugixml.org/docs/quickstart.html" rel="external nofollow noopener noreferrer" target="_blank">pugixml示例</a></p>
+<h2 id="format"><a href="#format" class="headerlink" title="format"></a><code>format</code></h2><ul>
+<li><a href="https://studiofreya.com/cpp/boost/a-few-boostformat-examples/" rel="external nofollow noopener noreferrer" target="_blank">示例</a></li>
+<li><a href="https://studiofreya.com/cpp/boost/a-few-boostformat-examples/" rel="external nofollow noopener noreferrer" target="_blank">example</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_66_0/libs/format/" rel="external nofollow noopener noreferrer" target="_blank">doc</a></li>
+<li><a href="https://medium.com/@lijia1/stop-using-boost-format-now-731367392b62" rel="external nofollow noopener noreferrer" target="_blank">问题</a></li>
+<li><a href="https://stackoverflow.com/questions/27051585/how-to-use-boostformat-to-zeropad-a-number-where-the-number-of-decimal-places" rel="external nofollow noopener noreferrer" target="_blank">zero pad</a></li>
+<li><a href="https://stackoverflow.com/questions/4168437/boost-library-format-getting-stdstring" rel="external nofollow noopener noreferrer" target="_blank">to string</a></li>
+<li><a href="https://stackoverflow.com/questions/24364032/boostformat-hex-output" rel="external nofollow noopener noreferrer" target="_blank">hex output</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_55_0/libs/format/doc/format.html" rel="external nofollow noopener noreferrer" target="_blank">doc2</a></li>
+</ul>
+<h2 id="thread-future"><a href="#thread-future" class="headerlink" title="thread, future"></a><code>thread</code>, <code>future</code></h2><ul>
+<li><a href="https://theboostcpplibraries.com/boost.thread-futures-and-promises" rel="external nofollow noopener noreferrer" target="_blank">future &amp; promise</a></li>
+<li><a href="http://stackoverflow.com/questions/16578941/boost-async-threading/16578970" rel="external nofollow noopener noreferrer" target="_blank"><code>thread.join()</code></a></li>
+<li><a href="https://blog.csdn.net/zhh157/article/details/3208750" rel="external nofollow noopener noreferrer" target="_blank">boost::thread线程创建方式</a></li>
+<li><a href="https://www.jianshu.com/p/0b2e360243f4" rel="external nofollow noopener noreferrer" target="_blank">简介</a></li>
+</ul>
+<h3 id="thread-pool"><a href="#thread-pool" class="headerlink" title="thread pool"></a>thread pool</h3><ul>
+<li><a href="http://stackoverflow.com/questions/4084777/creating-a-thread-pool-using-boost/4085345" rel="external nofollow noopener noreferrer" target="_blank">create thread pool</a></li>
+<li><a href="https://think-async.com/Asio/Recipes" rel="external nofollow noopener noreferrer" target="_blank">think-async</a></li>
+<li><a href="https://blog.csdn.net/byxdaz/article/details/6299020" rel="external nofollow noopener noreferrer" target="_blank">线程池</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_66_0/boost/asio/thread_pool.hpp" rel="external nofollow noopener noreferrer" target="_blank"><code>thread_pool</code>官方文档</a></li>
+<li><a href="https://codeday.me/bug/20180702/187403.html" rel="external nofollow noopener noreferrer" target="_blank">boost::threadpool</a></li>
+<li><a href="https://codeday.me/bug/20171018/86927.html" rel="external nofollow noopener noreferrer" target="_blank"><code>thread_group</code>和<code>io_service</code></a></li>
+<li><a href="https://www.quora.com/Are-there-any-C++-libraries-with-simple-to-use-efficient-thread-pooling" rel="external nofollow noopener noreferrer" target="_blank">quora讨论</a></li>
+<li><a href="https://www.codeproject.com/Articles/664709/Creating-a-Work-Queue-Thread-Pool-Application-Usin" rel="external nofollow noopener noreferrer" target="_blank">Creating a Work Queue (Thread Pool)</a></li>
+<li><a href="http://progsch.net/wordpress/?p=71" rel="external nofollow noopener noreferrer" target="_blank">Boost.Threads</a></li>
+<li><a href="https://ce39906.github.io/2018/03/29/C-Thread-Pool-%E4%BD%BF%E7%94%A8%E8%A7%A3%E6%9E%90/" rel="external nofollow noopener noreferrer" target="_blank">boost::threadpool</a></li>
+</ul>
+<h2 id="archive"><a href="#archive" class="headerlink" title="archive"></a><code>archive</code></h2><h3 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h3><ul>
+<li><a href="https://stackoverflow.com/questions/7053538/how-do-i-encode-a-string-to-base64-using-only-boost" rel="external nofollow noopener noreferrer" target="_blank">encode</a></li>
+<li><a href="https://stackoverflow.com/questions/8033942/boost-base64-url-encode-decode" rel="external nofollow noopener noreferrer" target="_blank">decode or encode</a></li>
+<li><a href="https://stackoverflow.com/questions/44380979/c11-boost-how-to-base64-decode-back-to-integer-presentation" rel="external nofollow noopener noreferrer" target="_blank">decode</a></li>
+<li><a href="https://blog.csdn.net/nk_wang/article/details/50405704" rel="external nofollow noopener noreferrer" target="_blank">encode/decode</a></li>
+<li><a href="https://blog.csdn.net/morewindows/article/details/11922519" rel="external nofollow noopener noreferrer" target="_blank">encode</a></li>
+</ul>
+<p>网上的教程往往只完成了”6<-->8”的转化，但实际过程如下。</--></p>
+<ul>
+<li>encode<ul>
+<li>6-&gt;8的转化</li>
+<li>补足”=”</li>
+</ul>
+</li>
+<li>decode<ul>
+<li>移除补齐的”=”</li>
+<li>8-&gt;6的转化</li>
+</ul>
+</li>
+</ul>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p><a href="http://edyfox.codecarver.org/html/boost_python.html" rel="external nofollow noopener noreferrer" target="_blank">Boost.Python 简明教程</a></p>
+<h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><ul>
+<li><a href="https://stackoverflow.com/questions/31279373/error-c2039-result-type-is-not-a-member-of-global-namespace" rel="external nofollow noopener noreferrer" target="_blank">经常报错<code>result_type</code> is not a member of <code>global namespace</code></a></li>
+<li><a href="https://stackoverflow.com/questions/31290188" rel="external nofollow noopener noreferrer" target="_blank">经常报错<code>F</code> must be a class or namespace when followed ‘::’</a></li>
+<li><a href="http://cs.brown.edu/~jwicks/boost/libs/bind/bind.html" rel="external nofollow noopener noreferrer" target="_blank">帮助文档</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_66_0/libs/bind/doc/html/bind.html" rel="external nofollow noopener noreferrer" target="_blank">doc</a></li>
+</ul>
+<h2 id="boost-arrary"><a href="#boost-arrary" class="headerlink" title="boost::arrary"></a>boost::arrary</h2><p>这个也被c11收编</p>
+<p><a href="https://stackoverflow.com/questions/11040335/copying-boostarraychar-to-stdstring" rel="external nofollow noopener noreferrer" target="_blank">Copying <code>boost::array&lt;char&gt;</code> to <code>std::string</code></a></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/工具/Operator System/ubuntu-tool/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    ubuntu-tool
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/工具/IDE/nmake-msbuild/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">nmake-msbuild</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

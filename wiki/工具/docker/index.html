@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>docker | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="docker,工具,ubuntu">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="安装方式一https传输与CA证书 12345$ sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    software-properties-common 国内源 12345$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/u">
+<meta name="keywords" content="docker,工具,ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker">
+<meta property="og:url" content="http://yoursite.com/wiki/工具/docker/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="安装方式一https传输与CA证书 12345$ sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    software-properties-common 国内源 12345$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/u">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker">
+<meta name="twitter:description" content="安装方式一https传输与CA证书 12345$ sudo apt-get install \    apt-transport-https \    ca-certificates \    curl \    software-properties-common 国内源 12345$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/u">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file active"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-工具/docker" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/工具/">工具</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/docker/">docker</a>, <a class="tag-link" href="/tags/ubuntu/">ubuntu</a>, <a class="tag-link" href="/tags/工具/">工具</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/工具/docker/">
+            <time datetime="2017-10-06T06:54:28.000Z" itemprop="datePublished">2017-10-06</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/工具/docker.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/工具/docker.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/工具/docker.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            docker
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式一"><span class="toc-number">1.1.</span> <span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方式二"><span class="toc-number">1.2.</span> <span class="toc-text">方式二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装完后的运行"><span class="toc-number">1.3.</span> <span class="toc-text">安装完后的运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户"><span class="toc-number">1.4.</span> <span class="toc-text">用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#镜像加速"><span class="toc-number">1.5.</span> <span class="toc-text">镜像加速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#私有repository"><span class="toc-number">1.6.</span> <span class="toc-text">私有repository</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-compose"><span class="toc-number">1.7.</span> <span class="toc-text">docker-compose</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-number">2.</span> <span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#镜像Image"><span class="toc-number">2.1.</span> <span class="toc-text">镜像Image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器Container"><span class="toc-number">2.2.</span> <span class="toc-text">容器Container</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库Repository"><span class="toc-number">2.3.</span> <span class="toc-text">仓库Repository</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令技巧"><span class="toc-number">2.4.</span> <span class="toc-text">命令技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOCKERFILE尝试"><span class="toc-number">3.</span> <span class="toc-text">DOCKERFILE尝试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ubuntu的apt源"><span class="toc-number">3.1.</span> <span class="toc-text">ubuntu的apt源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题一"><span class="toc-number">3.2.</span> <span class="toc-text">问题一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尝试一：muduo"><span class="toc-number">3.3.</span> <span class="toc-text">尝试一：muduo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尝试二：hexo"><span class="toc-number">3.4.</span> <span class="toc-text">尝试二：hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尝试三：brpc"><span class="toc-number">3.5.</span> <span class="toc-text">尝试三：brpc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尝试四：网站"><span class="toc-number">3.6.</span> <span class="toc-text">尝试四：网站</span></a></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><p>https传输与CA证书</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure>
+<p>国内源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line">$ sudo add-apt-repository \</span><br><span class="line">    <span class="string">"deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \</span></span><br><span class="line"><span class="string">    <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">    stable"</span></span><br></pre></td></tr></table></figure>
+<p>官方源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">$ sudo add-apt-repository \</span><br><span class="line">   <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable"</span></span><br></pre></td></tr></table></figure>
+<p>正式安装</p>
+<p><code>sudo apt-get install docker-ce</code></p>
+<h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3><p>直接用官方脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -fsSL get.docker.com -o get-docker.sh</span><br><span class="line">$ sudo sh get-docker.sh --mirror Aliyun</span><br></pre></td></tr></table></figure>
+<h3 id="安装完后的运行"><a href="#安装完后的运行" class="headerlink" title="安装完后的运行"></a>安装完后的运行</h3><p>设为开机自启，运行服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl <span class="built_in">enable</span> docker</span><br><span class="line">$ sudo systemctl start docker</span><br><span class="line"></span><br><span class="line">$ sudo service docker start</span><br></pre></td></tr></table></figure>
+<h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><p>安装完后默认会创建用户组docker，需要把你想要的用户添加进该组，否则“权限不够”，默认只有dockerGroup的人和root有权限。</p>
+<p><code>sudo usermod -aG docker $USER</code>其中<code>$USER</code>修改为你自己的名字即可。</p>
+<p>也可以用<code>sudo usermod -aG docker $(whoami)</code></p>
+<p>然后再重新启动电脑，才能免去每次都要<code>sudo docker</code>的烦恼。不然一直报错。</p>
+<p>“Got permission denied while trying to connect to the Docker daemon socket”</p>
+<h3 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h3><p>编辑文件<code>/etc/systemd/system/multi-user.target.wants/docker.service</code></p>
+<p>找到<code>ExecStart=</code>改为<code>ExecStart=/usr/bin/dockerd --registry-mirror=https://8myepw5e.mirror.aliyuncs.com</code></p>
+<p><code>https://8myepw5e.mirror.aliyuncs.com</code>需要自己去申请加速器的链接<a href="https://cr.console.aliyun.com/#/accelerator" rel="external nofollow noopener noreferrer" target="_blank">阿里</a>。</p>
+<h3 id="私有repository"><a href="#私有repository" class="headerlink" title="私有repository"></a>私有repository</h3><p><strong>通过docker，官方registry安装</strong></p>
+<p><code>docker    run -d -p 5000:5000 registry</code></p>
+<p>装在本地<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run	-d	\</span><br><span class="line">                -p 5000:5000 \</span><br><span class="line">                -v /home/user/registry-conf:/registry-conf \</span><br><span class="line">                -e DOCKER_REGISTRY_CONFIG=/registry-conf/config.yml</span><br><span class="line">                registry</span><br></pre></td></tr></table></figure></p>
+<p>装在云端<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run \</span><br><span class="line">         -e SETTINGS_FLAVOR=s3	\</span><br><span class="line">         -e AWS_BUCKET=acme-docker	\</span><br><span class="line">         -e	STORAGE_PATH=/registry	\</span><br><span class="line">         -e	AWS_KEY=AKIAHSHB43HS3J92MXZ	\</span><br><span class="line">         -e AWS_SECRET=xdDowwlK7TJajV1Y7EoOZrmuPEJlHYcNP2k4j49T	\</span><br><span class="line">         -e	SEARCH_BACKEND=sqlalchemy	\</span><br><span class="line">         -p	5000:5000	\</span><br><span class="line">         registry</span><br></pre></td></tr></table></figure></p>
+<p><strong>通过apt，软件安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install -y build-essential python-dev libevent-dev python-pip liblzma-dev</span><br><span class="line">$ sudo pip install docker-registry</span><br></pre></td></tr></table></figure>
+<h3 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h3><p>安装docker-compose异常： Failed to connect to github-production-release-XX-.s3.amazonaws.com port 443:连接超时<br><a href="https://blog.csdn.net/farYang/article/details/76863140" rel="external nofollow noopener noreferrer" target="_blank">问题解决</a></p>
+<p>安装方法一：<code>sudo pip install -U docker-compose</code></p>
+<p>​    我在阿里云上失败了，估计和系统的py包犯冲，py包的确经常会出现这个情况。—不推荐。</p>
+<p>安装方法二：<code>curl -L https://github.com/docker/compose/releases/download/1.8.0/run.sh &gt; /usr/local/bin/docker-compose &amp;&amp; chmod +x /usr/local/bin/docker-compose</code></p>
+<p>​    本质上就是下载docker镜像，并用docker运行。———–推荐</p>
+<p>安装方法三：自己编译并运行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s``-uname-m` &gt; /usr/<span class="built_in">local</span>/bin/docker-compose &amp;&amp; sudo chmod a+x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>docker-compose的使用和docker类似</p>
+<ul>
+<li>服务(推荐！！)———-类比于“image”————–必须得先<code>up</code>，有了container，他才能start！！！<ul>
+<li>建立或重建：<code>docker-compose build</code></li>
+<li>开始：<code>docker-compose start</code></li>
+<li>重启：<code>docker-compose restart</code></li>
+<li>暂停和恢复：<code>pause</code>，<code>unpause</code></li>
+<li>停止：<code>docker-compose stop</code></li>
+</ul>
+</li>
+<li>容器<ul>
+<li>建立并运行：<code>docker-compose up</code>，加<code>-d</code>不会在宿主显示。</li>
+<li>停止并移除：<code>down</code></li>
+<li>杀死：<code>kill</code></li>
+<li>显示：<code>docker-compose ps</code></li>
+<li>显示内部：<code>logs</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="镜像Image"><a href="#镜像Image" class="headerlink" title="镜像Image"></a>镜像Image</h3><ul>
+<li><p>下载</p>
+<p><code>docker pull ubuntu:14.04</code></p>
+</li>
+<li><p>查看</p>
+<p><code>docker images</code></p>
+</li>
+<li><p>创建方式一</p>
+<p><code>docker diff &lt;容器名&gt;</code>查看改动</p>
+<p><code>docker commit [选项] &lt;容器ID或容器名&gt; [&lt;仓库名&gt;[:&lt;标签&gt;]]</code></p>
+</li>
+<li><p>创建方式二</p>
+<p><code>DOCKERFILE</code></p>
+<p><code>docker build [选项] &lt;上下文路径/URL/-&gt;</code></p>
+</li>
+<li><p>删除本地</p>
+<p><code>docker rmi [选项] &lt;镜像一&gt;[&lt;镜像二&gt;...]</code></p>
+<p>可以是<code>镜像短ID</code> 、<code>镜像长ID</code> 、<code>镜像名</code>或者<code>镜像摘要</code></p>
+</li>
+<li><p>上传镜像</p>
+<p>我本来以为上传的只是dockerfile呢，没想到是整个image这个大包，感觉有点太大了吧。好处就是<code>pull</code>下来就不需要再执行我<code>build</code>时，那个漫长过程。</p>
+<p>方法如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker tag XXX YOUR_DOCKERHUB_NAME/YYY</span><br><span class="line">docker push YOUR_DOCKERHUB_NAME/YYY</span><br></pre></td></tr></table></figure>
+<p>需要重命名成“YOUR_DOCKERHUB_NAME/YYY”才能允许上传的。</p>
+</li>
+</ul>
+<h3 id="容器Container"><a href="#容器Container" class="headerlink" title="容器Container"></a>容器Container</h3><ul>
+<li><p>创建并运行</p>
+<p><code>docker run -it --rm ubuntu:14.04 bash</code></p>
+<p><code>docker run ubuntu:14.04 /bin/echo &#39;Hello World&#39;</code></p>
+<p><code>docker run --name webserver -d -p 80:80 nginx</code></p>
+<p>​</p>
+<p>| 指令       | 用途                                       |<br>| :——- | :————————————— |<br>| <code>-t</code>     | 命令行,伪终端                                  |<br>| <code>-i</code>     | 保持打开                                     |<br>| <code>-P</code>     | 随机分配端口，49000～49900,具体是哪个，通过<code>docker ps</code>看。 |<br>| <code>-p</code>     | 指定分配，具体格式取决于<code>ip:hostPort:containerPort| ip::containerPort |</code> |<br>| <code>--name</code> |                                          |<br>| <code>-v</code>     |                                          |<br>| <code>-d</code>     | 保证不在宿主显示内容                               |</p>
+<p>​</p>
+</li>
+</ul>
+<ul>
+<li><p>查看<br><code>docker ps -a</code>查看所有容器，”运行态UP“、”终止态Exit“</p>
+<p>用<code>docker logs ID</code>查看的执行情况。</p>
+</li>
+<li><p>内部查看</p>
+<p><a href="https://github.com/ma6174/blog/issues/8" rel="external nofollow noopener noreferrer" target="_blank">参考</a>使用<code>docker exec -it &lt;CONTAINER_ID&gt; bash</code></p>
+</li>
+<li><p>终止<br><code>docker stop</code></p>
+</li>
+<li><p>运行<br><code>docker start</code>将“终止态”容器重新启动。<br><code>docker restart</code>将“运行态”容器终止，再重新启动。</p>
+</li>
+<li><p>删除<br><code>docker rm</code>只能删除“终止态”</p>
+</li>
+</ul>
+<p>上述的可以用“名字”，可以用“id”，都不需要全拼，和<code>git reset</code>很像，有个大概的，他就能检索到。</p>
+<h3 id="仓库Repository"><a href="#仓库Repository" class="headerlink" title="仓库Repository"></a>仓库Repository</h3><p>官方公共</p>
+<ul>
+<li>搜索<br><code>docker search &lt;镜像&gt;</code></li>
+<li>下载<br><code>docker pull ubuntu:14.04</code></li>
+</ul>
+<h3 id="命令技巧"><a href="#命令技巧" class="headerlink" title="命令技巧"></a>命令技巧</h3><p>得到悬空的镜像</p>
+<p><code>docker images -f dangling=true</code></p>
+<p>得到停止的容器</p>
+<p><code>docker ps -f status=exited</code></p>
+<p>得到他们的id。</p>
+<p><code>docker ps/images -q</code></p>
+<h2 id="DOCKERFILE尝试"><a href="#DOCKERFILE尝试" class="headerlink" title="DOCKERFILE尝试"></a>DOCKERFILE尝试</h2><h3 id="ubuntu的apt源"><a href="#ubuntu的apt源" class="headerlink" title="ubuntu的apt源"></a>ubuntu的apt源</h3><p>如果你要修改源，他应该是和版本对应的。不能瞎来！！！</p>
+<ul>
+<li>lucid(10.04)</li>
+<li>precise(12.04)</li>
+<li>trusty(14.04)</li>
+<li>utopic(14.10)</li>
+<li>vivid(15.04)</li>
+<li>wily(15.10)</li>
+</ul>
+<p>然后国内的ali、163、sohu都有，比如说</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ wily main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ wily-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ wily-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ wily-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ wily-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<p>也可以采用非覆盖的方式，但是那样会去检查官方源，特别慢。</p>
+<p><code>COPY sources.list /etc/apt/sources.list.d/aliyun.list</code></p>
+<p>一般就直接覆盖了</p>
+<p><code>COPY sources.list /etc/apt/sources.list</code></p>
+<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>我一开始全都是用的<code>docker build .</code>生成的镜像，弄出了一堆没用的。</p>
+<p>所以要清除<code>&lt;none&gt;</code>的image和container。</p>
+<p>container一般都有名字，是docker给起的。</p>
+<p>image倒是没有名字。</p>
+<p>一定要先清除container</p>
+<p><code>docker rm $(docker ps -a -q)</code></p>
+<p>再清理image</p>
+<p><code>docker rmi $(docker images -q -f dangling=true)</code></p>
+<h3 id="尝试一：muduo"><a href="#尝试一：muduo" class="headerlink" title="尝试一：muduo"></a>尝试一：muduo</h3><p>目前使用如下方式：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">14.04</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> tommars00@gmail.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir /muduo-docker</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /muduo-docker</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> sources.list /etc/apt/sources.list</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update &amp;&amp; apt-get install -y \</span></span><br><span class="line"><span class="bash">    git \</span></span><br><span class="line"><span class="bash">    g++ \</span></span><br><span class="line"><span class="bash">    cmake \</span></span><br><span class="line"><span class="bash">    libboost-dev libboost-test-dev \</span></span><br><span class="line"><span class="bash">    libcurl4-openssl-dev \</span></span><br><span class="line"><span class="bash">    libc-ares-dev \</span></span><br><span class="line"><span class="bash">    protobuf-compiler libprotobuf-dev</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/chenshuo/muduo.git &amp;&amp; \</span></span><br><span class="line"><span class="bash">  <span class="built_in">cd</span> muduo &amp;&amp; \</span></span><br><span class="line"><span class="bash">  ./build.sh -j2 &amp;&amp; \</span></span><br><span class="line"><span class="bash">  ./build.sh install</span></span><br></pre></td></tr></table></figure>
+<p>改进内容：</p>
+<ul>
+<li>似乎那个WORKDIR，没啥用，我没必要创建一个新的文件夹。</li>
+<li>下面安装muduo库时，感觉可以把<code>cd</code>换为<code>WORKDIR</code></li>
+<li>目前还是没想好该如何去实现“开发、测试”异地用docker的样子，想想不到。而且这个DOCKERFILE，似乎有点臃肿，尤其是C++的编译需要的时间真的很久。<ul>
+<li>我目前想到的就是，我还需要学习<strong>CMAKE</strong>，然后我的“开发”就可以实现想muduo库一样，一条命令完成安装。也同样是<code>git clone</code>，这样测试者就能直接看到我的源码。</li>
+<li>但我想不通的是双方怎么沟通呢？你提交的修改方案“开发者”怎么看到。</li>
+</ul>
+</li>
+</ul>
+<p>官方对于development的建议</p>
+<p><a href="https://docs.docker.com/develop/dev-best-practices/#where-and-how-to-persist-application-data" rel="external nofollow noopener noreferrer" target="_blank">https://docs.docker.com/develop/dev-best-practices/#where-and-how-to-persist-application-data</a></p>
+<p><a href="https://docs.docker.com/develop/" rel="external nofollow noopener noreferrer" target="_blank">https://docs.docker.com/develop/</a></p>
+<p>对于怎么加载git/自己的代码，大家争论很多：</p>
+<p><a href="https://github.com/moby/moby/issues/14704" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/moby/moby/issues/14704</a></p>
+<p><a href="http://blog.cloud66.com/how-to-get-code-into-a-docker-container/" rel="external nofollow noopener noreferrer" target="_blank">http://blog.cloud66.com/how-to-get-code-into-a-docker-container/</a></p>
+<p><a href="https://forums.docker.com/t/best-practices-for-getting-code-into-a-container-git-clone-vs-copy-vs-data-container/4077" rel="external nofollow noopener noreferrer" target="_blank">https://forums.docker.com/t/best-practices-for-getting-code-into-a-container-git-clone-vs-copy-vs-data-container/4077</a></p>
+<p>加载private repository：</p>
+<p><a href="https://codeday.me/bug/20170514/16081.html" rel="external nofollow noopener noreferrer" target="_blank">https://codeday.me/bug/20170514/16081.html</a></p>
+<h3 id="尝试二：hexo"><a href="#尝试二：hexo" class="headerlink" title="尝试二：hexo"></a>尝试二：hexo</h3><p>我看到的几个版本，绝大多数都是基于node之上的docker组建的，也有很疯狂的，基于nginx，更有甚者基于ubuntu。</p>
+<ul>
+<li><p>坑一</p>
+<p><code>node:alpinne</code>默认安装node8，但是node8不支持hexo-cli。（他报的错是permission denied，我还以为是权限问题，这不是坑人吗？然后又说不是npm的问题，服啦）</p>
+<p>必须用<code>mhart/alpine-node:6</code></p>
+<p>用alpine是因为他是个及其精简版的linux，能在上面安装git。</p>
+</li>
+<li><p>坑二</p>
+<p>默认<code>mhart:alpine-node:6</code>只支持<code>sh</code>的，没有<code>/bin/bash</code>。</p>
+</li>
+<li><p>坑三</p>
+<p>所谓的<code>npm install hexo-cli -g</code>的全局安装感觉就是胡扯，我想在docker外面直接利用<code>docker run -d -p 4080:4000 -v XXX imageName hexo s</code>来运行，结果发现容器内，压根没有<code>node_modules</code>，始终运行失败。必须得手动根据<code>package.json</code>来安装。</p>
+</li>
+<li><p>坑四</p>
+<p>默认的<code>hexo s</code>是4000端口，所以你的<code>docker run -p xx:4000</code>后面必须是4000！否则容器外面也还是什么都看不到。</p>
+</li>
+</ul>
+<p>我选择这个思路：</p>
+<ul>
+<li><p>只基于一个简单的linux：alpine，利用node6，配上之前我找到的hexo-theme，完成环境搭建。</p>
+</li>
+<li><p>我只需要用到预览功能，也就是<code>hexo server</code>。主要是搭配1个数据卷。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 容器里的 **Hexo** 运行在 **80** 端口上,</span></span><br><span class="line">docker run -d -p 4010:4000 --name hexo-server \</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据卷关联 Hexo 里blog的文件夹source,</span></span><br><span class="line">-v &#123;你的博客文件夹路径&#125;/<span class="built_in">source</span>:/Hexo/<span class="built_in">source</span> \</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行</span></span><br><span class="line">hexo-docker hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我想到的一个应用就是，我在里面运行<code>hexo n</code>来利用模板，虽然模板没几行。。</p>
+<p>​</p>
+</li>
+</ul>
+<p>我的dockerfile内容为</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> mhart/alpine-node:<span class="number">6</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> tommars00@gmail.com</span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"http://mirrors.aliyun.com/alpine/v3.4/main/"</span> &gt; /etc/apk/repositories</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apk --update --no-progress add git</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /Hexo</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org &amp;&amp; \</span></span><br><span class="line"><span class="bash">    npm install hexo-cli -g</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/tommars00/dockerfile-my.git &amp;&amp; \</span></span><br><span class="line"><span class="bash">    cp -rf dockerfile-my/hexo-docker/hexo-tommars00-theme/* . &amp;&amp; \</span></span><br><span class="line"><span class="bash">    rm -rf dockerfile-my &amp;&amp; \</span></span><br><span class="line"><span class="bash">    npm install .</span></span><br></pre></td></tr></table></figure>
+<p>特殊点：</p>
+<ul>
+<li>要改alpine、npm的软件源，否则速度太慢了。</li>
+<li>目前暂时没想到怎么解决<code>npm -g</code>无法全局的情况。</li>
+<li>我看他们都是搭配sh文件，来提供更厉害的功能。</li>
+</ul>
+<p>弄完了之后发现没啥用，因为docker-hexo，他们用的都是自动部署功能，我只用个预览。。。。就当是练手了。</p>
+<p>几个被枪毙的想法:</p>
+<ul>
+<li>git不支持你只copy某个文件夹</li>
+<li>关于dockerfile的<code>CMD []</code>有用，但我没用上。</li>
+</ul>
+<h3 id="尝试三：brpc"><a href="#尝试三：brpc" class="headerlink" title="尝试三：brpc"></a>尝试三：brpc</h3><ul>
+<li><p>坑一</p>
+<p>小巧型alpine没有protobuf等包，所以不行，必须是ubuntu了。</p>
+</li>
+<li><p>坑二</p>
+<p>ubuntu默认不安装<code>realpath</code>，他的sh脚本需要该命令来找到，我看他的报错是<code>realpath not found</code>我以为是我地址写的不对，或者docker比较特别，原来都不是！！就是“command not found”</p>
+</li>
+</ul>
+<p>完全和muduo一样。没啥太多可说的。</p>
+<h3 id="尝试四：网站"><a href="#尝试四：网站" class="headerlink" title="尝试四：网站"></a>尝试四：网站</h3><p>我之前是用Fabric+“nginx—uwsgi—flask”来做的。</p>
+<ul>
+<li>我只用到了nginx的静态资源的“反向代理”功能。负载均衡没有用到。</li>
+<li>需要配置<code>niginx.conf</code>，<code>uwsig.conf</code>，<code>uwsig.ini</code>。</li>
+<li>fabric执行过程<ul>
+<li>把我的全部代码打包、上传。安装pip内容。</li>
+<li>将<code>uwsgi.conf</code>内容复制到<code>/etc/init/uwsgi.conf</code>中，并重启uwsgi。</li>
+<li>将<code>nginx.conf</code>内容链接到<code>/etc/nginx/conf.d/</code>中去，并重启nginx。</li>
+</ul>
+</li>
+<li>暂时没有独立的数据库，用的是<code>flask-migrate</code>来管理的</li>
+</ul>
+<p>现在：需要用到docker-compose</p>
+<p>借鉴：</p>
+<p>​    <a href="https://github.com/rajdeepd/orchestrating-docker" rel="external nofollow noopener noreferrer" target="_blank">方案一</a></p>
+<p>​    <a href="https://github.com/webpatch/Docker-Flask-uWSGI-Nginx" rel="external nofollow noopener noreferrer" target="_blank">方案二</a></p>
+<p>方案一</p>
+<ul>
+<li>容器1：运行nginx<ul>
+<li>和”容器2“沟通。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>容器2：运行flask<ul>
+<li>直接运行，不再用uwsgi。(方案二用uwsgi)</li>
+</ul>
+</li>
+</ul>
+<p>实现的开发、测试、发布流程如下：</p>
+<ul>
+<li>开发<ul>
+<li>在git上clone我的sheenAPP。</li>
+<li>在pycharm上进行开发</li>
+</ul>
+</li>
+<li>测试<ul>
+<li>利用falsk-script完成初步测试</li>
+</ul>
+</li>
+<li>发布<ul>
+<li>从git上得到requirement，搭建flask—-webapp容器，</li>
+<li>nginx—–proxy容器基本定型</li>
+<li>docker-compose通过git的代码来让webapp容器运行，并建立两个容器关系。</li>
+</ul>
+</li>
+</ul>
+<p>配置如下：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.4</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> tommars00@gmail.com</span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir -p /usr/src/app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> ./requirement.txt /usr/src/app/ </span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> ./pip.conf /root/.pip/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /usr/src/app</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> pip install --no-cache-dir -r requirement.txt</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> nginx:latest</span><br><span class="line"><span class="keyword">MAINTAINER</span> tommars00@gmail.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> rm /etc/nginx/nginx.conf</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> nginx.conf /etc/nginx/</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> rm /etc/nginx/conf.d/default.conf</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> sheen_nginx.conf /etc/nginx/conf.d/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>                  <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>             localhost;</span><br><span class="line">    <span class="attribute">charset</span>                 utf-<span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> /static &#123;</span><br><span class="line">        <span class="attribute">alias</span> /usr/src/app/static;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">		<span class="attribute">proxy_pass</span> http://webapp:8000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'2.0'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  webapp:</span></span><br><span class="line"><span class="attr">    restart:</span> <span class="string">always</span></span><br><span class="line"><span class="attr">    build:</span> <span class="string">./web</span></span><br><span class="line"><span class="attr">    expose:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"8000"</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">./Sheen:/usr/src/app</span></span><br><span class="line"><span class="attr">    command:</span> <span class="string">/usr/local/bin/python</span> <span class="string">/usr/src/app/manage.py</span> <span class="string">runserver</span> <span class="bullet">--host="0.0.0.0"</span> <span class="bullet">--port=8000</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  proxy:</span></span><br><span class="line"><span class="attr">    build:</span> <span class="string">./nginx</span></span><br><span class="line"><span class="attr">    restart:</span> <span class="string">always</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">"8080:80"</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">./Sheen/app/log:/var/log/nginx</span></span><br><span class="line"><span class="attr">    volumes_from:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">webapp</span></span><br><span class="line"><span class="attr">    links:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">webapp</span></span><br></pre></td></tr></table></figure>
+<p><strong>陷阱一</strong>：</p>
+<p>我的yml的volume宿主地址写的不规范没有用<code>./xxx</code>而是<code>/xxx</code>，导致我的CMD没法执行。</p>
+<p>yml的volume加载的确是晚于build的，在build的dockerfile中有添加了一变，修改后无此问题。</p>
+<p>同样的问题也出现在了pip更新软件源上，我以为我的docker的pip是在<code>/.pip/</code>但是他们实在<code>root/.pip/</code>我觉得这可以借鉴给其他的。</p>
+<p>我也没用他们用的什么gunicorn来运行flask，估计是和python一样的东西。</p>
+<p><strong>陷阱二</strong>：</p>
+<p>还是不太能理解nginx他的conf加载规则。</p>
+<p>​    目前看到的是两种方案</p>
+<p>方案一</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> tutum/nginx</span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> rm /etc/nginx/sites-enabled/default</span></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> sites-enabled/ /etc/nginx/sites-enabled</span></span><br></pre></td></tr></table></figure>
+<p>方案二</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> nginx:latest</span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> rm /etc/nginx/nginx.conf</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> nginx.conf /etc/nginx/</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> rm /etc/nginx/conf.d/default.conf</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> sheen_nginx.conf /etc/nginx/conf.d/</span></span><br></pre></td></tr></table></figure>
+<p>方案一我估计他的nginx.conf写的是用sites-enbale。</p>
+<p>方案二是绝大多数nginx默认的情况。对于两个文件我们仅是注释掉了一些内容，而nginx.conf中的http会导向conf.d/*.conf内容。我之前以为只要有一个conf就够了，直接删除外面的导致无法运行。(我是看这个知道的<a href="https://stackoverflow.com/questions/41766195/nginx-emerg-server-directive-is-not-allowed-here" rel="external nofollow noopener noreferrer" target="_blank">nginx两个conf</a>)</p>
+<p>我始终无法运行，一直报错“docker nginx [emerg] host not found in upstream”，也就是代理proxy问题：</p>
+<ul>
+<li>怀疑是webapp名字问题（因为docker-compose up启动的时候名字会在后面加_1。）</li>
+<li>怀疑是depends_on的关系(因为我无法确定两个container的先后关系)，</li>
+<li>怀疑是nginx_conf的proxy_set没有添加，或者多了server_name等内容上的conf问题，</li>
+<li>我也怀疑过格式，比如稍加了空白行，稍加了什么空格或者制表符之类的，但是我用<code>nginx -t</code>检查，他认为我的conf并没有问题</li>
+<li>怀疑是端口问题，比如yml中是否要加引号之类的—————–最后发现是我的端口号有两个不一致！！！</li>
+</ul>
+<p><strong>陷阱三</strong>：</p>
+<p>关于<code>volumes_from</code>和nginx-container与flask-container建立的联系。我理解错了。</p>
+<p>由于我在“xxx-nginx.conf”有设定<code>static location</code>，它重定向到了<code>/usr/src/app/static</code>该地址是flask-container的地址，由于我们有在nginx-proxy有设定<code>volumes_from</code>，所以能找得到他。但他和我们在proxy设定的<code>volume</code>没有任何关系！！！你不要以为这里的<code>volume</code>会和<code>volumes_from</code>有任何关联，他里没有任何联系。<code>volume</code>是真的在自己的container中挂载了某个数据卷且能在container中找到他，而<code>volumes_from</code>直接借用别人container挂载的数据卷，不能在自己的container中找到他吧？？</p>
+<p>我发现了一点docker的debug方式：</p>
+<p>​    dokcer-compose他也是运行几个container，所以可以用docker logs来看里面的运行情况。有的根本就是运行失败。</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/编程语言/python/python-writing/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    python-writing
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/编程语言/cpp/compiler/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">compiler</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Visual Studio | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="IDE,工具,Visual Studio,VScode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="版本   VS VC MSVC++ _MSC_VER       C6.0 600     C/C++7.0 700     1.0 800     2.0 900     4.0 1000     5.0 1100   Visual Studio 6 vc6 6.0 1200   Visual Studio 2003 vc7 7.0(7.1) 1300(1310)   Visual Studio">
+<meta name="keywords" content="IDE,工具,Visual Studio,VScode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visual Studio">
+<meta property="og:url" content="http://yoursite.com/wiki/工具/IDE/Visual Studio/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="版本   VS VC MSVC++ _MSC_VER       C6.0 600     C/C++7.0 700     1.0 800     2.0 900     4.0 1000     5.0 1100   Visual Studio 6 vc6 6.0 1200   Visual Studio 2003 vc7 7.0(7.1) 1300(1310)   Visual Studio">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.925Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Visual Studio">
+<meta name="twitter:description" content="版本   VS VC MSVC++ _MSC_VER       C6.0 600     C/C++7.0 700     1.0 800     2.0 900     4.0 1000     5.0 1100   Visual Studio 6 vc6 6.0 1200   Visual Studio 2003 vc7 7.0(7.1) 1300(1310)   Visual Studio">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file active"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-工具/IDE/Visual Studio" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/工具/">工具</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/工具/IDE/">IDE</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/IDE/">IDE</a>, <a class="tag-link" href="/tags/VScode/">VScode</a>, <a class="tag-link" href="/tags/Visual-Studio/">Visual Studio</a>, <a class="tag-link" href="/tags/工具/">工具</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/工具/IDE/Visual Studio/">
+            <time datetime="2018-10-01T14:39:54.000Z" itemprop="datePublished">2018-10-01</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/工具/IDE/Visual Studio.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/工具/IDE/Visual Studio.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/工具/IDE/Visual Studio.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Visual Studio
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">VS</th>
+<th style="text-align:left">VC</th>
+<th style="text-align:left">MSVC++</th>
+<th style="text-align:left">_MSC_VER</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">C6.0</td>
+<td style="text-align:left">600</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">C/C++7.0</td>
+<td style="text-align:left">700</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">1.0</td>
+<td style="text-align:left">800</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">2.0</td>
+<td style="text-align:left">900</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">4.0</td>
+<td style="text-align:left">1000</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">5.0</td>
+<td style="text-align:left">1100</td>
+</tr>
+<tr>
+<td style="text-align:left">Visual Studio 6</td>
+<td style="text-align:left">vc6</td>
+<td style="text-align:left">6.0</td>
+<td style="text-align:left">1200</td>
+</tr>
+<tr>
+<td style="text-align:left">Visual Studio 2003</td>
+<td style="text-align:left">vc7</td>
+<td style="text-align:left">7.0(7.1)</td>
+<td style="text-align:left">1300(1310)</td>
+</tr>
+<tr>
+<td style="text-align:left">Visual Studio 2005</td>
+<td style="text-align:left">vc8</td>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">1400)</td>
+</tr>
+<tr>
+<td style="text-align:left">Visual Studio 2008</td>
+<td style="text-align:left">vc9</td>
+<td style="text-align:left">9.0</td>
+<td style="text-align:left">1500</td>
+</tr>
+<tr>
+<td style="text-align:left">Visual Studio 2010</td>
+<td style="text-align:left">vc100</td>
+<td style="text-align:left">10.0</td>
+<td style="text-align:left">1600</td>
+</tr>
+<tr>
+<td style="text-align:left">Visual Studio 2012</td>
+<td style="text-align:left">vc110</td>
+<td style="text-align:left">11.0</td>
+<td style="text-align:left">1700</td>
+</tr>
+<tr>
+<td style="text-align:left">Visual Studio 2013</td>
+<td style="text-align:left">vc120</td>
+<td style="text-align:left">12.0</td>
+<td style="text-align:left">1800</td>
+</tr>
+<tr>
+<td style="text-align:left">Visual Studio 2015</td>
+<td style="text-align:left">vc140</td>
+<td style="text-align:left">14.0</td>
+<td style="text-align:left">1900</td>
+</tr>
+</tbody>
+</table>
+<h2 id="VS常用功能"><a href="#VS常用功能" class="headerlink" title="VS常用功能"></a>VS常用功能</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">Title1</th>
+<th style="text-align:left">Title2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Python Environment</td>
+<td style="text-align:left"><code>Ctrl+K, Ctrl+`</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Solution Exploer</td>
+<td style="text-align:left"><code>Ctrl+Alt+L</code></td>
+</tr>
+<tr>
+<td style="text-align:left">查找Find</td>
+<td style="text-align:left"><code>Ctrl+F</code>(其中Match Case:<code>Alt+C</code>;Match Whole Word:<code>Alt+W</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left">替换Replace</td>
+<td style="text-align:left"><code>Ctrl+H</code>(其中Replace Next:<code>Alt+R</code>;Replace All:<code>Alt+A</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left">管理我们下载的插件</td>
+<td style="text-align:left">Tools-&gt;Extension and Update</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="https://stackoverflow.com/questions/45253941/visual-studio-2017-evaluate-expression-debug-mode/52792503" rel="external nofollow noopener noreferrer" target="_blank">evaluate expression while debug</a></li>
+<li><a href="https://docs.microsoft.com/en-us/visualstudio/debugger/attach-to-running-processes-with-the-visual-studio-debugger" rel="external nofollow noopener noreferrer" target="_blank">debug running process</a></li>
+<li><a href="https://www.curlybrace.com/words/2012/12/17/setting-global-c-include-paths-in-visual-studio-2012-and-2011-and-2010/" rel="external nofollow noopener noreferrer" target="_blank">include path</a></li>
+<li><a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/2eb29f95-72cc-4eb0-b01e-0012d211be48/vs2015-c-global-include-and-library-directories-settings-shared-with-vs2010?forum=msbuild" rel="external nofollow noopener noreferrer" target="_blank">global include path</a></li>
+</ul>
+<h2 id="Visual-Assist"><a href="#Visual-Assist" class="headerlink" title="Visual Assist"></a>Visual Assist</h2><p>我们就可以实现圈出一段代码，然后按”/”就可将其装换成注释</p>
+<h2 id="VS中的编译选项"><a href="#VS中的编译选项" class="headerlink" title="VS中的编译选项"></a>VS中的编译选项</h2><p>RunTime-library【msvcrt==MsVC-RT】———-又叫做C Runtime library，可以看书《Win32 多线程程序设计（侯捷译）》<br>libcmt.lib是windows环境下vc提供的静态运行时库（多线程）；<br>msvcrt.lib是windows环境下vc提供的动态运行时库。</p>
+<p>动态链接：MD、MDd——-libcmt.lib, libcmtd.lib<br>静态链接：MT、MTd——-msvcrt.lib, msvcrtd.lib<br>lib后面带d表示是DEBUG版本。</p>
+<p>这两个库都位于</p>
+<p>MFC<br>multi-thread-dll(MTd)</p>
+<h2 id="构建选项"><a href="#构建选项" class="headerlink" title="构建选项"></a>构建选项</h2><h3 id="添加目录到工程"><a href="#添加目录到工程" class="headerlink" title="添加目录到工程"></a>添加目录到工程</h3><p><a href="https://blog.csdn.net/oneinmore/article/details/43017471" rel="external nofollow noopener noreferrer" target="_blank">1</a></p>
+<h3 id="添加构建时环境变量"><a href="#添加构建时环境变量" class="headerlink" title="添加构建时环境变量"></a>添加构建时环境变量</h3><p><a href="https://stackoverflow.com/questions/4953843/why-cant-visual-studio-find-my-dll" rel="external nofollow noopener noreferrer" target="_blank">添加dll的path</a><br><a href="https://stackoverflow.com/questions/2119539/how-do-i-set-the-path-to-a-dll-file-in-visual-studio" rel="external nofollow noopener noreferrer" target="_blank">添加dll的path</a></p>
+<p>比如：<br>Search MSDN for “How to: Set Environment Variables for Projects”. (It’s Project&gt;Properties&gt;Configuration Properties&gt;Debugging “Environment” and “Merge Environment” properties for those who are in a rush.)</p>
+<p>The syntax is NAME=VALUE and macros can be used (for example, $(OutDir)).</p>
+<h2 id="编译报错"><a href="#编译报错" class="headerlink" title="编译报错"></a>编译报错</h2><h3 id="LNK2026-safeseh"><a href="#LNK2026-safeseh" class="headerlink" title="LNK2026 safeseh"></a><code>LNK2026 safeseh</code></h3><p>这个是因为C没有exception处理，所以Windows给提供的SEH,而且还可以用来加密程序，防破解。<br>SAFESEH is a security feature and as all compiler/linker security features it is optional.</p>
+<p><a href="https://stackoverflow.com/questions/14710577/error-lnk2026-module-unsafe-for-safeseh-image" rel="external nofollow noopener noreferrer" target="_blank">解决方案</a></p>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>注：链接错误经常是<code>unresolved external symbol __imp__****</code>后面才是真的函数名，前面的不算。<code>__imp__</code>表示构建时使用dynamic library mangling，而非static library。</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>警告C4005 <code>_useHeader</code>和<code>__on_failure</code>宏重定义，这是因为VS2012和Win7默认的inlcude/lib有冲突，<a href="http://landcareweb.com/questions/14384/vs2012-c-jing-gao-c4005-useheader-hong-zhong-ding-yi" rel="external nofollow noopener noreferrer" target="_blank">参考</a></p>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>Error C1083: Cannot open source file” Shouldn’t Be Looking For The File At All<br><a href="https://stackoverflow.com/questions/16422883/error-c1083-cannot-open-source-file-shouldnt-be-looking-for-the-file-at-all" rel="external nofollow noopener noreferrer" target="_blank">参考</a></p>
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>编程中经常能遇到LNK2005错误——重复定义错误。<br>造成LNK2005错误主要有以下几种情况：1．重复定义全局变量。<br>可能存在两种情况：<br>A、对于一些初学编程的程序员，有时候会以为需要使用全局变量的地方就可以使用定义申明一下。<br>其实这是错误的，全局变量是针对整个工程的。<br>正确的应该是在一个CPP文件中定义如下：int g_Test;<br>那么在使用的CPP文件中就应该使用：extern int g_Test即可，如果还是使用int g_Test，那么就会产生LNK2005错误，<br>一般错误错误信息类似：AAA.obj error LNK2005 int book c？ book@@3HA already defined in BBB.obj。<br>切记的就是不能给变量赋值否则还是会有LNK2005错误。<br>这里需要的是“声明”，不是“定义”！根据C++标准的规定，一个变量是声明，必须同时满足两个条件，否则就是定义：(1)声明必须使用extern关键字；(2)不能给变量赋初值所以，下面的是声明:extern int a;下面的是定义int a; int a = 0; extern int a =0;</p>
+<p>B、对于那么编程不是那么严谨的程序员，总是在需要使用变量的文件中随意定义一个全局变量，并且对于变量名也不予考虑，这也往往容易造成变量名重复，而造成LNK2005错误。</p>
+<p>2．头文件的包含重复。往往需要包含的头文件中含有变量、函数、类的定义，在其它使用的地方又不得不多次包含之，如果头文件中没有相关的宏等防止重复链接的措施，那么就会产生LNK2005错误。解决办法是在需要包含的头文件中做类似的处理：#ifndef MY_H_FILE   //如果没有定义这个宏#define MY_H_FILE   //定义这个宏…….   //头文件主体内容…….#endif上面是使用宏来做的，也可以使用预编译来做，在头文件中加入：#pragma once//头文件主体</p>
+<p>3．使用第三方的库造成的。这种情况主要是C运行期函数库和MFC的库冲突造成的。具体的办法就是将那个提示出错的库放到另外一个库的前面。另外选择不同的C函数库，可能会引起这个错误。微软和C有两种C运行期函数库，一种是普通的函数库：LIBC.LIB，不支持多线程。另外一种是支持多线程的：msvcrt.lib。如果一个工程里，这两种函数库混合使用，可能会引起这个错误，一般情况下它需要MFC的库先于C运行期函数库被链接，因此建议使用支持多线程的msvcrt.lib。</p>
+<p>所以在使用第三方的库之前首先要知道它链接的是什么库，否则就可能造成LNK2005错误。如果不得不使用第三方的库，可以尝试按下面所说的方法修改，但不能保证一定能解决问题，前两种方法是微软提供的：<br>A、选择VC菜单Project-&gt;Settings-&gt;Link-&gt;Catagory选择Input，再在Ignore libraries 的Edit栏中填入你需要忽略的库，如：Nafxcwd.lib;Libcmtd.lib。然后在Object/library Modules的Edit栏中填入正确的库的顺序，这里需要你能确定什么是正确的顺序。</p>
+<p>B、选择VC菜单Project-&gt;Settings-&gt;Link页，然后在Project Options的Edit栏中输入/verbose:lib，这样就可以在编译链接程序过程中在输出窗口看到链接的顺序了。</p>
+<p>C、选择VC菜单Project-&gt;Settings-&gt;C/C++页，Catagory选择Code Generation后再在User Runtime libraray中选择MultiThread DLL等其他库，逐一尝试。</p>
+<h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><p><a href="https://code.visualstudio.com/docs/getstarted/settings" rel="external nofollow noopener noreferrer" target="_blank">设置</a></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/工具/IDE/PyCharm/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    pycharm
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/工具/IDE/QtCreator/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">QtCreator</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

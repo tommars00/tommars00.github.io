@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>std | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="C++,std">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="综述 History of C++ CppCon2014  std::string std::replace replace all occurance string char转wchar_t解决方案 char* 和 std::string和char[]比较 string occurance string is number strcmp  char转string1234//char -- std">
+<meta name="keywords" content="C++,std">
+<meta property="og:type" content="article">
+<meta property="og:title" content="std">
+<meta property="og:url" content="http://yoursite.com/wiki/编程语言/cpp/std/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="综述 History of C++ CppCon2014  std::string std::replace replace all occurance string char转wchar_t解决方案 char* 和 std::string和char[]比较 string occurance string is number strcmp  char转string1234//char -- std">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.933Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="std">
+<meta name="twitter:description" content="综述 History of C++ CppCon2014  std::string std::replace replace all occurance string char转wchar_t解决方案 char* 和 std::string和char[]比较 string occurance string is number strcmp  char转string1234//char -- std">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file active"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-编程语言/cpp/std" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/编程语言/">编程语言</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/编程语言/cpp/">cpp</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/C/">C++</a>, <a class="tag-link" href="/tags/std/">std</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/编程语言/cpp/std/">
+            <time datetime="2019-03-25T14:13:54.000Z" itemprop="datePublished">2019-03-25</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/编程语言/cpp/std.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/编程语言/cpp/std.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/编程语言/cpp/std.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            std
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><ul>
+<li><a href="https://en.cppreference.com/w/cpp/language/history" rel="external nofollow noopener noreferrer" target="_blank">History of C++</a></li>
+<li><a href="https://github.com/CppCon/CppCon2014" rel="external nofollow noopener noreferrer" target="_blank">CppCon2014</a></li>
+</ul>
+<h2 id="std-string"><a href="#std-string" class="headerlink" title="std::string"></a><code>std::string</code></h2><ul>
+<li><a href="https://stackoverflow.com/questions/2896600/how-to-replace-all-occurrences-of-a-character-in-string" rel="external nofollow noopener noreferrer" target="_blank">std::replace</a></li>
+<li><a href="https://stackoverflow.com/q/5343190" rel="external nofollow noopener noreferrer" target="_blank">replace all occurance string</a></li>
+<li><a href="https://stackoverflow.com/questions/3074776/how-to-convert-char-array-to-wchar-t-array/3074785" rel="external nofollow noopener noreferrer" target="_blank">char转wchar_t解决方案</a></li>
+<li><a href="https://www.geeksforgeeks.org/char-vs-stdstring-vs-char-c/" rel="external nofollow noopener noreferrer" target="_blank"><code>char*</code> 和 <code>std::string</code>和<code>char[]</code>比较</a></li>
+<li><a href="https://thispointer.com/find-all-occurrences-of-a-sub-string-in-a-string-c-both-case-sensitive-insensitive/" rel="external nofollow noopener noreferrer" target="_blank">string occurance</a></li>
+<li><a href="https://stackoverflow.com/questions/4654636/how-to-determine-if-a-string-is-a-number-with-c" rel="external nofollow noopener noreferrer" target="_blank">string is number</a></li>
+<li><a href="http://www.cplusplus.com/reference/cstring/strcmp/" rel="external nofollow noopener noreferrer" target="_blank">strcmp</a></li>
+</ul>
+<h3 id="char转string"><a href="#char转string" class="headerlink" title="char转string"></a>char转string</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//char -- std::string</span></span><br><span class="line"><span class="keyword">char</span> c;</span><br><span class="line"><span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="number">1</span>,c)</span></span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="number">15</span>,c)</span></span>;</span><br></pre></td></tr></table></figure>
+<h3 id="char-array转string"><a href="#char-array转string" class="headerlink" title="char array转string"></a>char array转string</h3><p><a href="http://www.cplusplus.com/forum/beginner/113003" rel="external nofollow noopener noreferrer" target="_blank">1</a></p>
+<p><a href="https://stackoverflow.com/questions/3828307/defining-a-string-with-no-null-terminating-char-0-at-the-end" rel="external nofollow noopener noreferrer" target="_blank">Defining a string with no null terminating char(\0) at the end</a></p>
+<h3 id="printf与char-与string"><a href="#printf与char-与string" class="headerlink" title="printf与char*与string"></a>printf与char*与string</h3><p><a href="https://stackoverflow.com/questions/10865957/printf-with-stdstring" rel="external nofollow noopener noreferrer" target="_blank">安全性</a></p>
+<h3 id="std-memcpy和std-memcpys"><a href="#std-memcpy和std-memcpys" class="headerlink" title="std::memcpy和std::memcpys"></a><code>std::memcpy</code>和<code>std::memcpys</code></h3><p>这个对于cpp只适用于POD。</p>
+<ul>
+<li><a href="https://en.cppreference.com/w/cpp/string/byte/memcpy" rel="external nofollow noopener noreferrer" target="_blank">文档</a></li>
+<li><a href="https://stackoverflow.com/questions/146452/what-are-pod-types-in-c" rel="external nofollow noopener noreferrer" target="_blank">POD解释</a></li>
+</ul>
+<p>和<code>string</code>配合时，往往要len+1，否则<code>\0</code>没地方放，会出现严重问题</p>
+<h3 id="拼接字符串"><a href="#拼接字符串" class="headerlink" title="拼接字符串"></a>拼接字符串</h3><p>当你用C-style的string时,我们想要将s1和s2相串联,必须要<code>s1+&quot; &quot;+s2</code>,不能是<code>s1+s2</code>,前者是分两步的,必须是双引号,单引号是char不是string类.<br>第一步,<code>s1+&quot; &quot;</code>他的结果是string类,然后再用这个string类<code>+s2</code>,也就是说虽然C++可以将旧的C-style相加,但是必须得保证至少有一个是string类<br>毛线,不行,必须都得是stirng类…简直扯淡.</p>
+<h3 id="分解字符串"><a href="#分解字符串" class="headerlink" title="分解字符串"></a>分解字符串</h3><p><a href="https://stackoverflow.com/questions/43402188/how-to-seperate-string-by-specific-delimiter" rel="external nofollow noopener noreferrer" target="_blank">1</a></p>
+<h3 id="pad，前面还是后面补足到某一固定长度"><a href="#pad，前面还是后面补足到某一固定长度" class="headerlink" title="pad，前面还是后面补足到某一固定长度"></a>pad，前面还是后面补足到某一固定长度</h3><p><a href="https://stackoverflow.com/questions/667183/padding-stl-strings-in-c" rel="external nofollow noopener noreferrer" target="_blank">1</a><br>提供了下述方法：<br>(1)<code>std::setw</code>配合<code>std::sstringstream</code><br>(2)<code>std::string::insert()</code>和<code>std::string::append()</code><br>(3)<code>std::setfill</code></p>
+<h2 id="container"><a href="#container" class="headerlink" title="container"></a>container</h2><ol>
+<li>所有的std的API中，关于iterator都是<code>[begin, end)</code></li>
+<li>使用container时,<code>&lt;&gt;</code>中间如果你想用C-style的string,你只能用const char*,这个const是不能省略的!!!</li>
+<li>学会用C++11的Range <code>for</code> Statement。参见《C++Primer》P187<code>for(auto ch:s)</code>或者<code>for(const auto&amp; r:v)</code></li>
+</ol>
+<h3 id="溢出"><a href="#溢出" class="headerlink" title="溢出"></a>溢出</h3><ol>
+<li><code>vector</code>若是使用<code>v[20]</code>即使<code>v.size()==19</code>他也会输出值，且不会报错！！这特别的危险！！！</li>
+<li><code>vector</code>和<code>string</code>使用<code>iterator</code>时,不要忘记判定是否超出限制边界!条件语句里尤为重要!!</li>
+<li>有时候我们会采用C的<code>[]</code>方式，来提取元素值，很可能就忽略了，合理性检查，譬如<code>vector</code>，<code>string</code>，<code>map</code>等</li>
+<li>对于<code>stack</code>，不要盲目<code>top()</code>或是<code>pop()</code>，很可能忽略了<code>empty()</code>检查！！！</li>
+<li>如果我们把错误的<code>begin</code>和<code>end</code>给了algorithm的<code>min</code>或<code>max</code>之类的函数，他们不一定会给我们返回正确的数值，他们根本不会去检验你的iterator的正确性！！！！比方说，你想在<code>vector</code>发生删除操作后，更新min_ele，要是<code>vector</code>此时恰好为空，那真是就爆炸了，你的min_ele压根不会更新，还是之前的数值！！！</li>
+<li>上述都是忽略了合理性检查，而std他可是不会管你的，直接死在那里，程序动都不动的。</li>
+</ol>
+<h3 id="vecotr"><a href="#vecotr" class="headerlink" title="vecotr"></a><code>vecotr</code></h3><ol>
+<li><code>vector</code>的一个教训，<code>copy ctor</code>不仅仅是在copy时会调用！！！<code>vector.push_back()</code>若是原来的容量不足，就会发生大范围的整体搬迁，然后就会隐含<code>copy ctor</code>这个调用！！他不仅仅是<code>vector</code>还有<code>T</code>，都会调用！！所以当定义的class（将其作为T)中，主动将<code>copy ctor=delete</code>且<code>move ctor=delete</code>时，就会导致<code>push_back</code>可能会失败</li>
+<li><a href="https://www.cnblogs.com/biyeymyhjob/archive/2013/05/11/3072893.html" rel="external nofollow noopener noreferrer" target="_blank"><code>resize</code>和<code>reserve</code>用途</a></li>
+</ol>
+<h3 id="std-unoreder-set"><a href="#std-unoreder-set" class="headerlink" title="std::unoreder_set"></a><code>std::unoreder_set</code></h3><p>The value of ESP was not properly saved across a function call.<br>This is usually a result of calling a function declared with one calling convention with a function pointer declared with a different c</p>
+<p>这是因为只有元素能被hash的，才可放在unordered容器中。<br>所以如果硬要放，你得做一些适当的修改</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a><code>map</code></h3><ul>
+<li><a href="https://stackoverflow.com/questions/326062/in-stl-maps-is-it-better-to-use-mapinsert-than" rel="external nofollow noopener noreferrer" target="_blank">map::insert vs <code>[]</code></a></li>
+</ul>
+<h3 id="常见领域"><a href="#常见领域" class="headerlink" title="常见领域"></a>常见领域</h3><p><code>std::priority_queue</code>可以修改后做固定数目的min_heap或max_heap即小根堆、大根堆。<br><code>std::deque</code>有双向iterator，当你相让<code>std::queue</code>拥有<code>std::vector</code>性质时，可以考虑用他</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">特点</th>
+<th style="text-align:center">实现方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">vector</td>
+<td style="text-align:center">单向开口、连续线性</td>
+<td style="text-align:center">连续线性空间，配置新空间总会预留一部分用于“成长”，如果还不够，就会另觅更大空间+复制原数据+释放原空间</td>
+</tr>
+<tr>
+<td style="text-align:center">list</td>
+<td style="text-align:center">双向链表</td>
+<td style="text-align:center">空间运用绝对精确</td>
+</tr>
+<tr>
+<td style="text-align:center">deque</td>
+<td style="text-align:center">双向开口、连续线性</td>
+<td style="text-align:center">一段一段的定量连续空间构成（分段连续），所以需要中央控制，以造成整体连续的假象</td>
+</tr>
+<tr>
+<td style="text-align:center">queue</td>
+<td style="text-align:center">FIFO、队列</td>
+<td style="text-align:center">default使用<code>deque</code>实现，也可用<code>list</code></td>
+</tr>
+<tr>
+<td style="text-align:center">stack</td>
+<td style="text-align:center">FILO、栈</td>
+<td style="text-align:center">default使用<code>deque</code>实现，也可以用<code>list</code>，<code>vector</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm"></a>algorithm</h2><h3 id="检查某一元素"><a href="#检查某一元素" class="headerlink" title="检查某一元素"></a>检查某一元素</h3><p><a href="https://stackoverflow.com/questions/4225029/is-there-an-stl-boost-algorithm-to-check-all-elements-in-a-container-match-a-val" rel="external nofollow noopener noreferrer" target="_blank"><code>std::find_if</code></a></p>
+<h3 id="std-accumulate"><a href="#std-accumulate" class="headerlink" title="std::accumulate"></a><code>std::accumulate</code></h3><p>使用algorithm中的accumulate时,第三个量var,也就是sum的初始值,也要求和前两个量所指向的内容一致,最坑的就是vector<double>,如果var你设置成0,它会把你前面的指向的double全变成int</double></p>
+<h2 id="resource-manager"><a href="#resource-manager" class="headerlink" title="resource manager"></a>resource manager</h2><h3 id="shared-ptr"><a href="#shared-ptr" class="headerlink" title="shared_ptr"></a><code>shared_ptr</code></h3><p><a href="https://stackoverflow.com/questions/12340810/using-custom-deleter-with-stdshared-ptr" rel="external nofollow noopener noreferrer" target="_blank">定义deleter</a></p>
+<ol>
+<li>是否有必要在二叉树这种多指针，使用SmartPointer这个工具</li>
+<li>是否可行，定义<code>vector&lt;unique_ptr&lt;T&gt;&gt;</code>，是否可知执行<code>push_back(raw pointer)</code></li>
+</ol>
+<h2 id="other"><a href="#other" class="headerlink" title="other"></a>other</h2><ol>
+<li><code>std::cout</code>的多线程<br>本质stdout也是个io-fd，也会存在竞争。<br><a href="https://stackoverflow.com/questions/18277304/using-stdcout-in-multiple-threads/41602932" rel="external nofollow noopener noreferrer" target="_blank">using-stdcout-in-multiple-threads</a></li>
+</ol>
+<h2 id="New–funtional-programming"><a href="#New–funtional-programming" class="headerlink" title="New–funtional programming"></a>New–funtional programming</h2><ol>
+<li><code>std::function&lt;&gt;</code><br>实现了一套类型消除机制，可以统一处理不同的函数对象类型（普通函数（包括成员函数）、Lambda表达式、函数指针、以及其它函数对象functor等）。<br>以前我们使用函数指针来完成这些；现在我们可以使用更安全的<code>std::function</code>来完成这些任务。</li>
+<li><code>std::bind()</code>与<code>std::function&lt;&gt;</code>搭配<br>一个用法为，取代虚函数virtual function。即实现：同一个class，不同的object，某个API有不同的实现方式，从而实现不同的行为。<br>具体参考《linux多线程muduo》第11.5节阐述<br><code>std::function&lt;&gt; f1=std::bind(&amp;X, this)</code>这个用法和python的class中<code>self</code>概念有些相似</li>
+<li>使用<code>lambda</code>取代<code>std::bind</code></li>
+</ol>
+<h2 id="error-code"><a href="#error-code" class="headerlink" title="error_code"></a><code>error_code</code></h2><p>这是从boost引进的，c17才添加。</p>
+<ul>
+<li><a href="http://timothyqiu.com/archives/std-error-code-and-more/" rel="external nofollow noopener noreferrer" target="_blank">std::error_code</a></li>
+<li><a href="https://akrzemi1.wordpress.com/2017/07/12/your-own-error-code/" rel="external nofollow noopener noreferrer" target="_blank">Your own error code</a></li>
+<li><a href="https://www.boost.org/doc/libs/1_68_0/libs/system/doc/reference.html#Header-system_error" rel="external nofollow noopener noreferrer" target="_blank">boost-system-error</a></li>
+<li><a href="https://stackoverflow.com/questions/21046742/using-boostsystemerror-code-in-c" rel="external nofollow noopener noreferrer" target="_blank">boost::error_code</a></li>
+</ul>
+<h2 id="stream"><a href="#stream" class="headerlink" title="stream"></a><code>stream</code></h2><ul>
+<li><a href="https://blog.csdn.net/gettogetto/article/details/51534037" rel="external nofollow noopener noreferrer" target="_blank">cout、cerr、clog的区别</a></li>
+<li><a href="http://www.cplusplus.com/reference/ostream/ostream" rel="external nofollow noopener noreferrer" target="_blank"><code>ostream</code></a></li>
+</ul>
+<h3 id="ifstream和ofstream"><a href="#ifstream和ofstream" class="headerlink" title="ifstream和ofstream"></a><code>ifstream</code>和<code>ofstream</code></h3><p>文件流。</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/7681555/resetting-the-end-of-file-state-of-a-ifstream-object-in-c" rel="external nofollow noopener noreferrer" target="_blank">获取长度</a>。<a href="https://stackoverflow.com/questions/5840148/how-can-i-get-a-files-size-in-c/6039648" rel="external nofollow noopener noreferrer" target="_blank">或者</a><ol>
+<li><code>std::ifstream.clear/seekg/tellg/</code></li>
+<li><code>std::ifstream::ate/binary</code>,</li>
+<li><code>std::ios::beg</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="ostringstream和istringstream和stringstream"><a href="#ostringstream和istringstream和stringstream" class="headerlink" title="ostringstream和istringstream和stringstream"></a><code>ostringstream</code>和<code>istringstream</code>和<code>stringstream</code></h3><p>不要对<code>std::string</code>有偏见，的确他的<code>c_str()</code>会在<code>\0</code>处结束，但是内部的内容却是完整的，完全可以用<code>data()</code>匹配<code>char*</code>, <code>length()</code>匹配<code>len</code>来作为buff或char数组。千万不要只用一个<code>data/c_str</code>，对于非文本内容绘有截断，比如加解密的结果，二进制文件内容等。</p>
+<ul>
+<li><a href="http://www.cplusplus.com/reference/sstream/ostringstream/" rel="external nofollow noopener noreferrer" target="_blank"><code>ostringstream</code></a></li>
+<li><a href="http://www.cplusplus.com/reference/sstream/stringstream/" rel="external nofollow noopener noreferrer" target="_blank"><code>stringstream</code></a></li>
+<li><a href="http://www.cplusplus.com/reference/sstream/stringbuf/" rel="external nofollow noopener noreferrer" target="_blank"><code>stringbuf</code></a></li>
+</ul>
+<h2 id="task"><a href="#task" class="headerlink" title="task"></a>task</h2><ul>
+<li><a href="https://codereview.stackexchange.com/questions/21336/c-task-scheduler" rel="external nofollow noopener noreferrer" target="_blank">C++ Task Scheduler</a></li>
+<li><a href="https://www.enkisoftware.com/devlogpost-20150822-1-Implementing-a-lightweight-task-scheduler" rel="external nofollow noopener noreferrer" target="_blank">enkiTS</a></li>
+<li><a href="http://www.atakansarioglu.com/easy-task-scheduler-real-time/" rel="external nofollow noopener noreferrer" target="_blank">自己实现的</a></li>
+<li><a href="https://blog.csdn.net/zxh2075/article/details/78889997" rel="external nofollow noopener noreferrer" target="_blank">自己实现</a></li>
+<li><a href="http://www.cs.ucr.edu/~vahid/rios/" rel="external nofollow noopener noreferrer" target="_blank">RIOS</a></li>
+<li><a href="https://news.ycombinator.com/item?id=10103757" rel="external nofollow noopener noreferrer" target="_blank">Implementing a lightweight task scheduler in C++</a></li>
+<li><a href="https://www.codeproject.com/Articles/80825/Concurrency-Runtime-in-Visual-C-2010" rel="external nofollow noopener noreferrer" target="_blank">Concurrency-Runtime-in-Visual-C-2010</a></li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/开源库/cpp/imgui/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    imgui
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/编程语言/python/grammar/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">python-grammar</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

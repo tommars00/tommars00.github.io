@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>OllDbg | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="工具,OllDbg">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="快捷键官网 Pop-up menus   Function Window Menu command Shortcut     Edit memory as binary, ASCII or UNICODE string Disassembler, Stack; Dump Binary/Edit Ctrl+E   Undo changes Disassembler, Dump ;Registers">
+<meta name="keywords" content="工具,OllDbg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OllDbg">
+<meta property="og:url" content="http://yoursite.com/wiki/工具/reverse engineer/OllyDbg/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="快捷键官网 Pop-up menus   Function Window Menu command Shortcut     Edit memory as binary, ASCII or UNICODE string Disassembler, Stack; Dump Binary/Edit Ctrl+E   Undo changes Disassembler, Dump ;Registers">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OllDbg">
+<meta name="twitter:description" content="快捷键官网 Pop-up menus   Function Window Menu command Shortcut     Edit memory as binary, ASCII or UNICODE string Disassembler, Stack; Dump Binary/Edit Ctrl+E   Undo changes Disassembler, Dump ;Registers">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file active"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-工具/reverse engineer/OllyDbg" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/工具/">工具</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/工具/reverse-engineer/">reverse engineer</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/OllDbg/">OllDbg</a>, <a class="tag-link" href="/tags/工具/">工具</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/工具/reverse engineer/OllyDbg/">
+            <time datetime="2019-05-12T22:00:54.000Z" itemprop="datePublished">2019-05-13</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/工具/reverse engineer/OllyDbg.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/工具/reverse engineer/OllyDbg.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/工具/reverse engineer/OllyDbg.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            OllDbg
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><a href="http://www.ollydbg.de/quickst.htm" rel="external nofollow noopener noreferrer" target="_blank">官网</a></p>
+<h3 id="Pop-up-menus"><a href="#Pop-up-menus" class="headerlink" title="Pop-up menus"></a>Pop-up menus</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">Function</th>
+<th style="text-align:left">Window</th>
+<th style="text-align:left">Menu command</th>
+<th style="text-align:left">Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Edit memory as binary, ASCII or UNICODE string</td>
+<td style="text-align:left">Disassembler, Stack; Dump</td>
+<td style="text-align:left">Binary/Edit</td>
+<td style="text-align:left">Ctrl+E</td>
+</tr>
+<tr>
+<td style="text-align:left">Undo changes</td>
+<td style="text-align:left">Disassembler, Dump ;Registers</td>
+<td style="text-align:left">Undo selection ;Undo</td>
+<td style="text-align:left">Alt+BkSp</td>
+</tr>
+<tr>
+<td style="text-align:left">Run application</td>
+<td style="text-align:left">Main</td>
+<td style="text-align:left">Debug/Run</td>
+<td style="text-align:left">F9</td>
+</tr>
+<tr>
+<td style="text-align:left">Run to selection</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">`Breakpoint</td>
+<td style="text-align:left">Run` to selection</td>
+<td>F4</td>
+</tr>
+<tr>
+<td style="text-align:left">Execute till return</td>
+<td style="text-align:left">Main</td>
+<td style="text-align:left">`Debug</td>
+<td style="text-align:left">Execute till return`</td>
+<td>Ctrl+F9</td>
+</tr>
+<tr>
+<td style="text-align:left">Execute till user code</td>
+<td style="text-align:left">Main</td>
+<td style="text-align:left">`Debug</td>
+<td style="text-align:left">Execute till user code`</td>
+<td>Alt+F9</td>
+</tr>
+<tr>
+<td style="text-align:left">Set/reset INT3 breakpoint</td>
+<td style="text-align:left">Disassembler Names, Source</td>
+<td style="text-align:left">`Breakpoint</td>
+<td style="text-align:left">Toggle` Toggle breakpoint</td>
+<td>F2</td>
+</tr>
+<tr>
+<td style="text-align:left">Set/edit conditional INT3 breakpoint</td>
+<td style="text-align:left">Disassembler Names, Source</td>
+<td style="text-align:left">`Breakpoint</td>
+<td style="text-align:left">Conditional` Conditional breakpoint</td>
+<td>Shift+F2</td>
+</tr>
+<tr>
+<td style="text-align:left">Set/edit conditional logging breakpoint (logs into the Log window)</td>
+<td style="text-align:left">Disassembler Names, Source</td>
+<td style="text-align:left">`Breakpoint</td>
+<td style="text-align:left">Conditional` log Conditional log breakpoint</td>
+<td>Shift+F4</td>
+</tr>
+<tr>
+<td style="text-align:left">Temporarily disable/restore INT3 breakpoint</td>
+<td style="text-align:left">Breakpoints</td>
+<td style="text-align:left">Disable Enable</td>
+<td style="text-align:left">Space</td>
+</tr>
+<tr>
+<td style="text-align:left">Set memory breakpoint (only one is allowed)</td>
+<td style="text-align:left">Disassembler, Dump</td>
+<td style="text-align:left">`Breakpoint</td>
+<td style="text-align:left">Memory<code>, on access</code>Breakpoint</td>
+<td>Memory`, on write</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Remove memory breakpoint</td>
+<td style="text-align:left">Disassembler, Dump</td>
+<td style="text-align:left">Breakpoint</td>
+<td style="text-align:left">Remove memory breakpoint</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Set hardware breakpoint (ME/NT/2000 only)</td>
+<td style="text-align:left">Disassembler, Dump</td>
+<td style="text-align:left">Breakpoint</td>
+<td style="text-align:left">Hardware (select type and size!)</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Remove hardware breakpoint</td>
+<td style="text-align:left">Main</td>
+<td style="text-align:left">`Debug</td>
+<td style="text-align:left">Hardware` breakpoints</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Set single-short break on access to memory block (NT/2000 only)</td>
+<td style="text-align:left">Memory</td>
+<td style="text-align:left">Set break-on-access</td>
+<td style="text-align:left">F2</td>
+</tr>
+<tr>
+<td style="text-align:left">Set break on module, thread, debug string</td>
+<td style="text-align:left">Options</td>
+<td style="text-align:left">Events</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Set new origin</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">New origin here</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Display list of all symbolic names</td>
+<td style="text-align:left">Disassembler, Dump Modules</td>
+<td style="text-align:left">`Search for</td>
+<td style="text-align:left">Name` (label) View names</td>
+<td>Ctrl+N</td>
+</tr>
+<tr>
+<td style="text-align:left">Context-sensitive help (requires external help file!)</td>
+<td style="text-align:left">Disassembler, Names</td>
+<td style="text-align:left">Help on symbolic name</td>
+<td style="text-align:left">Ctrl+F1</td>
+</tr>
+<tr>
+<td style="text-align:left">Find all references in code to selected address range</td>
+<td style="text-align:left">Disassembler Dump</td>
+<td style="text-align:left">`Find references to</td>
+<td style="text-align:left">Command` Find references</td>
+<td>Ctrl+R</td>
+</tr>
+<tr>
+<td style="text-align:left">Find all references in code to the constant</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">`Find references to</td>
+<td style="text-align:left">Constant<code></code>Search for</td>
+<td>All constants`</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Search whole allocated memory</td>
+<td style="text-align:left">Memory</td>
+<td style="text-align:left">Search Search next</td>
+<td style="text-align:left">Ctrl+L</td>
+</tr>
+<tr>
+<td style="text-align:left">Go to address or value of expression</td>
+<td style="text-align:left">Disassembler Dump</td>
+<td style="text-align:left">`Go to</td>
+<td style="text-align:left">Expression<code></code>Go to expression`</td>
+<td>Ctrl+G</td>
+</tr>
+<tr>
+<td style="text-align:left">Go to previous address/run trace item</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">`Go to</td>
+<td style="text-align:left">Previous`</td>
+<td>Minus</td>
+</tr>
+<tr>
+<td style="text-align:left">Go to next address/run trace item</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">`Go to</td>
+<td style="text-align:left">Next`</td>
+<td>Plus</td>
+</tr>
+<tr>
+<td style="text-align:left">Go to previous procedure</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">`Go to</td>
+<td style="text-align:left">Previous procedure`</td>
+<td>Ctrl+Minus</td>
+</tr>
+<tr>
+<td style="text-align:left">Go to next procedure</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">`Go to</td>
+<td style="text-align:left">Next procedure`</td>
+<td>Ctrl+Plus</td>
+</tr>
+<tr>
+<td style="text-align:left">View executable file</td>
+<td style="text-align:left">Disassembler, Dump, Modules</td>
+<td style="text-align:left">`View</td>
+<td style="text-align:left">Executable file`</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">Copy changes to executable file</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">Copy to executable file</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Analyse executable code</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">Analysis</td>
+<td style="text-align:left">Analyse code</td>
+<td>Ctrl+A</td>
+</tr>
+<tr>
+<td style="text-align:left">Scan object files and libraries</td>
+<td style="text-align:left">Disassembler</td>
+<td style="text-align:left">Scan object files</td>
+<td style="text-align:left">Ctrl+O</td>
+</tr>
+<tr>
+<td style="text-align:left">View resources</td>
+<td style="text-align:left">Modules, Memory</td>
+<td style="text-align:left">View all resources View resource strings</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Suspend/resume thread</td>
+<td style="text-align:left">Threads</td>
+<td style="text-align:left">Suspend Resume</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Display relative addresses</td>
+<td style="text-align:left">Disassembler, Dump, Stack</td>
+<td style="text-align:left">Doubleclick address</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Copy</td>
+<td style="text-align:left">Most of windows</td>
+<td style="text-align:left">Copy to clipboard</td>
+<td style="text-align:left">Ctrl+C</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-shortcuts"><a href="#global-shortcuts" class="headerlink" title="global shortcuts"></a>global shortcuts</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Ctrl+F2</td>
+<td style="text-align:left">Restart program</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+F2</td>
+<td style="text-align:left">Close program</td>
+</tr>
+<tr>
+<td style="text-align:left">F3</td>
+<td style="text-align:left">Open new program</td>
+</tr>
+<tr>
+<td style="text-align:left">F5</td>
+<td style="text-align:left">Maximize/restore active window</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+F5</td>
+<td style="text-align:left">Make OllyDbg topmost</td>
+</tr>
+<tr>
+<td style="text-align:left">F7</td>
+<td style="text-align:left">Step into (entering functions)</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+F7</td>
+<td style="text-align:left">Animate into (entering functions)</td>
+</tr>
+<tr>
+<td style="text-align:left">F8</td>
+<td style="text-align:left">Step over (executing function calls at once)</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+F8</td>
+<td style="text-align:left">Animate over (executing function calls at once)</td>
+</tr>
+<tr>
+<td style="text-align:left">F9</td>
+<td style="text-align:left">Run</td>
+</tr>
+<tr>
+<td style="text-align:left">Shift+F9</td>
+<td style="text-align:left">Pass exception to standard handler and run</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+F9</td>
+<td style="text-align:left">Execute till return</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+F9</td>
+<td style="text-align:left">Execute till user code</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+F11</td>
+<td style="text-align:left">Trace into</td>
+</tr>
+<tr>
+<td style="text-align:left">F12</td>
+<td style="text-align:left">Pause</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+F12</td>
+<td style="text-align:left">Trace over</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+B</td>
+<td style="text-align:left">Open Breakpoints window</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+C</td>
+<td style="text-align:left">Open CPU window</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+E</td>
+<td style="text-align:left">Open Modules window</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+L</td>
+<td style="text-align:left">Open Log window</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+M</td>
+<td style="text-align:left">Open Memory window</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+O</td>
+<td style="text-align:left">Open Options dialog</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+T</td>
+<td style="text-align:left">Set condition to pause Run trace</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+X</td>
+<td style="text-align:left">Close OllyDbg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Disasembler-shortcuts"><a href="#Disasembler-shortcuts" class="headerlink" title="Disasembler shortcuts"></a>Disasembler shortcuts</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">F2</td>
+<td style="text-align:left">Toggle breakpoint</td>
+</tr>
+<tr>
+<td style="text-align:left">Shift+F2</td>
+<td style="text-align:left">Set conditional breakpoint</td>
+</tr>
+<tr>
+<td style="text-align:left">F4</td>
+<td style="text-align:left">Run to selection</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+F7</td>
+<td style="text-align:left">Go to previous reference</td>
+</tr>
+<tr>
+<td style="text-align:left">Alt+F8</td>
+<td style="text-align:left">Go to next reference</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+A</td>
+<td style="text-align:left">Analyse code</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+B</td>
+<td style="text-align:left">Start binary search</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+C</td>
+<td style="text-align:left">Copy selection to clipboard</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+E</td>
+<td style="text-align:left">Edit selection in binary format</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+F</td>
+<td style="text-align:left">Search for a command</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+G</td>
+<td style="text-align:left">Follow expression</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+J</td>
+<td style="text-align:left">Show list of jumps to selected line</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+K</td>
+<td style="text-align:left">View call tree</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+L</td>
+<td style="text-align:left">Repeat last search</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+N</td>
+<td style="text-align:left">Open list of labels (names)</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+O</td>
+<td style="text-align:left">Scan object files</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+R</td>
+<td style="text-align:left">Find references to selected command</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+S</td>
+<td style="text-align:left">Search for a sequence of commands</td>
+</tr>
+<tr>
+<td style="text-align:left">Asterisk (*)</td>
+<td style="text-align:left">Origin</td>
+</tr>
+<tr>
+<td style="text-align:left">Enter</td>
+<td style="text-align:left">Follow jump or call</td>
+</tr>
+<tr>
+<td style="text-align:left">Plus (+)</td>
+<td style="text-align:left">Go to next location/next run trace item</td>
+</tr>
+<tr>
+<td style="text-align:left">Minus (-)</td>
+<td style="text-align:left">Go to previous location/previous run trace item</td>
+</tr>
+<tr>
+<td style="text-align:left">Space (  )</td>
+<td style="text-align:left">Assemble</td>
+</tr>
+<tr>
+<td style="text-align:left">Colon (:)</td>
+<td style="text-align:left">Add label</td>
+</tr>
+<tr>
+<td style="text-align:left">Semicolon (;)</td>
+<td style="text-align:left">Add comment</td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令栏"><a href="#命令栏" class="headerlink" title="命令栏"></a>命令栏</h2><p>以下命令使用于 OllyDbg 的快捷命令栏（显示于程序的状态栏上方）<br>以下命令适用于 OllyDbg 的命令行插件 Cmdline.dll（显示于程序的插件菜单中）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">英文</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CALC</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">判断表达式</td>
+</tr>
+<tr>
+<td style="text-align:left">WATCH</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">添加监视表达式</td>
+</tr>
+<tr>
+<td style="text-align:left">AT / FOLLOW</td>
+<td style="text-align:left">Disassemble at address</td>
+<td style="text-align:left">在地址进行反汇编</td>
+</tr>
+<tr>
+<td style="text-align:left">ORIG</td>
+<td style="text-align:left">Disassemble at EIP</td>
+<td style="text-align:left">反汇编于 EIP</td>
+</tr>
+<tr>
+<td style="text-align:left">DUMP</td>
+<td style="text-align:left">Dump at address</td>
+<td style="text-align:left">在地址转存</td>
+</tr>
+<tr>
+<td style="text-align:left">DA</td>
+<td style="text-align:left">Dump as disassembly</td>
+<td style="text-align:left">转存为反汇编代码</td>
+</tr>
+<tr>
+<td style="text-align:left">DB</td>
+<td style="text-align:left">Dump in hex byte format</td>
+<td style="text-align:left">转存在十六进制字节格式</td>
+</tr>
+<tr>
+<td style="text-align:left">DC</td>
+<td style="text-align:left">Dump in ASCII format</td>
+<td style="text-align:left">转存在 ASCII 格式</td>
+</tr>
+<tr>
+<td style="text-align:left">DD</td>
+<td style="text-align:left">Dump in stack format</td>
+<td style="text-align:left">转存在堆栈格式</td>
+</tr>
+<tr>
+<td style="text-align:left">DU</td>
+<td style="text-align:left">Dump in UNICODE format</td>
+<td style="text-align:left">转存在 UNICODE 格式</td>
+</tr>
+<tr>
+<td style="text-align:left">DW</td>
+<td style="text-align:left">Dump in hex word format</td>
+<td style="text-align:left">转存在十六进制字词格式</td>
+</tr>
+<tr>
+<td style="text-align:left">STK</td>
+<td style="text-align:left">Go to address in stack</td>
+<td style="text-align:left">前往堆栈中的地址</td>
+</tr>
+<tr>
+<td style="text-align:left">AS + 地址 + 字符串</td>
+<td style="text-align:left">Assemble at address</td>
+<td style="text-align:left">在地址进行汇编</td>
+</tr>
+<tr>
+<td style="text-align:left">L + 地址 + 字符串</td>
+<td style="text-align:left">Label at address</td>
+<td style="text-align:left">在地址进行标号</td>
+</tr>
+<tr>
+<td style="text-align:left">C + 地址 + 字符串</td>
+<td style="text-align:left">Comment at address</td>
+<td style="text-align:left">在地址进行注释</td>
+</tr>
+<tr>
+<td style="text-align:left">BP</td>
+<td style="text-align:left">Break with condition</td>
+<td style="text-align:left">使用条件中断</td>
+</tr>
+<tr>
+<td style="text-align:left">BPX</td>
+<td style="text-align:left">Break on all calls</td>
+<td style="text-align:left">中断在全部调用</td>
+</tr>
+<tr>
+<td style="text-align:left">BPD</td>
+<td style="text-align:left">Delete break on all calls</td>
+<td style="text-align:left">清除位于全部调用的断点</td>
+</tr>
+<tr>
+<td style="text-align:left">BC</td>
+<td style="text-align:left">Delete breakpoint</td>
+<td style="text-align:left">清除断点</td>
+</tr>
+<tr>
+<td style="text-align:left">MR</td>
+<td style="text-align:left">Memory breakpt on access</td>
+<td style="text-align:left">内存断点于访问时</td>
+</tr>
+<tr>
+<td style="text-align:left">MW</td>
+<td style="text-align:left">Memory breakpt on write</td>
+<td style="text-align:left">内存断点于写入时</td>
+</tr>
+<tr>
+<td style="text-align:left">MD</td>
+<td style="text-align:left">Remove memory breakpoint</td>
+<td style="text-align:left">清除内存断点</td>
+</tr>
+<tr>
+<td style="text-align:left">HR</td>
+<td style="text-align:left">HW break on access</td>
+<td style="text-align:left">硬件中断在访问</td>
+</tr>
+<tr>
+<td style="text-align:left">HW</td>
+<td style="text-align:left">HW break on write</td>
+<td style="text-align:left">硬件中断在写入</td>
+</tr>
+<tr>
+<td style="text-align:left">HE</td>
+<td style="text-align:left">HW break on execution</td>
+<td style="text-align:left">硬件中断在执行</td>
+</tr>
+<tr>
+<td style="text-align:left">HD</td>
+<td style="text-align:left">Remove HW breakpoint</td>
+<td style="text-align:left">清除硬件断点</td>
+</tr>
+<tr>
+<td style="text-align:left">STOP</td>
+<td style="text-align:left">Pause execution</td>
+<td style="text-align:left">暂停执行</td>
+</tr>
+<tr>
+<td style="text-align:left">PAUSE</td>
+<td style="text-align:left">PAUSE</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">RUN</td>
+<td style="text-align:left">Run program</td>
+<td style="text-align:left">运行程序</td>
+</tr>
+<tr>
+<td style="text-align:left">Run till address</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">运行到地址</td>
+</tr>
+<tr>
+<td style="text-align:left">GE</td>
+<td style="text-align:left">Run and pass exception</td>
+<td style="text-align:left">运行和通过例外</td>
+</tr>
+<tr>
+<td style="text-align:left">SI</td>
+<td style="text-align:left">Step into</td>
+<td style="text-align:left">步入</td>
+</tr>
+<tr>
+<td style="text-align:left">SO</td>
+<td style="text-align:left">Step over</td>
+<td style="text-align:left">步过</td>
+</tr>
+<tr>
+<td style="text-align:left">TI</td>
+<td style="text-align:left">Trace in till address</td>
+<td style="text-align:left">跟踪进入直到地址</td>
+</tr>
+<tr>
+<td style="text-align:left">TO</td>
+<td style="text-align:left">Trace over till address</td>
+<td style="text-align:left">跟踪步过直到地址</td>
+</tr>
+<tr>
+<td style="text-align:left">TC</td>
+<td style="text-align:left">Trace in till condition</td>
+<td style="text-align:left">跟踪进入直到条件</td>
+</tr>
+<tr>
+<td style="text-align:left">TOC</td>
+<td style="text-align:left">Trace over till condition</td>
+<td style="text-align:left">跟踪步过直到条件</td>
+</tr>
+<tr>
+<td style="text-align:left">TR</td>
+<td style="text-align:left">Till return</td>
+<td style="text-align:left">直到返回</td>
+</tr>
+<tr>
+<td style="text-align:left">TU</td>
+<td style="text-align:left">Till user code</td>
+<td style="text-align:left">直到用户代码</td>
+</tr>
+<tr>
+<td style="text-align:left">LOG</td>
+<td style="text-align:left">View Log window</td>
+<td style="text-align:left">查看记录窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">MOD</td>
+<td style="text-align:left">View Modules window</td>
+<td style="text-align:left">查看模块窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">MEM</td>
+<td style="text-align:left">View Memory window</td>
+<td style="text-align:left">查看内存窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">CPU</td>
+<td style="text-align:left">View CPU window</td>
+<td style="text-align:left">查看 CPU 窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">CS</td>
+<td style="text-align:left">View Call Stack</td>
+<td style="text-align:left">查看 Call 堆栈</td>
+</tr>
+<tr>
+<td style="text-align:left">BRK</td>
+<td style="text-align:left">View Breakpoints window</td>
+<td style="text-align:left">查看断点窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">OPT</td>
+<td style="text-align:left">Open Options</td>
+<td style="text-align:left">打开选项</td>
+</tr>
+<tr>
+<td style="text-align:left">EXIT / QUIT</td>
+<td style="text-align:left">Quit OllyDbg</td>
+<td style="text-align:left">退出 OllyDbg</td>
+</tr>
+<tr>
+<td style="text-align:left">OPEN</td>
+<td style="text-align:left">Open executable file</td>
+<td style="text-align:left">打开可执行文件</td>
+</tr>
+<tr>
+<td style="text-align:left">CLOSE</td>
+<td style="text-align:left">Close executable</td>
+<td style="text-align:left">关闭程序</td>
+</tr>
+<tr>
+<td style="text-align:left">RST</td>
+<td style="text-align:left">Restart current program</td>
+<td style="text-align:left">恢复当前程序</td>
+</tr>
+<tr>
+<td style="text-align:left">HELP</td>
+<td style="text-align:left">Help on API function</td>
+<td style="text-align:left">API 函数的帮助</td>
+</tr>
+<tr>
+<td style="text-align:left">ASM</td>
+<td style="text-align:left">Assemble (if command needs it’s own addres, \”ASM COMMAND;ADDRESS\”)</td>
+<td style="text-align:left">汇编 (如果命令需要自身的地址 \”ASM COMMAND;ADDRESS\”)</td>
+</tr>
+<tr>
+<td style="text-align:left">DASM</td>
+<td style="text-align:left">Disassemble immediate opcode</td>
+<td style="text-align:left">反汇编直接的机器码</td>
+</tr>
+<tr>
+<td style="text-align:left">FR</td>
+<td style="text-align:left">Find reference to selected command/address</td>
+<td style="text-align:left">查找参考到选定的命令/地址</td>
+</tr>
+<tr>
+<td style="text-align:left">AC</td>
+<td style="text-align:left">Analyse code</td>
+<td style="text-align:left">分析代码</td>
+</tr>
+<tr>
+<td style="text-align:left">SN</td>
+<td style="text-align:left">Search for Name(label) in current module</td>
+<td style="text-align:left">在当前模块中搜索名称(标号)</td>
+</tr>
+<tr>
+<td style="text-align:left">SOB</td>
+<td style="text-align:left">Scan object files</td>
+<td style="text-align:left">扫描项目文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><ul>
+<li><a href="https://reverseengineering.stackexchange.com/questions/16586/searching-for-strings-in-ollydbg" rel="external nofollow noopener noreferrer" target="_blank">Searching for strings in ollydbg</a></li>
+<li><a href="http://www.c-jump.com/CIS77/MLabs/M12reverse/M12_0070_text_strings.htm" rel="external nofollow noopener noreferrer" target="_blank">ollydbg的字符串搜索</a></li>
+<li><a href="https://stackoverflow.com/questions/34239605/cant-find-referenced-string-in-ollydbg/35991890" rel="external nofollow noopener noreferrer" target="_blank">ollydbg ‘referenced string’</a></li>
+<li><a href="https://bbs.pediy.com/thread-161919-1.htm" rel="external nofollow noopener noreferrer" target="_blank">ollydbg插件合集</a></li>
+<li><a href="https://lichao890427.github.io/2014/12/30/some-thing-about-ollydbg-plugin/" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg插件深入分析</a></li>
+<li><a href="https://blog.csdn.net/qq_27011361/article/details/79375924" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg快速查找指定代码四种方法</a></li>
+<li><a href="https://blog.csdn.net/VxD1/article/details/2235148" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用方法</a></li>
+<li><a href="https://reverseengineering.stackexchange.com/questions/13213/a-simple-reverseme-application-wont-run-always-loads-the-code-of-ntdll-and-ter" rel="external nofollow noopener noreferrer" target="_blank">always loads the code of ntdll and terminates the app</a></li>
+<li><a href="https://reverseengineering.stackexchange.com/questions/6236/simple-program-being-paused-somewhere-in-ntdll/6237#6237" rel="external nofollow noopener noreferrer" target="_blank">Simple Program Being Paused Somewhere in ntdll</a></li>
+<li><a href="https://stackoverflow.com/questions/12873197/ollydbg-single-step-event-at-ntdll-press-shiftf8-to-pass-execution" rel="external nofollow noopener noreferrer" target="_blank">Ollydbg “Single step event at ntdll“</a></li>
+<li><a href="https://www.aldeid.com/wiki/OllyDbg/CommandLine" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg/CommandLine</a></li>
+<li><a href="https://kevien.github.io/2017/08/22/OllyDbg%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用入门</a></li>
+<li><a href="https://weimingtom.iteye.com/blog/1126470" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用技巧总结</a></li>
+<li><a href="https://blog.csdn.net/faithzzf/article/details/51003170" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用小技巧(慢慢积累)</a></li>
+<li><a href="https://blog.csdn.net/china_jeffery/article/details/79427256" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg使用教程</a></li>
+<li><a href="https://blog.csdn.net/billvsme/article/details/38305839" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg 使用笔记 （一）</a></li>
+<li><a href="https://blog.csdn.net/yongshi6/article/details/50867780" rel="external nofollow noopener noreferrer" target="_blank">Ollydbg使用技巧</a></li>
+<li><a href="http://www.openrce.org/downloads/details/206/Modified_CmdLine_Plug-in" rel="external nofollow noopener noreferrer" target="_blank">OllyDbg Plugins</a></li>
+<li><a href="https://www.it72.com/thread-9155.htm" rel="external nofollow noopener noreferrer" target="_blank">OllyDBG完美教程(完美)</a></li>
+<li><a href="https://stackoverflow.com/questions/28488750/how-to-automate-task-in-ollydbg-using-ollyscript-or-any-other-tool/28556003#28556003" rel="external nofollow noopener noreferrer" target="_blank">How to automate task in OllyDBG ?</a></li>
+<li><a href="https://forum.exetools.com/showthread.php?t=3903" rel="external nofollow noopener noreferrer" target="_blank">module has entry point outside of code</a></li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/工具/reverse engineer/IDA/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    IDA
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/工具/Operator System/linux/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">linux</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>go经验 | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="语言,go,experience">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="小项目—echo输入流、字节数组buf、 123456789101112131415161718192021sca := bufio.NewScanner(os.Stdio)scan.Scan()s string = scan.Text()b := []byte(s)bb := make([]byte,1024)conn = net.Connconn.Write(b)conn.Read(bb)rd">
+<meta name="keywords" content="语言,go,experience">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go经验">
+<meta property="og:url" content="http://yoursite.com/wiki/编程语言/go/go经验/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="小项目—echo输入流、字节数组buf、 123456789101112131415161718192021sca := bufio.NewScanner(os.Stdio)scan.Scan()s string = scan.Text()b := []byte(s)bb := make([]byte,1024)conn = net.Connconn.Write(b)conn.Read(bb)rd">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.933Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="go经验">
+<meta name="twitter:description" content="小项目—echo输入流、字节数组buf、 123456789101112131415161718192021sca := bufio.NewScanner(os.Stdio)scan.Scan()s string = scan.Text()b := []byte(s)bb := make([]byte,1024)conn = net.Connconn.Write(b)conn.Read(bb)rd">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file active"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-编程语言/go/go经验" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/编程语言/">编程语言</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/编程语言/go/">go</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/experience/">experience</a>, <a class="tag-link" href="/tags/go/">go</a>, <a class="tag-link" href="/tags/语言/">语言</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/编程语言/go/go经验/">
+            <time datetime="2017-10-23T15:44:54.000Z" itemprop="datePublished">2017-10-23</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/编程语言/go/go经验.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/编程语言/go/go经验.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/编程语言/go/go经验.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            go经验
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="小项目—echo"><a href="#小项目—echo" class="headerlink" title="小项目—echo"></a>小项目—echo</h2><p>输入流、字节数组buf、</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">sca := bufio.NewScanner(os.Stdio)</span><br><span class="line">scan.Scan()</span><br><span class="line">s <span class="keyword">string</span> = scan.Text()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b := []<span class="keyword">byte</span>(s)</span><br><span class="line">bb := <span class="built_in">make</span>([]<span class="keyword">byte</span>,<span class="number">1024</span>)</span><br><span class="line">conn = net.Conn</span><br><span class="line">conn.Write(b)</span><br><span class="line">conn.Read(bb)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rd := bufio.NewReader(conn)</span><br><span class="line">str, err := rd.ReadString(<span class="string">'\n'</span>)</span><br><span class="line">rd.Read()</span><br><span class="line"></span><br><span class="line">wr := bufio.NewWriter(conn)</span><br><span class="line">wr.Write()</span><br><span class="line">wr.Flush()</span><br><span class="line"></span><br><span class="line">io.Copy(conn, conn)</span><br></pre></td></tr></table></figure>
+<p>服务端，客户端<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 地址</span></span><br><span class="line"><span class="keyword">var</span> tcpAddr *net.TCPAddr</span><br><span class="line">tcpAddr, err = net.ResolveTcpAddr(<span class="string">"tcp"</span>, <span class="string">"localhost:9999"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端</span></span><br><span class="line">conn, err := net.Dial(<span class="string">"tcp"</span>, <span class="string">"localhost:8888"</span>)</span><br><span class="line">connptr, err := net.DialTCP(<span class="string">"tcp"</span>, <span class="literal">nil</span>, tcpAddr)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 服务端</span></span><br><span class="line">ln, err := net.Listen(<span class="string">"tcp"</span>, <span class="string">":9999"</span>)</span><br><span class="line">ln, err := net.ListenTCP(<span class="string">"tcp"</span>, tcpAddr)</span><br><span class="line">conn, err := ln.Accept()</span><br><span class="line">connptr, err := ln.AcceptTCP()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接</span></span><br><span class="line">conn := <span class="built_in">make</span>(net.Conn)</span><br><span class="line">conn.localAddr()</span><br><span class="line">conn.RemoteAddr()</span><br><span class="line">conn.Close()</span><br></pre></td></tr></table></figure></p>
+<h2 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h2><ol>
+<li><code>package</code>问题。一个文件夹下，所有go文件的package name都应该相同！！！否则无法执行<code>go install/test</code>会报错<code>can&#39;t load package</code>。</li>
+<li>不允许嵌套定义函数。（会出现报什么”expected xx, found xxx”这种看不懂的错）。允许定义类似lambda这种匿名函数。<a href="http://blog.csdn.net/zhangzhebjut/article/details/25181151" rel="external nofollow noopener noreferrer" target="_blank">参考</a></li>
+<li>s</li>
+</ol>
+<h2 id="字节数组"><a href="#字节数组" class="headerlink" title="字节数组"></a>字节数组</h2><p><code>Buffer.Bytes()</code>返回<code>[]byte</code></p>
+<p><code>var b []byte</code>，他的<code>b.String()</code>返回<code>string</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">b := <span class="built_in">make</span>([]<span class="keyword">byte</span>,<span class="number">1024</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// illegal rune literal</span></span><br><span class="line">b[<span class="number">0</span>] = <span class="string">'0x00'</span></span><br><span class="line"><span class="comment">// cannot use "0x00" (type string) as type byte in assignment</span></span><br><span class="line">b[<span class="number">0</span>] = <span class="string">"0x00"</span></span><br><span class="line"><span class="comment">// OK</span></span><br><span class="line">b[<span class="number">0</span>] = <span class="number">0x00</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b := []<span class="keyword">byte</span>(s)</span><br></pre></td></tr></table></figure>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>因为<code>fmt.Fprinft</code>需要<code>io.Writer</code>。</p>
+<p>所以自定义一个<code>func (p *ByteSlice) Write(data []byte) (n int, err error)</code>。</p>
+<p>然后就可以用字符串的方式，修改字符数组。</p>
+<p>我的思路仍然停留在覆盖在原有的数组内容，但是go语言，似乎喜欢的是append。所有我看到的文档，都是用append操作。即先不申请固定长度的数组，然后对其赋值。而是用个slice，一点点的扩张。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> ByteSlice []<span class="keyword">byte</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p *ByteSlice)</span> <span class="title">Write</span><span class="params">(data []<span class="keyword">byte</span>)</span> <span class="params">(n <span class="keyword">int</span>, err error)</span></span> &#123;</span><br><span class="line">	slice := *p </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 旧思路-----覆盖原先内容</span></span><br><span class="line">	<span class="comment">//for i:=0; i&lt;len(data); i++ &#123;</span></span><br><span class="line">	<span class="comment">//	slice[i] = data[i]</span></span><br><span class="line">	<span class="comment">//&#125;  </span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  <span class="comment">// go的思路------apppend</span></span><br><span class="line">	l := <span class="built_in">len</span>(slice)</span><br><span class="line">	<span class="keyword">if</span> l + <span class="built_in">len</span>(data) &gt; <span class="built_in">cap</span>(slice) &#123;  <span class="comment">// 重新分配</span></span><br><span class="line">		<span class="comment">// 为了后面的增长，需分配两份。</span></span><br><span class="line">		newSlice := <span class="built_in">make</span>([]<span class="keyword">byte</span>, (l+<span class="built_in">len</span>(data))*<span class="number">2</span>)</span><br><span class="line">		<span class="comment">// copy 函数是预声明的，且可用于任何切片类型。</span></span><br><span class="line">		<span class="built_in">copy</span>(newSlice, slice)</span><br><span class="line">		slice = newSlice</span><br><span class="line">	&#125;</span><br><span class="line">	slice = slice[<span class="number">0</span>:l+<span class="built_in">len</span>(data)]</span><br><span class="line">	<span class="keyword">for</span> i, c := <span class="keyword">range</span> data &#123;</span><br><span class="line">		slice[l+i] = c</span><br><span class="line">	&#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">	*p = slice </span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">len</span>(data), <span class="literal">nil</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b ByteSlice</span><br><span class="line">fmt.Fprintf(&amp;b, <span class="string">"This hour has %d days\n"</span>, <span class="number">7</span>)</span><br><span class="line"><span class="comment">// 必须是一个字节一个字节的写。\0也可以用\x来替代</span></span><br><span class="line">fmt.Fprintf(&amp;b, <span class="string">"\000\x5a"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fmt.Printf(<span class="string">"output: %x\n"</span>, b)</span><br><span class="line">fmt.Printf(<span class="string">"output: %x\n"</span>, <span class="keyword">string</span>(b))</span><br></pre></td></tr></table></figure>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>用<code>bytes</code>包。</p>
+<p>用<code>Write</code>则参数要求是slice，用<code>WriteString</code>参数要求是string。</p>
+<p>仍然是Append操作。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b []<span class="keyword">byte</span></span><br><span class="line">buf := bytes.NewBuffer(b)</span><br><span class="line">buf.WriteString(<span class="string">"\x00\x10\x10\x00"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fmt.Printf(<span class="string">"output: %x\n"</span>, buf.String())</span><br></pre></td></tr></table></figure>
+<h3 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h3><h4 id="方法一-1"><a href="#方法一-1" class="headerlink" title="方法一"></a>方法一</h4><p>位操作</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b := <span class="built_in">make</span>([]<span class="keyword">byte</span>, <span class="number">1024</span>)</span><br><span class="line"><span class="keyword">var</span> i <span class="keyword">int</span> = (<span class="keyword">int</span>(b[<span class="number">0</span>])&lt;&lt;<span class="number">8</span> | <span class="keyword">int</span>(b[<span class="number">1</span>]))</span><br></pre></td></tr></table></figure>
+<p>####方法二</p>
+<p>用<code>strconv</code>包提供的函数</p>
+<p><code>[]byte(strconv.Itoa(intParam))</code>只支持int型。</p>
+<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><p>用<code>encoding/binary</code>包提供的函数</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  <span class="string">"encoding/binary"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 大端序：从左往右读</span></span><br><span class="line"><span class="comment">// 小端序：从右往左读</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i <span class="keyword">int64</span> = <span class="number">2323</span></span><br><span class="line">buf := Int64ToBytes(i)</span><br><span class="line">ii := BytesToInt64(buf)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Int64ToBytes</span><span class="params">(i <span class="keyword">int64</span>)</span> []<span class="title">byte</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> buf = <span class="built_in">make</span>([]<span class="keyword">byte</span>, <span class="number">8</span>)</span><br><span class="line">    binary.BigEndian.PutUint64(buf, <span class="keyword">uint64</span>(i))</span><br><span class="line">    <span class="keyword">return</span> buf</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">BytesToInt64</span><span class="params">(buf []<span class="keyword">byte</span>)</span> <span class="title">int64</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">int64</span>(binary.BigEndian.Uint64(buf))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="切片、数组"><a href="#切片、数组" class="headerlink" title="切片、数组"></a>切片、数组</h2><p><a href="https://my.oschina.net/chai2010/blog/161384" rel="external nofollow noopener noreferrer" target="_blank">范例解释</a></p>
+<p>切片，本身是一种抽象，可以理解为一个“对象”，你对他可以不断赋值新的数组范围，—–即“值传递”。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bb := b[<span class="number">2</span>:<span class="number">6</span>]</span><br><span class="line">bb = []<span class="keyword">byte</span>&#123;<span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x10</span>,<span class="number">0x00</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>但当你用下标来修改元素时，或者append操作，他就是“引用传递”。</p>
+<p>切片不允许对其做一大段赋值，比如说</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bb = <span class="number">0x00001000</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b [<span class="number">1024</span>]<span class="keyword">byte</span></span><br><span class="line"><span class="comment">//传参</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Fail--------把[1024]byte给[]byte不行，后者是slice，前者是array。类型不同</span></span><br><span class="line">bytes.NewBuffer(b)</span><br><span class="line"></span><br><span class="line"><span class="comment">// OK</span></span><br><span class="line">bytes.NewBuffer(b[:])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>GoSpec: the parameters of the call are passed by value!</li>
+<li>map/slice/chan 都是传值, 不是传引用</li>
+<li>map/chan 对应指针, 和引用类似</li>
+<li>slice 是结构体和指针的混合体</li>
+<li>slice 含 values/count/capacity 等信息, 是按值传递</li>
+<li>slice 中的 values 是指针, 按值传递</li>
+<li>按值传递的 slice 只能修改values指向的数据, 其他都不能修改</li>
+<li>以指针或结构体的角度看, 都是值传递!</li>
+</ul>
+<p>##输出</p>
+<p><a href="https://golang.org/pkg/fmt/" rel="external nofollow noopener noreferrer" target="_blank">官方</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">%v		<span class="comment">// the value in a default format when printing structs, the plus flag (%+v) adds field names</span></span><br><span class="line">%#v		<span class="comment">// a Go-syntax representation of the value</span></span><br><span class="line">%T		<span class="comment">// a Go-syntax representation of the type of the value</span></span><br><span class="line">%%		<span class="comment">// a literal percent sign; consumes no value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Boolen</span></span><br><span class="line">%t	the word <span class="literal">true</span> or <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Integer</span></span><br><span class="line">%b	base <span class="number">2</span></span><br><span class="line">%c	the character represented by the corresponding Unicode code point</span><br><span class="line">%d	base <span class="number">10</span></span><br><span class="line">%o	base <span class="number">8</span></span><br><span class="line">%q	a single-quoted character literal safely escaped with Go syntax.</span><br><span class="line">%x	base <span class="number">16</span>, with lower-<span class="keyword">case</span> letters <span class="keyword">for</span> a-f</span><br><span class="line">%X	base <span class="number">16</span>, with upper-<span class="keyword">case</span> letters <span class="keyword">for</span> A-F</span><br><span class="line">%U	Unicode format: U+<span class="number">1234</span>; same as <span class="string">"U+%04X"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// String and slice of bytes (treated equivalently with these verbs):</span></span><br><span class="line"></span><br><span class="line">%s		<span class="comment">// the uninterpreted bytes of the string or slice</span></span><br><span class="line">%q		<span class="comment">// a double-quoted string safely escaped with Go syntax</span></span><br><span class="line">%x		<span class="comment">// base 16, lower-case, two characters per byte</span></span><br><span class="line">%X		<span class="comment">// base 16, upper-case, two characters per byte</span></span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/编程语言/java/maven/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    maven project
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/编程语言/go/go环境/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">go环境</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

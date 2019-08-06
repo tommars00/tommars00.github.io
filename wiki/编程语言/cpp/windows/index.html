@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>windows-cpp | tommar00&#39;s wiki</title>
+    
+    
+        <meta name="keywords" content="C++,windows">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="vcpkg windows官方的github 软件安装工具  1234567891011121314151617181920&amp;gt; git clone https://github.com/Microsoft/vcpkg.git&amp;gt; cd vcpkgPS&amp;gt; .\bootstrap-vcpkg.batPS&amp;gt; dir Env:VCPKG_ROOTPS&amp;gt; setx VCPKG_R">
+<meta name="keywords" content="C++,windows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows-cpp">
+<meta property="og:url" content="http://yoursite.com/wiki/编程语言/cpp/windows/index.html">
+<meta property="og:site_name" content="tommar00&#39;s wiki">
+<meta property="og:description" content="vcpkg windows官方的github 软件安装工具  1234567891011121314151617181920&amp;gt; git clone https://github.com/Microsoft/vcpkg.git&amp;gt; cd vcpkgPS&amp;gt; .\bootstrap-vcpkg.batPS&amp;gt; dir Env:VCPKG_ROOTPS&amp;gt; setx VCPKG_R">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-06T15:20:43.933Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="windows-cpp">
+<meta name="twitter:description" content="vcpkg windows官方的github 软件安装工具  1234567891011121314151617181920&amp;gt; git clone https://github.com/Microsoft/vcpkg.git&amp;gt; cd vcpkgPS&amp;gt; .\bootstrap-vcpkg.batPS&amp;gt; dir Env:VCPKG_ROOTPS&amp;gt; setx VCPKG_R">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">tommar00&#39;s wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hacker
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            net
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/net/protocol/">protocol</a></li>  <li class="file"><a href="/wiki/hacker/net/socket/">net</a></li>  <li class="file"><a href="/wiki/hacker/net/tcp/">tcp-basic</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            windows
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/hacker/windows/asm/">asm</a></li>  <li class="file"><a href="/wiki/hacker/windows/pe/">pe</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-driver/">windows-driver</a></li>  <li class="file"><a href="/wiki/hacker/windows/windows-hook/">windows-hook</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/hacker/attack/">attack</a></li>  <li class="file"><a href="/wiki/hacker/kali-linux/">Kali Linux Tools</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            IDE
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/IDE/IDE/">IDE</a></li>  <li class="file"><a href="/wiki/工具/IDE/IntelliJ/">IntelliJ</a></li>  <li class="file"><a href="/wiki/工具/IDE/Matlab/">MatLab</a></li>  <li class="file"><a href="/wiki/工具/IDE/PyCharm/">pycharm</a></li>  <li class="file"><a href="/wiki/工具/IDE/QtCreator/">QtCreator</a></li>  <li class="file"><a href="/wiki/工具/IDE/Visual Studio/">Visual Studio</a></li>  <li class="file"><a href="/wiki/工具/IDE/eclipse/">eclipse</a></li>  <li class="file"><a href="/wiki/工具/IDE/emscripten/">emscripten</a></li>  <li class="file"><a href="/wiki/工具/IDE/llvm/">LLVM</a></li>  <li class="file"><a href="/wiki/工具/IDE/nmake-msbuild/">nmake-msbuild</a></li>  <li class="file"><a href="/wiki/工具/IDE/sublime-use/">sublime</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Operator System
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/Operator System/cmd/">CMD</a></li>  <li class="file"><a href="/wiki/工具/Operator System/linux/">linux</a></li>  <li class="file"><a href="/wiki/工具/Operator System/powershell/">Powershell</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu-tool/">ubuntu-tool</a></li>  <li class="file"><a href="/wiki/工具/Operator System/ubuntu/">ubuntu</a></li>  <li class="file"><a href="/wiki/工具/Operator System/windows/">Windows</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            network
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/network/cloud_server/">cloud-server use</a></li>  <li class="file"><a href="/wiki/工具/network/postman/">postman && curl</a></li>  <li class="file"><a href="/wiki/工具/network/shadowsocks/">shadowsocks</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            reverse engineer
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/工具/reverse engineer/IDA/">IDA</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/OllyDbg/">OllDbg</a></li>  <li class="file"><a href="/wiki/工具/reverse engineer/windbg/">IDA</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/工具/database/">数据库环境</a></li>  <li class="file"><a href="/wiki/工具/docker/">docker</a></li>  <li class="file"><a href="/wiki/工具/git/">git-use</a></li>  <li class="file"><a href="/wiki/工具/gitbook/">gitbook</a></li>  <li class="file"><a href="/wiki/工具/hexo-install/">hexo-install</a></li>  <li class="file"><a href="/wiki/工具/markdown/">markdown语法</a></li>  <li class="file"><a href="/wiki/工具/vim/">vim</a></li>  <li class="file"><a href="/wiki/工具/vmware/">VMware</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            开源库
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/cpp/boost/">boost</a></li>  <li class="file"><a href="/wiki/开源库/cpp/curl/">curl</a></li>  <li class="file"><a href="/wiki/开源库/cpp/gtest/">gtest</a></li>  <li class="file"><a href="/wiki/开源库/cpp/imgui/">imgui</a></li>  <li class="file"><a href="/wiki/开源库/cpp/lzma/">cpp-lzma</a></li>  <li class="file"><a href="/wiki/开源库/cpp/mfc/">mfc</a></li>  <li class="file"><a href="/wiki/开源库/cpp/muduo/">muduo-python</a></li>  <li class="file"><a href="/wiki/开源库/cpp/pugiXML/">pugiXML</a></li>  <li class="file"><a href="/wiki/开源库/cpp/qt/">qt</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm example/">WebAssembly示例</a></li>  <li class="file"><a href="/wiki/开源库/cpp/wasm/">WebAssembly</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring/library&framework/">library 和 framework</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring amqp/">spring amqp</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring anotation/">spring-anotation</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring boot/">Spring-boot</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring cache/">Spring-cache</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring data/">spring-data</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring event/">spring event</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring integration/">spring integration</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring scheduler/">spring scheduler</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring security/">spring security</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring test/">spring-test</a></li>  <li class="file"><a href="/wiki/开源库/java/spring/spring web/">spring web</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            spring-cloud
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud admin/">Spring-Cloud-Admin</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud config/">spring-cloud-config</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud feign/">spring-cloud-feign</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud stream bus/">Spring-cloud-stream/bus</a></li>  <li class="file"><a href="/wiki/开源库/java/spring-cloud/spring cloud/">Spring-Cloud</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/开源库/java/elastic-job-lite/">elastic-job-lite</a></li>  <li class="file"><a href="/wiki/开源库/java/guava/">guava</a></li>  <li class="file"><a href="/wiki/开源库/java/jackson/">jackson</a></li>  <li class="file"><a href="/wiki/开源库/java/jna/">JNA</a></li>  <li class="file"><a href="/wiki/开源库/java/mpush/">mpush</a></li>  <li class="file"><a href="/wiki/开源库/java/netty/">Netty</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/开源库/python/SciPy/">scipy</a></li>  <li class="file"><a href="/wiki/开源库/python/crawl/">爬虫</a></li>  <li class="file"><a href="/wiki/开源库/python/flask/">flask</a></li>  <li class="file"><a href="/wiki/开源库/python/numpy/">numpy</a></li>  <li class="file"><a href="/wiki/开源库/python/pandas/">pandas</a></li>  <li class="file"><a href="/wiki/开源库/python/pycrypto/">pycrypto</a></li>  <li class="file"><a href="/wiki/开源库/python/scapy/">scapy</a></li>  <li class="file"><a href="/wiki/开源库/python/win32/">pywin32</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            cpp
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/cpp/class/">class</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/compiler/">compiler</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/keyword/">keyword</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/reference/">reference-pointer</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/std/">std</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/template/">template</a></li>  <li class="file active"><a href="/wiki/编程语言/cpp/windows/">windows-cpp</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/其他语言融合/">other Language</a></li>  <li class="file"><a href="/wiki/编程语言/cpp/特殊的C/">Old-C</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            go
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/go/go环境/">go环境</a></li>  <li class="file"><a href="/wiki/编程语言/go/go经验/">go经验</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            java
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/java/grammar/">grammar</a></li>  <li class="file"><a href="/wiki/编程语言/java/idea/">idea</a></li>  <li class="file"><a href="/wiki/编程语言/java/maven/">maven project</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            library
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/编程语言/python/library/encrypt/">python-加解密处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/file-operator/">python-文件处理</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/os/">python-os</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/socket/">python-socket</a></li>  <li class="file"><a href="/wiki/编程语言/python/library/xpath/">python-xpath</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/编程语言/python/grammar/">python-grammar</a></li>  <li class="file"><a href="/wiki/编程语言/python/py2 & py3/">python 2.7&3.5</a></li>  <li class="file"><a href="/wiki/编程语言/python/python-writing/">python-writing</a></li>  <li class="file"><a href="/wiki/编程语言/python/python环境/">python environment</a></li>  <li class="file"><a href="/wiki/编程语言/python/tensorflow/">tensorflow</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/index/">Welcome tom's Wiki</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-编程语言/cpp/windows" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/编程语言/">编程语言</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/编程语言/cpp/">cpp</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/C/">C++</a>, <a class="tag-link" href="/tags/windows/">windows</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/编程语言/cpp/windows/">
+            <time datetime="2019-03-20T14:13:54.000Z" itemprop="datePublished">2019-03-20</time>
+        </a>
+    </div>
+
+
+                        
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/raw/master/source/_posts/编程语言/cpp/windows.md" rel="external nofollow noopener noreferrer" target="_blank"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/edit/master/source/_posts/编程语言/cpp/windows.md" rel="external nofollow noopener noreferrer" target="_blank"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href="https://github.com/tommars00/wiki-tom/commits/master/source/_posts/编程语言/cpp/windows.md" rel="external nofollow noopener noreferrer" target="_blank"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            windows-cpp
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h2 id="vcpkg"><a href="#vcpkg" class="headerlink" title="vcpkg"></a>vcpkg</h2><ul>
+<li><a href="https://github.com/Microsoft/cpprestsdk" rel="external nofollow noopener noreferrer" target="_blank">windows官方的github</a></li>
+<li><a href="https://github.com/Microsoft/vcpkg" rel="external nofollow noopener noreferrer" target="_blank">软件安装工具</a></li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt; git clone https://github.com/Microsoft/vcpkg.git</span><br><span class="line">&gt; <span class="built_in">cd</span> vcpkg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PS&gt; .\bootstrap-vcpkg.bat</span><br><span class="line">PS&gt; <span class="built_in">dir</span> Env:VCPKG_ROOT</span><br><span class="line">PS&gt; setx VCPKG_ROOT ""</span><br><span class="line">PS&gt; setx VCPKG_DEFAULT_TRIPLET=x64-windows</span><br><span class="line"></span><br><span class="line">PS&gt; .\vcpkg.exe <span class="built_in">help</span></span><br><span class="line">PS&gt; .\vcpkg.exe search curl</span><br><span class="line">PS&gt; .\vcpkg.exe install sqlite</span><br><span class="line">PS&gt; .\vcpkg.exe list</span><br><span class="line">PS&gt; .\vcpkg.exe install zlib:x64-windows</span><br><span class="line">PS&gt; .\vcpkg.exe upgrade --no-dry-run</span><br><span class="line"></span><br><span class="line">PS&gt; git pull</span><br><span class="line">PS&gt; .\bootstrap-vcpkg.bat</span><br><span class="line"></span><br><span class="line">PS&gt; vcpkg version</span><br></pre></td></tr></table></figure>
+<h2 id="pragma"><a href="#pragma" class="headerlink" title="pragma"></a><code>pragma</code></h2><ul>
+<li><a href="https://stackoverflow.com/questions/5723269/what-does-pragma-intrinsic-mean" rel="external nofollow noopener noreferrer" target="_blank">What does #pragma intrinsic mean?</a></li>
+<li><a href="https://www.jianshu.com/p/b019a3ca1c71" rel="external nofollow noopener noreferrer" target="_blank">#pragma编译指令大全（上）</a></li>
+<li><a href="https://www.jianshu.com/p/3cef414630f9" rel="external nofollow noopener noreferrer" target="_blank">#pragma编译指令大全（下）</a></li>
+<li><a href="https://blog.csdn.net/lmhuanying1012/article/details/78549763" rel="external nofollow noopener noreferrer" target="_blank">#pragma命令详解</a></li>
+<li><a href="https://www.cnblogs.com/cchyao/archive/2010/09/25/1834308.html" rel="external nofollow noopener noreferrer" target="_blank">#pragma命令详解(一)</a></li>
+<li><a href="https://www.cnblogs.com/cchyao/archive/2010/09/25/1834319.html" rel="external nofollow noopener noreferrer" target="_blank">#pragma命令详解(二)</a></li>
+</ul>
+<h2 id="不同版本dll"><a href="#不同版本dll" class="headerlink" title="不同版本dll"></a>不同版本dll</h2><ul>
+<li><a href="http://developer.51cto.com/art/200509/3400.htm" rel="external nofollow noopener noreferrer" target="_blank">让.NET程序兼容不同版本的Dll文件</a></li>
+<li><a href="https://yq.aliyun.com/articles/640522" rel="external nofollow noopener noreferrer" target="_blank">dll向后兼容</a></li>
+<li><a href="https://www.twblogs.net/a/5c3ee632bd9eee35b3a64e0d/zh-cn" rel="external nofollow noopener noreferrer" target="_blank">针对同一动态组件的不同版本链接和加载</a></li>
+<li><a href="https://blog.csdn.net/gx_489587482/article/details/53285797" rel="external nofollow noopener noreferrer" target="_blank">解决dll兼容性问题</a></li>
+<li><a href="https://blog.csdn.net/wangzl1163/article/details/73162826" rel="external nofollow noopener noreferrer" target="_blank">一个项目引用不同版本dll</a></li>
+<li><a href="https://www.cnblogs.com/mrhgw/p/6700720.html" rel="external nofollow noopener noreferrer" target="_blank">dll版本兼容</a></li>
+<li><a href="https://blog.csdn.net/smileiam/article/details/68927084" rel="external nofollow noopener noreferrer" target="_blank">动态加载、插件化、热部署、热修复</a></li>
+</ul>
+<h2 id="vs2010的c-11-features"><a href="#vs2010的c-11-features" class="headerlink" title="vs2010的c+11 features"></a>vs2010的c+11 features</h2><ul>
+<li><a href="https://stackoverflow.com/questions/7421825/c11-features-in-visual-studio-2012" rel="external nofollow noopener noreferrer" target="_blank">c11-features-in-visual-studio-2012</a></li>
+<li><a href="https://stackoverflow.com/questions/12654394/initializer-list-not-working-with-vector-in-visual-studio-2012" rel="external nofollow noopener noreferrer" target="_blank">initializer-list-not-working-with-vector-in-visual-studio-2012</a></li>
+</ul>
+<p>c14才有<code>make_unique</code>，所以vs2010只能是用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::unique&lt;Base&gt; p;</span><br><span class="line">p = <span class="built_in">std</span>::unique&lt;Derive&gt;(<span class="keyword">new</span> Derive);</span><br></pre></td></tr></table></figure>
+<h2 id="atomic"><a href="#atomic" class="headerlink" title="atomic"></a>atomic</h2><ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.interlocked?view=netframework-4.7.2" rel="external nofollow noopener noreferrer" target="_blank">system.threading.interlocked</a></li>
+<li><a href="https://aigo.iteye.com/blog/2291402" rel="external nofollow noopener noreferrer" target="_blank">atomic性能比较</a></li>
+<li><code>boost.Atomic</code>的windows适配就使用下面这个实现<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/sync/interlocked-variable-access" rel="external nofollow noopener noreferrer" target="_blank">interlocked-variable-access</a></li>
+</ul>
+</li>
+<li><a href="https://en.cppreference.com/w/cpp/atomic" rel="external nofollow noopener noreferrer" target="_blank">std::atomic</a></li>
+<li><a href="http://taozj.net/201609/modern-cpp-atomic-and-memory-model.html" rel="external nofollow noopener noreferrer" target="_blank">C++11标准中的Atomic原子操作和内存模型</a></li>
+</ul>
+<p>注：<code>unsigned long long/int64</code>他们默认调用64bit版本的API，然后就导致在XP32上会报<code>interlockedcompareexchange64 could not be located kernel32.dll</code>。而且<code>and/or/xor</code>的API只有64位版本。<a href="https://superuser.com/questions/674223/grit-wont-launch-due-to-dll-error/674445" rel="external nofollow noopener noreferrer" target="_blank">具体说明</a></p>
+<h2 id="windows自定义的integer-type别名"><a href="#windows自定义的integer-type别名" class="headerlink" title="windows自定义的integer type别名"></a>windows自定义的integer type别名</h2><p><a href="https://blog.csdn.net/shiwei408/article/details/7463476" rel="external nofollow noopener noreferrer" target="_blank">__int64 与long long 的区别</a></p>
+<h2 id="stdio-h的safe提供的-TRUANCATE宏"><a href="#stdio-h的safe提供的-TRUANCATE宏" class="headerlink" title="stdio.h的safe提供的_TRUANCATE宏"></a><code>stdio.h</code>的safe提供的<code>_TRUANCATE</code>宏</h2><p><a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/truncate?view=vs-2017" rel="external nofollow noopener noreferrer" target="_blank">_TRUANCATE</a></p>
+<h2 id="vs多工程"><a href="#vs多工程" class="headerlink" title="vs多工程"></a>vs多工程</h2><p><a href="http://www.cnblogs.com/grandyang/p/7765653.html" rel="external nofollow noopener noreferrer" target="_blank">多工程开发</a></p>
+<h2 id="windows中常见的函数修饰-stdcall-cdecl"><a href="#windows中常见的函数修饰-stdcall-cdecl" class="headerlink" title="windows中常见的函数修饰_stdcall, _cdecl"></a>windows中常见的函数修饰<code>_stdcall</code>, <code>_cdecl</code></h2><p><a href="https://docs.microsoft.com/en-us/cpp/cpp/stdcall?view=vs-2017" rel="external nofollow noopener noreferrer" target="_blank"><code>_stdcall</code></a></p>
+<h2 id="windows自己实现的并行容器"><a href="#windows自己实现的并行容器" class="headerlink" title="windows自己实现的并行容器"></a>windows自己实现的并行容器</h2><ul>
+<li><a href="https://docs.microsoft.com/en-us/cpp/parallel/concrt/reference/concurrent-unordered-map-class?view=vs-2017" rel="external nofollow noopener noreferrer" target="_blank">concurrent-unordered-map</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/parallel/concrt/reference/concurrency-namespace?view=vs-2017" rel="external nofollow noopener noreferrer" target="_blank">concurrency-namespace</a></li>
+<li><a href="https://preshing.com/20160201/new-concurrent-hash-maps-for-cpp/" rel="external nofollow noopener noreferrer" target="_blank">concurrent-hash-map比较</a></li>
+<li><a href="https://stackoverflow.com/questions/14338732/is-it-possible-to-implement-lock-free-map-in-c/14338903" rel="external nofollow noopener noreferrer" target="_blank">lock free map问题</a></li>
+<li><a href="https://erdani.com/publications/cuj-2004-12.pdf" rel="external nofollow noopener noreferrer" target="_blank">lock free map论文</a></li>
+</ul>
+<h2 id="Windows的大牛"><a href="#Windows的大牛" class="headerlink" title="Windows的大牛"></a>Windows的大牛</h2><p><a href="https://www.cnblogs.com/cmt/archive/2009/01/17/1377477.html" rel="external nofollow noopener noreferrer" target="_blank">Jeffrey Richter</a></p>
+<h2 id="一些讨论"><a href="#一些讨论" class="headerlink" title="一些讨论"></a>一些讨论</h2><p><a href="https://www.v2ex.com/t/160455" rel="external nofollow noopener noreferrer" target="_blank">mfc-win32-核心编程</a></p>
+<h2 id="vs2010入门级使用—gtest"><a href="#vs2010入门级使用—gtest" class="headerlink" title="vs2010入门级使用—gtest"></a>vs2010入门级使用—gtest</h2><p><a href="https://blog.csdn.net/q_l_s/article/details/51783729" rel="external nofollow noopener noreferrer" target="_blank">教程</a></p>
+<h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/minwinbase/ns-minwinbase-systemtime" rel="external nofollow noopener noreferrer" target="_blank"><code>SYSTEMTIME</code></a></li>
+<li><a href="https://blog.csdn.net/bokee/article/details/5330791" rel="external nofollow noopener noreferrer" target="_blank">Windows中的时间(SYSTEMTIME和FILETIME)</a></li>
+<li><a href="https://blog.csdn.net/MoreWindows/article/details/8654298" rel="external nofollow noopener noreferrer" target="_blank">Windows系统时间(FILETIME和SYSTEMTIME</a></li>
+<li><a href="https://blog.csdn.net/morewindows/article/details/6854764" rel="external nofollow noopener noreferrer" target="_blank">Windows 各种计时函数总结</a></li>
+</ul>
+<h2 id="cmd"><a href="#cmd" class="headerlink" title="cmd"></a>cmd</h2><p><a href="https://stackoverflow.com/questions/31201631/execute-cmd-commands-using-c/31201720" rel="external nofollow noopener noreferrer" target="_blank">用<code>system()</code></a></p>
+<h2 id="windows-h和afx-mfc"><a href="#windows-h和afx-mfc" class="headerlink" title="windows.h和afx(mfc)"></a><code>windows.h</code>和afx(mfc)</h2><ul>
+<li><a href="https://stackoverflow.com/questions/5026799/windows-h-and-mfc" rel="external nofollow noopener noreferrer" target="_blank">windows-h-and-mfc</a></li>
+<li><a href="https://stackoverflow.com/questions/1017814/error-windows-h-already-included-mfc-apps-must-not-include-windows-h/10833654" rel="external nofollow noopener noreferrer" target="_blank">windows-h-and-mfc关系</a></li>
+<li><a href="http://www.voidcn.com/article/p-wknoonws-bdr.html" rel="external nofollow noopener noreferrer" target="_blank">stdafx.h的作用</a></li>
+<li><a href="https://hownot2code.com/2016/08/16/stdafx-h/" rel="external nofollow noopener noreferrer" target="_blank">StdAfx.h的理解，最下面解决了为什么会报错undeclared identifier</a></li>
+</ul>
+<p>宏编译 预处理头 ，经常可以在stdafx.h文件中出现宏定义<code>#define WIN32_LEAN_AND_MEAN</code>，具体含义就是当项目中包含<code>#include&lt;windows.h&gt;</code>时去除一些头文件的包含。一个重要的演示例子就是<code>winsock2.h</code>和<code>windows.h</code>之间有关于<code>_WINSOCKAPI_</code>的重复定义，如果定义了上面的宏编译，就会避免出现重定义，不同的链接的错误。</p>
+<p><code>stdafx.h</code>、<code>sdkddkver.h</code>等</p>
+<p>“Error: Windows.h already include. MFC apps must not #include&lt;windows.h&gt;”当时是在h文件添加include，后来改为cpp文件就没问题</p>
+<p><a href="https://social.msdn.microsoft.com/Forums/en-US/412bdc0b-05ac-4d17-a6c8-f5af190b724a/errorwindowsh-already-included-mfc-apps-must-not-include-ltwindowshgt?forum=vcgeneral" rel="external nofollow noopener noreferrer" target="_blank">msdn论坛建议</a></p>
+<h3 id="在编译VC-6-0是-出现fatal-error-C1010的错误"><a href="#在编译VC-6-0是-出现fatal-error-C1010的错误" class="headerlink" title="在编译VC++6.0是,出现fatal error C1010的错误"></a>在编译VC++6.0是,出现<code>fatal error C1010</code>的错误</h3><ul>
+<li>fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add ‘#include “stdafx.h”‘ to your source?</li>
+<li>fatal error C1010: unexpected end of file while looking for precompiled header directive</li>
+</ul>
+<p>解决方法：</p>
+<ol>
+<li>如果发生错误的文件是由其他的C代码文件添加进入当前工程而引起的，则Alt+F7进入当前工程的 Settings，选择C/C++选项卡，从Category组合框中选中Precompiled Headers，选择Not Using Precompiled headers。确定。</li>
+<li>在cpp文件开头添加: <code>#include &quot;stdafx.h&quot;</code></li>
+</ol>
+<p>对预编译头文件说明如下：</p>
+<ul>
+<li>所谓头文件预编译，就是把一个工程(Project)中使用的一些MFC标准头文件(如Windows.H、Afxwin.H)预先编译，以后该工程编译时，不再编译这部分头文件，仅仅使用预编译的结果。这样可以加快编译速度，节省时间。</li>
+<li>预编译头文件通过编译stdafx.cpp生成，以工程名命名，由于预编译的头文件的后缀是“pch”，所以编译结果文件是projectname.pch。即pre-compile-header缩写</li>
+<li>编译器通过一个头文件stdafx.h来使用预编译头文件。stdafx.h这个头文件名是可以在project的编译设置里指定的。</li>
+<li>编译器认为，所有在指令<code>#include   &quot;stdafx.h&quot;</code>前的代码都是预编译的，它跳过<code>#include   &quot;stdafx.   h&quot;</code>指令，使用projectname.pch编译这条指令之后的所有代码。因此，所有的CPP实现文件第一条语句都是：<code>#include   &quot;stdafx.h&quot;</code>。</li>
+</ul>
+<h3 id="MFC-跟win32的比较【其实做这是在和GDI-Direct作比较】"><a href="#MFC-跟win32的比较【其实做这是在和GDI-Direct作比较】" class="headerlink" title="MFC 跟win32的比较【其实做这是在和GDI/Direct作比较】"></a>MFC 跟win32的比较【其实做这是在和GDI/Direct作比较】</h3><ul>
+<li>From colleague:<ol>
+<li>Win32 Release 出来的Image 小</li>
+<li>Win32细节控制更强，因为MFC的封装，有些功能想要修改反而比较麻烦</li>
+<li>Win32移植更加方便（例如移植到WINDOWS MOBILE平台）</li>
+</ol>
+</li>
+<li>From Internet:<ol>
+<li>看法一：win32有两种执行程序，一种是控制台程序，没有图形界面的，另一种是windows图形界面的GUI程序，就是可以打开窗口，在窗口中画图显示文字的程序<ol>
+<li>win32 sdk还可以编写dll</li>
+<li>MFC是一个类库，用这个类库编写windows图形界面的GUI程序比较容易，但生成的exe文件比较大。</li>
+<li>现在很少有直接用win32直接写GUI程序，除非程序很简单，要求程序很小的情况。一般都用MFC，这样可以用相同的时间写出更漂亮和复杂的GUI程序。</li>
+</ol>
+</li>
+<li>看法二：<ol>
+<li>WIN32 是Windows的一个子系统，也是最重要的一个。（还有POSIX子系统和OS/2子系统）Win32子系统为应用程序提供了使用系统资源的接口Win32 API，WIN32 API是Windows用户态下应用程序编程的基础。因此所有在WIN32API基础上的应用程序都是Win32应用程序。</li>
+<li>MFC ，Microsoft Foundation Classes.微软基础类库。这个类库不光封装了大多数的GUI系统对象和数据结构，还为开发者提供了开发框架，使原本复杂繁琐的Windows开发（尤其使界面开发）变得非常简单。MFC是对API的封装，因此它能实现的功能只是API的子集。对于追求系统底层相关而且效率高的程序而言，MFC不够灵活而且开销也大。但对于图形界面开发，如果没有MFC而使用API的话那么开发简直是对人的折磨。MFC很好用，但终归也是API的东西。懂了系统原理和接口，MFC也就全明白了。</li>
+</ol>
+</li>
+<li>看法三：<ol>
+<li>win32是windows下的最基本的编程方式，使用它得到的代码最干净最有效率，也是最底层，它是其它所有方式实现的基础。一般指只使用API和SDK。</li>
+<li>MFC是对win32的封装，使用win32编程方法，写了一个又一个类，让我们不用再重复大量劳动。但毕竟是封装，所以不可能完全实现win32所有功能。用着虽然方便，但距离细节毕竟远了，在个性个、特殊化方面还有差距。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<p>两者相比，win32更本质,MFC更抽像。从软件工程来看，MFC更符合要求，更人性化。我们在正常使用中，优先使用MFC</p>
+<ol>
+<li>MFC的功能正常情况下可以满足绝大部分的需要，特殊需要，也可以直接用API和SDK实现。但反过来，win32下想用MFC的东西，却是非常困难的。MFC下开发，是包融了win32.</li>
+<li>MFC和vc融合，拥有大量人性化的东西，会极大增加开发效率。如界面、通用对话框等。而且它的代码是微软写的，比你自己用win32实现更值得让公司信赖。而且代码量会降低很多，更容易调试和维护。</li>
+<li>很多功能你自己实现起来非常麻烦，甚至你的技术没达到那标准，而使用MFC很简单，这会迫使你使用它。</li>
+</ol>
+<p>有些场合下不要使用MFC：</p>
+<ol>
+<li>三维游戏等，这些东东MFC并没有包含，这时需要使用其它库。使用MFC反而不好，会造成臃肿和拖累。</li>
+<li>特殊程序，如病毒等后台工具。它们根本不需要什么界面，需要的就是效率，而且要求体积小。这些无疑Win32比MFC强，甚至连win32都可以不用。</li>
+<li>简单的实现，win32上简陋的东西就够用了，或者就算不够用，但有STL等C++自带的，那么MFC就可以不需要了。win32更符合老编程员的习惯。而且如STL，同样功能下，事实上比MFC更优秀。</li>
+</ol>
+<h2 id="winsock"><a href="#winsock" class="headerlink" title="winsock"></a>winsock</h2><p><a href="https://stackoverflow.com/questions/6755637/recv-windows-socket-takes-infinite-time-how-to-timeout" rel="external nofollow noopener noreferrer" target="_blank">recv超时时间设置</a></p>
+<h2 id="registry"><a href="#registry" class="headerlink" title="registry"></a>registry</h2><ul>
+<li><p><a href="https://stackoverflow.com/questions/531998/is-there-a-way-to-set-the-environment-path-programmatically-in-c-on-windows" rel="external nofollow noopener noreferrer" target="_blank">winAPI设定registry</a></p>
+</li>
+<li><p><a href="https://docs.microsoft.com/en-us/windows/desktop/sysinfo/registry-functions" rel="external nofollow noopener noreferrer" target="_blank">registry-functions</a></p>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-setenvironmentvariable" rel="external nofollow noopener noreferrer" target="_blank"><code>SetEnvironmentVariable</code>的msdn文档</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/winreg/nf-winreg-regqueryvalueexa" rel="external nofollow noopener noreferrer" target="_blank"><code>RegQueryValueEx</code></a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/winreg/nf-winreg-regqueryinfokeya" rel="external nofollow noopener noreferrer" target="_blank"><code>RegQueryInfoKey</code></a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/sysinfo/enumerating-registry-subkeys" rel="external nofollow noopener noreferrer" target="_blank"><code>Enum Registry</code></a></li>
+</ul>
+<h2 id="pipe"><a href="#pipe" class="headerlink" title="pipe"></a>pipe</h2><p><a href="https://stackoverflow.com/questions/28454141/c-windows-asynch-io-named-pipe-first-message-not-received" rel="external nofollow noopener noreferrer" target="_blank">Named Pipe</a></p>
+<h2 id="模块-dll-lib"><a href="#模块-dll-lib" class="headerlink" title="模块 dll lib"></a>模块 dll lib</h2><p><code>GetModuleHandle</code>报错 the specified module could not be found</p>
+<ol>
+<li>很可能是因为该dll目前没有一个进程有加载到内存中，那就需要我们自己<code>LoadLibrary</code></li>
+<li>也很可能是因为32/64bit缘故</li>
+<li>也可以用<code>PathFileExists</code>来判断dll文件是否存在</li>
+</ol>
+<h2 id="编译报错"><a href="#编译报错" class="headerlink" title="编译报错"></a>编译报错</h2><h3 id="问题一-LINK-fatal-error-LNK1123-转换到-COFF-期间失败-文件无效或损坏"><a href="#问题一-LINK-fatal-error-LNK1123-转换到-COFF-期间失败-文件无效或损坏" class="headerlink" title="问题一 LINK : fatal error LNK1123: 转换到 COFF 期间失败: 文件无效或损坏"></a>问题一 LINK : fatal error LNK1123: 转换到 COFF 期间失败: 文件无效或损坏</h3><p>NMAKE : fatal error U1077: “”C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\BIN\x86_amd64\link.EXE””: 返回代码“0x463”</p>
+<p>问题说明：当安装VS2012之后，原来的.NET 4.0会被替换为.NET 4.5。卸载VS2012时，不会恢复.NET 4.0。</p>
+<p>l 当VS2012安装后，VS2010的cvtres.exe就无法使用了。如果你的PATH环境变量中VS2010的工具路径第一个出现，而且链接器需要将.res文件转换为COFF 对象格式，就会导致LNK1123错误。<br>l 当VS生成PE文件头时，使用的cvtres.exe版本错误，不能与当前的.NET平台兼容。<br>解决方案：</p>
+<p><a href="http://stackoverflow.com/questions/10888391/link-fatal-error-lnk1123-failure-during-conversion-to-coff-file-invalid-or-c" rel="external nofollow noopener noreferrer" target="_blank">参考</a></p>
+<p>因为是cvtres.exe版本错误导致的结果，所以凡是能使VS链接器找到正确的cvtres.exe版本的方法都可以解决该问题。或者使VS链接器不生成COFF的方法都可以。</p>
+<p>【方法一】<br>  当前系统中存在两个cvtres.exe文件，版本不同。让VS2010使用.NET 4.5的cvtres.exe程序。</p>
+<p>具体步骤：</p>
+<p>重命名或删除：（vs2010安装的位置）C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\cvtres.exe</p>
+<p>这样C:\Windows\Microsoft.NET\Framework\v4.0.30319 (.NET 4.5)中的cvtres.exe文件就可以被VS2010使用。</p>
+<p>【方法二】<br>解决方法如下：<br>项目\属性\配置属性\清单工具\输入和输出\嵌入清单：原来是“是”，改成“否”。</p>
+<p>说明：这种方法每个工程均需要修改配置。</p>
+<p>【方法三】<br>安装：VS2010 SP1. 该版本应该是能使用.NET 4.5的，并配有正确的cvtres.exe版本。</p>
+<p>注意：安装VS 2010 SP1 时会移除64-bit 编译器. 通过安装 VS 2010 SP1 compiler pack 能够重新获得。</p>
+<p>【方法四】<br>卸载.NET 4.5，重装.NET 4.0</p>
+<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><p><a href="http://www.acodersjourney.com/2016/05/top-10-c-header-file-mistakes-and-how-to-fix-them/" rel="external nofollow noopener noreferrer" target="_blank">是个常见的header导致的错误</a></p>
+<h2 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h2><p>C语言奇怪的VS编译报错<br><a href="https://stackoverflow.com/questions/9402720/errors-c2059-and-c2061-in-c-language" rel="external nofollow noopener noreferrer" target="_blank">C2059, C2061</a></p>
+<p>unknown override specifier, missing type specifier<br>【与stdafx.h这个预编译header，没有关系。只要保证cpp中的第一行是stdafx就可以】<br>这个问题，主要是由于我的依赖header是通过vx添加的，导致依赖覆盖。<br>举例，&lt;windows.h&gt;就可以完成&lt;winbase.h&gt;和？？？。</p>
+<p>【msdn的超长错误表<a href="https://msdn.microsoft.com/en-us/library/8x5x43k7.aspx?f=255&amp;MSPPError=-2147217396】" rel="external nofollow noopener noreferrer" target="_blank">https://msdn.microsoft.com/en-us/library/8x5x43k7.aspx?f=255&amp;MSPPError=-2147217396】</a></p>
+<p>  <a href="https://blog.csdn.net/liruda/article/details/2230617" rel="external nofollow noopener noreferrer" target="_blank"><code>#pragma comment(lib,&quot;Mwic_32.lib&quot;)</code></a>  </p>
+<p>  <a href="http://www.cnblogs.com/hokyhu/archive/2009/03/30/1425604.html" rel="external nofollow noopener noreferrer" target="_blank"><code>#pragma once</code></a></p>
+<h3 id="remote-access—fatal-error"><a href="#remote-access—fatal-error" class="headerlink" title="remote access—fatal error"></a>remote access—fatal error</h3><ul>
+<li><a href="https://social.msdn.microsoft.com/Forums/ie/en-US/eab723d1-4b5c-47db-8624-07cc5fd20310/getforegroundwindow-returns-zero?forum=windowsgeneraldevelopmentissues" rel="external nofollow noopener noreferrer" target="_blank">1</a></li>
+<li><a href="https://www.codesd.com/item/getforegroundwindow-returns-null-when-the-remote-desktop-is-disconnected.html" rel="external nofollow noopener noreferrer" target="_blank">2</a></li>
+</ul>
+<h3 id><a href="#" class="headerlink" title="?"></a>?</h3><ul>
+<li><a href="https://stackoverflow.com/questions/15586224/is-wsagetlasterror-just-an-alias-for-getlasterror%EF%BC%89" rel="external nofollow noopener noreferrer" target="_blank">wsaGetLastError和GetLastError区别</a></li>
+<li><a href="https://devblogs.microsoft.com/oldnewthing/20050908-19/?p=34283" rel="external nofollow noopener noreferrer" target="_blank">Why does the function WSASetLastError exist</a></li>
+<li><a href="https://stackoverflow.com/questions/15854930/how-do-you-use-stdsystem-error-with-getlasterror" rel="external nofollow noopener noreferrer" target="_blank">std::system_error和GetLastError</a></li>
+<li><a href="http://www.aiuxian.com/article/p-310843.html" rel="external nofollow noopener noreferrer" target="_blank">libcmtd.lib libcpmtd冲突</a></li>
+<li><a href="https://www.cnblogs.com/jimson/archive/2011/11/02/2233727.html" rel="external nofollow noopener noreferrer" target="_blank">windows char to wchar</a></li>
+<li><p><a href="https://blog.csdn.net/bloodfighter/article/details/5618846" rel="external nofollow noopener noreferrer" target="_blank">CT2A和CA2T</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/wang03989/article/details/51698247" rel="external nofollow noopener noreferrer" target="_blank"><code>#pragma comment(linker /section:.rdata)</code></a></p>
+</li>
+<li><a href="https://bbs.pediy.com/thread-129887.htm" rel="external nofollow noopener noreferrer" target="_blank">关于#pragma comment(linker, “/Section:Shared,rws”)</a></li>
+<li><a href="https://blogs.technet.microsoft.com/srd/2014/05/13/load-library-safely/" rel="external nofollow noopener noreferrer" target="_blank">loadlibrary</a></li>
+<li><a href="https://blog.csdn.net/rankun1/article/details/50449512" rel="external nofollow noopener noreferrer" target="_blank">VirtualAlloc</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc" rel="external nofollow noopener noreferrer" target="_blank">VirtualAlloc(msdn)</a></li>
+<li><a href="https://blog.csdn.net/Howard_Liu1314/article/details/8683201" rel="external nofollow noopener noreferrer" target="_blank">loadlibrary和getmodulehandle区别</a></li>
+<li><a href="https://stackoverflow.com/questions/3493344/difference-between-getmodulehandle-and-including-header" rel="external nofollow noopener noreferrer" target="_blank">loadlibrary和getmodulehandle</a></li>
+</ul>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><ul>
+<li><a href="https://stackoverflow.com/questions/306533/how-do-i-get-a-list-of-files-in-a-directory-in-c" rel="external nofollow noopener noreferrer" target="_blank">命令<code>ls</code>的功能</a></li>
+<li><a href="https://stackoverflow.com/questions/8233842/how-to-check-if-directory-exist-using-c-and-winapi" rel="external nofollow noopener noreferrer" target="_blank">How to check if directory exist using C++ and winAPI</a> </li>
+<li><a href="https://stackoverflow.com/questions/3828835/how-can-we-check-if-a-file-exists-or-not-using-win32-program" rel="external nofollow noopener noreferrer" target="_blank">windows - How can we check if a file Exists</a></li>
+<li><a href="https://stackoverflow.com/questions/213392/what-is-the-win32-api-function-to-use-to-delete-a-folder" rel="external nofollow noopener noreferrer" target="_blank">What is the Win32 API function to use to delete a folder</a></li>
+<li><a href="https://stackoverflow.com/q/7193348" rel="external nofollow noopener noreferrer" target="_blank">CreateFile() Failed With GetLastError() = 5</a></li>
+<li><a href="https://stackoverflow.com/questions/18974687/createfile-winapi-fails-with-error-5-access-denied-is-shell-programming-or" rel="external nofollow noopener noreferrer" target="_blank">::createFile winApi fails with error 5</a></li>
+<li><a href="https://blog.csdn.net/bxsec/article/details/76566011" rel="external nofollow noopener noreferrer" target="_blank">Windows-CreateFile</a></li>
+<li><a href="https://stackoverflow.com/questions/7481200/how-to-read-file-from-a-shared-location-windows-java/7579712" rel="external nofollow noopener noreferrer" target="_blank">How to Read file from a shared location Windows</a></li>
+<li><a href="http://www.martinbroadhurst.com/list-the-files-in-a-directory-in-c.html" rel="external nofollow noopener noreferrer" target="_blank">How to list the Files in a Directory in C++</a></li>
+<li><a href="https://stackoverflow.com/questions/8233842/how-to-check-if-directory-exist-using-c-and-winapi" rel="external nofollow noopener noreferrer" target="_blank">How to check if directory exist using C++ and winAPI</a></li>
+<li><a href="http://stackoverflow.com/questions/41404711/how-to-list-files-in-a-directory-using-the-windows-api/41407186" rel="external nofollow noopener noreferrer" target="_blank">How to list files in a directory using the Windows API?</a></li>
+<li><a href="https://blog.csdn.net/houjinfeng210/article/details/5488658" rel="external nofollow noopener noreferrer" target="_blank">MoveFile, MoveFileEx, CopyFile的几点心得</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/windows/desktop/FileIO/file-systems" rel="external nofollow noopener noreferrer" target="_blank">Local File Systems(包含了很多)</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-createdirectorya" rel="external nofollow noopener noreferrer" target="_blank">CreateDirectoryA function</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/api/winbase/nf-winbase-movefile" rel="external nofollow noopener noreferrer" target="_blank">MoveFile function</a></li>
+<li><a href="https://blog.csdn.net/huangkangying/article/details/73614402" rel="external nofollow noopener noreferrer" target="_blank">Windows Overlapped I/O详解</a></li>
+<li><a href="https://www.cnblogs.com/transcom/articles/1384946.html" rel="external nofollow noopener noreferrer" target="_blank">CreateFile,ReadFile等API详解</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/fileio/opening-a-file-for-reading-or-writing" rel="external nofollow noopener noreferrer" target="_blank">msdn opening a file for reading or writing</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/fileio/file-attribute-constants" rel="external nofollow noopener noreferrer" target="_blank">File Attribute Constants</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea" rel="external nofollow noopener noreferrer" target="_blank"><code>createfilea</code></a></li>
+<li><a href="https://stackoverflow.com/questions/18503879/how-to-get-a-folder-size-via-windows-api/18503967" rel="external nofollow noopener noreferrer" target="_blank">How to get a folder size via Windows API</a></li>
+<li><a href="https://stackoverflow.com/questions/15495756/how-can-i-find-the-size-of-all-files-located-inside-a-folder" rel="external nofollow noopener noreferrer" target="_blank">How can I find the size of all files located inside</a></li>
+<li><a href="https://stackoverflow.com/questions/10015341/size-of-a-directory%EF%BC%89" rel="external nofollow noopener noreferrer" target="_blank">Size of a directory</a></li>
+<li><a href="https://stackoverflow.com/questions/54064811/how-to-flush-all-file-buffers-in-windows" rel="external nofollow noopener noreferrer" target="_blank">How to flush all file buffers in Windows</a></li>
+</ul>
+<h2 id="MSXML"><a href="#MSXML" class="headerlink" title="MSXML"></a>MSXML</h2><ul>
+<li><a href="https://stackoverflow.com/questions/16269460/which-version-of-msxml-began-to-support-parsing-xml-1-1?noredirect=1&amp;lq=1" rel="external nofollow noopener noreferrer" target="_blank">Which version of MSXML began to support parsing xml1.1</a></li>
+<li><a href="https://stackoverflow.com/questions/5869191/character-reference-x1f-is-an-invalid-xml-character" rel="external nofollow noopener noreferrer" target="_blank">Character reference “&amp;#x1F” is an invalid XML character</a></li>
+<li><a href="https://meta.stackexchange.com/questions/95505/invalid-characters-for-xml-parsing-in-posthistory-xml-from-stack-overflow" rel="external nofollow noopener noreferrer" target="_blank">Invalid characters for XML parsing in posthistory.xml</a></li>
+</ul>
+<h2 id="concurrency"><a href="#concurrency" class="headerlink" title="concurrency"></a>concurrency</h2><ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/sync/mutex-objects" rel="external nofollow noopener noreferrer" target="_blank">Mutex Objects</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/sync/using-mutex-objects" rel="external nofollow noopener noreferrer" target="_blank">Using Mutex Objects</a></li>
+</ul>
+<h2 id="disk-info"><a href="#disk-info" class="headerlink" title="disk info"></a>disk info</h2><ul>
+<li><a href="https://stackoverflow.com/questions/15384916/get-total-size-of-a-hard-disk-in-c-windows" rel="external nofollow noopener noreferrer" target="_blank">win API get disk info</a></li>
+<li><a href="https://stackoverflow.com/questions/26729187/how-can-get-hard-disk-information-using-cmd/26729223" rel="external nofollow noopener noreferrer" target="_blank">cmd get disk info</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/desktop/devio/calling-deviceiocontrol" rel="external nofollow noopener noreferrer" target="_blank">Calling DeviceIoControl</a></li>
+</ul>
+<h2 id="任务框架"><a href="#任务框架" class="headerlink" title="任务框架"></a>任务框架</h2><ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page" rel="external nofollow noopener noreferrer" target="_blank">Task Scheduler</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/windows/win32/sync" rel="external nofollow noopener noreferrer" target="_blank">同步原语</a></li>
+<li><a href="https://docs.microsoft.com/zh-cn/windows/win32/api/threadpoollegacyapiset/nf-threadpoollegacyapiset-createtimerqueuetimer" rel="external nofollow noopener noreferrer" target="_blank">TimerQueue</a></li>
+<li><a href="https://blog.csdn.net/flyingleo1981/article/details/7857203" rel="external nofollow noopener noreferrer" target="_blank">timeSetEvent</a></li>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions/dd757634(v%3Dvs.85" rel="external nofollow noopener noreferrer" target="_blank">timeSetEvent docs</a>)</li>
+<li><a href="https://stackoverflow.com/questions/4266078/how-to-schedule-a-task-in-c" rel="external nofollow noopener noreferrer" target="_blank">How to schedule a task in C++</a></li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li><a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/75a504d1-03b7-4592-8dab-b6897585de6a/bstr-bstrt-sysallocstring-wchar-and-passing-parameters-to-wmi-methods?forum=vcgeneral" rel="external nofollow noopener noreferrer" target="_blank">BSTR, _bstr_t, SysAllocString, WCHAR and Passing Parameters to WMI Methods</a></li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/编程语言/cpp/template/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    template
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/编程语言/cpp/其他语言融合/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">other Language</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            tommars00 &copy; 2019 
+            <a rel="external nofollow noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>. Theme by <a href="https://github.com/zthxxx" rel="external nofollow noopener noreferrer" target="_blank">zthxxx</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
